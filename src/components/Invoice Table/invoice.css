@@ -1,0 +1,21 @@
+
+.inv-tbl > .MuiTableCell-root{
+    border: 0 !important;
+    padding: 0.65rem 1rem;
+}
+
+.MuiTypography-body1 {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+}
+
+.table-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2a95c5;
+}
+
+.inv-tbl-total{
+    background-color: #F2F9FC !important;
+}

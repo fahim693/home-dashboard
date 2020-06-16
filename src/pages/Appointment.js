@@ -5,6 +5,8 @@ import Layout from '../components/Layout';
 import { Card, CardContent, Typography, CardActions, Button, Chip } from '@material-ui/core';
 import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdFileDownload, MdMonetizationOn, MdHistory } from 'react-icons/md'
 import '../styles/appointment.css'
+import Invoice from '../components/Invoice Table/Invoice';
+import AppointmentHistory from '../components/Appointment History/AppointmentHistory';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -42,30 +44,40 @@ export default function CenteredGrid() {
                                         </Typography>
                                         <div className="card-content">
                                             <div className="start">
-                                                <Typography className="title-heads" variant="body2" component="p">
-                                                    Start Date and Time
-                                            </Typography>
-                                                <div className="subtitle-dark">
-                                                    <Typography variant="body2" component="p" >
-                                                        06/02/20
-                                            </Typography>
-                                                    <Typography variant="body2" component="p" style={{ margin: '2px 0' }}>
-                                                        01:00 Pm
-                                            </Typography>
+                                                <div className="step-status-drawing">
+                                                    <span className="step-status-dot"></span>
+                                                    <span className="step-status-line"></span>
+                                                </div>
+                                                <div>
+                                                    <Typography className="title-heads" variant="body2" component="p">
+                                                        Start Date and Time
+                                                </Typography>
+                                                    <div className="subtitle-dark">
+                                                        <Typography variant="body2" component="p" >
+                                                            06/02/20
+                                                    </Typography>
+                                                        <Typography variant="body2" component="p" style={{ margin: '2px 0' }}>
+                                                            01:00 Pm
+                                                    </Typography>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <br />
                                             <div className="end">
-                                                <Typography className="title-heads" variant="body2" component="p">
-                                                    End Date and Time
+                                                <div className="step-status-drawing">
+                                                    <span className="step-status-dot"></span>
+                                                </div>
+                                                <div>
+                                                    <Typography className="title-heads" variant="body2" component="p">
+                                                        End Date and Time
                                             </Typography>
-                                                <div className="subtitle-dark">
-                                                    <Typography variant="body2" component="p" >
-                                                        06/02/20
+                                                    <div className="subtitle-dark">
+                                                        <Typography variant="body2" component="p" >
+                                                            06/02/20
                                             </Typography>
-                                                    <Typography variant="body2" component="p" style={{ margin: '2px 0' }}>
-                                                        03:00 Pm
+                                                        <Typography variant="body2" component="p" style={{ margin: '2px 0' }}>
+                                                            03:00 Pm
                                             </Typography>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,35 +181,7 @@ export default function CenteredGrid() {
                                             </div>
                                         </Typography>
                                         <div className="card-content">
-                                            <Typography className="title-heads" variant="body2" component="p" >
-                                                Tags
-                                            </Typography>
-                                            <div className="chips">
-                                                <Chip className="chip" label="Tools" />
-                                                <Chip className="chip" label="Photo" />
-                                                <Chip className="chip" label="Job" />
-                                            </div>
-                                            <br />
-                                            <Typography className="title-heads" variant="body2" component="p" >
-                                                Source
-                                            </Typography>
-                                            <Typography variant="body2" component="p" >Phone</Typography>
-                                            <br />
-                                            <Typography className="title-heads" variant="body2" component="p" >
-                                                Notes
-                                            </Typography>
-                                            <Typography variant="body2" component="p" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.</Typography>
-                                            <br />
-                                            <Typography className="title-heads" variant="body2" component="p" >
-                                                Attachments
-                                            </Typography>
-                                            <div className="attachment-card">
-                                                <div>
-                                                    <MdImage style={{ marginRight: 18 }} />
-                                                    <Typography variant="body2" component="p" >Attachment Name.ext</Typography>
-                                                </div>
-                                                <MdFileDownload />
-                                            </div>
+                                            <Invoice />
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -211,37 +195,7 @@ export default function CenteredGrid() {
                                                 Appointment History
                                             </div>
                                         </Typography>
-                                        <div className="card-content">
-                                            <Typography className="title-heads" variant="body2" component="p" >
-                                                Tags
-                                            </Typography>
-                                            <div className="chips">
-                                                <Chip className="chip" label="Tools" />
-                                                <Chip className="chip" label="Photo" />
-                                                <Chip className="chip" label="Job" />
-                                            </div>
-                                            <br />
-                                            <Typography className="title-heads" variant="body2" component="p" >
-                                                Source
-                                            </Typography>
-                                            <Typography variant="body2" component="p" >Phone</Typography>
-                                            <br />
-                                            <Typography className="title-heads" variant="body2" component="p" >
-                                                Notes
-                                            </Typography>
-                                            <Typography variant="body2" component="p" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.</Typography>
-                                            <br />
-                                            <Typography className="title-heads" variant="body2" component="p" >
-                                                Attachments
-                                            </Typography>
-                                            <div className="attachment-card">
-                                                <div>
-                                                    <MdImage style={{ marginRight: 18 }} />
-                                                    <Typography variant="body2" component="p" >Attachment Name.ext</Typography>
-                                                </div>
-                                                <MdFileDownload />
-                                            </div>
-                                        </div>
+                                        <AppointmentHistory />
                                     </CardContent>
                                 </Card>
                             </Grid>

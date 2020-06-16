@@ -1,0 +1,35 @@
+.chips-edit {
+  margin-top: 1rem;
+}
+.flex-remove-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.apt-edit-icon {
+  font-size: 1.2rem;
+  color: red;
+}
+
+.chips-edit .chip-edit {
+  margin-right: 0.5rem;
+  padding: 0.4rem;
+  background-color: #2a95c5;
+  color: #fff;
+  font-weight: 400;
+}
+
+.MuiOutlinedInput-input {
+  padding: 0.55rem !important;
+}
+.MuiOutlinedInput-adornedEnd {
+  padding: 0 !important;
+}
+.MuiInputBase-input {
+  font-size: 2px;
+}
+.start,
+.end {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,11 @@
+.hst-tbl > .MuiTableCell-root {
+    padding: 1rem 3rem;
+}
+
+.hst-tbl-header {
+    color: #2a95c5 !important;
+}
+
+.hst-tbl-header > .MuiTableCell-root{
+    color: #2a95c5 !important;
+}
