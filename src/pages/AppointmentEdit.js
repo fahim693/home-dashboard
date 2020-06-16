@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
     formControl: {
         marginTop: 6,
-        minWidth: 160,
+        minWidth: 185,
     },
     formControlDT:{
         marginTop: 6,

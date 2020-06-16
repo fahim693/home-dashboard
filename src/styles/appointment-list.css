@@ -1,0 +1,29 @@
+.hst-tbl > .MuiTableCell-root {
+  padding: 1rem 3rem;
+}
+
+.hst-tbl-header {
+  color: #2a95c5 !important;
+}
+
+.hst-tbl-header > .MuiTableCell-root {
+  color: #2a95c5 !important;
+}
+
+.tbl-title {
+  display: flex;
+  align-items: center;
+}
+
+.row-length {
+  margin-left: 12px;
+  padding: 4px;
+  background-color: #2a95c5;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #2a95c5 !important;
+  color: #fff !important;
+}
