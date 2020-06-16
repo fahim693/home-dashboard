@@ -2,34 +2,32 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout';
-import { Card, CardContent, Typography, CardActions, Button, Chip } from '@material-ui/core';
-import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdFileDownload, MdMonetizationOn, MdHistory } from 'react-icons/md'
+import { Card, CardContent, Typography, Chip } from '@material-ui/core';
+import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdFileDownload, MdMonetizationOn, MdHistory, MdKeyboardArrowLeft } from 'react-icons/md'
 import '../styles/appointment.css'
 import Invoice from '../components/Invoice Table/Invoice';
-import AppointmentHistory from '../components/Appointment History/AppointmentHistory';
+import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
+import Timeline from '../components/Timeline/Timeline';
+import Banner from '../components/CustomerBanner/Banner';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
+    formControl: {
+        minWidth: 185,
+    }
 }));
 
 export default function CenteredGrid() {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
     return (
         <Layout>
             <div className={classes.root}>
+                <Breadcrumbs />
+                <Banner />
+                <Timeline />
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={4} >
                         <Grid container spacing={3}>

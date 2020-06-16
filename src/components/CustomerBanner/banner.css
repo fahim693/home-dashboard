@@ -1,0 +1,20 @@
+.cst-info-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.cst-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cst-name {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.remaining-balance {
+  margin-top: 5px;
+  font-weight: 300;
+}

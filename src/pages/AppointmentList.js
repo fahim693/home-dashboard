@@ -285,7 +285,6 @@ export default function EnhancedTable() {
 
     return (
         <Layout>
-
             <div className={classes.root}>
                 <Paper className={classes.paper}>
                     <EnhancedTableToolbar numSelected={selected.length} />

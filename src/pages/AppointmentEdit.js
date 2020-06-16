@@ -6,7 +6,7 @@ import { Card, CardContent, Typography, Chip, TextField, FormControl, InputLabel
 import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdFileDownload, MdMonetizationOn, MdHistory, MdRemoveCircle } from 'react-icons/md'
 import '../styles/appointment-edit.css'
 import Invoice from '../components/Invoice Table/InvoiceEdit';
-import AppointmentHistory from '../components/Appointment History/AppointmentHistory';
+import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
 import { MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
 
