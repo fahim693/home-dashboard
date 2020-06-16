@@ -28,8 +28,8 @@
 .MuiInputBase-input {
   font-size: 2px;
 }
-.start,
-.end {
+.start-edit,
+.end-edit {
   display: flex;
   justify-content: space-between;
 }

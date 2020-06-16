@@ -46,7 +46,7 @@ export default function CenteredGrid() {
                                             </div>
                                         </Typography>
                                         <div className="card-content">
-                                            <div className="start">
+                                            <div className="start-edit">
                                                 <div className="date-time">
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         Start Date
@@ -83,7 +83,7 @@ export default function CenteredGrid() {
                                                 </div>
                                             </div>
                                             <br />
-                                            <div className="end">
+                                            <div className="end-edit">
                                                 <div className="date-time">
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         End Date
