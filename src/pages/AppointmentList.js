@@ -9,7 +9,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
@@ -17,8 +16,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import Layout from '../components/Layout'
+import Layout from '../components/Layout/Layout'
 import { TextField, Button } from '@material-ui/core';
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
@@ -86,7 +84,7 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
-    const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+    const { onSelectAllClick, numSelected, rowCount } = props;
 
     return (
         <TableHead>
@@ -147,12 +145,9 @@ const EnhancedTableToolbar = (props) => {
 
     return (
         <Toolbar
-            className={clsx(classes.root, {
+            className={`${clsx(classes.root, {
                 [classes.highlight]: numSelected > 0,
-            })}
-            style={{
-                boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.17)'
-            }}
+            })} tbl-toolbar`}
         >
             {numSelected > 0 ? (
                 <Typography className={classes.title} color="inherit" variant="subtitle1" component="div">
@@ -163,7 +158,7 @@ const EnhancedTableToolbar = (props) => {
                         <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
                             Appointments
                         </Typography>
-                        <div className="row-length">12</div>
+                        <div className="row-length">{rows.length}</div>
                     </div>
                 )}
 
@@ -174,12 +169,7 @@ const EnhancedTableToolbar = (props) => {
                     </IconButton>
                 </Tooltip>
             ) : (
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'flex-end',
-                        width: '100%'
-                    }}>
+                    <div className="search-container">
                         <TextField
                             // label="Search"
                             placeholder="Search"
@@ -237,7 +227,7 @@ export default function EnhancedTable() {
     const classes = useStyles();
     const [selected, setSelected] = React.useState([]);
     const [page, setPage] = React.useState(0);
-    const [dense, setDense] = React.useState(false);
+    const [dense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
     const handleSelectAllClick = (event) => {
@@ -281,11 +271,30 @@ export default function EnhancedTable() {
 
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-
     return (
         <Layout>
             <div className={classes.root}>
+                <div className="search-container-resp">
+                    <TextField
+                        // label="Search"
+                        placeholder="Search"
+                        variant="outlined"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment>
+                                    <IconButton>
+                                        <SearchIcon />
+                                    </IconButton>
+                                </InputAdornment>
+                            )
+                        }}
+                    />
+                    <div style={{
+                        marginTop: 10
+                    }}>
+                        <Button variant='contained' className="btn-primary">ADD NEW</Button>
+                    </div>
+                </div>
                 <Paper className={classes.paper}>
                     <EnhancedTableToolbar numSelected={selected.length} />
                     <TableContainer>
@@ -324,7 +333,7 @@ export default function EnhancedTable() {
                                                         inputProps={{ 'aria-labelledby': labelId }}
                                                     />
                                                 </TableCell>
-                                                <TableCell align='left' id={labelId}  scope="row">
+                                                <TableCell align='left' id={labelId} scope="row">
                                                     {row.id}
                                                 </TableCell>
                                                 <TableCell align="left">{row.date}</TableCell>

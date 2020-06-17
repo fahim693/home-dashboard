@@ -1,13 +1,12 @@
-
 .inv-tbl > .MuiTableCell-root{
     border: 0 !important;
     padding: 0.65rem 1rem;
 }
 
-.MuiTypography-body1 {
+/* .MuiTypography-body1 {
   font-size: 0.8rem !important;
   font-weight: 600 !important;
-}
+} */
 
 .table-title {
   margin: 0;

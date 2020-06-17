@@ -7,9 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import './invoice.css'
-import { FormControlLabel, Checkbox, Divider } from '@material-ui/core';
-
-const TAX_RATE = 0.07;
+import { FormControlLabel, Checkbox } from '@material-ui/core';
 
 const useStyles = makeStyles({
     table: {
@@ -104,7 +102,8 @@ export default function Invoice() {
                                 // checked={state.checkedB}
                                 // onChange={handleChange}
                                 name="checked"
-                                color="primary"
+                                className='checkbox'
+
                             />
                         }
                         label="Tax Applicable"
@@ -128,7 +127,7 @@ export default function Invoice() {
                             <Checkbox
                                 // checked={state.checkedB}
                                 // onChange={handleChange}
-                                name="checked"
+                                className='checkbox'
                                 color="primary"
                             />
                         }

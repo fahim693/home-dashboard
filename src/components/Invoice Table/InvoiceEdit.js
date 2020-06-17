@@ -7,10 +7,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import './invoice-edit.css'
-import { FormControlLabel, Checkbox, Divider, FormControl, Select, MenuItem, TextField, Chip } from '@material-ui/core';
+import { FormControlLabel, Checkbox, FormControl, Select, MenuItem, TextField, Chip } from '@material-ui/core';
 import { MdRemoveCircle } from 'react-icons/md';
 
-const TAX_RATE = 0.07;
 
 const useStyles = makeStyles({
     table: {
@@ -106,15 +105,13 @@ export default function Invoice() {
                                         <FormControl variant="outlined" className={classes.formControl}>
                                             <Select
                                                 id="city"
-                                            // value={age}
-                                            // onChange={handleChange}
+                                                // value={age}
+                                                // onChange={handleChange}
+                                                defaultValue={1}
                                             >
-                                                <MenuItem value="">
-                                                    <em>None</em>
-                                                </MenuItem>
-                                                <MenuItem value={10}>Ten</MenuItem>
-                                                <MenuItem value={20}>Twenty</MenuItem>
-                                                <MenuItem value={30}>Thirty</MenuItem>
+                                                <MenuItem value={1}>Technician</MenuItem>
+                                                <MenuItem value={2}>Scientist</MenuItem>
+                                                <MenuItem value={3}>Engineer</MenuItem>
                                             </Select>
                                         </FormControl>
                                         <br />
@@ -122,6 +119,7 @@ export default function Invoice() {
                                             <TextField
                                                 id="outlined-basic"
                                                 variant="outlined"
+                                                value="Photobooth Techie"
                                             />
                                         </FormControl>
                                     </div>
@@ -132,6 +130,7 @@ export default function Invoice() {
                                     <TextField
                                         id="outlined-basic"
                                         variant="outlined"
+                                        value={1}
                                     />
                                 </FormControl>
                             </TableCell>
@@ -140,6 +139,8 @@ export default function Invoice() {
                                     <TextField
                                         id="outlined-basic"
                                         variant="outlined"
+                                        value="62.00"
+
                                     />
                                 </FormControl>
                             </TableCell>
@@ -148,6 +149,7 @@ export default function Invoice() {
                                     <TextField
                                         id="outlined-basic"
                                         variant="outlined"
+                                        value="62.00"
                                     />
                                 </FormControl>
                             </TableCell>
@@ -155,13 +157,8 @@ export default function Invoice() {
                     ))}
                     <TableRow className='inv-tbl'>
                         <TableCell>
-                            <div style={{
-                                margin: 0
-                            }}>
-                                <Chip style={{
-                                    backgroundColor: "#2a95c5",
-                                    color: '#fff'
-                                }} label="+ Add Service" />
+                            <div className="chips-edit">
+                                <Chip className="chip-edit" label="+ Add Service" />
                             </div>
                         </TableCell>
                         <TableCell></TableCell>
@@ -174,6 +171,7 @@ export default function Invoice() {
                                         // onChange={handleChange}
                                         name="checked"
                                         color="primary"
+                                        className='checkbox'
                                     />
                                 }
                                 label="Tax Applicable"
@@ -194,15 +192,13 @@ export default function Invoice() {
                                         <FormControl variant="outlined" className={classes.formControl}>
                                             <Select
                                                 id="city"
+                                                defaultValue={1}
+
                                             // value={age}
                                             // onChange={handleChange}
                                             >
-                                                <MenuItem value="">
-                                                    <em>None</em>
-                                                </MenuItem>
-                                                <MenuItem value={10}>Ten</MenuItem>
-                                                <MenuItem value={20}>Twenty</MenuItem>
-                                                <MenuItem value={30}>Thirty</MenuItem>
+                                                <MenuItem value={1}>Wipes</MenuItem>
+                                                <MenuItem value={2}>Wipes</MenuItem>
                                             </Select>
                                         </FormControl>
                                         <br />
@@ -210,6 +206,7 @@ export default function Invoice() {
                                             <TextField
                                                 id="outlined-basic"
                                                 variant="outlined"
+                                                value="Description"
                                             />
                                         </FormControl>
                                     </div>
@@ -219,6 +216,7 @@ export default function Invoice() {
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         id="outlined-basic"
+                                        value="1"
                                         variant="outlined"
                                     />
                                 </FormControl>
@@ -227,6 +225,7 @@ export default function Invoice() {
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         id="outlined-basic"
+                                        value="62.00"
                                         variant="outlined"
                                     />
                                 </FormControl>
@@ -235,6 +234,7 @@ export default function Invoice() {
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         id="outlined-basic"
+                                        value="62.00"
                                         variant="outlined"
                                     />
                                 </FormControl>
@@ -243,13 +243,8 @@ export default function Invoice() {
                     ))}
                     <TableRow >
                         <TableCell>
-                            <div style={{
-                                margin: 0
-                            }}>
-                                <Chip style={{
-                                    backgroundColor: "#2a95c5",
-                                    color: '#fff'
-                                }} label="+ Add Service" />
+                            <div className="chips-edit">
+                                <Chip className="chip-edit" label="+ Add Service" />
                             </div>
                         </TableCell>
                         <TableCell></TableCell>
@@ -258,10 +253,11 @@ export default function Invoice() {
                             <FormControlLabel
                                 control={
                                     <Checkbox
-                                        // checked={state.checkedB}
+                                        // checked={true}
                                         // onChange={handleChange}
                                         name="checked"
-                                        color="primary"
+                                        // color="primary"
+                                        className='checkbox'
                                     />
                                 }
                                 label="Tax Applicable"

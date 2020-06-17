@@ -1,14 +1,17 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Layout from '../components/Layout';
-import { Card, CardContent, Typography, Chip, TextField, FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
-import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdFileDownload, MdMonetizationOn, MdHistory, MdRemoveCircle } from 'react-icons/md'
+import Layout from '../components/Layout/Layout';
+import { Card, CardContent, Typography, Chip, TextField, FormControl, MenuItem, Select } from '@material-ui/core';
+import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdMonetizationOn, MdHistory, MdRemoveCircle } from 'react-icons/md'
 import '../styles/appointment-edit.css'
 import Invoice from '../components/Invoice Table/InvoiceEdit';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
 import { MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+import Banner from '../components/CustomerBanner/Banner';
+import Timeline from '../components/Timeline/Timeline';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 6,
         minWidth: 185,
     },
-    formControlDT:{
+    formControlDT: {
         marginTop: 6,
-        width: 170
+        width: 150
     },
     title: {
         fontSize: 14,
@@ -29,12 +32,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CenteredGrid() {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
     return (
         <Layout>
             <div className={classes.root}>
+                <Breadcrumbs />
+                <Banner edit={true} />
+                <Timeline />
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={4} >
+                    <Grid item xs={12} md={4} >
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <Card className={classes.root}>
@@ -51,7 +56,7 @@ export default function CenteredGrid() {
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         Start Date
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT}>
+                                                    <FormControl variant="outlined" className={classes.formControlDT} style={{ marginRight: 20 }}>
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardDatePicker
                                                                 clearable
@@ -88,7 +93,7 @@ export default function CenteredGrid() {
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         End Date
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT}>
+                                                    <FormControl variant="outlined" className={classes.formControlDT} style={{ marginRight: 20 }}>
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardDatePicker
                                                                 clearable
@@ -140,6 +145,7 @@ export default function CenteredGrid() {
                                                 <TextField
                                                     id="outlined-basic"
                                                     variant="outlined"
+                                                    value="941, Baker’s Street"
                                                     fullWidth
                                                 />
                                             </div>
@@ -150,15 +156,16 @@ export default function CenteredGrid() {
                                             <FormControl variant="outlined" className={classes.formControl}>
                                                 <Select
                                                     id="city"
-                                                // value={age}
+                                                    // value={city}
+                                                    defaultValue={4}
+                                                // name="city"
                                                 // onChange={handleChange}
                                                 >
-                                                    <MenuItem value="">
-                                                        <em>None</em>
-                                                    </MenuItem>
-                                                    <MenuItem value={10}>Ten</MenuItem>
-                                                    <MenuItem value={20}>Twenty</MenuItem>
-                                                    <MenuItem value={30}>Thirty</MenuItem>
+                                                    <MenuItem value={1}>Los Angeles</MenuItem>
+                                                    <MenuItem value={4}>New York</MenuItem>
+                                                    <MenuItem value={2}>San Diego</MenuItem>
+                                                    <MenuItem value={3}>Dallas</MenuItem>
+                                                    <MenuItem value={5}>Houston</MenuItem>
                                                 </Select>
                                             </FormControl>
                                             <br />
@@ -169,15 +176,16 @@ export default function CenteredGrid() {
                                             <FormControl variant="outlined" className={classes.formControl}>
                                                 <Select
                                                     id="state"
+                                                    defaultValue={5}
+
                                                 // value={age}
                                                 // onChange={handleChange}
                                                 >
-                                                    <MenuItem value="">
-                                                        <em>None</em>
-                                                    </MenuItem>
-                                                    <MenuItem value={10}>Ten</MenuItem>
-                                                    <MenuItem value={20}>Twenty</MenuItem>
-                                                    <MenuItem value={30}>Thirty</MenuItem>
+                                                    <MenuItem value={1}>California</MenuItem>
+                                                    <MenuItem value={5}>New York</MenuItem>
+                                                    <MenuItem value={2}>Texas</MenuItem>
+                                                    <MenuItem value={3}>Florida</MenuItem>
+                                                    <MenuItem value={4}>New Jersey</MenuItem>
                                                 </Select>
                                             </FormControl>
                                             <br />
@@ -189,6 +197,7 @@ export default function CenteredGrid() {
                                                 <TextField
                                                     id="outlined-basic"
                                                     variant="outlined"
+                                                    value="50008"
                                                 />
                                             </FormControl>
                                         </div>
@@ -207,7 +216,7 @@ export default function CenteredGrid() {
                                         <div className="card-content">
                                             <div className="flex-remove-card">
                                                 <div className="logged-in-user">
-                                                    <img src="/profile-img.png" />
+                                                    <img src="/profile-img.png" alt=""/>
                                                     <div>
                                                         <h3 className="name">Ray Wilson</h3>
                                                         <div className="subtitle-dark">Project Manager</div>
@@ -253,15 +262,12 @@ export default function CenteredGrid() {
                                             <FormControl variant="outlined" className={classes.formControl}>
                                                 <Select
                                                     id="state"
-                                                // value={age}
-                                                // onChange={handleChange}
+                                                    // value={age}
+                                                    // onChange={handleChange}
+                                                    defaultValue={1}
                                                 >
-                                                    <MenuItem value="">
-                                                        <em>None</em>
-                                                    </MenuItem>
-                                                    <MenuItem value={10}>Ten</MenuItem>
-                                                    <MenuItem value={20}>Twenty</MenuItem>
-                                                    <MenuItem value={30}>Thirty</MenuItem>
+                                                    <MenuItem value={1}>Phone</MenuItem>
+                                                    <MenuItem value={2}>Email</MenuItem>
                                                 </Select>
                                             </FormControl>
                                             <br />
@@ -274,6 +280,7 @@ export default function CenteredGrid() {
                                                     id="outlined-basic"
                                                     variant="outlined"
                                                     fullWidth
+                                                    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius."
                                                     rows={2}
                                                     rowsMax={4}
                                                     multiline
@@ -300,7 +307,7 @@ export default function CenteredGrid() {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={8} >
+                    <Grid item xs={12} md={8} >
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <Card className={classes.root}>

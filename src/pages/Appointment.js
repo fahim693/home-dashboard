@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import { Card, CardContent, Typography, Chip } from '@material-ui/core';
-import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdFileDownload, MdMonetizationOn, MdHistory, MdKeyboardArrowLeft } from 'react-icons/md'
+import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdFileDownload, MdMonetizationOn, MdHistory } from 'react-icons/md'
 import '../styles/appointment.css'
 import Invoice from '../components/Invoice Table/Invoice';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
@@ -14,6 +14,7 @@ import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        minWidth: 275,
     },
     formControl: {
         minWidth: 185,
@@ -29,7 +30,7 @@ export default function CenteredGrid() {
                 <Banner />
                 <Timeline />
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={4} >
+                    <Grid item xs={12} md={4} >
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <Card className={classes.root}>
@@ -110,7 +111,7 @@ export default function CenteredGrid() {
                                         </Typography>
                                         <div className="card-content">
                                             <div className="logged-in-user">
-                                                <img src="/profile-img.png" />
+                                                <img src="/profile-img.png" alt="" />
                                                 <div>
                                                     <h3 className="name">Ray Wilson</h3>
                                                     <div className="subtitle-dark">Project Manager</div>
@@ -167,7 +168,7 @@ export default function CenteredGrid() {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={8} >
+                    <Grid item xs={12} md={8} >
                         <Grid container spacing={3}>
                             <Grid item xs={12}>
                                 <Card className={classes.root}>
@@ -182,6 +183,7 @@ export default function CenteredGrid() {
                                             <Invoice />
                                         </div>
                                     </CardContent>
+
                                 </Card>
                             </Grid>
                             <Grid item xs={12}>

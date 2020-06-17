@@ -1,11 +1,22 @@
-.MuiAppBar-colorPrimary {
+/* .MuiAppBar-colorPrimary {
   background-color: #2a95c5 !important;
+} */
+.nav-desktop {
+  display: block;
+}
+.nav-mobile {
+  display: none;
 }
 .toolbar {
   display: flex;
   justify-content: space-between;
   background-color: #2a95c5;
-  margin: 0 1.5rem;
+}
+.navbar {
+  overflow: hidden;
+  width: 100%;
+  /* padding: 0 2rem; */
+  margin: 0 5rem 0 0;
 }
 .navbar > ul {
   list-style: none;
@@ -13,7 +24,7 @@
   margin: 0;
 }
 .nav-item {
-  margin-right: 6px;
+  margin-right: 2px;
   width: 7rem;
 }
 
@@ -21,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   padding: 0.9rem 0;
   color: #fff;
@@ -39,32 +50,27 @@
 }
 
 .nav-icon {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
-.logged-in-user {
-  display: flex;
-  align-items: center;
-}
-
-.logged-in-user img {
-  border-radius: 50%;
-  margin-right: 1rem;
-  height: 50px;
-}
-
-.logged-in-user .name {
-  margin: 0.2rem 0;
-}
-
-.logged-in-user .email {
-  font-size: 14px;
-  font-weight: 300;
+.selected {
+  background-color: #fff;
+  color: #2a95c5;
 }
 
 .body {
-  margin-top: 2rem;
+  margin: 2.5rem auto;
   max-width: 1360px;
-  margin: 3rem auto;
   padding: 0 2rem;
+}
+
+@media only screen and (max-width: 970px) {
+  .nav-desktop {
+    display: none;
+  }
+  .nav-mobile {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+  }
 }
