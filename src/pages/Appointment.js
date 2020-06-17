@@ -10,6 +10,7 @@ import AppointmentHistory from '../components/AppointmentHistory/AppointmentHist
 import Timeline from '../components/Timeline/Timeline';
 import Banner from '../components/CustomerBanner/Banner';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
+import { data } from '../data/UserData'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,11 +54,11 @@ export default function CenteredGrid() {
                                                 </Typography>
                                                     <div className="subtitle-dark">
                                                         <Typography variant="body2" component="p" >
-                                                            06/02/20
-                                                    </Typography>
+                                                            {data.start_date}
+                                                        </Typography>
                                                         <Typography variant="body2" component="p" style={{ margin: '2px 0' }}>
-                                                            01:00 Pm
-                                                    </Typography>
+                                                            {data.start_time}
+                                                        </Typography>
                                                     </div>
                                                 </div>
                                             </div>
@@ -71,11 +72,11 @@ export default function CenteredGrid() {
                                             </Typography>
                                                     <div className="subtitle-dark">
                                                         <Typography variant="body2" component="p" >
-                                                            06/02/20
-                                            </Typography>
+                                                            {data.end_date}
+                                                        </Typography>
                                                         <Typography variant="body2" component="p" style={{ margin: '2px 0' }}>
-                                                            03:00 Pm
-                                            </Typography>
+                                                            {data.end_time}
+                                                        </Typography>
                                                     </div>
                                                 </div>
                                             </div>
@@ -94,7 +95,7 @@ export default function CenteredGrid() {
                                         </Typography>
                                         <div className="card-content">
                                             <Typography variant="body2" component="p">
-                                                941, Baker’s Street, Eva Park, Parkinson County, LA 50008
+                                                {data.appointment_address}
                                             </Typography>
                                         </div>
                                     </CardContent>
@@ -137,31 +138,37 @@ export default function CenteredGrid() {
                                                 Tags
                                             </Typography>
                                             <div className="chips">
-                                                <Chip className="chip" label="Tools" />
-                                                <Chip className="chip" label="Photo" />
-                                                <Chip className="chip" label="Job" />
+                                                {
+                                                    data.tags.map(tag => (
+                                                        <Chip key={tag} className="chip" label={tag} />
+                                                    ))
+                                                }
                                             </div>
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Source
                                             </Typography>
-                                            <Typography variant="body2" component="p" >Phone</Typography>
+                                            <Typography variant="body2" component="p" >{data.source}</Typography>
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Notes
                                             </Typography>
-                                            <Typography variant="body2" component="p" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.</Typography>
+                                            <Typography variant="body2" component="p" >{data.notes}</Typography>
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Attachments
                                             </Typography>
-                                            <div className="attachment-card">
-                                                <div>
-                                                    <MdImage style={{ marginRight: 18 }} />
-                                                    <Typography variant="body2" component="p" >Attachment Name.ext</Typography>
-                                                </div>
-                                                <MdFileDownload />
-                                            </div>
+                                            {
+                                                data.attachments.map((attachment,idx) => (
+                                                    <div key={idx} className="attachment-card">
+                                                        <div>
+                                                            <MdImage style={{ marginRight: 18 }} />
+                                                        <Typography variant="body2" component="p" >{attachment}</Typography>
+                                                        </div>
+                                                        <MdFileDownload />
+                                                    </div>
+                                                ))
+                                            }
                                         </div>
                                     </CardContent>
                                 </Card>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
@@ -32,6 +32,31 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CenteredGrid() {
     const classes = useStyles();
+    const [fieldValue, setFieldValue] = useState({
+        street_address: '941, Baker’s Street',
+        notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.",
+        zip:'50008'
+    })
+    const [date, selectedDate] = useState({
+        start: new Date(),
+        end: new Date(),
+        start_time: new Date(),
+        end_time: new Date(),
+    })
+
+    const handleDateChange = (e, name) => {
+        selectedDate({
+            ...date,
+            [name]: e
+        })
+    }
+
+    const handleOnChange = (e) => {
+        setFieldValue({
+            ...fieldValue,
+            [e.target.name]: e.target.value
+        })
+    }
     return (
         <Layout>
             <div className={classes.root}>
@@ -60,12 +85,11 @@ export default function CenteredGrid() {
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardDatePicker
                                                                 clearable
-                                                                // value={selectedDate}
-                                                                placeholder="10/10/2018"
-                                                                // onChange={date => handleDateChange(date)}
+                                                                value={date.start}
+                                                                onChange={date => handleDateChange(date, 'start')}
                                                                 minDate={new Date()}
                                                                 inputVariant="outlined"
-                                                                format="YYYY/MM/DD"
+                                                                format="MM/DD/YYYY"
                                                             />
                                                         </MuiPickersUtilsProvider>
                                                     </FormControl>
@@ -80,8 +104,8 @@ export default function CenteredGrid() {
                                                                 placeholder="08:00 AM"
                                                                 mask="__:__ _M"
                                                                 inputVariant="outlined"
-                                                            // value={selectedDate}
-                                                            // onChange={date => handleDateChange(date)}
+                                                                value={date.start_time}
+                                                                onChange={date => handleDateChange(date, 'start_time')}
                                                             />
                                                         </MuiPickersUtilsProvider>
                                                     </FormControl>
@@ -97,12 +121,11 @@ export default function CenteredGrid() {
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardDatePicker
                                                                 clearable
-                                                                // value={selectedDate}
-                                                                placeholder="10/10/2018"
-                                                                // onChange={date => handleDateChange(date)}
+                                                                value={date.end}
+                                                                onChange={date => handleDateChange(date, 'end')}
                                                                 minDate={new Date()}
                                                                 inputVariant="outlined"
-                                                                format="YYYY/MM/DD"
+                                                                format="MM/DD/YYYY"
                                                             />
                                                         </MuiPickersUtilsProvider>
                                                     </FormControl>
@@ -117,8 +140,8 @@ export default function CenteredGrid() {
                                                                 placeholder="08:00 AM"
                                                                 mask="__:__ _M"
                                                                 inputVariant="outlined"
-                                                            // value={selectedDate}
-                                                            // onChange={date => handleDateChange(date)}
+                                                                value={date.end_time}
+                                                                onChange={date => handleDateChange(date, 'end_time')}
                                                             />
                                                         </MuiPickersUtilsProvider>
                                                     </FormControl>
@@ -143,9 +166,11 @@ export default function CenteredGrid() {
                                             </Typography>
                                             <div style={{ marginTop: 6 }}>
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="street-address"
                                                     variant="outlined"
-                                                    value="941, Baker’s Street"
+                                                    value={fieldValue.street_address}
+                                                    name='street_address'
+                                                    onChange={handleOnChange}
                                                     fullWidth
                                                 />
                                             </div>
@@ -195,9 +220,11 @@ export default function CenteredGrid() {
                                             </Typography>
                                             <FormControl variant="outlined" className={classes.formControl}>
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="zip"
                                                     variant="outlined"
-                                                    value="50008"
+                                                    name="zip"
+                                                    value={fieldValue.zip}
+                                                    onChange={handleOnChange}
                                                 />
                                             </FormControl>
                                         </div>
@@ -216,7 +243,7 @@ export default function CenteredGrid() {
                                         <div className="card-content">
                                             <div className="flex-remove-card">
                                                 <div className="logged-in-user">
-                                                    <img src="/profile-img.png" alt=""/>
+                                                    <img src="/profile-img.png" alt="" />
                                                     <div>
                                                         <h3 className="name">Ray Wilson</h3>
                                                         <div className="subtitle-dark">Project Manager</div>
@@ -277,10 +304,12 @@ export default function CenteredGrid() {
                                             </Typography>
                                             <div style={{ marginTop: 6 }}>
                                                 <TextField
-                                                    id="outlined-basic"
+                                                    id="notes"
                                                     variant="outlined"
                                                     fullWidth
-                                                    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius."
+                                                    name="notes"
+                                                    value={fieldValue.notes}
+                                                    onChange={handleOnChange}
                                                     rows={2}
                                                     rowsMax={4}
                                                     multiline

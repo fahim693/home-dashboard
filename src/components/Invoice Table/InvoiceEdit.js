@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import './invoice-edit.css'
 import { FormControlLabel, Checkbox, FormControl, Select, MenuItem, TextField, Chip } from '@material-ui/core';
 import { MdRemoveCircle } from 'react-icons/md';
-
+import { items, services } from '../../data/InvoiceData'
 
 const useStyles = makeStyles({
     table: {
@@ -24,59 +24,6 @@ const useStyles = makeStyles({
     },
 });
 
-const services = [
-    {
-        desc: 'Technician',
-        subdesc: 'Photobooth Techie',
-        qty: 1,
-        price: 62,
-        amount: 62
-
-    },
-    {
-        desc: 'Technician',
-        subdesc: 'Photobooth Techie',
-        qty: 1,
-        price: 62,
-        amount: 62
-
-    },
-    {
-        desc: 'Technician',
-        subdesc: 'Photobooth Techie',
-        qty: 1,
-        price: 62,
-        amount: 62
-
-    },
-];
-
-const items = [
-    {
-        desc: 'Wipes',
-        subdesc: 'Description',
-        qty: 1,
-        price: 5,
-        amount: 5
-
-    },
-    {
-        desc: 'Wipes',
-        subdesc: 'Description',
-        qty: 1,
-        price: 5,
-        amount: 5
-
-    },
-    {
-        desc: 'Wipes',
-        subdesc: 'Description',
-        qty: 1,
-        price: 5,
-        amount: 5
-
-    },
-];
 
 export default function Invoice() {
     const classes = useStyles();
@@ -94,8 +41,8 @@ export default function Invoice() {
                 </TableHead>
                 <TableBody>
                     <p className='table-title'>Services</p>
-                    {services.map((row) => (
-                        <TableRow className='inv-tbl' key={row.desc}>
+                    {services.data.map((row, idx) => (
+                        <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
                                 <div className="edit-field">
                                     <div style={{ marginTop: 10 }}>
@@ -117,9 +64,8 @@ export default function Invoice() {
                                         <br />
                                         <FormControl variant="outlined" className={classes.formControl}>
                                             <TextField
-                                                id="outlined-basic"
                                                 variant="outlined"
-                                                value="Photobooth Techie"
+                                                value={row.subdesc}
                                             />
                                         </FormControl>
                                     </div>
@@ -128,18 +74,16 @@ export default function Invoice() {
                             <TableCell align="left">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
-                                        id="outlined-basic"
                                         variant="outlined"
-                                        value={1}
+                                        value={row.qty}
                                     />
                                 </FormControl>
                             </TableCell>
                             <TableCell align="left">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
-                                        id="outlined-basic"
                                         variant="outlined"
-                                        value="62.00"
+                                        value={row.price}
 
                                     />
                                 </FormControl>
@@ -147,9 +91,8 @@ export default function Invoice() {
                             <TableCell align="left">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
-                                        id="outlined-basic"
                                         variant="outlined"
-                                        value="62.00"
+                                        value={row.amount}
                                     />
                                 </FormControl>
                             </TableCell>
@@ -157,7 +100,7 @@ export default function Invoice() {
                     ))}
                     <TableRow className='inv-tbl'>
                         <TableCell>
-                            <div className="chips-edit">
+                            <div className="chips-edit-inv">
                                 <Chip className="chip-edit" label="+ Add Service" />
                             </div>
                         </TableCell>
@@ -181,8 +124,8 @@ export default function Invoice() {
                     <br />
                     <br />
                     <p className='table-title'>Items</p>
-                    {items.map((row) => (
-                        <TableRow className='inv-tbl' key={row.desc}>
+                    {items.data.map((row, idx) => (
+                        <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
                                 <div className="edit-field">
                                     <div style={{ marginTop: 10 }}>
@@ -204,9 +147,8 @@ export default function Invoice() {
                                         <br />
                                         <FormControl variant="outlined" className={classes.formControl}>
                                             <TextField
-                                                id="outlined-basic"
                                                 variant="outlined"
-                                                value="Description"
+                                                value={row.subdesc}
                                             />
                                         </FormControl>
                                     </div>
@@ -215,8 +157,7 @@ export default function Invoice() {
                             <TableCell align="left">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
-                                        id="outlined-basic"
-                                        value="1"
+                                        value={row.qty}
                                         variant="outlined"
                                     />
                                 </FormControl>
@@ -224,8 +165,7 @@ export default function Invoice() {
                             <TableCell align="left">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
-                                        id="outlined-basic"
-                                        value="62.00"
+                                        value={row.price}
                                         variant="outlined"
                                     />
                                 </FormControl>
@@ -233,8 +173,7 @@ export default function Invoice() {
                             <TableCell align="left">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
-                                        id="outlined-basic"
-                                        value="62.00"
+                                        value={row.amount}
                                         variant="outlined"
                                     />
                                 </FormControl>
@@ -243,7 +182,7 @@ export default function Invoice() {
                     ))}
                     <TableRow >
                         <TableCell>
-                            <div className="chips-edit">
+                            <div className="chips-edit-inv">
                                 <Chip className="chip-edit" label="+ Add Service" />
                             </div>
                         </TableCell>

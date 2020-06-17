@@ -7,46 +7,13 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import './appointment-history.css'
+import { rows } from '../../data/AppointmentHistoryData'
 
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
     },
 });
-
-const rows = [
-    {
-        name: 'Mike Davis',
-        activity: 'Created',
-        date: '12/04/2020',
-        time: '05:30 PM'
-    },
-    {
-        name: 'Rob Tyler',
-        activity: 'Created',
-        date: '12/04/2020',
-        time: '05:30 PM'
-    },
-    {
-        name: 'Thomas Davis',
-        activity: 'Created',
-        date: '12/04/2020',
-        time: '05:30 PM'
-    },
-    {
-        name: 'George Williamson',
-        activity: 'Created',
-        date: '12/04/2020',
-        time: '05:30 PM'
-    },
-    {
-        name: 'Steve Parker',
-        activity: 'Created',
-        date: '12/04/2020',
-        time: '05:30 PM'
-    },
-
-];
 
 export default function AppointmentHistory() {
     const classes = useStyles();

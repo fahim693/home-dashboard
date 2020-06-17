@@ -8,66 +8,13 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import './invoice.css'
 import { FormControlLabel, Checkbox } from '@material-ui/core';
+import { items, services } from '../../data/InvoiceData'
 
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
     },
 });
-
-const services = [
-    {
-        desc: 'Technician',
-        subdesc: 'Photobooth Techie',
-        qty: 1,
-        price: 62,
-        amount: 62
-
-    },
-    {
-        desc: 'Technician',
-        subdesc: 'Photobooth Techie',
-        qty: 1,
-        price: 62,
-        amount: 62
-
-    },
-    {
-        desc: 'Technician',
-        subdesc: 'Photobooth Techie',
-        qty: 1,
-        price: 62,
-        amount: 62
-
-    },
-];
-
-const items = [
-    {
-        desc: 'Wipes',
-        subdesc: 'Description',
-        qty: 1,
-        price: 5,
-        amount: 5
-
-    },
-    {
-        desc: 'Wipes',
-        subdesc: 'Description',
-        qty: 1,
-        price: 5,
-        amount: 5
-
-    },
-    {
-        desc: 'Wipes',
-        subdesc: 'Description',
-        qty: 1,
-        price: 5,
-        amount: 5
-
-    },
-];
 
 export default function Invoice() {
     const classes = useStyles();
@@ -85,8 +32,8 @@ export default function Invoice() {
                 </TableHead>
                 <TableBody>
                     <p className='table-title'>Services</p>
-                    {services.map((row) => (
-                        <TableRow className='inv-tbl' key={row.desc}>
+                    {services.data.map((row,idx) => (
+                        <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
                                 {row.desc}
                                 <div className="subtitle-dark">{row.subdesc}</div>
@@ -99,7 +46,7 @@ export default function Invoice() {
                     <FormControlLabel
                         control={
                             <Checkbox
-                                // checked={state.checkedB}
+                                // checked={services.tax}
                                 // onChange={handleChange}
                                 name="checked"
                                 className='checkbox'
@@ -111,8 +58,8 @@ export default function Invoice() {
                     <br />
                     <br />
                     <p className='table-title'>Items</p>
-                    {items.map((row) => (
-                        <TableRow className='inv-tbl' key={row.desc}>
+                    {items.data.map((row,idx) => (
+                        <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
                                 {row.desc}
                                 <div className="subtitle-dark">{row.subdesc}</div>
@@ -125,7 +72,7 @@ export default function Invoice() {
                     <FormControlLabel
                         control={
                             <Checkbox
-                                // checked={state.checkedB}
+                                // checked={items.tax}
                                 // onChange={handleChange}
                                 className='checkbox'
                                 color="primary"

@@ -1,8 +1,17 @@
-.edit-field{
-    display: grid;
-    grid-template-columns: 1fr 10fr;
+.edit-field {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
 }
 
-.checkbox{
-    color: #2a95c5 !important;
+.checkbox {
+  color: #2a95c5 !important;
+}
+
+.chips-edit-inv .chip-edit {
+  margin-right: 0.5rem;
+  padding: 0.4rem;
+  background-color: #2a95c5;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
 }

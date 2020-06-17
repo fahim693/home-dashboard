@@ -28,19 +28,16 @@ const NavBar = (props) => {
             <AppBar position="static">
                 <div className='nav-desktop'>
                     <Toolbar className="toolbar">
-                        {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton> */}
                         <div className="navbar">
                             <ul>
                                 <li className="nav-item">
-                                    <Link className="nav-link">
+                                    <Link className="nav-link" to="#">
                                         <MdDashboard className="nav-icon" />
                                         <p>Home</p>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link">
+                                    <Link className="nav-link" to="#">
                                         <MdPeople className="nav-icon" />
                                         <p>Customers</p>
                                     </Link>
@@ -52,25 +49,25 @@ const NavBar = (props) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link">
+                                    <Link className="nav-link" to="#">
                                         <MdReceipt className="nav-icon" />
                                         <p>Quotes</p>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link">
+                                    <Link className="nav-link" to="#">
                                         <MdAssignment className="nav-icon" />
                                         <p>Schedule</p>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link">
+                                    <Link className="nav-link" to="#">
                                         <MdAssignmentInd className="nav-icon" />
                                         <p>Employees</p>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link">
+                                    <Link className="nav-link" to="#">
                                         <MdMoreHoriz className="nav-icon" />
                                         <p>More</p>
                                     </Link>

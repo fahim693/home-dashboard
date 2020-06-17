@@ -3,6 +3,7 @@ import './banner.css'
 import { Button, FormControl, makeStyles, Select, MenuItem } from '@material-ui/core';
 import { MdCheck, MdClose, MdSend, MdCreate, MdApps } from 'react-icons/md';
 import { withRouter } from 'react-router-dom';
+import { data } from '../../data/UserData'
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -22,13 +23,13 @@ const Banner = (props) => {
             props.history.push('/edit')
         } else if (e.target.value === 4) {
             props.history.push('/appointments')
-        } 
+        }
     }
     return (
         <div className="cst-info-section">
             <div>
-                <div className="cst-name">John Williams</div>
-                <div className="remaining-balance">Remaining Balance <span style={{ color: '#2a95c5', fontWeight: 400 }}>$208.00</span></div>
+                <div className="cst-name">{data.name}</div>
+    <div className="remaining-balance">Remaining Balance <span style={{ color: '#2a95c5', fontWeight: 400 }}>${data.remaining_balance}</span></div>
             </div>
             <div className="cst-container">
                 {
