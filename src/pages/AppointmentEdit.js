@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     formControlDT: {
         marginTop: 6,
-        width: 150
+        width: 163
     },
     title: {
         fontSize: 14,
@@ -56,7 +56,7 @@ export default function CenteredGrid() {
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         Start Date
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT} style={{ marginRight: 20 }}>
+                                                    <FormControl variant="outlined" className={classes.formControlDT} style={{ marginRight: 2 }}>
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardDatePicker
                                                                 clearable
@@ -93,7 +93,7 @@ export default function CenteredGrid() {
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         End Date
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT} style={{ marginRight: 20 }}>
+                                                    <FormControl variant="outlined" className={classes.formControlDT} style={{ marginRight: 2 }}>
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardDatePicker
                                                                 clearable
