@@ -43,7 +43,7 @@ export default function Invoice() {
                             <TableCell className="tbl-body-cell" align="right">${row.amount}</TableCell>
                         </TableRow>
                     ))}
-                    <div style={{ paddingLeft: '1rem' }}>
+                    <div style={{ paddingLeft: '1.55rem' }}>
                         <FormControlLabel
                             control={
                                 <Checkbox
@@ -70,7 +70,7 @@ export default function Invoice() {
                             <TableCell className="tbl-body-cell" align="right">${row.amount}</TableCell>
                         </TableRow>
                     ))}
-                    <div style={{ paddingLeft: '1rem' }}>
+                    <div style={{ paddingLeft: '1.55rem' }}>
                         <FormControlLabel
                             control={
                                 <Checkbox

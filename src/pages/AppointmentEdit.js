@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     formControlDT: {
         marginTop: 6,
-        width: 163
+        width: 170
     },
     title: {
         fontSize: 14,
