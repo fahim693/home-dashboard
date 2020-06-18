@@ -35,10 +35,10 @@
   display: flex;
   justify-content: space-between;
 }
-.mr{
+.mr {
   margin-right: 5px;
 }
-.ml{
+.ml {
   margin-left: 5px;
 }
 
@@ -50,10 +50,10 @@
   .date-time {
     margin-top: 12px;
   }
-  .mr{
+  .mr {
     margin-right: 0;
   }
-  .ml{
+  .ml {
     margin-left: 0;
   }
 }
@@ -66,10 +66,10 @@
   .date-time {
     margin-top: 0;
   }
-  .mr{
+  .mr {
     margin-right: 5px;
   }
-  .ml{
+  .ml {
     margin-left: 5px;
   }
 }
@@ -80,5 +80,11 @@
   }
   .date-time {
     margin-top: 12px;
+  }
+  .mr {
+    margin-right: 0;
+  }
+  .ml {
+    margin-left: 0;
   }
 }
