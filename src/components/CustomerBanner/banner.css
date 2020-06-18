@@ -4,59 +4,75 @@
   margin-bottom: 1rem;
 }
 
-
-.cst-container,.cst-action,.cst-edit-action {
+.cst-action > .Mui-focused {
+  outline: 0 !important;
+}
+.cst-container,
+.cst-action,
+.cst-edit-action {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .cst-name {
-  font-size: 1.8rem;
+  font-size: 2.25rem;
   font-weight: 500;
 }
 .remaining-balance {
   margin-top: 5px;
-  font-weight: 300;
+  font-weight: 500;
 }
-.start-container{
+.start-container {
   margin-left: 16px;
 }
-.btn-save{
-    background-color: #62C796 !important;
-    color: #fff !important;
+.btn-save {
+  background-color: #62c796 !important;
+  color: #fff !important;
 }
 
-.btn-cancel{
-    background-color: #fff !important;
-    color: #000 !important;
+.btn-cancel {
+  background-color: #fff !important;
+  color: #000 !important;
 }
 
-.btn-icon{
-    font-size: 20px;
-    margin-right: 10px;
+.btn-icon {
+  font-size: 20px;
+  margin-right: 10px;
 }
 
-.btn-icon-cancel{
-    color: red;
+.btn-icon-cancel {
+  color: red;
 }
 
-.action-icon{
-    margin-right: 12px;
+.menu-item{
+  display: flex;
+  align-items: center;
+}
+
+.menu-item > div{
+  margin-top: 1px;
+  margin-left: 2px;
+}
+
+.action-icon {
+  margin-right: 10px;
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 690px) {
-  .cst-info-section, .cst-container {
+  .cst-info-section,
+  .cst-container {
     display: block;
   }
-  .cst-action{
+  .cst-action {
     display: block;
     margin-top: 16px;
   }
-  .cst-edit-action{
+  .cst-edit-action {
     margin-top: 20px;
   }
-  .start-container{
+  .start-container {
     margin-left: 0;
     margin-top: 8px;
   }

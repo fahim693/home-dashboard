@@ -1,6 +1,6 @@
-/* .MuiAppBar-colorPrimary {
+.MuiAppBar-colorPrimary {
   background-color: #2a95c5 !important;
-} */
+}
 .nav-desktop {
   display: block;
 }
@@ -11,20 +11,21 @@
   display: flex;
   justify-content: space-between;
   background-color: #2a95c5;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 !important;
 }
 .navbar {
   overflow: hidden;
   width: 100%;
-  /* padding: 0 2rem; */
-  margin: 0 5rem 0 0;
 }
 .navbar > ul {
   list-style: none;
   display: flex;
   margin: 0;
+  padding-inline-start: 0;
 }
 .nav-item {
-  margin-right: 2px;
   width: 7rem;
 }
 
@@ -34,7 +35,7 @@
   align-items: center;
   font-size: 1rem;
   font-weight: 400;
-  padding: 0.9rem 0;
+  padding: 1.25rem 0;
   color: #fff;
   transition: all 0.5s;
   text-decoration: none;
@@ -45,8 +46,9 @@
   color: #2a95c5;
 }
 
-.nav-link p {
-  margin: 0.5rem 0;
+.nav-link div {
+  margin: 0.6rem 0 0;
+  font-size: 16px !important;
 }
 
 .nav-icon {
@@ -63,6 +65,35 @@
   max-width: 1360px;
   padding: 0 2rem;
 }
+
+/* Template classes */
+
+.f5-22{
+  font-size: 1.375 !important;
+  font-weight: 500 !important;
+}
+
+.fn-20{
+  font-size: 1.25 !important;
+  font-weight: normal !important;
+}
+
+.fn-18{
+  font-size: 1.125;
+  font-weight: normal;
+}
+
+.f5-18{
+  font-size: 1.125;
+  font-weight: 500;
+}
+
+.f5-24{
+  font-size: 1.5;
+  font-weight: 500;
+}
+/* Template classes */
+
 
 @media only screen and (max-width: 970px) {
   .nav-desktop {

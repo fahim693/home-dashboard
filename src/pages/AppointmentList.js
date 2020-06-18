@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { lighten, makeStyles } from '@material-ui/core/styles';
+import { lighten, makeStyles, MuiThemeProvider } from '@material-ui/core/styles';
+import Theme from '../themes/theme'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -38,9 +39,10 @@ function EnhancedTableHead(props) {
 
     return (
         <TableHead>
-            <TableRow>
+            <TableRow className="hst-tbl">
                 <TableCell padding="checkbox">
                     <Checkbox
+                        className='checkbox'
                         indeterminate={numSelected > 0 && numSelected < rowCount}
                         checked={rowCount > 0 && numSelected === rowCount}
                         onChange={onSelectAllClick}
@@ -49,6 +51,7 @@ function EnhancedTableHead(props) {
                 </TableCell>
                 {headCells.map((headCell) => (
                     <TableCell
+                        className="apt-tbl-head tbl-head-cell"
                         key={headCell.id}
                     >
                         {headCell.label}
@@ -105,7 +108,7 @@ const EnhancedTableToolbar = (props) => {
                 </Typography>
             ) : (
                     <div className="tbl-title">
-                        <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
+                        <Typography className={classes.title} variant="h6" id="tableTitle" component="div" style={{ fontSize: 24,marginLeft:20, fontWeight: 500 }}>
                             Appointments
                         </Typography>
                         <div className="row-length">{rows.length}</div>
@@ -152,6 +155,11 @@ EnhancedTableToolbar.propTypes = {
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
+        ".MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff'
+            }
+        },
     },
     paper: {
         width: '100%',
@@ -170,7 +178,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 20,
         width: 1,
-    },
+    }
 }));
 
 export default function EnhancedTable() {
@@ -276,36 +284,40 @@ export default function EnhancedTable() {
                                                 tabIndex={-1}
                                                 key={row.id}
                                                 selected={isItemSelected}
+                                                className="hst-tbl"
                                             >
                                                 <TableCell padding="checkbox">
                                                     <Checkbox
+                                                        className='checkbox'
                                                         checked={isItemSelected}
                                                         inputProps={{ 'aria-labelledby': labelId }}
                                                     />
                                                 </TableCell>
-                                                <TableCell align='left' id={labelId} scope="row">
+                                                <TableCell className='hst-body-cell' align='left' id={labelId} scope="row">
                                                     {row.id}
                                                 </TableCell>
-                                                <TableCell align="left">{row.date}</TableCell>
-                                                <TableCell align="left">{row.start}</TableCell>
-                                                <TableCell align="left">{row.status}</TableCell>
-                                                <TableCell align="left">{row.amount}</TableCell>
-                                                <TableCell align="left">{row.address}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.date}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.start}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.status}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.amount}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.address}</TableCell>
                                             </TableRow>
                                         );
                                     })}
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    <TablePagination
-                        rowsPerPageOptions={[5, 10, 25]}
-                        component="div"
-                        count={rows.length}
-                        rowsPerPage={rowsPerPage}
-                        page={page}
-                        onChangePage={handleChangePage}
-                        onChangeRowsPerPage={handleChangeRowsPerPage}
-                    />
+                    <MuiThemeProvider theme={Theme}>
+                        <TablePagination
+                            rowsPerPageOptions={[5, 10, 25]}
+                            component="div"
+                            count={rows.length}
+                            rowsPerPage={rowsPerPage}
+                            page={page}
+                            onChangePage={handleChangePage}
+                            onChangeRowsPerPage={handleChangeRowsPerPage}
+                        />
+                    </MuiThemeProvider>
                 </Paper>
             </div>
         </Layout>

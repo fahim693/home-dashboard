@@ -33,43 +33,43 @@ const NavBar = (props) => {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
                                         <MdDashboard className="nav-icon" />
-                                        <p>Home</p>
+                                        <div>Home</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
                                         <MdPeople className="nav-icon" />
-                                        <p>Customers</p>
+                                        <div>Customers</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link selected" to="/">
                                         <MdWork className="nav-icon" />
-                                        <p>Appointment</p>
+                                        <div>Appointments</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
                                         <MdReceipt className="nav-icon" />
-                                        <p>Quotes</p>
+                                        <div>Quotes</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
                                         <MdAssignment className="nav-icon" />
-                                        <p>Schedule</p>
+                                        <div>Schedule</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
                                         <MdAssignmentInd className="nav-icon" />
-                                        <p>Employees</p>
+                                        <div>Employees</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
                                         <MdMoreHoriz className="nav-icon" />
-                                        <p>More</p>
+                                        <div>More</div>
                                     </Link>
                                 </li>
                             </ul>

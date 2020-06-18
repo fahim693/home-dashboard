@@ -47,7 +47,7 @@ const NavbarResponsive = (props) => {
       icon: <MdPeople style={{ color: "#fff", fontSize: 28 }} />
     },
     {
-      name: 'Appointment',
+      name: 'Appointments',
       icon: <MdWork style={{ color: "#fff", fontSize: 28 }} />,
       link: '/'
     },

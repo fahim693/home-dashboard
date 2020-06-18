@@ -53,10 +53,10 @@ export default function CenteredGrid() {
                                                         Start Date and Time
                                                 </Typography>
                                                     <div className="subtitle-dark">
-                                                        <Typography variant="body2" component="p" >
+                                                        <Typography variant="body2" component="p" style={{fontSize: '1.125rem'}} >
                                                             {data.start_date}
                                                         </Typography>
-                                                        <Typography variant="body2" component="p" style={{ margin: '2px 0' }}>
+                                                        <Typography variant="body2" component="p" style={{ margin: '2px 0',fontSize: '1.125rem' }}>
                                                             {data.start_time}
                                                         </Typography>
                                                     </div>
@@ -71,10 +71,10 @@ export default function CenteredGrid() {
                                                         End Date and Time
                                             </Typography>
                                                     <div className="subtitle-dark">
-                                                        <Typography variant="body2" component="p" >
+                                                        <Typography variant="body2" component="p" style={{fontSize: '1.125rem' }}>
                                                             {data.end_date}
                                                         </Typography>
-                                                        <Typography variant="body2" component="p" style={{ margin: '2px 0' }}>
+                                                        <Typography variant="body2" component="p" style={{ margin: '2px 0',fontSize: '1.125rem' }}>
                                                             {data.end_time}
                                                         </Typography>
                                                     </div>
@@ -94,7 +94,7 @@ export default function CenteredGrid() {
                                             </div>
                                         </Typography>
                                         <div className="card-content">
-                                            <Typography variant="body2" component="p">
+                                            <Typography variant="body2" component="p" style={{fontSize: 20}}>
                                                 {data.appointment_address}
                                             </Typography>
                                         </div>
@@ -114,7 +114,7 @@ export default function CenteredGrid() {
                                             <div className="logged-in-user">
                                                 <img src="/profile-img.png" alt="" />
                                                 <div>
-                                                    <h3 className="name">Ray Wilson</h3>
+                                                    <div className="name">Ray Wilson</div>
                                                     <div className="subtitle-dark">Project Manager</div>
                                                 </div>
                                             </div>
@@ -148,22 +148,22 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Source
                                             </Typography>
-                                            <Typography variant="body2" component="p" >{data.source}</Typography>
+                                            <Typography variant="body2" component="p" style={{fontSize: 20}}>{data.source}</Typography>
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Notes
                                             </Typography>
-                                            <Typography variant="body2" component="p" >{data.notes}</Typography>
+                                            <Typography variant="body2" component="p" style={{fontSize: 20}}>{data.notes}</Typography>
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Attachments
                                             </Typography>
                                             {
-                                                data.attachments.map((attachment,idx) => (
+                                                data.attachments.map((attachment, idx) => (
                                                     <div key={idx} className="attachment-card">
                                                         <div>
-                                                            <MdImage style={{ marginRight: 18 }} />
-                                                        <Typography variant="body2" component="p" >{attachment}</Typography>
+                                                            <MdImage style={{ marginRight: 10 }} />
+                                                            <Typography variant="body2" component="p" >{attachment}</Typography>
                                                         </div>
                                                         <MdFileDownload />
                                                     </div>
@@ -186,7 +186,7 @@ export default function CenteredGrid() {
                                                 Invoice
                                             </div>
                                         </Typography>
-                                        <div className="card-content">
+                                        <div className="card-content-inv">
                                             <Invoice />
                                         </div>
                                     </CardContent>

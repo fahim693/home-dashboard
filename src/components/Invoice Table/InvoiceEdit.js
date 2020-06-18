@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import './invoice-edit.css'
-import { FormControlLabel, Checkbox, FormControl, Select, MenuItem, TextField, Chip } from '@material-ui/core';
+import { FormControlLabel, Checkbox, FormControl, Select, MenuItem, TextField, Chip, Typography } from '@material-ui/core';
 import { MdRemoveCircle } from 'react-icons/md';
 import { items, services } from '../../data/InvoiceData'
 
@@ -34,9 +34,9 @@ export default function Invoice() {
                 <TableHead>
                     <TableRow className='inv-tbl hst-tbl-header '>
                         <TableCell></TableCell>
-                        <TableCell align="left">Quantity</TableCell>
-                        <TableCell align="left">Price</TableCell>
-                        <TableCell align="left">Amount</TableCell>
+                        <TableCell className="tbl-head-cell" align="center">Quantity</TableCell>
+                        <TableCell className="tbl-head-cell" align="center">Price</TableCell>
+                        <TableCell className="tbl-head-cell" align="center">Amount</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -71,7 +71,7 @@ export default function Invoice() {
                                     </div>
                                 </div>
                             </TableCell>
-                            <TableCell align="left">
+                            <TableCell align="center">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         variant="outlined"
@@ -79,7 +79,7 @@ export default function Invoice() {
                                     />
                                 </FormControl>
                             </TableCell>
-                            <TableCell align="left">
+                            <TableCell align="center">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         variant="outlined"
@@ -88,7 +88,7 @@ export default function Invoice() {
                                     />
                                 </FormControl>
                             </TableCell>
-                            <TableCell align="left">
+                            <TableCell align="center">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         variant="outlined"
@@ -117,7 +117,7 @@ export default function Invoice() {
                                         className='checkbox'
                                     />
                                 }
-                                label="Tax Applicable"
+                                label={<Typography className="tbl-tax-label">Tax Applicable</Typography>}
                             />
                         </TableCell>
                     </TableRow>
@@ -154,7 +154,7 @@ export default function Invoice() {
                                     </div>
                                 </div>
                             </TableCell>
-                            <TableCell align="left">
+                            <TableCell align="center">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         value={row.qty}
@@ -162,7 +162,7 @@ export default function Invoice() {
                                     />
                                 </FormControl>
                             </TableCell>
-                            <TableCell align="left">
+                            <TableCell align="center">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         value={row.price}
@@ -170,7 +170,7 @@ export default function Invoice() {
                                     />
                                 </FormControl>
                             </TableCell>
-                            <TableCell align="left">
+                            <TableCell align="center">
                                 <FormControl variant="outlined" className={classes.formControlSecondary}>
                                     <TextField
                                         value={row.amount}
@@ -180,8 +180,8 @@ export default function Invoice() {
                             </TableCell>
                         </TableRow>
                     ))}
-                    <TableRow >
-                        <TableCell>
+                    <TableRow className='inv-tbl'>
+                        <TableCell >
                             <div className="chips-edit-inv">
                                 <Chip className="chip-edit" label="+ Add Service" />
                             </div>
@@ -199,27 +199,27 @@ export default function Invoice() {
                                         className='checkbox'
                                     />
                                 }
-                                label="Tax Applicable"
+                                label={<Typography className="tbl-tax-label">Tax Applicable</Typography>}
                             />
                         </TableCell>
                     </TableRow>
                     <TableRow className='inv-tbl'>
                         <TableCell></TableCell>
-                        <TableCell align="left"><strong>Subtotal</strong></TableCell>
+                        <TableCell className="tbl-head-cell" align="center"><strong>Subtotal</strong></TableCell>
                         <TableCell align="left"></TableCell>
-                        <TableCell align="left">$201</TableCell>
+                        <TableCell className="tbl-body-cell" align="center">$201</TableCell>
                     </TableRow>
                     <TableRow className='inv-tbl'>
                         <TableCell></TableCell>
-                        <TableCell align="left"><strong>Tax</strong></TableCell>
+                        <TableCell className="tbl-head-cell" align="center"><strong>Tax</strong></TableCell>
                         <TableCell></TableCell>
-                        <TableCell align="left">$7</TableCell>
+                        <TableCell className="tbl-body-cell" align="center">$7</TableCell>
                     </TableRow>
                     <TableRow className='inv-tbl inv-tbl-total'>
                         <TableCell></TableCell>
-                        <TableCell className="hst-tbl-header" align="left"><strong>Total</strong></TableCell>
+                        <TableCell className="hst-tbl-header tbl-head-cell" align="center"><strong>Total</strong></TableCell>
                         <TableCell></TableCell>
-                        <TableCell className="hst-tbl-header" align="left"><strong>$208</strong></TableCell>
+                        <TableCell className="hst-tbl-header tbl-head-cell" align="center"><strong>$208</strong></TableCell>
                     </TableRow>
                 </TableBody>
             </Table>

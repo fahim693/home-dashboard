@@ -11,18 +11,23 @@
 
 .card-title div {
   margin-left: 0.63rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .card-content {
   padding: 1.5rem;
 }
+.card-content-inv{
+  padding: 1.5rem 0 0;
+}
 .subtitle-dark {
-  font-size: 0.8rem;
+  font-size: 1.125rem;
   color: #5a5a5a;
 }
 
 .title-heads {
-  font-size: 1.1rem !important;
+  font-size: 1.375rem !important;
   font-weight: 500 !important;
 }
 .chips {
@@ -35,16 +40,17 @@
   padding: 0.7rem;
   background-color: #6fa9ff42;
   font-weight: 400;
+  font-size: 1.125rem;
 }
 
 .attachment-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0.8rem;
-  font-size: 1.4rem;
-  background-color: #e5e5e578;
-  border-radius: 3px;
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #e6e6e678;;
+  border-radius: 6px;
   margin-top: 0.6rem;
 }
 
@@ -54,7 +60,7 @@
 }
 
 .attachment-name {
-  margin-left: 10rem;
+  margin-left: 7rem;
 }
 
 .start,
@@ -62,10 +68,11 @@
   display: flex;
 }
 .step-status-drawing {
-  margin: 0 1rem;
+  margin: 0 0.8rem 0 0;
 }
 .step-status-dot {
   display: block;
+  margin-top: 4px;
   width: 1rem;
   height: 1rem;
   border-radius: 50%;

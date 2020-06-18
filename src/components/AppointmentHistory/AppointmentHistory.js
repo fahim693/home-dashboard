@@ -23,21 +23,21 @@ export default function AppointmentHistory() {
             <Table className={classes.table} aria-label="simple table">
                 <TableHead >
                     <TableRow className="hst-tbl hst-tbl-header">
-                        <TableCell>Job Assigned To</TableCell>
-                        <TableCell>Activity</TableCell>
-                        <TableCell>Date</TableCell>
-                        <TableCell>Time</TableCell>
+                        <TableCell className="tbl-head-cell">Job Assigned To</TableCell>
+                        <TableCell className="tbl-head-cell">Activity</TableCell>
+                        <TableCell className="tbl-head-cell">Date</TableCell>
+                        <TableCell className="tbl-head-cell">Time</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {rows.map((row) => (
                         <TableRow className="hst-tbl" key={row.name}>
-                            <TableCell component="th" scope="row">
+                            <TableCell className="hst-body-cell" component="th" scope="row">
                                 {row.name}
                             </TableCell>
-                            <TableCell >{row.activity}</TableCell>
-                            <TableCell >{row.date}</TableCell>
-                            <TableCell >{row.time}</TableCell>
+                            <TableCell className="hst-body-cell">{row.activity}</TableCell>
+                            <TableCell className="hst-body-cell">{row.date}</TableCell>
+                            <TableCell className="hst-body-cell">{row.time}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

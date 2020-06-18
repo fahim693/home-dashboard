@@ -22,7 +22,7 @@
 }
 
 .MuiOutlinedInput-input {
-  padding: 0.6rem !important;
+  padding: 0.6rem 0.6rem 0.6rem 1rem !important;
 }
 .MuiOutlinedInput-adornedEnd {
   padding: 0 !important;

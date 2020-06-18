@@ -8,6 +8,33 @@ import { data } from '../../data/UserData'
 const useStyles = makeStyles((theme) => ({
     formControl: {
         minWidth: 215,
+    },
+    quantityRoot: {
+        minWidth: 215,
+        color: "#000",
+        zIndex: 10,
+        backgroundColor: "#fff",
+        // opacity: 0.6,
+        borderRadius: "5px",
+        "& .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        ".MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff'
+            }
+        },
+        ".MuiOutlinedInput-notchedOutline": {
+            color: '#000',
+            backgroundColor: "#fff"
+        },
+        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf",
+            // backgroundColor: "#fff"
+        },
     }
 }));
 
@@ -29,7 +56,7 @@ const Banner = (props) => {
         <div className="cst-info-section">
             <div>
                 <div className="cst-name">{data.name}</div>
-    <div className="remaining-balance">Remaining Balance <span style={{ color: '#2a95c5', fontWeight: 400 }}>${data.remaining_balance}</span></div>
+                <p className="remaining-balance">Remaining Balance <span style={{ color: '#2a95c5' }}>${data.remaining_balance}</span></p>
             </div>
             <div className="cst-container">
                 {
@@ -54,36 +81,55 @@ const Banner = (props) => {
                         </React.Fragment> :
                         <React.Fragment>
                             <div className="cst-action">
-
-                                <FormControl variant="outlined" className={classes.formControl}>
+                                <FormControl variant="outlined" classes={{
+                                    root: classes.quantityRoot
+                                }}>
                                     {/* <InputLabel id="demo-simple-select-label">Actions</InputLabel> */}
                                     <Select
                                         id="city"
                                         // label="Actions"
                                         // value={age}
+                                        MenuProps={{
+                                            getContentAnchorEl: null,
+                                            anchorOrigin: {
+                                                vertical: "bottom",
+                                                horizontal: "left",
+                                            }
+                                        }}
                                         defaultValue={0}
                                         onChange={handleChange}
                                     >
-                                        <MenuItem value={0} disabled>
-                                            <MdApps className="action-icon" />
-                                        ACTIONS
-                                    </MenuItem>
+                                        <MenuItem value={0} disabled style={{ display: 'none' }}>
+                                            <div className="menu-item">
+                                                <MdApps className="action-icon" />
+                                                <div>ACTIONS</div>
+                                            </div>
+                                        </MenuItem>
                                         <MenuItem value={1}>
-                                            <MdCreate className="action-icon" />
-                                        PAY NOW
-                                    </MenuItem>
+                                            <div className="menu-item">
+                                                <MdCreate className="action-icon" />
+                                                <div>PAY NOW</div>
+                                            </div>
+                                        </MenuItem>
                                         <MenuItem value={2}>
-                                            <MdSend className="action-icon" />
-                                        SEND INVOICE
-                                    </MenuItem>
+                                            <div className="menu-item">
+                                                <MdSend className="action-icon" />
+                                                <div> SEND INVOICE</div>
+                                            </div>
+                                        </MenuItem>
                                         <MenuItem value={3}>
-                                            <MdCreate className="action-icon" />
-                                        EDIT
-                                    </MenuItem>
+                                            <div className="menu-item">
+                                                <MdCreate className="action-icon" />
+                                                <div>EDIT</div>
+                                            </div>
+
+                                        </MenuItem>
                                         <MenuItem value={4}>
-                                            <MdCreate className="action-icon" />
-                                        ADD/DELETE
-                                    </MenuItem>
+                                            <div className="menu-item">
+                                                <MdCreate className="action-icon" />
+                                                <div>ADD/DELETE</div>
+                                            </div>
+                                        </MenuItem>
                                     </Select>
                                 </FormControl>
                             </div>

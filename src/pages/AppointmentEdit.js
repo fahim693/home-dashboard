@@ -35,7 +35,7 @@ export default function CenteredGrid() {
     const [fieldValue, setFieldValue] = useState({
         street_address: '941, Baker’s Street',
         notes: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.",
-        zip:'50008'
+        zip: '50008'
     })
     const [date, selectedDate] = useState({
         start: new Date(),
@@ -98,7 +98,8 @@ export default function CenteredGrid() {
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         Start Time
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT}>
+                                                    <FormControl variant="outlined" className={classes.formControlDT} >
+
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardTimePicker
                                                                 placeholder="08:00 AM"
@@ -347,7 +348,7 @@ export default function CenteredGrid() {
                                                 Invoice
                                             </div>
                                         </Typography>
-                                        <div className="card-content">
+                                        <div className="card-content-inv">
                                             <Invoice />
                                         </div>
                                     </CardContent>
@@ -363,6 +364,7 @@ export default function CenteredGrid() {
                                             </div>
                                         </Typography>
                                         <AppointmentHistory />
+
                                     </CardContent>
                                 </Card>
                             </Grid>
