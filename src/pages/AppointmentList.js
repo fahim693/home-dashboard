@@ -18,7 +18,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Layout from '../components/Layout/Layout'
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, FormControl } from '@material-ui/core';
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
 import '../styles/appointment-list.css'
@@ -90,6 +90,33 @@ const useToolbarStyles = makeStyles((theme) => ({
     title: {
         flex: '1 1 100%',
     },
+    quantityRoot: {
+        minWidth: 185,
+        // width: '100%',
+        color: "#000",
+        backgroundColor: "#fff",
+        // opacity: 0.6,
+        borderRadius: "5px",
+        "& .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #000"
+        },
+        ".MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff'
+            }
+        },
+        ".MuiOutlinedInput-notchedOutline": {
+            color: '#000',
+            backgroundColor: "#fff"
+        },
+        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf",
+            // backgroundColor: "#fff"
+        },
+    }
 }));
 
 const EnhancedTableToolbar = (props) => {
@@ -108,7 +135,7 @@ const EnhancedTableToolbar = (props) => {
                 </Typography>
             ) : (
                     <div className="tbl-title">
-                        <Typography className={classes.title} variant="h6" id="tableTitle" component="div" style={{ fontSize: 24,marginLeft:20, fontWeight: 500 }}>
+                        <Typography className={classes.title} variant="h6" id="tableTitle" component="div" style={{ fontSize: 24, marginLeft: 20, fontWeight: 500 }}>
                             Appointments
                         </Typography>
                         <div className="row-length">{rows.length}</div>
@@ -123,20 +150,24 @@ const EnhancedTableToolbar = (props) => {
                 </Tooltip>
             ) : (
                     <div className="search-container">
-                        <TextField
-                            // label="Search"
-                            placeholder="Search"
-                            variant="outlined"
-                            InputProps={{
-                                endAdornment: (
-                                    <InputAdornment>
-                                        <IconButton>
-                                            <SearchIcon />
-                                        </IconButton>
-                                    </InputAdornment>
-                                )
-                            }}
-                        />
+                        <FormControl variant="outlined" classes={{
+                            root: classes.quantityRoot
+                        }}>
+                            <TextField
+                                // label="Search"
+                                placeholder="Search"
+                                variant="outlined"
+                                InputProps={{
+                                    endAdornment: (
+                                        <InputAdornment>
+                                            <IconButton>
+                                                <SearchIcon />
+                                            </IconButton>
+                                        </InputAdornment>
+                                    )
+                                }}
+                            />
+                        </FormControl>
                         <div style={{
                             marginLeft: 16
                         }}>
@@ -178,6 +209,32 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 20,
         width: 1,
+    }, quantityRoot: {
+        minWidth: 185,
+        // width: '100%',
+        color: "#000",
+        backgroundColor: "#fff",
+        // opacity: 0.6,
+        borderRadius: "5px",
+        "& .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #000"
+        },
+        ".MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff'
+            }
+        },
+        ".MuiOutlinedInput-notchedOutline": {
+            color: '#000',
+            backgroundColor: "#fff"
+        },
+        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf",
+            // backgroundColor: "#fff"
+        },
     }
 }));
 
@@ -233,20 +290,24 @@ export default function EnhancedTable() {
         <Layout>
             <div className={classes.root}>
                 <div className="search-container-resp">
-                    <TextField
-                        // label="Search"
-                        placeholder="Search"
-                        variant="outlined"
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment>
-                                    <IconButton>
-                                        <SearchIcon />
-                                    </IconButton>
-                                </InputAdornment>
-                            )
-                        }}
-                    />
+                    <FormControl variant="outlined" classes={{
+                        root: classes.quantityRoot
+                    }}>
+                        <TextField
+                            // label="Search"
+                            placeholder="Search"
+                            variant="outlined"
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment>
+                                        <IconButton>
+                                            <SearchIcon />
+                                        </IconButton>
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
+                    </FormControl>
                     <div style={{
                         marginTop: 10
                     }}>

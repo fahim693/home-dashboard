@@ -22,6 +22,61 @@ const useStyles = makeStyles({
     formControlSecondary: {
         width: 110,
     },
+    quantityRoot: {
+        marginTop: 6,
+        minWidth: 210,
+        // width: '100%',
+        color: "#000",
+        backgroundColor: "#fff",
+        // opacity: 0.6,
+        borderRadius: "5px",
+        "& .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #000"
+        },
+        ".MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff'
+            }
+        },
+        ".MuiOutlinedInput-notchedOutline": {
+            color: '#000',
+            backgroundColor: "#fff"
+        },
+        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf",
+            // backgroundColor: "#fff"
+        },
+    },
+    quantityRoot2: {
+        width: 110,
+        // width: '100%',
+        color: "#000",
+        backgroundColor: "#fff",
+        // opacity: 0.6,
+        borderRadius: "5px",
+        "& .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #000"
+        },
+        ".MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff'
+            }
+        },
+        ".MuiOutlinedInput-notchedOutline": {
+            color: '#000',
+            backgroundColor: "#fff"
+        },
+        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf",
+            // backgroundColor: "#fff"
+        },
+    }
 });
 
 
@@ -49,11 +104,20 @@ export default function Invoice() {
                                         <MdRemoveCircle className="apt-edit-icon" />
                                     </div>
                                     <div>
-                                        <FormControl variant="outlined" className={classes.formControl}>
+                                        <FormControl variant="outlined" classes={{
+                                            root: classes.quantityRoot
+                                        }}>
                                             <Select
                                                 id="city"
                                                 // value={age}
                                                 // onChange={handleChange}
+                                                MenuProps={{
+                                                    getContentAnchorEl: null,
+                                                    anchorOrigin: {
+                                                        vertical: "bottom",
+                                                        horizontal: "left",
+                                                    }
+                                                }}
                                                 defaultValue={1}
                                             >
                                                 <MenuItem value={1}>Technician</MenuItem>
@@ -62,7 +126,9 @@ export default function Invoice() {
                                             </Select>
                                         </FormControl>
                                         <br />
-                                        <FormControl variant="outlined" className={classes.formControl}>
+                                        <FormControl variant="outlined" classes={{
+                                            root: classes.quantityRoot
+                                        }}>
                                             <TextField
                                                 variant="outlined"
                                                 value={row.subdesc}
@@ -72,7 +138,9 @@ export default function Invoice() {
                                 </div>
                             </TableCell>
                             <TableCell align="center">
-                                <FormControl variant="outlined" className={classes.formControlSecondary}>
+                                <FormControl variant="outlined" classes={{
+                                    root: classes.quantityRoot2
+                                }}>
                                     <TextField
                                         variant="outlined"
                                         value={row.qty}
@@ -80,7 +148,9 @@ export default function Invoice() {
                                 </FormControl>
                             </TableCell>
                             <TableCell align="center">
-                                <FormControl variant="outlined" className={classes.formControlSecondary}>
+                                <FormControl variant="outlined" classes={{
+                                    root: classes.quantityRoot2
+                                }}>
                                     <TextField
                                         variant="outlined"
                                         value={row.price}
@@ -89,7 +159,9 @@ export default function Invoice() {
                                 </FormControl>
                             </TableCell>
                             <TableCell align="center">
-                                <FormControl variant="outlined" className={classes.formControlSecondary}>
+                                <FormControl variant="outlined" classes={{
+                                    root: classes.quantityRoot2
+                                }}>
                                     <TextField
                                         variant="outlined"
                                         value={row.amount}
@@ -132,11 +204,19 @@ export default function Invoice() {
                                         <MdRemoveCircle className="apt-edit-icon" />
                                     </div>
                                     <div>
-                                        <FormControl variant="outlined" className={classes.formControl}>
+                                        <FormControl variant="outlined" classes={{
+                                            root: classes.quantityRoot
+                                        }}>
                                             <Select
                                                 id="city"
                                                 defaultValue={1}
-
+                                                MenuProps={{
+                                                    getContentAnchorEl: null,
+                                                    anchorOrigin: {
+                                                        vertical: "bottom",
+                                                        horizontal: "left",
+                                                    }
+                                                }}
                                             // value={age}
                                             // onChange={handleChange}
                                             >
@@ -145,7 +225,9 @@ export default function Invoice() {
                                             </Select>
                                         </FormControl>
                                         <br />
-                                        <FormControl variant="outlined" className={classes.formControl}>
+                                        <FormControl variant="outlined" classes={{
+                                            root: classes.quantityRoot
+                                        }}>
                                             <TextField
                                                 variant="outlined"
                                                 value={row.subdesc}
@@ -155,7 +237,9 @@ export default function Invoice() {
                                 </div>
                             </TableCell>
                             <TableCell align="center">
-                                <FormControl variant="outlined" className={classes.formControlSecondary}>
+                                <FormControl variant="outlined" classes={{
+                                    root: classes.quantityRoot2
+                                }}>
                                     <TextField
                                         value={row.qty}
                                         variant="outlined"
@@ -163,7 +247,9 @@ export default function Invoice() {
                                 </FormControl>
                             </TableCell>
                             <TableCell align="center">
-                                <FormControl variant="outlined" className={classes.formControlSecondary}>
+                                <FormControl variant="outlined" classes={{
+                                    root: classes.quantityRoot2
+                                }}>
                                     <TextField
                                         value={row.price}
                                         variant="outlined"
@@ -171,7 +257,9 @@ export default function Invoice() {
                                 </FormControl>
                             </TableCell>
                             <TableCell align="center">
-                                <FormControl variant="outlined" className={classes.formControlSecondary}>
+                                <FormControl variant="outlined" classes={{
+                                    root: classes.quantityRoot2
+                                }}>
                                     <TextField
                                         value={row.amount}
                                         variant="outlined"

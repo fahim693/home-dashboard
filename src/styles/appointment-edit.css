@@ -22,7 +22,7 @@
 }
 
 .MuiOutlinedInput-input {
-  padding: 0.6rem 0.6rem 0.6rem 1rem !important;
+  padding: 0.6rem 0 0.6rem 0.6rem !important;
 }
 .MuiOutlinedInput-adornedEnd {
   padding: 0 !important;
@@ -35,6 +35,12 @@
   display: flex;
   justify-content: space-between;
 }
+.mr{
+  margin-right: 5px;
+}
+.ml{
+  margin-left: 5px;
+}
 
 @media only screen and (max-width: 1170px) {
   .start-edit,
@@ -43,6 +49,12 @@
   }
   .date-time {
     margin-top: 12px;
+  }
+  .mr{
+    margin-right: 0;
+  }
+  .ml{
+    margin-left: 0;
   }
 }
 
@@ -53,6 +65,12 @@
   }
   .date-time {
     margin-top: 0;
+  }
+  .mr{
+    margin-right: 5px;
+  }
+  .ml{
+    margin-left: 5px;
   }
 }
 @media only screen and (max-width: 420px) {

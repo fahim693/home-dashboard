@@ -21,12 +21,36 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 6,
         minWidth: 185,
     },
-    formControlDT: {
-        marginTop: 6,
-        width: 170
-    },
     title: {
         fontSize: 14,
+    },
+    quantityRoot: {
+        marginTop: 6,
+        minWidth: 185,
+        // width: '100%',
+        color: "#000",
+        backgroundColor: "#fff",
+        // opacity: 0.6,
+        borderRadius: "5px",
+        "& .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #000"
+        },
+        ".MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff'
+            }
+        },
+        ".MuiOutlinedInput-notchedOutline": {
+            color: '#000',
+            backgroundColor: "#fff"
+        },
+        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf",
+            // backgroundColor: "#fff"
+        },
     }
 }));
 
@@ -77,11 +101,13 @@ export default function CenteredGrid() {
                                         </Typography>
                                         <div className="card-content">
                                             <div className="start-edit">
-                                                <div className="date-time">
+                                                <div className="date-time mr">
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         Start Date
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT} style={{ marginRight: 2 }}>
+                                                    <FormControl variant="outlined" style={{ width: '100%' }} classes={{
+                                                        root: classes.quantityRoot
+                                                    }}>
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardDatePicker
                                                                 clearable
@@ -94,12 +120,13 @@ export default function CenteredGrid() {
                                                         </MuiPickersUtilsProvider>
                                                     </FormControl>
                                                 </div>
-                                                <div className="date-time">
+                                                <div className="date-time ml" >
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         Start Time
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT} >
-
+                                                    <FormControl variant="outlined" style={{ width: '100%' }} classes={{
+                                                        root: classes.quantityRoot
+                                                    }}>
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardTimePicker
                                                                 placeholder="08:00 AM"
@@ -114,11 +141,13 @@ export default function CenteredGrid() {
                                             </div>
                                             <br />
                                             <div className="end-edit">
-                                                <div className="date-time">
+                                                <div className="date-time mr">
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         End Date
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT} style={{ marginRight: 2 }}>
+                                                    <FormControl variant="outlined" style={{ width: '100%' }} classes={{
+                                                        root: classes.quantityRoot
+                                                    }}>
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardDatePicker
                                                                 clearable
@@ -131,11 +160,13 @@ export default function CenteredGrid() {
                                                         </MuiPickersUtilsProvider>
                                                     </FormControl>
                                                 </div>
-                                                <div className="date-time">
+                                                <div className="date-time ml">
                                                     <Typography className="title-heads" variant="body2" component="p">
                                                         End Time
                                                     </Typography>
-                                                    <FormControl variant="outlined" className={classes.formControlDT}>
+                                                    <FormControl variant="outlined" style={{ width: '100%' }} classes={{
+                                                        root: classes.quantityRoot
+                                                    }}>
                                                         <MuiPickersUtilsProvider utils={MomentUtils} >
                                                             <KeyboardTimePicker
                                                                 placeholder="08:00 AM"
@@ -165,7 +196,9 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p">
                                                 Street Address
                                             </Typography>
-                                            <div style={{ marginTop: 6 }}>
+                                            <FormControl variant="outlined" style={{ width: '100%' }} classes={{
+                                                root: classes.quantityRoot
+                                            }}>
                                                 <TextField
                                                     id="street-address"
                                                     variant="outlined"
@@ -173,17 +206,28 @@ export default function CenteredGrid() {
                                                     name='street_address'
                                                     onChange={handleOnChange}
                                                     fullWidth
+                                                    size='small'
                                                 />
-                                            </div>
+                                            </FormControl>
+                                            <br />
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p">
                                                 City
                                             </Typography>
-                                            <FormControl variant="outlined" className={classes.formControl}>
+                                            <FormControl variant="outlined" classes={{
+                                                root: classes.quantityRoot
+                                            }}>
                                                 <Select
                                                     id="city"
                                                     // value={city}
                                                     defaultValue={4}
+                                                    MenuProps={{
+                                                        getContentAnchorEl: null,
+                                                        anchorOrigin: {
+                                                            vertical: "bottom",
+                                                            horizontal: "left",
+                                                        }
+                                                    }}
                                                 // name="city"
                                                 // onChange={handleChange}
                                                 >
@@ -199,11 +243,19 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p">
                                                 State
                                             </Typography>
-                                            <FormControl variant="outlined" className={classes.formControl}>
+                                            <FormControl variant="outlined" classes={{
+                                                root: classes.quantityRoot
+                                            }}>
                                                 <Select
                                                     id="state"
                                                     defaultValue={5}
-
+                                                    MenuProps={{
+                                                        getContentAnchorEl: null,
+                                                        anchorOrigin: {
+                                                            vertical: "bottom",
+                                                            horizontal: "left",
+                                                        }
+                                                    }}
                                                 // value={age}
                                                 // onChange={handleChange}
                                                 >
@@ -219,13 +271,16 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p">
                                                 ZIP
                                             </Typography>
-                                            <FormControl variant="outlined" className={classes.formControl}>
+                                            <FormControl variant="outlined" classes={{
+                                                root: classes.quantityRoot
+                                            }}>
                                                 <TextField
                                                     id="zip"
                                                     variant="outlined"
                                                     name="zip"
                                                     value={fieldValue.zip}
                                                     onChange={handleOnChange}
+                                                // size='small'
                                                 />
                                             </FormControl>
                                         </div>
@@ -287,12 +342,21 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Source
                                             </Typography>
-                                            <FormControl variant="outlined" className={classes.formControl}>
+                                            <FormControl variant="outlined" classes={{
+                                                root: classes.quantityRoot
+                                            }}>
                                                 <Select
                                                     id="state"
                                                     // value={age}
                                                     // onChange={handleChange}
                                                     defaultValue={1}
+                                                    MenuProps={{
+                                                        getContentAnchorEl: null,
+                                                        anchorOrigin: {
+                                                            vertical: "bottom",
+                                                            horizontal: "left",
+                                                        }
+                                                    }}
                                                 >
                                                     <MenuItem value={1}>Phone</MenuItem>
                                                     <MenuItem value={2}>Email</MenuItem>
@@ -303,7 +367,9 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Notes
                                             </Typography>
-                                            <div style={{ marginTop: 6 }}>
+                                            <FormControl variant="outlined" style={{ width: '100%' }} classes={{
+                                                root: classes.quantityRoot
+                                            }}>
                                                 <TextField
                                                     id="notes"
                                                     variant="outlined"
@@ -313,10 +379,12 @@ export default function CenteredGrid() {
                                                     onChange={handleOnChange}
                                                     rows={2}
                                                     rowsMax={4}
+                                                    size='small'
                                                     multiline
                                                 />
-                                            </div>
+                                            </FormControl>
                                             {/* <Typography variant="body2" component="p" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.</Typography> */}
+                                            <br />
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Attachments
