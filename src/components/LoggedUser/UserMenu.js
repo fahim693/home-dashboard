@@ -38,7 +38,7 @@ const UserMenu = () => {
     return (
         <div>
             <div onClick={handleClick} className="logged-in-user">
-                <img src="/profile-img.png" alt="" />
+                <img style={{height: 50}} src="/profile-img.png" alt="" />
                 <div>
                     <h3 className="name">John Doe</h3>
                     <div className="email">johndoe@gmail.com</div>

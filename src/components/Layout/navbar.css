@@ -22,6 +22,7 @@
 .navbar > ul {
   list-style: none;
   display: flex;
+  padding: 0 48px 0 0;
   margin: 0;
   padding-inline-start: 0;
 }
@@ -69,32 +70,31 @@
 
 /* Template classes */
 
-.f5-22{
+.f5-22 {
   font-size: 1.375 !important;
   font-weight: 500 !important;
 }
 
-.fn-20{
+.fn-20 {
   font-size: 1.25 !important;
   font-weight: normal !important;
 }
 
-.fn-18{
+.fn-18 {
   font-size: 1.125;
   font-weight: normal;
 }
 
-.f5-18{
+.f5-18 {
   font-size: 1.125;
   font-weight: 500;
 }
 
-.f5-24{
+.f5-24 {
   font-size: 1.5;
   font-weight: 500;
 }
 /* Template classes */
-
 
 @media only screen and (max-width: 970px) {
   .nav-desktop {
