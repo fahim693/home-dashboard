@@ -2,6 +2,10 @@
   padding: 0 !important;
 }
 
+.main-title-icon{
+  font-size: 1.3rem !important;
+}
+
 .card-title {
   display: flex;
   align-items: center;
@@ -10,8 +14,8 @@
 }
 
 .card-title div {
-  margin-left: 0.63rem;
-  font-size: 1.5rem;
+  margin-left: 0.6rem;
+  font-size: 1.375rem;
   font-weight: 500;
 }
 
@@ -26,10 +30,10 @@
   color: #5a5a5a;
 }
 .apt-card > div> .name{
-  font-size: 1.375 !important;
+  font-size: 1.25 !important;
 }
 .title-heads {
-  font-size: 1.375rem !important;
+  font-size: 1.25rem !important;
   font-weight: 500 !important;
   margin-bottom: 5px !important;
 }

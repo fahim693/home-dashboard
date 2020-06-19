@@ -36,14 +36,10 @@ const useStyles = makeStyles({
         "&:hover .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #000"
         },
-        ".MuiSelect-select": {
+        "& .MuiSelect-select": {
             '&:focus': {
                 backgroundColor: '#fff'
             }
-        },
-        ".MuiOutlinedInput-notchedOutline": {
-            color: '#000',
-            backgroundColor: "#fff"
         },
         "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf",

@@ -4,13 +4,13 @@
 }
 
 .tbl-head-cell {
-  font-size: 1.375rem !important;
+  font-size: 1.25rem !important;
   font-weight: 500 !important;
 }
 
 .table-title {
   margin: 0 0 0.2rem;
-  font-size: 1.375rem;
+  /* font-size: 1rem; */
   font-weight: bold;
   color: #2a95c5;
   padding-left: 1.55rem;
@@ -19,19 +19,20 @@
 .tbl-desc,
 .tbl-body-cell {
   /* font-weight: normal; */
-  font-size: 1.25rem !important;
+  font-size: 1.125rem !important;
   padding-left: 1rem;
 }
 
 .tbl-tax-label {
-  font-size: 1.125rem !important;
+  font-size: 1rem !important;
   font-weight: 500 !important;
 }
 
 .tbl-subdesc {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #9b9b9b;
   padding-left: 1rem;
+  margin-top: 4px;
 }
 
 .inv-tbl-total {
@@ -39,6 +40,6 @@
 }
 
 .inv-tbl-total > .tbl-head-cell {
-  font-size: 1.375rem !important;
+  font-size: 1.2rem !important;
   font-weight: bold !important;
 }

@@ -21,3 +21,11 @@
 .logged-in-user .email {
   font-size: 14px;
 }
+
+.rotate{
+  transform: rotate(180deg);
+}
+
+.initial{
+  transform: rotate(0deg);
+}

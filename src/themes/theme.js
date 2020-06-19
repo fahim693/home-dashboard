@@ -7,6 +7,11 @@ const Theme = createMuiTheme({
                     backgroundColor: '#fff'
                 }
             }
+        },
+        MuiTablePagination:{
+            input:{
+                fontSize: 17
+            }
         }
     }
 });

@@ -17,9 +17,20 @@ const options = [
 
 const UserMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [rotate, setRotate] = React.useState('initial');
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
+        console.log(rotate);
+        handleChange();
     };
+
+    const handleChange = () => {
+        if (rotate === 'initial') {
+            setRotate('rotate')
+        } else {
+            setRotate('initial')
+        }
+    }
 
     const handleClose = () => {
         setAnchorEl(null);
@@ -32,7 +43,7 @@ const UserMenu = () => {
                     <h3 className="name">John Doe</h3>
                     <div className="email">johndoe@gmail.com</div>
                 </div>
-                <MdArrowDropDown style={{ fontSize: 30, margin: 10 }} />
+                <MdArrowDropDown className={rotate} style={{ fontSize: 30, margin: 10 }} />
             </div>
             <Menu
                 id="simple-menu"
@@ -43,6 +54,7 @@ const UserMenu = () => {
                 transformOrigin={{ vertical: "top", horizontal: "center" }}
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
+                onClick={handleChange}
             >
                 {
                     options.map((option) => (

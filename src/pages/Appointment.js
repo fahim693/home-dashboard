@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
 import { Card, CardContent, Typography, Chip } from '@material-ui/core';
-import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdFileDownload, MdMonetizationOn, MdHistory } from 'react-icons/md'
+import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded, ImageRounded, GetAppRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
 import '../styles/appointment.css'
 import Invoice from '../components/Invoice Table/Invoice';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
@@ -37,7 +37,7 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdAssignment />
+                                            <EventNoteRounded className="main-title-icon" />
                                             <div>
                                                 Schedule
                                             </div>
@@ -53,7 +53,7 @@ export default function CenteredGrid() {
                                                         Start Date and Time
                                                 </Typography>
                                                     <div className="subtitle-dark">
-                                                        <Typography variant="body2" component="p" style={{fontSize: '1.125rem',marginBottom: 6}} >
+                                                        <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6 }} >
                                                             {data.start_date}
                                                         </Typography>
                                                         <Typography variant="body2" component="p" style={{ fontSize: '1.125rem' }}>
@@ -71,7 +71,7 @@ export default function CenteredGrid() {
                                                         End Date and Time
                                             </Typography>
                                                     <div className="subtitle-dark">
-                                                        <Typography variant="body2" component="p" style={{fontSize: '1.125rem',marginBottom: 6 }}>
+                                                        <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6 }}>
                                                             {data.end_date}
                                                         </Typography>
                                                         <Typography variant="body2" component="p" style={{ fontSize: '1.125rem' }}>
@@ -88,13 +88,13 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdPlace />
+                                            <RoomRounded className="main-title-icon" />
                                             <div>
                                                 Appointment Address
                                             </div>
                                         </Typography>
                                         <div className="card-content">
-                                            <Typography variant="body2" component="p" style={{fontSize: 20}}>
+                                            <Typography variant="body2" component="p" style={{ fontSize: 20 }}>
                                                 {data.appointment_address}
                                             </Typography>
                                         </div>
@@ -105,16 +105,16 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdPersonAdd />
+                                            <PersonAddRounded className="main-title-icon" />
                                             <div>
                                                 Job Assigned To
                                             </div>
                                         </Typography>
                                         <div className="card-content">
-                                            <div style={{padding: 0}} className="logged-in-user">
+                                            <div style={{ padding: 0 }} className="logged-in-user">
                                                 <img src="/profile-img.png" alt="" />
                                                 <div>
-                                                    <div style={{fontSize: 22,marginBottom: 6}} className="name">Ray Wilson</div>
+                                                    <div style={{ fontSize: 22, marginBottom: 6 }} className="name">Ray Wilson</div>
                                                     <div className="subtitle-dark">Project Manager</div>
                                                 </div>
                                             </div>
@@ -126,9 +126,7 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <svg width="16" height="14" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.40568 23.0233H16.7507C17.7799 23.0233 18.7457 22.5332 19.3315 21.6953L25.5857 12.8891C25.9815 12.3357 25.9815 11.6084 25.5857 11.0551L19.3157 2.23308C18.7457 1.39514 17.7799 0.905029 16.7507 0.905029H2.40568C1.12318 0.905029 0.379015 2.37537 1.12318 3.41883L7.25068 11.9721L1.12318 20.5253C0.379015 21.5688 1.12318 23.0233 2.40568 23.0233Z" fill="black" />
-                                            </svg>
+                                            <LabelImportantRounded className="main-title-icon" />
                                             <div>
                                                 Others
                                             </div>
@@ -148,12 +146,12 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Source
                                             </Typography>
-                                            <Typography variant="body2" component="p" style={{fontSize: 20}}>{data.source}</Typography>
+                                            <Typography variant="body2" component="p" style={{ fontSize: 20 }}>{data.source}</Typography>
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Notes
                                             </Typography>
-                                            <Typography variant="body2" component="p" style={{fontSize: 20}}>{data.notes}</Typography>
+                                            <Typography variant="body2" component="p" style={{ fontSize: 20 }}>{data.notes}</Typography>
                                             <br />
                                             <Typography className="title-heads" variant="body2" component="p" >
                                                 Attachments
@@ -162,10 +160,10 @@ export default function CenteredGrid() {
                                                 data.attachments.map((attachment, idx) => (
                                                     <div key={idx} className="attachment-card">
                                                         <div>
-                                                            <MdImage style={{ marginRight: 10 }} />
+                                                            <ImageRounded style={{ marginRight: 10 }} />
                                                             <Typography variant="body2" component="p" >{attachment}</Typography>
                                                         </div>
-                                                        <MdFileDownload />
+                                                        <GetAppRounded />
                                                     </div>
                                                 ))
                                             }
@@ -181,7 +179,7 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdMonetizationOn />
+                                            <MonetizationOnRounded className="main-title-icon" />
                                             <div>
                                                 Invoice
                                             </div>
@@ -197,7 +195,7 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdHistory />
+                                            <HistoryRounded className='main-title-icon' />
                                             <div>
                                                 Appointment History
                                             </div>

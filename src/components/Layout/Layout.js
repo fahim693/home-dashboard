@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import '../Layout/navbar.css'
-import { MdDashboard, MdPeople, MdWork, MdReceipt, MdAssignment, MdAssignmentInd, MdMoreHoriz } from 'react-icons/md'
+// import { MdDashboard, MdPeople, MdWork, MdReceipt, MdAssignmentInd, MdMoreHoriz, MdEventNote } from 'react-icons/md'
+import { DashboardRounded, PeopleAltRounded, WorkRounded, ReceiptRounded, EventNoteRounded, AssignmentIndRounded, MoreHorizRounded } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import NavbarResponsive from '../NavbarResponsive/NavbarResponsive';
 import UserMenu from '../LoggedUser/UserMenu';
@@ -32,43 +33,44 @@ const NavBar = (props) => {
                             <ul>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
-                                        <MdDashboard className="nav-icon" />
+                                        {/* <MdDashboard className="nav-icon" /> */}
+                                        <DashboardRounded className="nav-icon"/>
                                         <div>Home</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
-                                        <MdPeople className="nav-icon" />
+                                        <PeopleAltRounded className="nav-icon" />
                                         <div>Customers</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link selected" to="/">
-                                        <MdWork className="nav-icon" />
+                                        <WorkRounded className="nav-icon" />
                                         <div>Appointments</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
-                                        <MdReceipt className="nav-icon" />
+                                        <ReceiptRounded className="nav-icon" />
                                         <div>Quotes</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
-                                        <MdAssignment className="nav-icon" />
+                                        <EventNoteRounded className="nav-icon" />
                                         <div>Schedule</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
-                                        <MdAssignmentInd className="nav-icon" />
+                                        <AssignmentIndRounded className="nav-icon" />
                                         <div>Employees</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="#">
-                                        <MdMoreHoriz className="nav-icon" />
+                                        <MoreHorizRounded className="nav-icon" />
                                         <div>More</div>
                                     </Link>
                                 </li>

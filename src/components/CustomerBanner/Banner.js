@@ -12,28 +12,21 @@ const useStyles = makeStyles((theme) => ({
     quantityRoot: {
         minWidth: 215,
         color: "#000",
-        zIndex: 10,
         backgroundColor: "#fff",
-        // opacity: 0.6,
         borderRadius: "5px",
+        "& .MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff',
+            }
+        },
         "& .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf"
         },
         "&:hover .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf"
         },
-        ".MuiSelect-select": {
-            '&:focus': {
-                backgroundColor: '#fff'
-            }
-        },
-        ".MuiOutlinedInput-notchedOutline": {
-            color: '#000',
-            backgroundColor: "#fff"
-        },
         "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf",
-            // backgroundColor: "#fff"
         },
     }
 }));

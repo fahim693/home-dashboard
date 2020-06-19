@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { lighten, makeStyles, MuiThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, MuiThemeProvider } from '@material-ui/core/styles';
 import Theme from '../themes/theme'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -242,10 +242,6 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: "#F2F9FC"
         }
     },
-
-    checkboxHover:{
-        
-    }
 }));
 
 export default function EnhancedTable() {

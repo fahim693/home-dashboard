@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
 import { Card, CardContent, Typography, Chip, TextField, FormControl, MenuItem, Select } from '@material-ui/core';
-import { MdAssignment, MdPlace, MdPersonAdd, MdImage, MdMonetizationOn, MdHistory, MdRemoveCircle } from 'react-icons/md'
+import { MdRemoveCircle } from 'react-icons/md'
+import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded, ImageRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
 import '../styles/appointment-edit.css'
 import Invoice from '../components/Invoice Table/InvoiceEdit';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
@@ -27,25 +28,19 @@ const useStyles = makeStyles((theme) => ({
     quantityRoot: {
         marginTop: 6,
         minWidth: 185,
-        // width: '100%',
         color: "#000",
         backgroundColor: "#fff",
-        // opacity: 0.6,
         borderRadius: "5px",
+        "& .MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff',
+            }
+        },
         "& .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf"
         },
         "&:hover .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #000"
-        },
-        ".MuiSelect-select": {
-            '&:focus': {
-                backgroundColor: '#fff'
-            }
-        },
-        ".MuiOutlinedInput-notchedOutline": {
-            color: '#000',
-            backgroundColor: "#fff"
         },
         "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf",
@@ -94,7 +89,10 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdAssignment />
+                                            <EventNoteRounded className="main-title-icon" />
+                                            {/* <svg width="17" height="19" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19.6354 13.5H7.55208C6.72135 13.5 6.04167 14.175 6.04167 15C6.04167 15.825 6.72135 16.5 7.55208 16.5H19.6354C20.4661 16.5 21.1458 15.825 21.1458 15C21.1458 14.175 20.4661 13.5 19.6354 13.5ZM24.1667 3H22.6562V1.5C22.6562 0.675 21.9766 0 21.1458 0C20.3151 0 19.6354 0.675 19.6354 1.5V3H7.55208V1.5C7.55208 0.675 6.8724 0 6.04167 0C5.21094 0 4.53125 0.675 4.53125 1.5V3H3.02083C1.34427 3 0 4.35 0 6V27C0 28.65 1.34427 30 3.02083 30H24.1667C25.8281 30 27.1875 28.65 27.1875 27V6C27.1875 4.35 25.8281 3 24.1667 3ZM22.6562 27H4.53125C3.70052 27 3.02083 26.325 3.02083 25.5V10.5H24.1667V25.5C24.1667 26.325 23.487 27 22.6562 27ZM15.1042 19.5H7.55208C6.72135 19.5 6.04167 20.175 6.04167 21C6.04167 21.825 6.72135 22.5 7.55208 22.5H15.1042C15.9349 22.5 16.6146 21.825 16.6146 21C16.6146 20.175 15.9349 19.5 15.1042 19.5Z" fill="black" />
+                                            </svg> */}
                                             <div>
                                                 Schedule
                                             </div>
@@ -187,7 +185,7 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdPlace />
+                                            <RoomRounded className="main-title-icon" />
                                             <div>
                                                 Appointment Address
                                             </div>
@@ -291,7 +289,7 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdPersonAdd />
+                                            <PersonAddRounded className="main-title-icon" />
                                             <div>
                                                 Job Assigned To
                                             </div>
@@ -319,9 +317,7 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <svg width="16" height="14" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.40568 23.0233H16.7507C17.7799 23.0233 18.7457 22.5332 19.3315 21.6953L25.5857 12.8891C25.9815 12.3357 25.9815 11.6084 25.5857 11.0551L19.3157 2.23308C18.7457 1.39514 17.7799 0.905029 16.7507 0.905029H2.40568C1.12318 0.905029 0.379015 2.37537 1.12318 3.41883L7.25068 11.9721L1.12318 20.5253C0.379015 21.5688 1.12318 23.0233 2.40568 23.0233Z" fill="black" />
-                                            </svg>
+                                            <LabelImportantRounded className="main-title-icon" />
                                             <div>
                                                 Others
                                             </div>
@@ -391,7 +387,7 @@ export default function CenteredGrid() {
                                             </Typography>
                                             <div className="attachment-card">
                                                 <div>
-                                                    <MdImage style={{ marginRight: 18 }} />
+                                                    <ImageRounded style={{ marginRight: 10 }} />
                                                     <Typography variant="body2" component="p" >Attachment Name.ext</Typography>
                                                 </div>
                                                 <MdRemoveCircle className="apt-edit-icon" />
@@ -411,7 +407,8 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdMonetizationOn />
+                                        <MonetizationOnRounded className="main-title-icon" />
+
                                             <div>
                                                 Invoice
                                             </div>
@@ -426,7 +423,8 @@ export default function CenteredGrid() {
                                 <Card className={classes.root}>
                                     <CardContent>
                                         <Typography variant="h6" component="h2" className="card-title">
-                                            <MdHistory />
+                                        <HistoryRounded className='main-title-icon' />
+
                                             <div>
                                                 Appointment History
                                             </div>
