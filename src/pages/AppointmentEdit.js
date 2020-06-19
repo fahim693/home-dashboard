@@ -296,7 +296,7 @@ export default function CenteredGrid() {
                                         </Typography>
                                         <div className="card-content">
                                             <div className="flex-remove-card">
-                                                <div className="logged-in-user">
+                                                <div style={{ padding: 0 }} className="logged-in-user">
                                                     <img src="/profile-img.png" alt="" />
                                                     <div>
                                                         <h3 className="name">Ray Wilson</h3>
