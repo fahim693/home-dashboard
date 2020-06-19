@@ -52,11 +52,11 @@
 
 .menu-item > div{
   margin-top: 1px;
-  margin-left: 2px;
+  /* margin-left: 2px; */
 }
 
 .action-icon {
-  margin-right: 10px;
+  margin-right: 8px;
   font-size: 20px;
 }
 

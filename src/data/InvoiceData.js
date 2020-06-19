@@ -4,24 +4,24 @@ export const services = {
             desc: 'Technician',
             subdesc: 'Photobooth Techie',
             qty: 1,
-            price: 62,
-            amount: 62
+            price: "62.00",
+            amount: "62.00"
 
         },
         {
             desc: 'Technician',
             subdesc: 'Photobooth Techie',
             qty: 1,
-            price: 62,
-            amount: 62
+            price: "62.00",
+            amount: "62.00"
 
         },
         {
             desc: 'Technician',
             subdesc: 'Photobooth Techie',
             qty: 1,
-            price: 62,
-            amount: 62
+            price: "62.00",
+            amount: "62.00"
 
         },
     ],
@@ -34,23 +34,23 @@ export const items = {
             desc: 'Wipes',
             subdesc: 'Description',
             qty: 1,
-            price: 5,
-            amount: 5,
+            price: '5.00',
+            amount: '5.00',
         },
         {
             desc: 'Wipes',
             subdesc: 'Description',
             qty: 1,
-            price: 5,
-            amount: 5
+            price: '5.00',
+            amount: '5.00'
 
         },
         {
             desc: 'Wipes',
             subdesc: 'Description',
             qty: 1,
-            price: 5,
-            amount: 5
+            price: '5.00',
+            amount: '5.00'
 
         },
     ],

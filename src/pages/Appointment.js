@@ -53,10 +53,10 @@ export default function CenteredGrid() {
                                                         Start Date and Time
                                                 </Typography>
                                                     <div className="subtitle-dark">
-                                                        <Typography variant="body2" component="p" style={{fontSize: '1.125rem'}} >
+                                                        <Typography variant="body2" component="p" style={{fontSize: '1.125rem',marginBottom: 6}} >
                                                             {data.start_date}
                                                         </Typography>
-                                                        <Typography variant="body2" component="p" style={{ margin: '2px 0',fontSize: '1.125rem' }}>
+                                                        <Typography variant="body2" component="p" style={{ fontSize: '1.125rem' }}>
                                                             {data.start_time}
                                                         </Typography>
                                                     </div>
@@ -71,10 +71,10 @@ export default function CenteredGrid() {
                                                         End Date and Time
                                             </Typography>
                                                     <div className="subtitle-dark">
-                                                        <Typography variant="body2" component="p" style={{fontSize: '1.125rem' }}>
+                                                        <Typography variant="body2" component="p" style={{fontSize: '1.125rem',marginBottom: 6 }}>
                                                             {data.end_date}
                                                         </Typography>
-                                                        <Typography variant="body2" component="p" style={{ margin: '2px 0',fontSize: '1.125rem' }}>
+                                                        <Typography variant="body2" component="p" style={{ fontSize: '1.125rem' }}>
                                                             {data.end_time}
                                                         </Typography>
                                                     </div>
@@ -111,10 +111,10 @@ export default function CenteredGrid() {
                                             </div>
                                         </Typography>
                                         <div className="card-content">
-                                            <div className="logged-in-user">
+                                            <div style={{padding: 0}} className="logged-in-user">
                                                 <img src="/profile-img.png" alt="" />
                                                 <div>
-                                                    <div className="name">Ray Wilson</div>
+                                                    <div style={{fontSize: 22,marginBottom: 6}} className="name">Ray Wilson</div>
                                                     <div className="subtitle-dark">Project Manager</div>
                                                 </div>
                                             </div>

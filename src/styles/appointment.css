@@ -25,10 +25,13 @@
   font-size: 1.125rem;
   color: #5a5a5a;
 }
-
+.apt-card > div> .name{
+  font-size: 1.375 !important;
+}
 .title-heads {
   font-size: 1.375rem !important;
   font-weight: 500 !important;
+  margin-bottom: 5px !important;
 }
 .chips {
   margin-top: 0.4rem;
@@ -68,7 +71,7 @@
   display: flex;
 }
 .step-status-drawing {
-  margin: 0 0.8rem 0 0;
+  margin: 0.15rem 0.8rem 0 0;
 }
 .step-status-dot {
   display: block;
@@ -79,9 +82,9 @@
   background-color: #2a95c5;
 }
 .step-status-line {
-  margin: 0 auto;
+  margin: 0 auto -10px;
   display: block;
   width: 2px;
-  height: 5rem;
+  height: 7rem;
   background-color: #dcedf5;
 }

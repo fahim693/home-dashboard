@@ -80,8 +80,8 @@ const useToolbarStyles = makeStyles((theme) => ({
     highlight:
         theme.palette.type === 'light'
             ? {
-                color: theme.palette.secondary.main,
-                backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+                color: '#000',
+                backgroundColor: '#F2F9FC',
             }
             : {
                 color: theme.palette.text.primary,
@@ -209,7 +209,8 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         top: 20,
         width: 1,
-    }, quantityRoot: {
+    },
+    quantityRoot: {
         minWidth: 185,
         // width: '100%',
         color: "#000",
@@ -235,6 +236,15 @@ const useStyles = makeStyles((theme) => ({
             border: "1px solid #bfbfbf",
             // backgroundColor: "#fff"
         },
+    },
+    tableRow: {
+        "&.MuiTableRow-root.Mui-selected":{
+            backgroundColor: "#F2F9FC"
+        }
+    },
+
+    checkboxHover:{
+        
     }
 }));
 
@@ -335,7 +345,6 @@ export default function EnhancedTable() {
                                     .map((row, index) => {
                                         const isItemSelected = isSelected(row.id);
                                         const labelId = `enhanced-table-checkbox-${index}`;
-
                                         return (
                                             <TableRow
                                                 hover
@@ -345,7 +354,7 @@ export default function EnhancedTable() {
                                                 tabIndex={-1}
                                                 key={row.id}
                                                 selected={isItemSelected}
-                                                className="hst-tbl"
+                                                className={`${classes.tableRow} hst-tbl`}
                                             >
                                                 <TableCell padding="checkbox">
                                                     <Checkbox

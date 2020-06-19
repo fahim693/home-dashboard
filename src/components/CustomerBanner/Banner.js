@@ -1,7 +1,7 @@
 import React from 'react'
 import './banner.css'
 import { Button, FormControl, makeStyles, Select, MenuItem } from '@material-ui/core';
-import { MdCheck, MdClose, MdSend, MdCreate, MdApps } from 'react-icons/md';
+import { MdCheck, MdClose, MdSend, MdCreate, MdApps, MdDelete } from 'react-icons/md';
 import { withRouter } from 'react-router-dom';
 import { data } from '../../data/UserData'
 
@@ -126,8 +126,8 @@ const Banner = (props) => {
                                         </MenuItem>
                                         <MenuItem value={4}>
                                             <div className="menu-item">
-                                                <MdCreate className="action-icon" />
-                                                <div>ADD/DELETE</div>
+                                                <MdDelete className="action-icon" />
+                                                <div>DELETE</div>
                                             </div>
                                         </MenuItem>
                                     </Select>

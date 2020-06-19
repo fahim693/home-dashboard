@@ -7,6 +7,10 @@
   color: #2a95c5 !important;
 }
 
+.checkbox:hover {
+  background-color: #F2F9FC !important;
+}
+
 .chips-edit-inv .chip-edit {
   margin-right: 0.5rem;
   padding: 0.4rem;

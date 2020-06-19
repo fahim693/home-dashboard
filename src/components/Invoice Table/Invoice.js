@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 export default function Invoice() {
     const classes = useStyles();
-
+    console.log(services.data);
     return (
         <TableContainer>
             <Table className={classes.table} aria-label="spanning table">
@@ -87,19 +87,19 @@ export default function Invoice() {
                         <TableCell></TableCell>
                         <TableCell align="right" className="tbl-head-cell">Subtotal:</TableCell>
                         <TableCell></TableCell>
-                        <TableCell className="tbl-body-cell" align="right">$201</TableCell>
+                        <TableCell className="tbl-body-cell" align="right">$201.00</TableCell>
                     </TableRow>
                     <TableRow className='inv-tbl'>
                         <TableCell></TableCell>
                         <TableCell align="right" className="tbl-head-cell">Tax:</TableCell>
                         <TableCell></TableCell>
-                        <TableCell className="tbl-body-cell" align="right">$7</TableCell>
+                        <TableCell className="tbl-body-cell" align="right">$7.00</TableCell>
                     </TableRow>
                     <TableRow className='inv-tbl inv-tbl-total'>
                         <TableCell></TableCell>
                         <TableCell align="right" className="hst-tbl-header tbl-head-cell">Total:</TableCell>
                         <TableCell></TableCell>
-                        <TableCell className="hst-tbl-header tbl-head-cell" align="right">$208</TableCell>
+                        <TableCell className="hst-tbl-header tbl-head-cell" align="right">$208.00</TableCell>
                     </TableRow>
                 </TableBody>
             </Table>
