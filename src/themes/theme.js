@@ -11,8 +11,12 @@ const Theme = createMuiTheme({
         MuiTablePagination:{
             input:{
                 fontSize: 17
+            },
+            caption:{
+                marginTop: "-0.24rem"
             }
         }
+        
     }
 });
 

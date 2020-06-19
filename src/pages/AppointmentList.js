@@ -240,7 +240,7 @@ const useStyles = makeStyles((theme) => ({
     tableRow: {
         "&.MuiTableRow-root.Mui-selected":{
             backgroundColor: "#F2F9FC"
-        }
+        },
     },
 }));
 
