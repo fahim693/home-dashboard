@@ -13,7 +13,7 @@ const Theme = createMuiTheme({
                 fontSize: 17
             },
             caption:{
-                marginTop: "-0.24rem"
+                marginTop: "-0.1rem"
             }
         }
         
