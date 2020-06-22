@@ -74,7 +74,7 @@ const Banner = (props) => {
                         </React.Fragment> :
                         <React.Fragment>
                             <div className="cst-action">
-                                <FormControl variant="outlined" classes={{
+                                <FormControl variant="outlined" margin="dense" classes={{
                                     root: classes.quantityRoot
                                 }}>
                                     {/* <InputLabel id="demo-simple-select-label">Actions</InputLabel> */}

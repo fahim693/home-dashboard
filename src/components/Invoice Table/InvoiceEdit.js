@@ -100,7 +100,7 @@ export default function Invoice() {
                                         <MdRemoveCircle className="apt-edit-icon" />
                                     </div>
                                     <div>
-                                        <FormControl variant="outlined" classes={{
+                                        <FormControl variant="outlined" margin="dense" classes={{
                                             root: classes.quantityRoot
                                         }}>
                                             <Select
@@ -128,6 +128,7 @@ export default function Invoice() {
                                             <TextField
                                                 variant="outlined"
                                                 value={row.subdesc}
+                                                margin="dense"
                                             />
                                         </FormControl>
                                     </div>
@@ -140,6 +141,7 @@ export default function Invoice() {
                                     <TextField
                                         variant="outlined"
                                         value={row.qty}
+                                        margin="dense"
                                     />
                                 </FormControl>
                             </TableCell>
@@ -150,7 +152,7 @@ export default function Invoice() {
                                     <TextField
                                         variant="outlined"
                                         value={row.price}
-
+                                        margin="dense"
                                     />
                                 </FormControl>
                             </TableCell>
@@ -161,6 +163,7 @@ export default function Invoice() {
                                     <TextField
                                         variant="outlined"
                                         value={row.amount}
+                                        margin="dense"
                                     />
                                 </FormControl>
                             </TableCell>
@@ -200,7 +203,7 @@ export default function Invoice() {
                                         <MdRemoveCircle className="apt-edit-icon" />
                                     </div>
                                     <div>
-                                        <FormControl variant="outlined" classes={{
+                                        <FormControl variant="outlined" margin="dense" classes={{
                                             root: classes.quantityRoot
                                         }}>
                                             <Select
@@ -227,6 +230,7 @@ export default function Invoice() {
                                             <TextField
                                                 variant="outlined"
                                                 value={row.subdesc}
+                                                margin="dense"
                                             />
                                         </FormControl>
                                     </div>
@@ -239,6 +243,7 @@ export default function Invoice() {
                                     <TextField
                                         value={row.qty}
                                         variant="outlined"
+                                        margin="dense"
                                     />
                                 </FormControl>
                             </TableCell>
@@ -249,6 +254,7 @@ export default function Invoice() {
                                     <TextField
                                         value={row.price}
                                         variant="outlined"
+                                        margin="dense"
                                     />
                                 </FormControl>
                             </TableCell>
@@ -259,6 +265,7 @@ export default function Invoice() {
                                     <TextField
                                         value={row.amount}
                                         variant="outlined"
+                                        margin="dense"
                                     />
                                 </FormControl>
                             </TableCell>

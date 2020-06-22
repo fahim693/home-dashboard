@@ -166,6 +166,7 @@ const EnhancedTableToolbar = (props) => {
                                         </InputAdornment>
                                     )
                                 }}
+                                margin="dense"
                             />
                         </FormControl>
                         <div style={{
@@ -238,7 +239,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     tableRow: {
-        "&.MuiTableRow-root.Mui-selected":{
+        "&.MuiTableRow-root.Mui-selected": {
             backgroundColor: "#F2F9FC"
         },
     },
@@ -312,6 +313,7 @@ export default function EnhancedTable() {
                                     </InputAdornment>
                                 )
                             }}
+                            margin="dense"
                         />
                     </FormControl>
                     <div style={{
