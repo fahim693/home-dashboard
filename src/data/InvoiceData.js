@@ -1,7 +1,7 @@
 export const services = {
     data:[
         {
-            desc: 'Technician',
+            desc: 1,
             subdesc: 'Photobooth Techie',
             qty: 1,
             price: "62.00",
@@ -9,7 +9,7 @@ export const services = {
 
         },
         {
-            desc: 'Technician',
+            desc: 1,
             subdesc: 'Photobooth Techie',
             qty: 1,
             price: "62.00",
@@ -17,7 +17,7 @@ export const services = {
 
         },
         {
-            desc: 'Technician',
+            desc: 1,
             subdesc: 'Photobooth Techie',
             qty: 1,
             price: "62.00",
@@ -31,14 +31,14 @@ export const services = {
 export const items = {
     data:[
         {
-            desc: 'Wipes',
+            desc: 1,
             subdesc: 'Description',
             qty: 1,
             price: '5.00',
             amount: '5.00',
         },
         {
-            desc: 'Wipes',
+            desc: 1,
             subdesc: 'Description',
             qty: 1,
             price: '5.00',
@@ -46,7 +46,7 @@ export const items = {
 
         },
         {
-            desc: 'Wipes',
+            desc: 1,
             subdesc: 'Description',
             qty: 1,
             price: '5.00',

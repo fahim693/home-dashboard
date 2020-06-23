@@ -11,7 +11,7 @@ export const data = {
         'Photo',
         'Job'
     ],
-    source: 'Phone',
+    source: 1,
     notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.',
     attachments: [
         'Attachment Name.ext'

@@ -14,6 +14,11 @@ import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 import Banner from '../components/CustomerBanner/Banner';
 import Timeline from '../components/Timeline/Timeline';
 import Card from '../components/Card/Card'
+import Others from '../components/Others/Others';
+import { data } from '../data/UserData'
+import { items, services } from '../data/InvoiceData'
+
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -231,7 +236,7 @@ export default function CenteredGrid() {
                                     <br />
                                     <Typography className="title-heads" variant="body2" component="p">
                                         State
-                                            </Typography>
+                                    </Typography>
                                     <FormControl variant="outlined" margin="dense" classes={{
                                         root: classes.quantityRoot
                                     }}>
@@ -299,78 +304,11 @@ export default function CenteredGrid() {
                                     title="Others"
                                     icon={<LabelImportantRounded className="main-title-icon" />}
                                 >
-                                    <Typography className="title-heads" variant="body2" component="p" >
-                                        Tags
-                                            </Typography>
-                                    <div className="chips">
-                                        <Chip className="chip" label="Tools" onDelete={() => { }} deleteIcon={<MdRemoveCircle style={{ color: "#FF0000" }} />} />
-                                        <Chip className="chip" label="Photo" onDelete={() => { }} deleteIcon={<MdRemoveCircle style={{ color: "#FF0000" }} />} />
-                                        <Chip className="chip" label="Job" onDelete={() => { }} deleteIcon={<MdRemoveCircle style={{ color: "#FF0000" }} />} />
-                                    </div>
-                                    <div className="chips-edit">
-                                        <Chip className="chip-edit" label="+ Add Tag" />
-                                    </div>
-                                    <br />
-                                    <Typography className="title-heads" variant="body2" component="p" >
-                                        Source
-                                            </Typography>
-                                    <FormControl variant="outlined" margin="dense" classes={{
-                                        root: classes.quantityRoot
-                                    }}>
-                                        <Select
-                                            id="state"
-                                            // value={age}
-                                            // onChange={handleChange}
-                                            defaultValue={1}
-                                            MenuProps={{
-                                                getContentAnchorEl: null,
-                                                anchorOrigin: {
-                                                    vertical: "bottom",
-                                                    horizontal: "left",
-                                                }
-                                            }}
-                                        >
-                                            <MenuItem value={1}>Phone</MenuItem>
-                                            <MenuItem value={2}>Email</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <br />
-                                    <br />
-                                    <Typography className="title-heads" variant="body2" component="p" >
-                                        Notes
-                                            </Typography>
-                                    <FormControl variant="outlined" style={{ width: '100%' }} classes={{
-                                        root: classes.quantityRoot
-                                    }}>
-                                        <TextField
-                                            id="notes"
-                                            variant="outlined"
-                                            fullWidth
-                                            name="notes"
-                                            value={fieldValue.notes}
-                                            onChange={handleOnChange}
-                                            rows={2}
-                                            rowsMax={4}
-                                            size='small'
-                                            multiline
-                                        />
-                                    </FormControl>
-                                    {/* <Typography variant="body2" component="p" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.</Typography> */}
-                                    <br />
-                                    <br />
-                                    <Typography className="title-heads" variant="body2" component="p" >
-                                        Attachments
-                                            </Typography>
-                                    <div className="attachment-card">
-                                        <div>
-                                            <ImageRounded style={{ marginRight: 10 }} />
-                                            <Typography variant="body2" component="p" >Attachment Name.ext</Typography>
-                                        </div>
-                                        <MdRemoveCircle className="apt-edit-icon" />
-                                    </div>
-                                    <div className="chips-edit">
-                                        <Chip className="chip-edit" label="+ Add Attachment" />
-                                    </div>
+                                    <Others 
+                                        notes={fieldValue.notes}
+                                        handleOnChange={handleOnChange}
+                                        data={data}
+                                    />
                                 </Card>
                             </Grid>
                         </Grid>
@@ -383,7 +321,10 @@ export default function CenteredGrid() {
                                     icon={<MonetizationOnRounded className="main-title-icon" />}
                                     cardType={0}
                                 >
-                                    <Invoice />
+                                    <Invoice 
+                                        items={items}
+                                        services={services}
+                                    />
                                 </Card>
                             </Grid>
                             <Grid item xs={12}>

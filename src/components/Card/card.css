@@ -9,10 +9,16 @@
   padding: 0.63rem 1.5rem;
 }
 
-.card-title div {
+.card-title .fw500 {
   margin-left: 0.6rem;
   font-size: 1.375rem;
   font-weight: 500;
+}
+
+.card-title .fbold {
+  margin-left: 0.6rem;
+  font-size: 1.375rem;
+  font-weight: bold;
 }
 
 .card-content {

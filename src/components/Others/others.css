@@ -1,0 +1,12 @@
+.chips-edit {
+  margin-top: 1rem;
+}
+
+.chips-edit .chip-edit {
+  margin-right: 0.5rem;
+  padding: 0.4rem;
+  background-color: #2a95c5;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+}

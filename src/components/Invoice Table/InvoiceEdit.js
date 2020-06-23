@@ -9,7 +9,6 @@ import TableRow from '@material-ui/core/TableRow';
 import './invoice-edit.css'
 import { FormControlLabel, Checkbox, FormControl, Select, MenuItem, TextField, Chip, Typography } from '@material-ui/core';
 import { MdRemoveCircle } from 'react-icons/md';
-import { items, services } from '../../data/InvoiceData'
 
 const useStyles = makeStyles({
     table: {
@@ -76,7 +75,7 @@ const useStyles = makeStyles({
 });
 
 
-export default function Invoice() {
+export default function Invoice(props) {
     const classes = useStyles();
 
     return (
@@ -92,12 +91,12 @@ export default function Invoice() {
                 </TableHead>
                 <TableBody>
                     <p className='table-title'>Services</p>
-                    {services.data.map((row, idx) => (
+                    {props.services.data.map((row, idx) => (
                         <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
                                 <div className="edit-field">
                                     <div style={{ marginTop: 10 }}>
-                                        <MdRemoveCircle className="apt-edit-icon" />
+                                        <MdRemoveCircle className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon' } />
                                     </div>
                                     <div>
                                         <FormControl variant="outlined" margin="dense" classes={{
@@ -114,8 +113,9 @@ export default function Invoice() {
                                                         horizontal: "left",
                                                     }
                                                 }}
-                                                defaultValue={1}
+                                                defaultValue={row.desc}
                                             >
+                                                <MenuItem value={0} style={{ display: "none" }}>Select Service</MenuItem>
                                                 <MenuItem value={1}>Technician</MenuItem>
                                                 <MenuItem value={2}>Scientist</MenuItem>
                                                 <MenuItem value={3}>Engineer</MenuItem>
@@ -126,6 +126,7 @@ export default function Invoice() {
                                             root: classes.quantityRoot
                                         }}>
                                             <TextField
+                                                placeholder="Description (optional)"
                                                 variant="outlined"
                                                 value={row.subdesc}
                                                 margin="dense"
@@ -151,6 +152,7 @@ export default function Invoice() {
                                 }}>
                                     <TextField
                                         variant="outlined"
+                                        placeholder="0.00"
                                         value={row.price}
                                         margin="dense"
                                     />
@@ -195,12 +197,12 @@ export default function Invoice() {
                     <br />
                     <br />
                     <p className='table-title'>Items</p>
-                    {items.data.map((row, idx) => (
+                    {props.items.data.map((row, idx) => (
                         <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
                                 <div className="edit-field">
                                     <div style={{ marginTop: 10 }}>
-                                        <MdRemoveCircle className="apt-edit-icon" />
+                                        <MdRemoveCircle className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon' } />
                                     </div>
                                     <div>
                                         <FormControl variant="outlined" margin="dense" classes={{
@@ -208,7 +210,7 @@ export default function Invoice() {
                                         }}>
                                             <Select
                                                 id="city"
-                                                defaultValue={1}
+                                                defaultValue={row.desc}
                                                 MenuProps={{
                                                     getContentAnchorEl: null,
                                                     anchorOrigin: {
@@ -219,6 +221,7 @@ export default function Invoice() {
                                             // value={age}
                                             // onChange={handleChange}
                                             >
+                                                <MenuItem value={0} style={{ display: "none" }}>Select Service</MenuItem>
                                                 <MenuItem value={1}>Wipes</MenuItem>
                                                 <MenuItem value={2}>Wipes</MenuItem>
                                             </Select>
@@ -229,6 +232,7 @@ export default function Invoice() {
                                         }}>
                                             <TextField
                                                 variant="outlined"
+                                                placeholder="Description (optional)"
                                                 value={row.subdesc}
                                                 margin="dense"
                                             />
@@ -253,6 +257,7 @@ export default function Invoice() {
                                 }}>
                                     <TextField
                                         value={row.price}
+                                        placeholder="0.00"
                                         variant="outlined"
                                         margin="dense"
                                     />
