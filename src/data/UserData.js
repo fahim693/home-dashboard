@@ -12,6 +12,7 @@ export const data = {
         'Job'
     ],
     source: 1,
+    source_name: 'Phone',
     notes: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.',
     attachments: [
         'Attachment Name.ext'

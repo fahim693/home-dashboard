@@ -123,7 +123,7 @@ export default function CenteredGrid() {
                                         <Typography className="title-heads" variant="body2" component="p" >
                                             Source
                                             </Typography>
-                                        <Typography variant="body2" component="p" style={{ fontSize: 20 }}>{data.source}</Typography>
+                                        <Typography variant="body2" component="p" style={{ fontSize: 20 }}>{data.source_name}</Typography>
                                         <br />
                                         <Typography className="title-heads" variant="body2" component="p" >
                                             Notes

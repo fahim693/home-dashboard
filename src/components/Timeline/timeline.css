@@ -2,6 +2,19 @@
   margin: 2rem 0;
 }
 
+.timeline-list {
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-list-icon {
+  padding: 0.1px;
+  background: #fff;
+  border-radius: 50%;
+  color: #62C896;
+  margin-left: 12px;
+}
+
 .timeline ul {
   padding: 0;
   margin: 0;
@@ -10,7 +23,7 @@
 }
 
 .timeline ul li {
-  max-width: calc(100% / 5);
+  /* max-width: calc(100% / 5); */
   background: #e2e2e2;
   position: relative;
   padding: 16px;

@@ -35,7 +35,7 @@ export default function Invoice() {
                     {services.data.map((row, idx) => (
                         <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
-                                <div className="tbl-desc">{row.desc}</div>
+                                <div className="tbl-desc">{row.desc_name}</div>
                                 <div className="tbl-subdesc">{row.subdesc}</div>
                             </TableCell>
                             <TableCell className="tbl-body-cell" align="right">{row.qty}</TableCell>
@@ -62,7 +62,7 @@ export default function Invoice() {
                     {items.data.map((row, idx) => (
                         <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
-                                <div className="tbl-desc">{row.desc}</div>
+                                <div className="tbl-desc">{row.desc_name}</div>
                                 <div className="tbl-subdesc">{row.subdesc}</div>
                             </TableCell>
                             <TableCell className="tbl-body-cell" align="right">{row.qty}</TableCell>

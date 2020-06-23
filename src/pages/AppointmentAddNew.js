@@ -7,7 +7,7 @@ import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded,
 import '../styles/appointment.css'
 import Invoice from '../components/Invoice Table/Invoice';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
-import Timeline from '../components/Timeline/Timeline';
+import TimelineAddNew from '../components/Timeline/TimelineAddNew';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
 import { data } from '../data/UserData'
 import Card from '../components/Card/Card'
@@ -58,7 +58,7 @@ export default function AppointmentAddNew() {
                     text="NEXT"
                     link="/add-invoice"
                 />
-                <Timeline />
+                <TimelineAddNew step={0} />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={12} >
                         <Grid container spacing={3}>

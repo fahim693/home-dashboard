@@ -8,7 +8,7 @@ import { RoomRounded, PersonAddRounded, LabelImportantRounded, ImageRounded, Mon
 import '../styles/appointment.css'
 import Invoice from '../components/Invoice Table/InvoiceEdit';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
-import Timeline from '../components/Timeline/Timeline';
+import TimelineAddNew from '../components/Timeline/TimelineAddNew';
 import Card from '../components/Card/Card'
 import BannerButtonOnly from '../components/CustomerBanner/BannerButtonOnly';
 import Others from '../components/Others/Others';
@@ -50,7 +50,7 @@ export default function CenteredGrid() {
         <Layout>
             <div className={classes.root}>
                 <BannerButtonOnly text="SCHEDULE" />
-                <Timeline />
+                <TimelineAddNew step={1}/>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4} >
                         <Grid container spacing={3}>
