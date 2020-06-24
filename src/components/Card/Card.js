@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import './card.css'
+import { CloseRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +17,7 @@ const CardCustom = (props) => {
     let cardTitle = 'fw500'
     if (props.cardType === 0) {
         cardContentClassName = 'card-content-inv'
-    } else if (props.cardType === 1) {
+    } else if (props.cardType === 1 || props.cardType === 3) {
         cardContentClassName = ''
     } else if (props.cardType === 2) {
         cardTitle = 'fbold'
@@ -39,12 +40,24 @@ const CardCustom = (props) => {
                                     {props.title}
                                 </div>
                                 <div>
-                                    <Button style={{color: '#2a95c5', fontWeight: 500,fontSize: 17}}>+ ADD NEW</Button>
+                                    <Button style={{ color: '#2a95c5', fontWeight: 500, fontSize: 17 }}>+ ADD NEW</Button>
                                 </div>
                             </div> :
-                            <div className={cardTitle}>
-                                {props.title}
-                            </div>
+                            props.cardType === 3 ?
+                                <div style={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center',
+                                    width: '100%'
+                                }}>
+                                    <div className={cardTitle}>
+                                        {props.title}
+                                    </div>
+                                    <CloseRounded onClick={props.handleClose} style={{ cursor: 'pointer' }} />
+                                </div> :
+                                <div className={cardTitle}>
+                                    {props.title}
+                                </div>
                     }
 
                 </Typography>

@@ -49,7 +49,7 @@ export default function CenteredGrid() {
     return (
         <Layout>
             <div className={classes.root}>
-                <BannerButtonOnly text="SCHEDULE" />
+                <BannerButtonOnly text="SCHEDULE" link='/appointment'/>
                 <TimelineAddNew step={1}/>
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4} >

@@ -176,7 +176,7 @@ const EnhancedTableToolbar = (props) => {
                         <div style={{
                             marginLeft: 16
                         }}>
-                            <Button variant='contained' className="btn-primary">ADD NEW</Button>
+                            <Button href='/add' variant='contained' className="btn-primary">ADD NEW</Button>
                         </div>
                     </div>
                 )}
@@ -331,7 +331,7 @@ export default function EnhancedTable() {
                     <div style={{
                         marginTop: 10
                     }}>
-                        <Button variant='contained' className="btn-primary">ADD NEW</Button>
+                        <Button href='/add' variant='contained' className="btn-primary">ADD NEW</Button>
                     </div>
                 </div>
                 <Paper className={classes.paper}>

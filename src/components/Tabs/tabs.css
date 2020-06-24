@@ -1,0 +1,16 @@
+.MuiTabs-root {
+  min-height: 56px !important;
+}
+.MuiTab-textColorPrimary.Mui-selected {
+  color: #2a95c5 !important;
+}
+.MuiTabs-indicator {
+  background-color: #2a95c5 !important;
+}
+.MuiBox-root {
+    padding: 0 !important;
+}
+.tab {
+  font-weight: bold !important;
+  margin-top: 5px !important;
+}

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         outline: 0,
         boxShadow: theme.shadows[5],
         borderRadius: '0.2rem',
-        padding: theme.spacing(4, 5,3),
+        padding: theme.spacing(4, 5, 3),
         width: 400,
     },
 }));
@@ -59,7 +59,7 @@ export default function TransitionsModal(props) {
                                 fontSize: 16,
                                 marginRight: 8
                             }}>
-                                <CloseRounded style={{ color: '#D35342' }} />
+                                <CloseRounded style={{ color: '#D35342', marginRight: 4 }} />
                                 <span>CANCEL</span>
                             </Button>
                             <Button onClick={props.handleModal} variant='outlined' style={{
@@ -70,7 +70,7 @@ export default function TransitionsModal(props) {
                                 color: '#fff',
                                 fontSize: 16
                             }}>
-                                <DeleteRounded style={{ color: '#fff' }} />
+                                <DeleteRounded style={{ color: '#fff', marginRight: 4 }} />
                                 <span>DELETE</span>
                             </Button>
                         </div>

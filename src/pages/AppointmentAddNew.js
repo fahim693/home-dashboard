@@ -15,7 +15,24 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import SearchIcon from "@material-ui/icons/Search";
 import '../styles/appointment-add-new.css'
 
+const dataSearch = [
+    {
+        name: 'James Cook'
+    },
+    {
+        name: 'Jack Brown'
+    },
+    {
+        name: 'Jacob Brown'
+    },
+    {
+        name: 'Jane Williams'
+    },
+    {
+        name: 'Jasmine Martinez'
+    },
 
+]
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,7 +70,7 @@ export default function AppointmentAddNew() {
     return (
         <Layout>
             <div className={classes.root}>
-                <BannerButtonOnly 
+                <BannerButtonOnly
                     text="NEXT"
                     link="/add-invoice"
                 />
@@ -73,8 +90,8 @@ export default function AppointmentAddNew() {
                                         <Autocomplete
                                             id="free-solo-demo"
                                             freeSolo
-                                            style={{ width: 750, height: 350, marginTop: 50 }}
-                                            options={['Title', 'title 2'].map((option) => option)}
+                                            style={{ width: 750, height: 340, marginTop: 20 }}
+                                            options={dataSearch.map((option) => option.name)}
                                             renderInput={(params) => (
                                                 <FormControl variant="outlined" fullWidth classes={{
                                                     root: classes.quantityRoot
