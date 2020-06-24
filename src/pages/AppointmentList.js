@@ -204,6 +204,7 @@ const useStyles = makeStyles((theme) => ({
                 backgroundColor: '#fff'
             }
         },
+        marginTop: '65px !important'
     },
     paper: {
         width: '100%',
