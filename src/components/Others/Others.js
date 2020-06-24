@@ -141,7 +141,6 @@ const Others = (props) => {
             <FormControl variant="outlined" margin="dense" classes={{
                 root: classes.quantityRoot
             }}>
-                {/* <InputLabel shrink htmlFor="name-multiple">Select Source</InputLabel> */}
                 <Select
                     id="state"
                     // value={props.data}
@@ -182,7 +181,6 @@ const Others = (props) => {
                     multiline
                 />
             </FormControl>
-            {/* <Typography variant="body2" component="p" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut sagittis est. Vivamus euismod cursus varius.</Typography> */}
             <br />
             <br />
             <Typography className="title-heads" variant="body2" component="p" >
