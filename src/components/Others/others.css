@@ -10,3 +10,7 @@
   font-weight: 400;
   cursor: pointer;
 }
+
+.MuiAutocomplete-option[data-focus="true"]{
+  background-color: #f2f9fc !important;
+}

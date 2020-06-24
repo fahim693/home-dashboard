@@ -23,6 +23,8 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
 import '../styles/appointment-list.css'
 import { rows } from '../data/AppointmentData'
+import { useState } from 'react';
+import Modal from '../components/Modal/Modal'
 
 
 const headCells = [
@@ -122,7 +124,7 @@ const useToolbarStyles = makeStyles((theme) => ({
 const EnhancedTableToolbar = (props) => {
     const classes = useToolbarStyles();
     const { numSelected } = props;
-
+    const [open, setOpen] = useState(false)
     return (
         <Toolbar
             className={`${clsx(classes.root, {
@@ -144,7 +146,9 @@ const EnhancedTableToolbar = (props) => {
 
             {numSelected > 0 ? (
                 <Tooltip title="Delete">
-                    <IconButton aria-label="delete">
+                    <IconButton onClick={() => {
+                        setOpen(true)
+                    }} aria-label="delete">
                         <DeleteIcon />
                     </IconButton>
                 </Tooltip>
@@ -176,6 +180,14 @@ const EnhancedTableToolbar = (props) => {
                         </div>
                     </div>
                 )}
+            <Modal
+                open={open}
+                handleModal={() => {
+                    setOpen(false)
+                    window.location.reload()
+                }}
+                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected appointments?' : 'Are you sure you want to delete the selected appointment?'}
+            />
         </Toolbar>
     );
 };

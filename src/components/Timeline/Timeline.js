@@ -1,42 +1,101 @@
 import React from 'react';
 import './timeline.css'
+import { DoneRounded } from '@material-ui/icons';
 
 const Timeline = (props) => {
+    let classCrated = ""
+    let classSched = ""
+    let classStart = ""
+    let classFinish = ""
+    let classPay = ""
+    if (props.step === 0) {
+        classCrated = "active"
+        classSched = "active on"
+    } else if (props.step === 1) {
+        classCrated = "active"
+        classSched = "active"
+        classStart = "active on"
+    } else if (props.step === 2) {
+        classCrated = "active"
+        classSched = "active"
+        classStart = "active"
+        classFinish = "active on"
+    } else if (props.step === 3) {
+        classCrated = "active"
+        classSched = "active"
+        classStart = "active"
+        classFinish = "active"
+        classPay = "active on"
+    }
+    else if (props.step === 4) {
+        classCrated = "active"
+        classSched = "active"
+        classStart = "active"
+        classFinish = "active"
+        classPay = "active"
+    }
     return (
         <div className="timeline">
             <ul>
-                <li className="active">
-                    <svg width="24" height="19" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7.50468 14.897L2.58801 9.98033C2.04015 9.43247 1.1692 9.43247 0.621342 9.98033C0.0734848 10.5282 0.0734848 11.3991 0.621342 11.947L6.5073 17.833C7.05516 18.3808 7.94016 18.3808 8.48802 17.833L23.3785 2.95651C23.9264 2.40865 23.9264 1.5377 23.3785 0.989842C22.8306 0.441985 21.9597 0.441985 21.4118 0.989842L7.50468 14.897Z"
-                            fill="white" />
-                    </svg>
+                <li className={`timeline-list ${classCrated}`}>
                     <span>Created</span>
+                    {
+                        props.step >= 0 ?
+                            <DoneRounded
+                                className='timeline-list-icon'
+                            /> : ''
+                    }
                 </li>
-                <li className="active">
-                    <svg width="24" height="19" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7.50468 14.897L2.58801 9.98033C2.04015 9.43247 1.1692 9.43247 0.621342 9.98033C0.0734848 10.5282 0.0734848 11.3991 0.621342 11.947L6.5073 17.833C7.05516 18.3808 7.94016 18.3808 8.48802 17.833L23.3785 2.95651C23.9264 2.40865 23.9264 1.5377 23.3785 0.989842C22.8306 0.441985 21.9597 0.441985 21.4118 0.989842L7.50468 14.897Z"
-                            fill="white" />
-                    </svg>
-                    <span>Schedule</span>
+                <li className={`timeline-list ${classSched}`}>
+                    <span>{
+                        props.step >= 1 ? 'Scheduled' : 'Schedule'
+                    }</span>
+                    {
+                        props.step >= 1 ?
+                            <DoneRounded
+                                className='timeline-list-icon'
+                            /> : ''
+                    }
                 </li>
-                <li className="active on">
-                    <svg width="24" height="19" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        {/* <path
-                            d="M7.50468 14.897L2.58801 9.98033C2.04015 9.43247 1.1692 9.43247 0.621342 9.98033C0.0734848 10.5282 0.0734848 11.3991 0.621342 11.947L6.5073 17.833C7.05516 18.3808 7.94016 18.3808 8.48802 17.833L23.3785 2.95651C23.9264 2.40865 23.9264 1.5377 23.3785 0.989842C22.8306 0.441985 21.9597 0.441985 21.4118 0.989842L7.50468 14.897Z"
-                            fill="white" /> */}
-                    </svg>In Progress</li>
-                <li><svg width="24" height="19" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* <path
-                            d="M7.50468 14.897L2.58801 9.98033C2.04015 9.43247 1.1692 9.43247 0.621342 9.98033C0.0734848 10.5282 0.0734848 11.3991 0.621342 11.947L6.5073 17.833C7.05516 18.3808 7.94016 18.3808 8.48802 17.833L23.3785 2.95651C23.9264 2.40865 23.9264 1.5377 23.3785 0.989842C22.8306 0.441985 21.9597 0.441985 21.4118 0.989842L7.50468 14.897Z"
-                            fill="white" /> */}
-                </svg>Complete</li>
-                <li><svg width="24" height="19" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* <path
-                            d="M7.50468 14.897L2.58801 9.98033C2.04015 9.43247 1.1692 9.43247 0.621342 9.98033C0.0734848 10.5282 0.0734848 11.3991 0.621342 11.947L6.5073 17.833C7.05516 18.3808 7.94016 18.3808 8.48802 17.833L23.3785 2.95651C23.9264 2.40865 23.9264 1.5377 23.3785 0.989842C22.8306 0.441985 21.9597 0.441985 21.4118 0.989842L7.50468 14.897Z"
-                            fill="white" /> */}
-                </svg>Closed</li>
+                <li className={`timeline-list ${classStart}`}>
+                    <span>
+                        {
+                            props.step >= 2 ? 'Started' : 'Start'
+                        }
+                    </span>
+                    {
+                        props.step >= 2 ?
+                            <DoneRounded
+                                className='timeline-list-icon'
+                            /> : ''
+                    }
+                </li>
+                <li className={`timeline-list ${classFinish}`}>
+                    <span>
+                        {
+                            props.step >= 3 ? 'Finished' : 'Finish'
+                        }
+                    </span>
+                    {
+                        props.step >= 3 ?
+                            <DoneRounded
+                                className='timeline-list-icon'
+                            /> : ''
+                    }
+                </li>
+                <li className={`timeline-list ${classPay}`}>
+                    <span>
+                        {
+                            props.step >= 4 ? 'Paid' : 'Pay'
+                        }
+                    </span>
+                    {
+                        props.step >= 4 ?
+                            <DoneRounded
+                                className='timeline-list-icon'
+                            /> : ''
+                    }
+                </li>
             </ul>
         </div>
     )

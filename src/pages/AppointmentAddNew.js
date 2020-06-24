@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
 import { Typography, Chip, TextField, FormControl } from '@material-ui/core';
-import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded, ImageRounded, GetAppRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
 import '../styles/appointment.css'
 import Invoice from '../components/Invoice Table/Invoice';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';

@@ -85,9 +85,8 @@ export default function CenteredGrid() {
     return (
         <Layout>
             <div className={classes.root}>
-                <Breadcrumbs />
                 <Banner edit={true} />
-                <Timeline />
+                <Timeline step={0} />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4} >
                         <Grid container spacing={3}>
@@ -304,7 +303,7 @@ export default function CenteredGrid() {
                                     title="Others"
                                     icon={<LabelImportantRounded className="main-title-icon" />}
                                 >
-                                    <Others 
+                                    <Others
                                         notes={fieldValue.notes}
                                         handleOnChange={handleOnChange}
                                         data={data}
@@ -321,7 +320,7 @@ export default function CenteredGrid() {
                                     icon={<MonetizationOnRounded className="main-title-icon" />}
                                     cardType={0}
                                 >
-                                    <Invoice 
+                                    <Invoice
                                         items={items}
                                         services={services}
                                     />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
@@ -10,8 +10,10 @@ import AppointmentHistory from '../components/AppointmentHistory/AppointmentHist
 import Timeline from '../components/Timeline/Timeline';
 import Banner from '../components/CustomerBanner/Banner';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
-import { data } from '../data/UserData'
+import { data, dataInit } from '../data/UserData'
 import Card from '../components/Card/Card'
+import Schedule from '../components/Schedule/Schedule';
+import JobAssigned from '../components/JobAssigned/JobAssigned';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,13 +27,20 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CenteredGrid() {
     const classes = useStyles();
+    const [type, setType] = useState(0)
+
+    const handleStep = () => {
+        setType(type + 1)
+    }
 
     return (
         <Layout>
             <div className={classes.root}>
-                <Breadcrumbs />
-                <Banner />
-                <Timeline />
+                <Banner
+                    type={type}
+                    handleStep={handleStep}
+                />
+                <Timeline step={type} />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4} >
                         <Grid container spacing={3}>
@@ -40,43 +49,9 @@ export default function CenteredGrid() {
                                     title="Schedule"
                                     icon={<EventNoteRounded className="main-title-icon" />}
                                 >
-                                    <div className="start">
-                                        <div className="step-status-drawing">
-                                            <span className="step-status-dot"></span>
-                                            <span className="step-status-line"></span>
-                                        </div>
-                                        <div>
-                                            <Typography className="title-heads" variant="body2" component="p">
-                                                Start Date and Time
-                                                </Typography>
-                                            <div className="subtitle-dark">
-                                                <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6 }} >
-                                                    {data.start_date}
-                                                </Typography>
-                                                <Typography variant="body2" component="p" style={{ fontSize: '1.125rem' }}>
-                                                    {data.start_time}
-                                                </Typography>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="end">
-                                        <div className="step-status-drawing">
-                                            <span className="step-status-dot"></span>
-                                        </div>
-                                        <div>
-                                            <Typography className="title-heads" variant="body2" component="p">
-                                                End Date and Time
-                                            </Typography>
-                                            <div className="subtitle-dark">
-                                                <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6 }}>
-                                                    {data.end_date}
-                                                </Typography>
-                                                <Typography variant="body2" component="p" style={{ fontSize: '1.125rem' }}>
-                                                    {data.end_time}
-                                                </Typography>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <Schedule
+                                        data={type === 0 ? dataInit : data}
+                                    />
                                 </Card>
                             </Grid>
                             <Grid item xs={12}>
@@ -94,13 +69,7 @@ export default function CenteredGrid() {
                                     title="Job Assigned To"
                                     icon={<PersonAddRounded className="main-title-icon" />}
                                 >
-                                    <div style={{ padding: 0 }} className="logged-in-user">
-                                        <img src="/profile-img.png" alt="" />
-                                        <div>
-                                            <div style={{ fontSize: 22, marginBottom: 6 }} className="name">Ray Wilson</div>
-                                            <div className="subtitle-dark">Project Manager</div>
-                                        </div>
-                                    </div>
+                                    <JobAssigned data={type === 0 ? dataInit : data} />
                                 </Card>
                             </Grid>
                             <Grid item xs={12}>

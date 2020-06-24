@@ -1,7 +1,7 @@
 import React from 'react'
 import './banner.css'
 import { Button, FormControl, makeStyles, Select, MenuItem } from '@material-ui/core';
-import { MdCheck, MdClose, MdSend, MdCreate, MdApps, MdDelete } from 'react-icons/md';
+import { MdCheck, MdClose, MdSend, MdCreate, MdApps, MdDelete, MdImportExport, MdLocalAtm } from 'react-icons/md';
 import { withRouter } from 'react-router-dom';
 import { data } from '../../data/UserData'
 
@@ -100,7 +100,7 @@ const Banner = (props) => {
                                         </MenuItem>
                                         <MenuItem value={1}>
                                             <div className="menu-item">
-                                                <MdCreate className="action-icon" />
+                                                <MdLocalAtm className="action-icon" />
                                                 <div>PAY NOW</div>
                                             </div>
                                         </MenuItem>
@@ -108,6 +108,12 @@ const Banner = (props) => {
                                             <div className="menu-item">
                                                 <MdSend className="action-icon" />
                                                 <div> SEND INVOICE</div>
+                                            </div>
+                                        </MenuItem>
+                                        <MenuItem value={2}>
+                                            <div className="menu-item">
+                                                <MdImportExport className="action-icon" />
+                                                <div> REFUND</div>
                                             </div>
                                         </MenuItem>
                                         <MenuItem value={3}>
@@ -126,9 +132,25 @@ const Banner = (props) => {
                                     </Select>
                                 </FormControl>
                             </div>
-                            <div className="start-container">
-                                <Button variant='contained' className="btn-primary">START NOW</Button>
-                            </div>
+                            {
+                                props.type === 0 ?
+                                    <div className="start-container">
+                                        <Button onClick={props.handleStep} variant='contained' className="btn-primary">SCHEDULE</Button>
+                                    </div> :
+                                    props.type === 1 ?
+                                        <div className="start-container">
+                                            <Button onClick={props.handleStep} variant='contained' className="btn-primary">START</Button>
+                                        </div> :
+                                        props.type === 2 ?
+                                            <div className="start-container">
+                                                <Button onClick={props.handleStep} variant='contained' className="btn-primary">FINISH</Button>
+                                            </div> :
+                                            props.type === 3 ?
+                                                <div className="start-container">
+                                                    <Button onClick={props.handleStep} variant='contained' className="btn-primary">PAY</Button>
+                                                </div> : ''
+                            }
+
                         </React.Fragment>
                 }
             </div>
