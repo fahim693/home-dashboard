@@ -1,7 +1,6 @@
 import React from 'react';
 import './timeline.css'
 import { DoneRounded } from '@material-ui/icons';
-import { colors } from '@material-ui/core';
 
 const Timeline = (props) => {
     let classCust = ""

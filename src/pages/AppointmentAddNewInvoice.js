@@ -2,22 +2,20 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
-import { Typography, Chip } from '@material-ui/core';
-import { MdRemoveCircle } from 'react-icons/md'
-import { RoomRounded, PersonAddRounded, LabelImportantRounded, ImageRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
+import { Typography } from '@material-ui/core';
+import { RoomRounded, LabelImportantRounded, MonetizationOnRounded } from '@material-ui/icons';
 import '../styles/appointment.css'
 import Invoice from '../components/Invoice Table/InvoiceEdit';
-import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
 import TimelineAddNew from '../components/Timeline/TimelineAddNew';
 import Card from '../components/Card/Card'
 import BannerButtonOnly from '../components/CustomerBanner/BannerButtonOnly';
 import Others from '../components/Others/Others';
 import AppointmentAddressInvoice from '../components/AppointmentAddressInvoice/AppointmentAddressInvoice';
-import {items, services} from '../data/NewInvoiceData'
+import { items, services } from '../data/NewInvoiceData'
 
-const data ={
-    tags:[],
-    attachments:[],
+const data = {
+    tags: [],
+    attachments: [],
     source: 0
 }
 
@@ -49,8 +47,8 @@ export default function CenteredGrid() {
     return (
         <Layout>
             <div className={classes.root}>
-                <BannerButtonOnly text="SCHEDULE" link='/appointment'/>
-                <TimelineAddNew step={1}/>
+                <BannerButtonOnly text="SCHEDULE" link='/appointment' />
+                <TimelineAddNew step={1} />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4} >
                         <Grid container spacing={3}>
@@ -60,7 +58,7 @@ export default function CenteredGrid() {
                                     icon={<RoomRounded className="main-title-icon" />}
                                 >
                                     <Typography variant="body2" component="p" style={{ fontSize: 20 }}>
-                                        <AppointmentAddressInvoice/>
+                                        <AppointmentAddressInvoice />
                                     </Typography>
                                 </Card>
                             </Grid>
@@ -87,7 +85,7 @@ export default function CenteredGrid() {
                                     icon={<MonetizationOnRounded className="main-title-icon" />}
                                     cardType={0}
                                 >
-                                    <Invoice 
+                                    <Invoice
                                         items={items}
                                         services={services}
                                         type={1}

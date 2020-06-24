@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { MdRemoveCircle } from 'react-icons/md'
 import { ImageRounded } from '@material-ui/icons';
-import { Typography, Chip, TextField, FormControl, MenuItem, Select, makeStyles, InputLabel, Button } from '@material-ui/core';
+import { Typography, Chip, TextField, FormControl, MenuItem, Select, makeStyles, Button } from '@material-ui/core';
 import './others.css'
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import SearchIcon from "@material-ui/icons/Search";
@@ -52,8 +52,6 @@ const useStyles = makeStyles((theme) => ({
 const Others = (props) => {
     const classes = useStyles();
     const [clickState, setClickState] = useState(0)
-    const [val, setVal] = useState('')
-    const [open, setOpen] = useState(false)
 
     const handleClick = () => {
         setClickState(clickState + 1)
@@ -77,7 +75,7 @@ const Others = (props) => {
             {
                 clickState === 0 ?
                     <div onClick={handleClick} className="chips-edit">
-                        <Chip className="chip-edit" label="+ Add Tag" />
+                        <Chip className="chip-edit" label="+ ADD TAG" />
                     </div> :
                     clickState === 1 ?
                         <div>
@@ -201,9 +199,8 @@ const Others = (props) => {
                     </div>
                 ))
             }
-
             <div className="chips-edit">
-                <Chip className="chip-edit" label="+ Add Attachment" />
+                <Chip className="chip-edit" label="+ ADD ATTACHMENT" />
             </div>
         </React.Fragment >
     )

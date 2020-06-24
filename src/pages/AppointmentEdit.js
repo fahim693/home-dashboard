@@ -4,20 +4,18 @@ import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
 import { Typography, Chip, TextField, FormControl, MenuItem, Select } from '@material-ui/core';
 import { MdRemoveCircle } from 'react-icons/md'
-import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded, ImageRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
+import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
 import '../styles/appointment-edit.css'
 import Invoice from '../components/Invoice Table/InvoiceEdit';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
 import { MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 import Banner from '../components/CustomerBanner/Banner';
 import Timeline from '../components/Timeline/Timeline';
 import Card from '../components/Card/Card'
 import Others from '../components/Others/Others';
 import { data } from '../data/UserData'
 import { items, services } from '../data/InvoiceData'
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -294,7 +292,7 @@ export default function CenteredGrid() {
                                         <MdRemoveCircle className="apt-edit-icon" />
                                     </div>
                                     <div className="chips-edit">
-                                        <Chip className="chip-edit" label="+ Assign Job" />
+                                        <Chip className="chip-edit" label="+ ASSIGN JOB" />
                                     </div>
                                 </Card>
                             </Grid>

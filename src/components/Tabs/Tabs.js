@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import './tabs.css'
 import Card from '../Card/Card'
-import { SendRounded, EventNoteRounded, LocalAtmRounded } from '@material-ui/icons';
+import { LocalAtmRounded } from '@material-ui/icons';
 
 import TabContent from './TabContent';
 

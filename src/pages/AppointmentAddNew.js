@@ -2,13 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
-import { Typography, Chip, TextField, FormControl } from '@material-ui/core';
+import { TextField, FormControl } from '@material-ui/core';
 import '../styles/appointment.css'
-import Invoice from '../components/Invoice Table/Invoice';
-import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
 import TimelineAddNew from '../components/Timeline/TimelineAddNew';
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
-import { data } from '../data/UserData'
 import Card from '../components/Card/Card'
 import BannerButtonOnly from '../components/CustomerBanner/BannerButtonOnly';
 import Autocomplete from '@material-ui/lab/Autocomplete';

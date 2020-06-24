@@ -174,7 +174,7 @@ export default function Invoice(props) {
                     <TableRow className='inv-tbl'>
                         <TableCell>
                             <div className="chips-edit-inv">
-                                <Chip className="chip-edit" label="+ Add Service" />
+                                <Chip className="chip-edit" label="+ ADD SERVICE" />
                             </div>
                         </TableCell>
                         <TableCell></TableCell>
@@ -279,7 +279,7 @@ export default function Invoice(props) {
                     <TableRow className='inv-tbl'>
                         <TableCell >
                             <div className="chips-edit-inv">
-                                <Chip className="chip-edit" label="+ Add Service" />
+                                <Chip className="chip-edit" label="+ ADD SERVICE" />
                             </div>
                         </TableCell>
                         <TableCell></TableCell>

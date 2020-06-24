@@ -9,7 +9,6 @@ import Invoice from '../components/Invoice Table/Invoice';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
 import Timeline from '../components/Timeline/Timeline';
 import Banner from '../components/CustomerBanner/Banner';
-import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs'
 import { data, dataInit } from '../data/UserData'
 import Card from '../components/Card/Card'
 import Schedule from '../components/Schedule/Schedule';
