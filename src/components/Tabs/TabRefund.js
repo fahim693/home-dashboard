@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles, Typography, FormControl, TextField, Select, MenuItem, Button } from '@material-ui/core';
 import Card from '../Card/Card'
-import { SendRounded, ImportExportRounded } from '@material-ui/icons';
+import { ImportExportRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
