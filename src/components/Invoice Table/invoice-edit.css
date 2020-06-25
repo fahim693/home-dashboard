@@ -3,10 +3,6 @@
   grid-template-columns: 1fr 7fr;
 }
 
-.checkbox {
-  color: #2a95c5 !important;
-}
-
 .checkbox:hover {
   background-color: #F2F9FC !important;
 }

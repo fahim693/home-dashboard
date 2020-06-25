@@ -1,5 +1,10 @@
-.hst-tbl > .MuiTableCell-root {
-  padding: 1rem 3rem;
+.MuiCheckbox-colorSecondary.Mui-checked,
+.MuiCheckbox-colorPrimary.Mui-checked,
+.MuiCheckbox-colorPrimary.MuiCheckbox-indeterminate {
+  color: #2a95c5 !important;
+}
+.apt-list-tbl > .checkbox-cell {
+  padding-left: 23px !important;
 }
 
 .hst-tbl-header {

@@ -5,9 +5,6 @@ import { Menu, MenuItem } from '@material-ui/core';
 
 const options = [
     {
-        name: 'Profile'
-    },
-    {
         name: 'Settings'
     },
     {
@@ -58,8 +55,7 @@ const UserMenu = () => {
             >
                 {
                     options.map((option) => (
-                        <MenuItem key={option.name} onClick={handleClose} style={{ width: 220 }}>{option.name}</MenuItem>
-
+                        <MenuItem key={option.name} onClick={handleClose} style={{ width: 235 }}>{option.name}</MenuItem>
                     ))
                 }
             </Menu>

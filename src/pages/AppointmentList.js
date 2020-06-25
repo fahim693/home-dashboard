@@ -41,14 +41,14 @@ function EnhancedTableHead(props) {
 
     return (
         <TableHead>
-            <TableRow className="hst-tbl">
-                <TableCell padding="checkbox">
+            <TableRow className="apt-list-tbl">
+                <TableCell className="checkbox-cell" padding="checkbox">
                     <Checkbox
                         className='checkbox'
                         indeterminate={numSelected > 0 && numSelected < rowCount}
                         checked={rowCount > 0 && numSelected === rowCount}
                         onChange={onSelectAllClick}
-                        inputProps={{ 'aria-label': 'select all desserts' }}
+                        color='primary'
                     />
                 </TableCell>
                 {headCells.map((headCell) => (
@@ -365,9 +365,9 @@ export default function EnhancedTable() {
                                                 tabIndex={-1}
                                                 key={row.id}
                                                 selected={isItemSelected}
-                                                className={`${classes.tableRow} hst-tbl`}
+                                                className={`${classes.tableRow}  apt-list-tbl`}
                                             >
-                                                <TableCell padding="checkbox">
+                                                <TableCell className="checkbox-cell" padding="checkbox">
                                                     <Checkbox
                                                         className='checkbox'
                                                         checked={isItemSelected}
