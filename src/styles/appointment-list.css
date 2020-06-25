@@ -3,8 +3,12 @@
 .MuiCheckbox-colorPrimary.MuiCheckbox-indeterminate {
   color: #2a95c5 !important;
 }
-.apt-list-tbl > .checkbox-cell {
+.apt-list-tbl > .MuiTableCell-root {
   padding-left: 23px !important;
+}
+
+.apt-list-tbl > .MuiTableCell-root:nth-child(2) {
+  padding-left: 2px !important;
 }
 
 .hst-tbl-header {
