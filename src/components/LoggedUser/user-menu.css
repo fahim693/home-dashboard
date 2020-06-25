@@ -8,7 +8,7 @@
 
 .logged-in-user img {
   border-radius: 50%;
-  margin-right: 1rem;
+  margin-right: 0.8rem;
   height: 60px;
 }
 
@@ -20,6 +20,7 @@
 
 .logged-in-user .email {
   font-size: 14px;
+  color: hsla(0, 0%, 100%, 0.7);
 }
 
 .rotate{

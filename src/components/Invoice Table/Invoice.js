@@ -23,7 +23,7 @@ export default function Invoice() {
         <TableContainer>
             <Table className={classes.table} aria-label="spanning table">
                 <TableHead>
-                    <TableRow className='inv-tbl hst-tbl-header '>
+                    <TableRow className='inv-tbl-cust hst-tbl-header '>
                         <TableCell></TableCell>
                         <TableCell className="tbl-head-cell" align="right">Quantity</TableCell>
                         <TableCell className="tbl-head-cell" align="right">Price</TableCell>
@@ -33,7 +33,7 @@ export default function Invoice() {
                 <TableBody>
                     <p className='table-title'>Services</p>
                     {services.data.map((row, idx) => (
-                        <TableRow className='inv-tbl' key={idx}>
+                        <TableRow className='inv-tbl-cust' key={idx}>
                             <TableCell>
                                 <div className="tbl-desc">{row.desc_name}</div>
                                 <div className="tbl-subdesc">{row.subdesc}</div>
@@ -43,7 +43,25 @@ export default function Invoice() {
                             <TableCell className="tbl-body-cell" align="right">${row.amount}</TableCell>
                         </TableRow>
                     ))}
-                    <div style={{ paddingLeft: '1.6rem' }}>
+                    <TableRow className='inv-tbl-cust'>
+                        <TableCell>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        // checked={services.tax}
+                                        // onChange={handleChange}
+                                        name="checked"
+                                        className='checkbox'
+                                    />
+                                }
+                                label={<Typography className="tbl-tax-label">Tax Applicable</Typography>}
+                            />
+                        </TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                    </TableRow>
+                    {/* <div style={{ paddingLeft: '1.6rem' }}>
                         <FormControlLabel
                             control={
                                 <Checkbox
@@ -55,12 +73,10 @@ export default function Invoice() {
                             }
                             label={<Typography className="tbl-tax-label">Tax Applicable</Typography>}
                         />
-                    </div>
-                    <br />
-                    <br />
+                    </div> */}
                     <p className='table-title'>Items</p>
                     {items.data.map((row, idx) => (
-                        <TableRow className='inv-tbl' key={idx}>
+                        <TableRow className='inv-tbl-cust' key={idx}>
                             <TableCell>
                                 <div className="tbl-desc">{row.desc_name}</div>
                                 <div className="tbl-subdesc">{row.subdesc}</div>
@@ -70,32 +86,37 @@ export default function Invoice() {
                             <TableCell className="tbl-body-cell" align="right">${row.amount}</TableCell>
                         </TableRow>
                     ))}
-                    <div style={{ paddingLeft: '1.6rem' }}>
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    // checked={items.tax}
-                                    // onChange={handleChange}
-                                    className='checkbox'
-                                    color="primary"
-                                />
-                            }
-                            label={<Typography className="tbl-tax-label">Tax Applicable</Typography>}
-                        />
-                    </div>
-                    <TableRow className='inv-tbl'>
+                    <TableRow style={{ borderBottom: '1px solid #E0E0E0'}} className='inv-tbl'>
+                        <TableCell style={{paddingBottom: 18}}>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        // checked={services.tax}
+                                        // onChange={handleChange}
+                                        name="checked"
+                                        className='checkbox'
+                                    />
+                                }
+                                label={<Typography className="tbl-tax-label">Tax Applicable</Typography>}
+                            />
+                        </TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                        <TableCell></TableCell>
+                    </TableRow>
+                    <TableRow className='inv-tbl-cust'>
                         <TableCell></TableCell>
                         <TableCell align="right" className="tbl-head-cell">Subtotal:</TableCell>
                         <TableCell></TableCell>
                         <TableCell className="tbl-body-cell" align="right">$201.00</TableCell>
                     </TableRow>
-                    <TableRow className='inv-tbl'>
+                    <TableRow className='inv-tbl-cust'>
                         <TableCell></TableCell>
                         <TableCell align="right" className="tbl-head-cell">Tax:</TableCell>
                         <TableCell></TableCell>
                         <TableCell className="tbl-body-cell" align="right">$7.00</TableCell>
                     </TableRow>
-                    <TableRow className='inv-tbl inv-tbl-total'>
+                    <TableRow className='inv-tbl-cust inv-tbl-total'>
                         <TableCell></TableCell>
                         <TableCell align="right" className="hst-tbl-header tbl-head-cell">Total:</TableCell>
                         <TableCell></TableCell>

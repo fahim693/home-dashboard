@@ -4,6 +4,16 @@
   margin-bottom: 1rem;
 }
 
+.MuiListItem-button:hover{
+  background-color: #F2F9FC !important;
+  color: #2A95C5 !important;
+}
+
+.MuiButton-root{
+  font-size: 1rem !important;
+  min-width: 130px !important;
+}
+
 .cst-action > .Mui-focused {
   outline: 0 !important;
 }
@@ -48,6 +58,7 @@
 .menu-item{
   display: flex;
   align-items: center;
+  font-weight: 500;
 }
 
 .menu-item > div{
@@ -56,7 +67,7 @@
 }
 
 .action-icon {
-  margin-right: 8px;
+  margin-right: 4px;
   font-size: 20px;
 }
 

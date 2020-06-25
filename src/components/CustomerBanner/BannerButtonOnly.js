@@ -11,7 +11,7 @@ const BannerButtonOnly = (props) => {
             justifyContent: 'flex-end',
             marginTop: 45
         }}>
-            <Button style={{ width: 120 }} onClick={() => props.history.push(props.link)} variant='contained' className="btn-primary">{props.text}</Button>
+            <Button onClick={() => props.history.push(props.link)} variant='contained' className="btn-primary">{props.text}</Button>
         </div >
     )
 }

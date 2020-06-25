@@ -143,8 +143,8 @@ const TabRefund = (props) => {
                 <Button variant='outlined' className='btn-primary' style={{
                     border: 0
                 }}>
-                    <SendRounded style={{ fontSize: 15, marginRight: 5 }} />
-                    <span>SUBMIT</span>
+                    <ImportExportRounded style={{ fontSize: 20, marginRight: 5 }} />
+                    <span>REFUND AMOUNT</span>
                 </Button>
             </div>
         </Card>

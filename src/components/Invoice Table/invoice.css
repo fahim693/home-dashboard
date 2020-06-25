@@ -1,6 +1,15 @@
 .inv-tbl > .MuiTableCell-root {
   border: 0 !important;
-  padding: 0.5rem 1.7rem;
+  padding: 0.5rem 0rem;
+}
+.inv-tbl-cust > .MuiTableCell-root {
+  border: 0 !important;
+  padding: 0.5rem 1.5rem;
+}
+
+.inv-tbl > .MuiTableCell-root:nth-child(1) {
+  border: 0 !important;
+  padding: 0.5rem 0 0.5rem 2rem;
 }
 
 .tbl-head-cell {

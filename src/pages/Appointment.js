@@ -108,7 +108,7 @@ export default function CenteredGrid() {
                                                         <ImageRounded style={{ marginRight: 10 }} />
                                                         <Typography variant="body2" component="p" >{attachment}</Typography>
                                                     </div>
-                                                    <GetAppRounded />
+                                                    <GetAppRounded style={{cursor: 'pointer'}} />
                                                 </div>
                                             ))
                                         }

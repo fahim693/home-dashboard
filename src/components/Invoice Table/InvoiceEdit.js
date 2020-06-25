@@ -81,6 +81,12 @@ export default function Invoice(props) {
     return (
         <TableContainer >
             <Table className={classes.table} aria-label="spanning table">
+                <colgroup>
+                    <col style={{ width: '40%' }} />
+                    <col style={{ width: '20%' }} />
+                    <col style={{ width: '20%' }} />
+                    <col style={{ width: '20%' }} />
+                </colgroup>
                 <TableHead>
                     <TableRow className='inv-tbl hst-tbl-header '>
                         <TableCell></TableCell>
@@ -93,13 +99,13 @@ export default function Invoice(props) {
                     <p className='table-title'>Services</p>
                     {props.services.data.map((row, idx) => (
                         <TableRow className='inv-tbl' key={idx}>
-                            <TableCell>
+                            <TableCell >
                                 <div className="edit-field">
                                     <div style={{ marginTop: 10 }}>
-                                        <MdRemoveCircle className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon' } />
+                                        <MdRemoveCircle className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon'} />
                                     </div>
                                     <div>
-                                        <FormControl variant="outlined" margin="dense" classes={{
+                                        <FormControl variant="outlined" fullWidth margin="dense" classes={{
                                             root: classes.quantityRoot
                                         }}>
                                             <Select
@@ -122,7 +128,7 @@ export default function Invoice(props) {
                                             </Select>
                                         </FormControl>
                                         <br />
-                                        <FormControl variant="outlined" classes={{
+                                        <FormControl variant="outlined" fullWidth classes={{
                                             root: classes.quantityRoot
                                         }}>
                                             <TextField
@@ -195,17 +201,16 @@ export default function Invoice(props) {
                         </TableCell>
                     </TableRow>
                     <br />
-                    <br />
                     <p className='table-title'>Items</p>
                     {props.items.data.map((row, idx) => (
                         <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
                                 <div className="edit-field">
                                     <div style={{ marginTop: 10 }}>
-                                        <MdRemoveCircle className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon' } />
+                                        <MdRemoveCircle className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon'} />
                                     </div>
                                     <div>
-                                        <FormControl variant="outlined" margin="dense" classes={{
+                                        <FormControl variant="outlined" fullWidth margin="dense" classes={{
                                             root: classes.quantityRoot
                                         }}>
                                             <Select
@@ -227,7 +232,7 @@ export default function Invoice(props) {
                                             </Select>
                                         </FormControl>
                                         <br />
-                                        <FormControl variant="outlined" classes={{
+                                        <FormControl variant="outlined" fullWidth classes={{
                                             root: classes.quantityRoot
                                         }}>
                                             <TextField
@@ -276,15 +281,15 @@ export default function Invoice(props) {
                             </TableCell>
                         </TableRow>
                     ))}
-                    <TableRow className='inv-tbl'>
-                        <TableCell >
+                    <TableRow style={{ borderBottom: '1px solid #E0E0E0' }} className='inv-tbl'>
+                        <TableCell style={{ paddingBottom: 35 }} >
                             <div className="chips-edit-inv">
-                                <Chip className="chip-edit" label="+ ADD SERVICE" />
+                                <Chip className="chip-edit" label="+ ADD ITEM" />
                             </div>
                         </TableCell>
                         <TableCell></TableCell>
                         <TableCell></TableCell>
-                        <TableCell>
+                        <TableCell style={{ paddingBottom: 35 }}>
                             <FormControlLabel
                                 control={
                                     <Checkbox

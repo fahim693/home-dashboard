@@ -11,7 +11,7 @@ const Schedule = (props) => {
                 </div>
                 <div>
                     <Typography className="title-heads" variant="body2" component="p">
-                        Start Date and Time
+                        Start
                                                 </Typography>
                     <div className="subtitle-dark">
                         {
@@ -24,7 +24,7 @@ const Schedule = (props) => {
                                         {props.data.start_time}
                                     </Typography>
                                 </React.Fragment> :
-                                <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6 }}>
+                                <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6, color: '#BDBDBD' }}>
                                     Not Scheduled Yet
                                 </Typography>
                         }
@@ -37,20 +37,20 @@ const Schedule = (props) => {
                 </div>
                 <div>
                     <Typography className="title-heads" variant="body2" component="p">
-                        End Date and Time
+                        End
                     </Typography>
                     <div className="subtitle-dark">
                         {
                             props.data.end_date !== '' ?
                                 <React.Fragment>
-                                    <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6 }}>
+                                    <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6,color: '#4F4F4F' }}>
                                         {props.data.end_date}
                                     </Typography>
-                                    <Typography variant="body2" component="p" style={{ fontSize: '1.125rem' }}>
+                                    <Typography variant="body2" component="p" style={{ fontSize: '1.125rem',color: '#4F4F4F' }}>
                                         {props.data.end_time}
                                     </Typography>
                                 </React.Fragment> :
-                                <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6 }}>
+                                <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', marginBottom: 6, color: '#BDBDBD' }}>
                                     Not Scheduled Yet
                                 </Typography>
                         }

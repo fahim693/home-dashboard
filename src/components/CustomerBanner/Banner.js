@@ -99,12 +99,12 @@ const Banner = (props) => {
                                                     horizontal: "left",
                                                 }
                                             }}
-                                            defaultValue={0}
+                                            value={0}
                                             onChange={handleChange}
                                         >
                                             <MenuItem value={0} disabled style={{ display: 'none' }}>
-                                                <div className="menu-item">
-                                                    <MdApps className="action-icon" />
+                                                <div className="menu-item" >
+                                                    <MdApps className="action-icon" style={{fontSize: 21,marginLeft: 2}} />
                                                     <div>ACTIONS</div>
                                                 </div>
                                             </MenuItem>

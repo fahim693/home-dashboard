@@ -20,7 +20,7 @@ const JobAssigned = (props) => {
                         padding: '10px 0'
                     }
                     }>
-                        <Typography variant="body2" component="p" style={{ fontSize: '1.125rem' }}>
+                        <Typography variant="body2" component="p" style={{ fontSize: '1.125rem', color: '#BDBDBD' }}>
                             Unassigned
                         </Typography>
                     </div>

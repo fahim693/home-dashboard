@@ -7,10 +7,10 @@
   padding: 0.4rem;
   background-color: #2a95c5;
   color: #fff;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
 }
 
-.MuiAutocomplete-option[data-focus="true"]{
+.MuiAutocomplete-option[data-focus="true"] {
   background-color: #f2f9fc !important;
 }

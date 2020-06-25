@@ -1,6 +1,9 @@
 .MuiTabs-root {
   min-height: 56px !important;
 }
+.MuiTab-root{
+  min-width: 120px !important;
+}
 .MuiTab-textColorPrimary.Mui-selected {
   color: #2a95c5 !important;
 }
