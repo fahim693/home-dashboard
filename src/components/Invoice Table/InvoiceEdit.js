@@ -78,6 +78,7 @@ const useStyles = makeStyles({
 export default function Invoice(props) {
     const classes = useStyles();
 
+
     return (
         <TableContainer >
             <Table className={classes.table} aria-label="spanning table">
@@ -134,8 +135,12 @@ export default function Invoice(props) {
                                             <TextField
                                                 placeholder="Description (optional)"
                                                 variant="outlined"
-                                                value={row.subdesc}
+                                                // value={idx}
+                                                defaultValue={row.subdesc}
+                                                // onChange={handleOnChange}
                                                 margin="dense"
+                                                id={row.id}
+                                                name={idx}
                                             />
                                         </FormControl>
                                     </div>
@@ -147,7 +152,7 @@ export default function Invoice(props) {
                                 }}>
                                     <TextField
                                         variant="outlined"
-                                        value={row.qty}
+                                        defaultValue={row.qty}
                                         margin="dense"
                                     />
                                 </FormControl>
@@ -159,7 +164,7 @@ export default function Invoice(props) {
                                     <TextField
                                         variant="outlined"
                                         placeholder="0.00"
-                                        value={row.price}
+                                        defaultValue={row.price}
                                         margin="dense"
                                     />
                                 </FormControl>
@@ -170,7 +175,7 @@ export default function Invoice(props) {
                                 }}>
                                     <TextField
                                         variant="outlined"
-                                        value={row.amount}
+                                        defaultValue={row.amount}
                                         margin="dense"
                                     />
                                 </FormControl>
@@ -238,7 +243,7 @@ export default function Invoice(props) {
                                             <TextField
                                                 variant="outlined"
                                                 placeholder="Description (optional)"
-                                                value={row.subdesc}
+                                                defaultValue={row.subdesc}
                                                 margin="dense"
                                             />
                                         </FormControl>
@@ -250,7 +255,7 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
-                                        value={row.qty}
+                                        defaultValue={row.qty}
                                         variant="outlined"
                                         margin="dense"
                                     />
@@ -261,7 +266,7 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
-                                        value={row.price}
+                                        defaultValue={row.price}
                                         placeholder="0.00"
                                         variant="outlined"
                                         margin="dense"
@@ -273,7 +278,7 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
-                                        value={row.amount}
+                                        defaultValue={row.amount}
                                         variant="outlined"
                                         margin="dense"
                                     />
