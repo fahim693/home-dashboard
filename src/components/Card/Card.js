@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import './card.css'
-import { CloseRounded } from '@material-ui/icons';
+import { CloseRounded, CreateRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,9 +55,33 @@ const CardCustom = (props) => {
                                     </div>
                                     <CloseRounded onClick={props.handleClose} style={{ cursor: 'pointer' }} />
                                 </div> :
-                                <div className={cardTitle}>
-                                    {props.title}
-                                </div>
+                                props.cardType === 4 ?
+                                    <div style={{
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        width: '100%'
+                                    }}>
+                                        <div className={cardTitle}>
+                                            {props.title}
+                                        </div>
+                                        <CreateRounded onClick={props.handleClose} style={{ cursor: 'pointer', fontSize: '1.3rem' }} />
+                                    </div> :
+                                    <div style={{
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        width: '100%'
+                                    }}>
+                                        <div className={cardTitle}>
+                                            {props.title}
+                                        </div>
+                                        {
+                                            props.withEditIcon ? <CreateRounded onClick={props.handleClose} style={{ cursor: 'pointer', fontSize: '1.3rem' }} /> : ''
+                                        }
+
+                                    </div>
+
                     }
 
                 </Typography>

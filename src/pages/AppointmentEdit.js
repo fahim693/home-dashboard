@@ -379,7 +379,7 @@ export default function CenteredGrid() {
                             </Grid>
                             <Grid item xs={12}>
                                 <Card
-                                    title="Appointment History"
+                                    title="Appointment Feed"
                                     icon={<HistoryRounded className='main-title-icon' />}
                                     cardType={1}
                                 >

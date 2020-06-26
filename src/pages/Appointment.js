@@ -47,6 +47,7 @@ export default function CenteredGrid() {
                                 <Card
                                     title="Schedule"
                                     icon={<EventNoteRounded className="main-title-icon" />}
+                                    cardType={type > 0 ? 4 : ''}
                                 >
                                     <Schedule
                                         data={type === 0 ? dataInit : data}
@@ -57,6 +58,7 @@ export default function CenteredGrid() {
                                 <Card
                                     title="Appointment Address"
                                     icon={<RoomRounded className="main-title-icon" />}
+                                    cardType={4}
                                 >
                                     <Typography variant="body2" component="p" style={{ fontSize: 20 }}>
                                         {data.appointment_address}
@@ -67,6 +69,7 @@ export default function CenteredGrid() {
                                 <Card
                                     title="Job Assigned To"
                                     icon={<PersonAddRounded className="main-title-icon" />}
+                                    cardType={4}
                                 >
                                     <JobAssigned data={type === 0 ? dataInit : data} />
                                 </Card>
@@ -75,6 +78,7 @@ export default function CenteredGrid() {
                                 <Card
                                     title="Others"
                                     icon={<LabelImportantRounded className="main-title-icon" />}
+                                    cardType={4}
                                 >
                                     <React.Fragment>
                                         <Typography className="title-heads" variant="body2" component="p" >
@@ -108,7 +112,7 @@ export default function CenteredGrid() {
                                                         <ImageRounded style={{ marginRight: 10 }} />
                                                         <Typography variant="body2" component="p" >{attachment}</Typography>
                                                     </div>
-                                                    <GetAppRounded style={{cursor: 'pointer'}} />
+                                                    <GetAppRounded style={{ cursor: 'pointer' }} />
                                                 </div>
                                             ))
                                         }
@@ -124,13 +128,14 @@ export default function CenteredGrid() {
                                     title="Invoice"
                                     icon={<MonetizationOnRounded className="main-title-icon" />}
                                     cardType={0}
+                                    withEditIcon={true}
                                 >
                                     <Invoice />
                                 </Card>
                             </Grid>
                             <Grid item xs={12}>
                                 <Card
-                                    title="Appointment History"
+                                    title="Appointment Feed"
                                     icon={<HistoryRounded className='main-title-icon' />}
                                     cardType={1}
                                 >
