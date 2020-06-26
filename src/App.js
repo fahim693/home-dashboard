@@ -6,7 +6,8 @@ import AppointmentEdit from './pages/AppointmentEdit'
 import AppointmentLists from './pages/AppointmentList';
 import AppointmentAddNew from './pages/AppointmentAddNew';
 import AppointmentAddNewInvoice from './pages/AppointmentAddNewInvoice';
-import CenteredTabs from './components/Tabs/Tabs';
+import CustomerNew from './pages/CustomerNew';
+import test from './components/Addresses/Addresses';
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
       <Route exact path="/edit" component={AppointmentEdit} />
       <Route exact path="/add" component={AppointmentAddNew} />
       <Route exact path="/add-invoice" component={AppointmentAddNewInvoice} />
-      <Route exact path="/tabs" component={CenteredTabs} />
+      <Route exact path="/customer-add" component={CustomerNew} />
+      <Route exact path="/test" component={test} />
     </Router>
   )
 }

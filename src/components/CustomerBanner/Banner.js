@@ -104,7 +104,7 @@ const Banner = (props) => {
                                         >
                                             <MenuItem value={0} disabled style={{ display: 'none' }}>
                                                 <div className="menu-item" >
-                                                    <MdApps className="action-icon" style={{fontSize: 21,marginLeft: 2}} />
+                                                    <MdApps className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
                                                     <div>ACTIONS</div>
                                                 </div>
                                             </MenuItem>
