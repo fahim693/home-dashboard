@@ -24,6 +24,14 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = (props) => {
     const classes = useStyles();
+    let home, customers, appointments, schedule, employees, more, quotes = ''
+    if (props.active === 0) {
+        home = 'selected'
+    } else if (props.active === 1) {
+        customers = 'selected'
+    } else if (props.active === 2) {
+        appointments = 'selected'
+    }
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -32,44 +40,44 @@ const NavBar = (props) => {
                         <div className="navbar">
                             <ul>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="#">
+                                    <Link className={`nav-link ${home}`} to="#">
                                         {/* <MdDashboard className="nav-icon" /> */}
-                                        <DashboardRounded className="nav-icon"/>
+                                        <DashboardRounded className="nav-icon" />
                                         <div>Home</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="#">
+                                    <Link className={`nav-link ${customers}`} to="#">
                                         <PeopleAltRounded className="nav-icon" />
                                         <div>Customers</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link selected" to="/">
+                                    <Link className={`nav-link ${appointments}`} to="/">
                                         <WorkRounded className="nav-icon" />
                                         <div>Appointments</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="#">
+                                    <Link className={`nav-link ${quotes}`} to="#">
                                         <ReceiptRounded className="nav-icon" />
                                         <div>Quotes</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="#">
+                                    <Link className={`nav-link ${schedule}`} to="#">
                                         <EventNoteRounded className="nav-icon" />
                                         <div>Schedule</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="#">
+                                    <Link className={`nav-link ${employees}`} to="#">
                                         <AssignmentIndRounded className="nav-icon" />
                                         <div>Employees</div>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="#">
+                                    <Link className={`nav-link ${more}`} to="#">
                                         <MoreHorizRounded className="nav-icon" />
                                         <div>More</div>
                                     </Link>

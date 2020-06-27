@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../Card/Card'
-import { EventNoteRounded, RemoveCircleRounded, NavigateNextRounded } from '@material-ui/icons';
+import { RemoveCircleRounded, NavigateNextRounded, RoomRounded } from '@material-ui/icons';
 import './addresses.css'
 import AppointmentAddressEdit from '../AppointmentAddressEdit/AppointmentAddressEdit';
 import { Chip } from '@material-ui/core';
@@ -9,7 +9,7 @@ const Addresses = () => {
     return (
         <Card
             title="Addresses"
-            icon={<EventNoteRounded className="main-title-icon" />}
+            icon={<RoomRounded className="main-title-icon" />}
             cardType={1}
         >
             <div className="address-container">

@@ -45,7 +45,7 @@ export default function CenteredGrid() {
     }
 
     return (
-        <Layout>
+        <Layout active={2}>
             <div className={classes.root}>
                 <BannerButtonOnly text="SCHEDULE" link='/appointment' />
                 <TimelineAddNew step={1} />

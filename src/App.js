@@ -7,7 +7,7 @@ import AppointmentLists from './pages/AppointmentList';
 import AppointmentAddNew from './pages/AppointmentAddNew';
 import AppointmentAddNewInvoice from './pages/AppointmentAddNewInvoice';
 import CustomerNew from './pages/CustomerNew';
-import test from './components/Addresses/Addresses';
+import test from './components/Tags/Tags';
 
 const App = () => {
   return (

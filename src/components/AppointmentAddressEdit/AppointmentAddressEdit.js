@@ -4,6 +4,7 @@ import { Typography, FormControl, Select, TextField, MenuItem, makeStyles } from
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
         minWidth: 195,
+        marginBottom: 9,
         "& .MuiSelect-select": {
             '&:focus': {
                 backgroundColor: '#fff',
@@ -47,8 +48,6 @@ const AppointmentAddressEdit = (props) => {
                                 margin='dense'
                             />
                         </FormControl>
-                        <br />
-                        <br />
                     </div> : ''
             }
             <Typography className="title-heads" variant="body2" component="p">
@@ -68,8 +67,6 @@ const AppointmentAddressEdit = (props) => {
                     margin='dense'
                 />
             </FormControl>
-            <br />
-            <br />
             <Typography className="title-heads" variant="body2" component="p">
                 City
                                             </Typography>
@@ -98,8 +95,6 @@ const AppointmentAddressEdit = (props) => {
                     <MenuItem value={5}>Houston</MenuItem>
                 </Select>
             </FormControl>
-            <br />
-            <br />
             <Typography className="title-heads" variant="body2" component="p">
                 State
                                     </Typography>
@@ -127,8 +122,6 @@ const AppointmentAddressEdit = (props) => {
                     <MenuItem value={4}>New Jersey</MenuItem>
                 </Select>
             </FormControl>
-            <br />
-            <br />
             <Typography className="title-heads" variant="body2" component="p">
                 ZIP
             </Typography>

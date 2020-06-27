@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../Card/Card'
 import './contact-info.css'
-import { EventNoteRounded } from '@material-ui/icons'
+import { AlternateEmailRounded } from '@material-ui/icons'
 import { makeStyles, Typography, TextField, FormControl, Select, MenuItem, Switch, Grid } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
@@ -28,7 +28,7 @@ const ContactInfo = () => {
     return (
         <Card
             title="Contact Information"
-            icon={<EventNoteRounded className="main-title-icon" />}
+            icon={<AlternateEmailRounded className="main-title-icon" />}
             cardType={1}
         >
             <Grid container spacing={4} style={{ padding: '17px 0 0 25px' }}>

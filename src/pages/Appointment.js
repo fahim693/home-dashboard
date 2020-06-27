@@ -33,7 +33,7 @@ export default function CenteredGrid() {
     }
 
     return (
-        <Layout>
+        <Layout active={2}>
             <div className={classes.root}>
                 <Banner
                     type={type}

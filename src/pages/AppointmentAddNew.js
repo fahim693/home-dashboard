@@ -75,7 +75,7 @@ export default function AppointmentAddNew() {
         setHeight(60)
     }
     return (
-        <Layout>
+        <Layout active={2}>
             <div className={classes.root}>
                 <BannerButtonOnly
                     text="NEXT"

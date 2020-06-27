@@ -307,7 +307,7 @@ export default function EnhancedTable() {
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
     return (
-        <Layout>
+        <Layout active={2}>
             <div className={classes.root}>
                 <div className="search-container-resp">
                     <FormControl variant="outlined" classes={{
