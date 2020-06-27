@@ -17,6 +17,7 @@ import Card from '../components/Card/Card'
 import Others from '../components/Others/Others';
 import { data } from '../data/UserData'
 import { items, services } from '../data/InvoiceData'
+import { customerData } from '../data/CustomerInfo';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -84,7 +85,7 @@ export default function CenteredGrid() {
     return (
         <Layout active={2}>
             <div className={classes.root}>
-                <Banner edit={true} />
+                <Banner edit={true} balanceTypeText="Remaining Balance" confirmUrl="/appointment"/>
                 <Timeline step={0} />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4} >
@@ -119,7 +120,7 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p">
                                                 Start Time
                                             </Typography>
-                                            <div style={{ display: "flex", marginTop: 13 }}>
+                                            <div style={{ display: "flex", marginTop: 9 }}>
                                                 <FormControl variant="outlined" style={{ minWidth: 0, width: 110, marginRight: 5 }} margin="dense" classes={{
                                                     root: classes.quantityRoot
                                                 }}>
@@ -188,7 +189,7 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p">
                                                 End Time
                                                     </Typography>
-                                            <div style={{ display: "flex", marginTop: 13 }}>
+                                            <div style={{ display: "flex", marginTop: 9 }}>
                                                 <FormControl variant="outlined" style={{ minWidth: 0, width: 110, marginRight: 5 }} margin="dense" classes={{
                                                     root: classes.quantityRoot
                                                 }}>
@@ -238,7 +239,7 @@ export default function CenteredGrid() {
                                     title="Appointment Address"
                                     icon={<RoomRounded className="main-title-icon" />}
                                 >
-                                    <AppointmentAddressEdit />
+                                    <AppointmentAddressEdit data={customerData} />
                                 </Card>
                             </Grid>
                             <Grid item xs={12}>

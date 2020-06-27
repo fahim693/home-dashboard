@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const ContactInfo = () => {
+const ContactInfo = (props) => {
     const classes = useStyles();
     return (
         <Card
@@ -45,6 +45,7 @@ const ContactInfo = () => {
                                 variant="outlined"
                                 placeholder="Enter Mobile Phone"
                                 // value={fieldValue.street_address}
+                                defaultValue={props.data.mobile_phone}
                                 name='street_address'
                                 // value="Permanent Address"
                                 // onChange={handleOnChange}
@@ -66,6 +67,7 @@ const ContactInfo = () => {
                                 id="street-address"
                                 variant="outlined"
                                 placeholder="Enter Work Phone"
+                                defaultValue={props.data.work_phone}
                                 // value={fieldValue.street_address}
                                 name='street_address'
                                 // value="Permanent Address"
@@ -88,6 +90,7 @@ const ContactInfo = () => {
                                 id="street-address"
                                 variant="outlined"
                                 placeholder="Enter Home Phone"
+                                defaultValue={props.data.home_phone}
                                 // value={fieldValue.street_address}
                                 name='street_address'
                                 // value="Permanent Address"
@@ -111,6 +114,7 @@ const ContactInfo = () => {
                                 id="street-address"
                                 variant="outlined"
                                 placeholder="Enter Email ID"
+                                defaultValue={props.data.email}
                                 // value={fieldValue.street_address}
                                 name='street_address'
                                 // value="Permanent Address"
@@ -135,6 +139,7 @@ const ContactInfo = () => {
                                 id="street-address"
                                 variant="outlined"
                                 placeholder="Enter Company Name"
+                                defaultValue={props.data.company}
                                 // value={fieldValue.street_address}
                                 name='street_address'
                                 // value="Permanent Address"
@@ -158,6 +163,7 @@ const ContactInfo = () => {
                                 id="street-address"
                                 variant="outlined"
                                 placeholder="Enter Title"
+                                defaultValue={props.data.title}
                                 // value={fieldValue.street_address}
                                 name='street_address'
                                 // value="Permanent Address"
@@ -179,7 +185,7 @@ const ContactInfo = () => {
                             <Select
                                 id="city"
                                 // value={city}
-                                defaultValue={0}
+                                defaultValue={1}
                                 MenuProps={{
                                     getContentAnchorEl: null,
                                     anchorOrigin: {
@@ -191,7 +197,7 @@ const ContactInfo = () => {
                             // onChange={handleChange}
                             >
                                 <MenuItem value={0} style={{ display: 'none' }}>Select Type</MenuItem>
-                                <MenuItem value={1}>Type</MenuItem>
+                                <MenuItem value={1}>Business</MenuItem>
                                 <MenuItem value={2}>Type</MenuItem>
                                 <MenuItem value={3}>Type</MenuItem>
                                 <MenuItem value={4}>Type</MenuItem>

@@ -10,7 +10,7 @@
 }
 
 .addresses-details {
-  height: 70px;
+  height: 90px;
   margin-top: 3px;
   padding: 2rem;
   display: flex;
@@ -33,4 +33,12 @@
 
 .inactive:last-child {
   border: 0;
+}
+
+.remove-icon{
+  margin-right: 10px;
+  color: #E24E3C;
+  font-size: 21px !important;
+  margin-top: 1px;
+
 }

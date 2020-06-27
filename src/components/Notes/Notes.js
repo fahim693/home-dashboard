@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function CenteredGrid() {
+export default function Notes(props) {
     const classes = useStyles();
 
     return (
@@ -43,8 +43,9 @@ export default function CenteredGrid() {
                         variant="outlined"
                         placeholder="Enter Notes"
                         multiline
-                        rows={17}
+                        rows={15}
                         rowsMax={18}
+                        defaultValue={props.data.notes}
                         // value={fieldValue.street_address}
                         name='email'
                         // onChange={handleOnChange}

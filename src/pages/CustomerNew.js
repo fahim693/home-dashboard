@@ -7,6 +7,7 @@ import ContactInfo from '../components/ContactInfo/ContactInfo';
 import Addresses from '../components/Addresses/Addresses';
 import Notes from '../components/Notes/Notes';
 import Tags from '../components/Tags/Tags';
+import { customerDataEmpty } from '../data/CustomerInfo';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,20 +36,20 @@ export default function CustomerNew() {
                 />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={12} >
-                        <ContactInfo />
+                        <ContactInfo data={customerDataEmpty} />
                     </Grid>
                     <Grid item xs={12} md={4} >
                         <Grid container spacing={3}>
                             <Grid item xs={12} md={12} >
-                                <Notes />
+                                <Notes data={customerDataEmpty} />
                             </Grid>
                             <Grid item xs={12} md={12} >
-                                <Tags />
+                                <Tags data={customerDataEmpty} />
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item xs={12} md={8} >
-                        <Addresses />
+                        <Addresses data={customerDataEmpty} />
                     </Grid>
                 </Grid>
             </div>

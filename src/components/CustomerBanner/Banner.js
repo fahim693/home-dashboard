@@ -38,7 +38,7 @@ const Banner = (props) => {
     const [isRefund, setRefund] = useState(false)
 
     const handleEdit = (e) => {
-        props.history.push('/appointment')
+        props.history.push(e)
     }
 
     const handleChange = (e) => {
@@ -47,6 +47,8 @@ const Banner = (props) => {
             props.history.push('/edit')
         } else if (e.target.value === 4) {
             props.history.push('/')
+        } else if (e.target.value === 'cust-edit') {
+            props.history.push('/customer-edit')
         }
     }
 
@@ -67,7 +69,7 @@ const Banner = (props) => {
                             <React.Fragment>
                                 <div className="cst-edit-action">
                                     <div>
-                                        <Button onClick={handleEdit} variant='contained' className="btn-cancel">
+                                        <Button onClick={() => handleEdit(props.confirmUrl)} variant='contained' className="btn-cancel">
                                             <MdClose className='btn-icon btn-icon-cancel' />
                                     CANCEL
                                 </Button>
@@ -75,7 +77,7 @@ const Banner = (props) => {
                                     <div style={{
                                         marginLeft: 16
                                     }}>
-                                        <Button onClick={handleEdit} variant='contained' className="btn-save">
+                                        <Button onClick={() => handleEdit(props.confirmUrl)} variant='contained' className="btn-save">
                                             <MdCheck className='btn-icon' />
                                     SAVE
                                 </Button>
@@ -88,29 +90,87 @@ const Banner = (props) => {
                                         root: classes.quantityRoot
                                     }}>
                                         {/* <InputLabel id="demo-simple-select-label">Actions</InputLabel> */}
-                                        <Select
-                                            id="city"
-                                            // label="Actions"
-                                            // value={age}
-                                            MenuProps={{
-                                                getContentAnchorEl: null,
-                                                anchorOrigin: {
-                                                    vertical: "bottom",
-                                                    horizontal: "left",
-                                                }
-                                            }}
-                                            value={0}
-                                            onChange={handleChange}
-                                        >
-                                            <MenuItem value={0} disabled style={{ display: 'none' }}>
-                                                <div className="menu-item" >
-                                                    <MdApps className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
-                                                    <div>ACTIONS</div>
-                                                </div>
-                                            </MenuItem>
-                                            {
-                                                props.screenType === 'cust' ?
-                                                    <React.Fragment>
+
+
+                                        {
+                                            props.screenType === 'cust' ?
+                                                <Select
+                                                    id="city"
+                                                    // label="Actions"
+                                                    // value={age}
+                                                    MenuProps={{
+                                                        getContentAnchorEl: null,
+                                                        anchorOrigin: {
+                                                            vertical: "bottom",
+                                                            horizontal: "left",
+                                                        }
+                                                    }}
+                                                    value={0}
+                                                    onChange={handleChange}
+                                                >
+                                                    <MenuItem value={0} disabled style={{ display: 'none' }}>
+                                                        <div className="menu-item" >
+                                                            <MdApps className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
+                                                            <div>ACTIONS</div>
+                                                        </div>
+                                                    </MenuItem>
+                                                    <MenuItem value='cust-edit'>
+                                                        <div className="menu-item">
+                                                            <MdCreate className="action-icon" />
+                                                            <div>EDIT</div>
+                                                        </div>
+
+                                                    </MenuItem>
+                                                    <MenuItem value={4}>
+                                                        <div className="menu-item">
+                                                            <MdDelete className="action-icon" />
+                                                            <div>DELETE</div>
+                                                        </div>
+                                                    </MenuItem>
+                                                </Select>
+                                                :
+                                                props.screenType === 'apt' ?
+                                                    <Select
+                                                        id="city"
+                                                        // label="Actions"
+                                                        // value={age}
+                                                        MenuProps={{
+                                                            getContentAnchorEl: null,
+                                                            anchorOrigin: {
+                                                                vertical: "bottom",
+                                                                horizontal: "left",
+                                                            }
+                                                        }}
+                                                        value={0}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value={0} disabled style={{ display: 'none' }}>
+                                                            <div className="menu-item" >
+                                                                <MdApps className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
+                                                                <div>ACTIONS</div>
+                                                            </div>
+                                                        </MenuItem>
+                                                        <MenuItem onClick={() => {
+                                                            setRefund(false)
+                                                            setOpen(true)
+                                                        }} value={1}>
+                                                            <div className="menu-item">
+                                                                <MdLocalAtm className="action-icon" />
+                                                                <div>PAY NOW</div>
+                                                            </div>
+                                                        </MenuItem>
+                                                        <MenuItem value={2}>
+                                                            <div className="menu-item">
+                                                                <MdSend className="action-icon" />
+                                                                <div> SEND INVOICE</div>
+                                                            </div>
+                                                        </MenuItem>
+                                                        <MenuItem onClick={handleClickRefund} value={5}>
+                                                            <div className="menu-item">
+                                                                <MdImportExport className="action-icon" />
+                                                                <div> REFUND</div>
+                                                            </div>
+                                                        </MenuItem>
                                                         <MenuItem value={3}>
                                                             <div className="menu-item">
                                                                 <MdCreate className="action-icon" />
@@ -124,48 +184,8 @@ const Banner = (props) => {
                                                                 <div>DELETE</div>
                                                             </div>
                                                         </MenuItem>
-                                                    </React.Fragment>
-                                                    :
-                                                    props.screenType === 'apt' ?
-
-                                                        <React.Fragment>
-                                                            <MenuItem onClick={() => {
-                                                                setRefund(false)
-                                                                setOpen(true)
-                                                            }} value={1}>
-                                                                <div className="menu-item">
-                                                                    <MdLocalAtm className="action-icon" />
-                                                                    <div>PAY NOW</div>
-                                                                </div>
-                                                            </MenuItem>
-                                                            <MenuItem value={2}>
-                                                                <div className="menu-item">
-                                                                    <MdSend className="action-icon" />
-                                                                    <div> SEND INVOICE</div>
-                                                                </div>
-                                                            </MenuItem>
-                                                            <MenuItem onClick={handleClickRefund} value={5}>
-                                                                <div className="menu-item">
-                                                                    <MdImportExport className="action-icon" />
-                                                                    <div> REFUND</div>
-                                                                </div>
-                                                            </MenuItem>
-                                                            <MenuItem value={3}>
-                                                                <div className="menu-item">
-                                                                    <MdCreate className="action-icon" />
-                                                                    <div>EDIT</div>
-                                                                </div>
-
-                                                            </MenuItem>
-                                                            <MenuItem value={4}>
-                                                                <div className="menu-item">
-                                                                    <MdDelete className="action-icon" />
-                                                                    <div>DELETE</div>
-                                                                </div>
-                                                            </MenuItem>
-                                                        </React.Fragment> : ''
-                                            }
-                                        </Select>
+                                                    </Select> : ''
+                                        }
                                     </FormControl>
                                 </div>
                                 {
