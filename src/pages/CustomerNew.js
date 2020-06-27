@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
@@ -13,26 +13,18 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         minWidth: 275,
-    },
-    formControl: {
-        minWidth: 185,
     }
 }));
 
 export default function CustomerNew() {
     const classes = useStyles();
-    const [type, setType] = useState(0)
-
-    const handleStep = () => {
-        setType(type + 1)
-    }
 
     return (
         <Layout active={1}>
             <div className={classes.root}>
                 <Banner
                     edit={true}
-                    handleStep={handleStep}
+                    confirmUrl="/customer"
                 />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={12} >

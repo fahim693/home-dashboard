@@ -14,7 +14,7 @@ const BannerButtonOnly = (props) => {
             marginBottom: 45
         }}>
             <div>
-                <Button variant='contained' className="btn-cancel">
+                <Button onClick={()=>props.history.push(props.confirmUrl)} variant='contained' className="btn-cancel">
                     <MdClose className='btn-icon btn-icon-cancel' />
                                     CANCEL
                 </Button>
@@ -22,7 +22,7 @@ const BannerButtonOnly = (props) => {
             <div style={{
                 marginLeft: 16
             }}>
-                <Button variant='contained' className="btn-save">
+                <Button onClick={()=>props.history.push(props.confirmUrl)} variant='contained' className="btn-save">
                     <MdCheck className='btn-icon' />
                                     SAVE
                 </Button>
