@@ -1,0 +1,27 @@
+.contact-innfo-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1.5rem 0rem 1.5rem 1.6rem;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.contact-info-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10rem;
+}
+
+.MuiSwitch-colorPrimary.Mui-checked {
+  color: #2a95c5 !important;
+}
+
+.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track {
+  background-color: rgba(42, 149, 197, 0.38) !important;
+}
+
+.contact-info-field-value {
+  color: #4F4F4F;
+  font-size: 17px;
+  margin-top: 8px;
+}

@@ -59,7 +59,7 @@ const Banner = (props) => {
             <div className="cst-info-section">
                 <div>
                     <div className="cst-name">{data.name}</div>
-                    <p className="remaining-balance">Remaining Balance <span style={{ color: '#2a95c5' }}>${data.remaining_balance}</span></p>
+                    <p className="remaining-balance">{props.balanceTypeText}: <span style={{ color: '#2a95c5' }}>${data.remaining_balance}</span></p>
                 </div>
                 <div className="cst-container">
                     {
@@ -104,44 +104,67 @@ const Banner = (props) => {
                                         >
                                             <MenuItem value={0} disabled style={{ display: 'none' }}>
                                                 <div className="menu-item" >
-                                                    <MdApps className="action-icon" style={{fontSize: 21,marginLeft: 2}} />
+                                                    <MdApps className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
                                                     <div>ACTIONS</div>
                                                 </div>
                                             </MenuItem>
-                                            <MenuItem onClick={() => {
-                                                setRefund(false)
-                                                setOpen(true)
-                                            }} value={1}>
-                                                <div className="menu-item">
-                                                    <MdLocalAtm className="action-icon" />
-                                                    <div>PAY NOW</div>
-                                                </div>
-                                            </MenuItem>
-                                            <MenuItem value={2}>
-                                                <div className="menu-item">
-                                                    <MdSend className="action-icon" />
-                                                    <div> SEND INVOICE</div>
-                                                </div>
-                                            </MenuItem>
-                                            <MenuItem onClick={handleClickRefund} value={5}>
-                                                <div className="menu-item">
-                                                    <MdImportExport className="action-icon" />
-                                                    <div> REFUND</div>
-                                                </div>
-                                            </MenuItem>
-                                            <MenuItem value={3}>
-                                                <div className="menu-item">
-                                                    <MdCreate className="action-icon" />
-                                                    <div>EDIT</div>
-                                                </div>
+                                            {
+                                                props.screenType === 'cust' ?
+                                                    <React.Fragment>
+                                                        <MenuItem value={3}>
+                                                            <div className="menu-item">
+                                                                <MdCreate className="action-icon" />
+                                                                <div>EDIT</div>
+                                                            </div>
 
-                                            </MenuItem>
-                                            <MenuItem value={4}>
-                                                <div className="menu-item">
-                                                    <MdDelete className="action-icon" />
-                                                    <div>DELETE</div>
-                                                </div>
-                                            </MenuItem>
+                                                        </MenuItem>
+                                                        <MenuItem value={4}>
+                                                            <div className="menu-item">
+                                                                <MdDelete className="action-icon" />
+                                                                <div>DELETE</div>
+                                                            </div>
+                                                        </MenuItem>
+                                                    </React.Fragment>
+                                                    :
+                                                    props.screenType === 'apt' ?
+
+                                                        <React.Fragment>
+                                                            <MenuItem onClick={() => {
+                                                                setRefund(false)
+                                                                setOpen(true)
+                                                            }} value={1}>
+                                                                <div className="menu-item">
+                                                                    <MdLocalAtm className="action-icon" />
+                                                                    <div>PAY NOW</div>
+                                                                </div>
+                                                            </MenuItem>
+                                                            <MenuItem value={2}>
+                                                                <div className="menu-item">
+                                                                    <MdSend className="action-icon" />
+                                                                    <div> SEND INVOICE</div>
+                                                                </div>
+                                                            </MenuItem>
+                                                            <MenuItem onClick={handleClickRefund} value={5}>
+                                                                <div className="menu-item">
+                                                                    <MdImportExport className="action-icon" />
+                                                                    <div> REFUND</div>
+                                                                </div>
+                                                            </MenuItem>
+                                                            <MenuItem value={3}>
+                                                                <div className="menu-item">
+                                                                    <MdCreate className="action-icon" />
+                                                                    <div>EDIT</div>
+                                                                </div>
+
+                                                            </MenuItem>
+                                                            <MenuItem value={4}>
+                                                                <div className="menu-item">
+                                                                    <MdDelete className="action-icon" />
+                                                                    <div>DELETE</div>
+                                                                </div>
+                                                            </MenuItem>
+                                                        </React.Fragment> : ''
+                                            }
                                         </Select>
                                     </FormControl>
                                 </div>
@@ -173,7 +196,7 @@ const Banner = (props) => {
                 handleClose={() => setOpen(false)}
                 isRefund={isRefund}
             />
-        </React.Fragment>
+        </React.Fragment >
     )
 }
 

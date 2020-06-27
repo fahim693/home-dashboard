@@ -1,0 +1,36 @@
+.address-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid#E0E0E0;
+}
+
+.addresses-fields {
+  padding: 1rem 2rem;
+  border-left: 2px solid#E0E0E0;
+}
+
+.addresses-details {
+  height: 70px;
+  margin-top: 3px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2f9fc;
+  cursor: pointer;
+}
+
+.address-active {
+  height: 52px;
+}
+
+.inactive {
+  height: 52px;
+  background-color: #fff;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.inactive:last-child {
+  border: 0;
+}

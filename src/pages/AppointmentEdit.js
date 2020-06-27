@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
-import { Typography, Chip, TextField, FormControl, MenuItem, Select } from '@material-ui/core';
+import { Typography, Chip, FormControl, MenuItem, Select } from '@material-ui/core';
 import { MdRemoveCircle } from 'react-icons/md'
 import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
 import '../styles/appointment-edit.css'
 import Invoice from '../components/Invoice Table/InvoiceEdit';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
-import { MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker } from '@material-ui/pickers';
+import AppointmentAddressEdit from '../components/AppointmentAddressEdit/AppointmentAddressEdit'
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
 import Banner from '../components/CustomerBanner/Banner';
 import Timeline from '../components/Timeline/Timeline';
@@ -81,7 +82,7 @@ export default function CenteredGrid() {
         })
     }
     return (
-        <Layout>
+        <Layout active={2}>
             <div className={classes.root}>
                 <Banner edit={true} />
                 <Timeline step={0} />
@@ -117,22 +118,48 @@ export default function CenteredGrid() {
                                         <div className="date-time ml" >
                                             <Typography className="title-heads" variant="body2" component="p">
                                                 Start Time
-                                                    </Typography>
-                                            <FormControl variant="outlined" style={{ width: '100%' }} classes={{
-                                                root: classes.quantityRoot
-                                            }}>
-                                                <MuiPickersUtilsProvider utils={MomentUtils} >
-                                                    <KeyboardTimePicker
-                                                        placeholder="08:00 AM"
-                                                        mask="__:__ _M"
-                                                        inputVariant="outlined"
-                                                        value={date.start_time}
-                                                        onChange={date => handleDateChange(date, 'start_time')}
-                                                        margin="dense"
-
-                                                    />
-                                                </MuiPickersUtilsProvider>
-                                            </FormControl>
+                                            </Typography>
+                                            <div style={{ display: "flex", marginTop: 13 }}>
+                                                <FormControl variant="outlined" style={{ minWidth: 0, width: 110, marginRight: 5 }} margin="dense" classes={{
+                                                    root: classes.quantityRoot
+                                                }}>
+                                                    <Select
+                                                        id="city"
+                                                        defaultValue={4}
+                                                        MenuProps={{
+                                                            getContentAnchorEl: null,
+                                                            anchorOrigin: {
+                                                                vertical: "bottom",
+                                                                horizontal: "left",
+                                                            }
+                                                        }}
+                                                    >
+                                                        <MenuItem value={4}>12:30</MenuItem>
+                                                        <MenuItem value={2}>1:00</MenuItem>
+                                                        <MenuItem value={3}>1:30</MenuItem>
+                                                        <MenuItem value={5}>2:00</MenuItem>
+                                                        <MenuItem value={5}>2:30</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                                <FormControl variant="outlined" style={{ minWidth: 0, width: 80 }} margin="dense" classes={{
+                                                    root: classes.quantityRoot
+                                                }}>
+                                                    <Select
+                                                        id="city"
+                                                        defaultValue={4}
+                                                        MenuProps={{
+                                                            getContentAnchorEl: null,
+                                                            anchorOrigin: {
+                                                                vertical: "bottom",
+                                                                horizontal: "left",
+                                                            }
+                                                        }}
+                                                    >
+                                                        <MenuItem value={1}>AM</MenuItem>
+                                                        <MenuItem value={4}>PM</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
                                         </div>
                                     </div>
                                     <br />
@@ -161,20 +188,47 @@ export default function CenteredGrid() {
                                             <Typography className="title-heads" variant="body2" component="p">
                                                 End Time
                                                     </Typography>
-                                            <FormControl variant="outlined" style={{ width: '100%' }} classes={{
-                                                root: classes.quantityRoot
-                                            }}>
-                                                <MuiPickersUtilsProvider utils={MomentUtils} >
-                                                    <KeyboardTimePicker
-                                                        placeholder="08:00 AM"
-                                                        mask="__:__ _M"
-                                                        inputVariant="outlined"
-                                                        value={date.end_time}
-                                                        onChange={date => handleDateChange(date, 'end_time')}
-                                                        margin="dense"
-                                                    />
-                                                </MuiPickersUtilsProvider>
-                                            </FormControl>
+                                            <div style={{ display: "flex", marginTop: 13 }}>
+                                                <FormControl variant="outlined" style={{ minWidth: 0, width: 110, marginRight: 5 }} margin="dense" classes={{
+                                                    root: classes.quantityRoot
+                                                }}>
+                                                    <Select
+                                                        id="city"
+                                                        defaultValue={4}
+                                                        MenuProps={{
+                                                            getContentAnchorEl: null,
+                                                            anchorOrigin: {
+                                                                vertical: "bottom",
+                                                                horizontal: "left",
+                                                            }
+                                                        }}
+                                                    >
+                                                        <MenuItem value={1}>12:00</MenuItem>
+                                                        <MenuItem value={4}>12:30</MenuItem>
+                                                        <MenuItem value={2}>1:00</MenuItem>
+                                                        <MenuItem value={3}>1:30</MenuItem>
+                                                        <MenuItem value={5}>2:00</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                                <FormControl variant="outlined" style={{ minWidth: 0, width: 80 }} margin="dense" classes={{
+                                                    root: classes.quantityRoot
+                                                }}>
+                                                    <Select
+                                                        id="city"
+                                                        defaultValue={4}
+                                                        MenuProps={{
+                                                            getContentAnchorEl: null,
+                                                            anchorOrigin: {
+                                                                vertical: "bottom",
+                                                                horizontal: "left",
+                                                            }
+                                                        }}
+                                                    >
+                                                        <MenuItem value={1}>AM</MenuItem>
+                                                        <MenuItem value={4}>PM</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </div>
                                         </div>
                                     </div>
                                 </Card>
@@ -184,96 +238,7 @@ export default function CenteredGrid() {
                                     title="Appointment Address"
                                     icon={<RoomRounded className="main-title-icon" />}
                                 >
-                                    <Typography className="title-heads" variant="body2" component="p">
-                                        Street Address
-                                            </Typography>
-                                    <FormControl variant="outlined" style={{ width: '100%' }} classes={{
-                                        root: classes.quantityRoot
-                                    }}>
-                                        <TextField
-                                            id="street-address"
-                                            variant="outlined"
-                                            value={fieldValue.street_address}
-                                            name='street_address'
-                                            onChange={handleOnChange}
-                                            fullWidth
-                                            margin='dense'
-                                        />
-                                    </FormControl>
-                                    <br />
-                                    <br />
-                                    <Typography className="title-heads" variant="body2" component="p">
-                                        City
-                                            </Typography>
-                                    <FormControl variant="outlined" margin="dense" classes={{
-                                        root: classes.quantityRoot
-                                    }}>
-                                        <Select
-                                            id="city"
-                                            // value={city}
-                                            defaultValue={4}
-                                            MenuProps={{
-                                                getContentAnchorEl: null,
-                                                anchorOrigin: {
-                                                    vertical: "bottom",
-                                                    horizontal: "left",
-                                                }
-                                            }}
-                                        // name="city"
-                                        // onChange={handleChange}
-                                        >
-                                            <MenuItem value={1}>Los Angeles</MenuItem>
-                                            <MenuItem value={4}>New York</MenuItem>
-                                            <MenuItem value={2}>San Diego</MenuItem>
-                                            <MenuItem value={3}>Dallas</MenuItem>
-                                            <MenuItem value={5}>Houston</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <br />
-                                    <br />
-                                    <Typography className="title-heads" variant="body2" component="p">
-                                        State
-                                    </Typography>
-                                    <FormControl variant="outlined" margin="dense" classes={{
-                                        root: classes.quantityRoot
-                                    }}>
-                                        <Select
-                                            id="state"
-                                            defaultValue={5}
-                                            MenuProps={{
-                                                getContentAnchorEl: null,
-                                                anchorOrigin: {
-                                                    vertical: "bottom",
-                                                    horizontal: "left",
-                                                }
-                                            }}
-                                        // value={age}
-                                        // onChange={handleChange}
-                                        >
-                                            <MenuItem value={1}>California</MenuItem>
-                                            <MenuItem value={5}>New York</MenuItem>
-                                            <MenuItem value={2}>Texas</MenuItem>
-                                            <MenuItem value={3}>Florida</MenuItem>
-                                            <MenuItem value={4}>New Jersey</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                    <br />
-                                    <br />
-                                    <Typography className="title-heads" variant="body2" component="p">
-                                        ZIP
-                                            </Typography>
-                                    <FormControl variant="outlined" classes={{
-                                        root: classes.quantityRoot
-                                    }}>
-                                        <TextField
-                                            id="zip"
-                                            variant="outlined"
-                                            name="zip"
-                                            value={fieldValue.zip}
-                                            onChange={handleOnChange}
-                                            margin="dense"
-                                        />
-                                    </FormControl>
+                                    <AppointmentAddressEdit />
                                 </Card>
                             </Grid>
                             <Grid item xs={12}>
@@ -326,7 +291,7 @@ export default function CenteredGrid() {
                             </Grid>
                             <Grid item xs={12}>
                                 <Card
-                                    title="Appointment History"
+                                    title="Appointment Feed"
                                     icon={<HistoryRounded className='main-title-icon' />}
                                     cardType={1}
                                 >

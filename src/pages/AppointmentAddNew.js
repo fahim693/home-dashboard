@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
@@ -10,22 +10,28 @@ import BannerButtonOnly from '../components/CustomerBanner/BannerButtonOnly';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import SearchIcon from "@material-ui/icons/Search";
 import '../styles/appointment-add-new.css'
+import CustomerDetails from '../components/CustomerDetails/CustomerDetails';
 
 const dataSearch = [
     {
-        name: 'James Cook'
+        name: 'James Cook',
+        address: '941 Baker’s Street New York NY 50008'
     },
     {
-        name: 'Jack Brown'
+        name: 'Jack Brown',
+        address: '941 Baker’s Street New York NY 50008'
     },
     {
-        name: 'Jacob Brown'
+        name: 'Jacob Brown',
+        address: '941 Baker’s Street New York NY 50008'
     },
     {
-        name: 'Jane Williams'
+        name: 'Jane Williams',
+        address: '941 Baker’s Street New York NY 50008'
     },
     {
-        name: 'Jasmine Martinez'
+        name: 'Jasmine Martinez',
+        address: '941 Baker’s Street New York NY 50008'
     },
 
 ]
@@ -62,9 +68,14 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AppointmentAddNew() {
     const classes = useStyles();
-
+    const [data, setData] = useState('')
+    const [height, setHeight] = useState(300)
+    const handleData = (opt) => {
+        setData(opt);
+        setHeight(60)
+    }
     return (
-        <Layout>
+        <Layout active={2}>
             <div className={classes.root}>
                 <BannerButtonOnly
                     text="NEXT"
@@ -86,8 +97,25 @@ export default function AppointmentAddNew() {
                                         <Autocomplete
                                             id="free-solo-demo"
                                             freeSolo
-                                            style={{ width: 750, height: 340, marginTop: 20 }}
-                                            options={dataSearch.map((option) => option.name)}
+                                            style={{ width: 750, height: height, marginTop: 20 }}
+                                            options={dataSearch}
+                                            getOptionLabel={(option) => option.name}
+                                            renderOption={(option, idx) => (
+                                                <div style={{
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between',
+                                                    width: '100%'
+                                                }}
+                                                    onClick={() => handleData(option)}
+                                                >
+                                                    <div>{option.name}</div>
+                                                    <div style={{
+                                                        color: '#828282',
+                                                        fontWeight: 400,
+                                                        fontStyle: 'italic'
+                                                    }}>{option.address}</div>
+                                                </div>
+                                            )}
                                             renderInput={(params) => (
                                                 <FormControl variant="outlined" fullWidth classes={{
                                                     root: classes.quantityRoot
@@ -111,8 +139,10 @@ export default function AppointmentAddNew() {
                                                 </FormControl>
                                             )}
                                         />
-
                                     </div>
+                                    <br />
+                                    <CustomerDetails data={data} />
+                                    <br />
                                 </Card>
                             </Grid>
                         </Grid>

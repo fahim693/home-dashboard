@@ -1,3 +1,11 @@
+export const headerData = [
+    'Appointment #',
+    'Date',
+    'Start Time',
+    'Status',
+    'Amount',
+    'Address'
+]
 export const rows = [
     {
         id: 12234,

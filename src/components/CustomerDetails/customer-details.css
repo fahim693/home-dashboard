@@ -1,0 +1,28 @@
+.customer-details-card{
+    max-width: 752px;
+    margin: 0 auto;
+}
+
+.customer-details-card-container{
+    border: 2px solid rgb(233, 233, 233);
+    border-radius: 8px;
+    padding: 17px 15px 17px 25px;
+}
+
+.customer-details-title {
+  font-size: 23px;
+  font-weight: 500;
+  color: #2a95c5;
+  margin: 20px 0 23px;
+}
+
+.customer-details-card-title{
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.customer-details-card-value{
+    font-size: 16px;
+    color: #4F4F4F;
+}
