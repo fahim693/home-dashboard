@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function CenteredGrid() {
+export default function CustomerNew() {
     const classes = useStyles();
     const [type, setType] = useState(0)
 

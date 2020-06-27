@@ -8,6 +8,7 @@ import AppointmentAddNew from './pages/AppointmentAddNew';
 import AppointmentAddNewInvoice from './pages/AppointmentAddNewInvoice';
 import CustomerNew from './pages/CustomerNew';
 import test from './components/ContactInfo/ContactInfoFilled';
+import CustomerDetails from './pages/CustomerDetails'
 
 const App = () => {
   return (
@@ -17,7 +18,8 @@ const App = () => {
       <Route exact path="/edit" component={AppointmentEdit} />
       <Route exact path="/add" component={AppointmentAddNew} />
       <Route exact path="/add-invoice" component={AppointmentAddNewInvoice} />
-      <Route exact path="/customer-add" component={CustomerNew} />
+      <Route exact path="/customer-new" component={CustomerNew} />
+      <Route exact path="/customer" component={CustomerDetails} />
       <Route exact path="/test" component={test} />
     </Router>
   )

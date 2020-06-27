@@ -10,7 +10,7 @@
 }
 
 .addresses-details {
-  height: 90px;
+  height: 70px;
   margin-top: 3px;
   padding: 2rem;
   display: flex;
@@ -20,7 +20,12 @@
   cursor: pointer;
 }
 
+.active{
+  height: 52px;
+}
+
 .inactive {
+  height: 52px;
   background-color: #fff;
   color: #333;
   border-bottom: 1px solid #e0e0e0;

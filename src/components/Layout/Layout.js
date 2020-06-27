@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import '../Layout/navbar.css'
-// import { MdDashboard, MdPeople, MdWork, MdReceipt, MdAssignmentInd, MdMoreHoriz, MdEventNote } from 'react-icons/md'
 import { DashboardRounded, PeopleAltRounded, WorkRounded, ReceiptRounded, EventNoteRounded, AssignmentIndRounded, MoreHorizRounded } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import NavbarResponsive from '../NavbarResponsive/NavbarResponsive';

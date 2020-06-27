@@ -38,6 +38,8 @@ export default function CenteredGrid() {
                 <Banner
                     type={type}
                     handleStep={handleStep}
+                    balanceTypeText="Remaining Balance"
+                    screenType='apt'
                 />
                 <Timeline step={type} />
                 <Grid container spacing={3}>

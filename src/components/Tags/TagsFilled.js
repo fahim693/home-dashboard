@@ -4,7 +4,6 @@ import Card from '../Card/Card'
 import { Chip } from '@material-ui/core';
 import { LocalOfferRounded } from '@material-ui/icons'
 import { data } from '../../data/UserData'
-import { MdRemoveCircle } from 'react-icons/md';
 
 export default function CenteredGrid() {
 

@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Card from '../Card/Card'
+import { MonetizationOnRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles({
     table: {
@@ -40,11 +41,10 @@ export default function SimpleTable(props) {
                         <TableCell className="hst-body-cell" component="th" scope="row">
                             {row.id}
                         </TableCell>
-                        <TableCell className="hst-body-cell">{row.date}</TableCell>
-                        <TableCell className="hst-body-cell">{row.start}</TableCell>
-                        <TableCell className="hst-body-cell">{row.status}</TableCell>
+                        <TableCell className="hst-body-cell">{row.dateSent}</TableCell>
+                        <TableCell className="hst-body-cell">{row.datePaid}</TableCell>
                         <TableCell className="hst-body-cell">${row.amount}</TableCell>
-                        <TableCell className="hst-body-cell">{row.address}</TableCell>
+                        <TableCell className="hst-body-cell">{row.status}</TableCell>
                     </TableRow>
                 )
             }
@@ -61,11 +61,10 @@ export default function SimpleTable(props) {
                     <TableCell className="hst-body-cell" component="th" scope="row">
                         {row.id}
                     </TableCell>
-                    <TableCell className="hst-body-cell">{row.date}</TableCell>
-                    <TableCell className="hst-body-cell">{row.start}</TableCell>
-                    <TableCell className="hst-body-cell">{row.status}</TableCell>
+                    <TableCell className="hst-body-cell">{row.dateSent}</TableCell>
+                    <TableCell className="hst-body-cell">{row.datePaid}</TableCell>
                     <TableCell className="hst-body-cell">${row.amount}</TableCell>
-                    <TableCell className="hst-body-cell">{row.address}</TableCell>
+                    <TableCell className="hst-body-cell">{row.status}</TableCell>
                 </TableRow>
             )
             return ''
@@ -76,8 +75,8 @@ export default function SimpleTable(props) {
     return (
         <TableContainer component={Paper}>
             <Card
-                title={props.cardTitle}
-                icon={props.icon}
+                title='Invoices'
+                icon={<MonetizationOnRounded className="main-title-icon" />}
                 cardType={1}
                 expansionButton={true}
                 handleClick={handleClick}
@@ -87,20 +86,9 @@ export default function SimpleTable(props) {
                     <TableHead>
                         <TableRow className="hst-tbl hst-tbl-header">
                             {
-                                props.type === 'apt' ?
-                                    <TableCell className="tbl-head-cell">Appointment #</TableCell> :
-                                    props.type === 'qts' ?
-                                        <TableCell className="tbl-head-cell" > Quote #</TableCell> : ''
-                            }
-                            {
-                                props.headerData.map((item, idx) => {
-                                    if (idx > 0) {
-                                        return (
-                                            <TableCell key={item} className="tbl-head-cell">{item}</TableCell>
-                                        )
-                                    }
-                                    return ''
-                                })
+                                props.headerData.map(item => (
+                                    <TableCell key={item} className="tbl-head-cell">{item}</TableCell>
+                                ))
                             }
 
                         </TableRow>

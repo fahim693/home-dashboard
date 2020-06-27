@@ -24,10 +24,10 @@ const Addresses = () => {
         >
             <div className="address-container" style={{ border: 0 }}>
                 <div>
-                    <div className="addresses-details">
+                    <div className="addresses-details active">
                         <div>
                             <div style={{ fontSize: 20, fontWeight: 500, color: '#2A95C5' }}>Permanent Address</div>
-                            <div style={{ fontSize: 17, color: '#2A95C5', margin: '10px 0' }}>941 Baker's Street</div>
+                            <div style={{ fontSize: 17, color: '#2A95C5', margin: '9px 0' }}>941 Baker's Street</div>
                             <div style={{ fontSize: 17, color: '#2A95C5' }}>New York NY 50008</div>
                         </div>
                         <NavigateNextRounded style={{ fontSize: 32, fontWeight: 600, color: '#2A95C5' }} />
@@ -35,7 +35,7 @@ const Addresses = () => {
                     <div className="addresses-details inactive">
                         <div>
                             <div style={{ fontSize: 20, fontWeight: 500 }}>Temporary Address 1</div>
-                            <div style={{ fontSize: 17, margin: '10px 0' }}>941 Baker's Street</div>
+                            <div style={{ fontSize: 17, margin: '9px 0' }}>941 Baker's Street</div>
                             <div style={{ fontSize: 17, }}>New York NY 50008</div>
                         </div>
                         <NavigateNextRounded style={{ fontSize: 32, fontWeight: 600, color: '#333' }} />
@@ -43,14 +43,14 @@ const Addresses = () => {
                     <div className="addresses-details inactive">
                         <div>
                             <div style={{ fontSize: 20, fontWeight: 500 }}>Temporary Address 2</div>
-                            <div style={{ fontSize: 17, margin: '10px 0' }}>941 Baker's Street</div>
+                            <div style={{ fontSize: 17, margin: '9px 0' }}>941 Baker's Street</div>
                             <div style={{ fontSize: 17, }}>New York NY 50008</div>
                         </div>
                         <NavigateNextRounded style={{ fontSize: 32, fontWeight: 600, color: '#333' }} />
                     </div>
                 </div>
                 <div className="addresses-fields" style={{ padding: 0 }}>
-                    <div style={{ height: '473px', width: '100%' }}>
+                    <div style={{ height: '370px', width: '100%' }}>
                         <GoogleMapReact
                             bootstrapURLKeys={{ key: 'AIzaSyAMLkvMBnv8lUJOdlCz4a3Kns6zRoVYT3A' }}
                             defaultCenter={defaultProps.center}
