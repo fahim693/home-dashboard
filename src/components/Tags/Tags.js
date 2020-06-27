@@ -4,24 +4,6 @@ import Card from '../Card/Card'
 import { Chip } from '@material-ui/core';
 import { LocalOfferRounded } from '@material-ui/icons';
 
-// const useStyles = makeStyles((theme) => ({
-//     quantityRoot: {
-//         "& .MuiSelect-select": {
-//             '&:focus': {
-//                 backgroundColor: '#fff',
-//             }
-//         },
-//         "& .MuiOutlinedInput-notchedOutline": {
-//             border: "1px solid #bfbfbf"
-//         },
-//         "&:hover .MuiOutlinedInput-notchedOutline": {
-//             border: "1px solid #000"
-//         },
-//         "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-//             border: "1px solid #bfbfbf",
-//         },
-//     }
-// }));
 
 export default function CenteredGrid() {
 

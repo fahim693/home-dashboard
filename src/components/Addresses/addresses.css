@@ -10,11 +10,22 @@
 }
 
 .addresses-details {
-  height: 65px;
+  height: 90px;
   margin-top: 3px;
   padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #f2f9fc;
+  cursor: pointer;
+}
+
+.inactive {
+  background-color: #fff;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.inactive:last-child {
+  border: 0;
 }

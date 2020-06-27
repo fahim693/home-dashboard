@@ -12,10 +12,16 @@
   gap: 10rem;
 }
 
-.MuiSwitch-colorPrimary.Mui-checked{
-    color: #2A95C5 !important;
+.MuiSwitch-colorPrimary.Mui-checked {
+  color: #2a95c5 !important;
 }
 
-.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track{
-    background-color: rgba(42, 149, 197, 0.38) !important;
+.MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track {
+  background-color: rgba(42, 149, 197, 0.38) !important;
+}
+
+.contact-info-field-value {
+  color: #4F4F4F;
+  font-size: 17px;
+  margin-top: 8px;
 }
