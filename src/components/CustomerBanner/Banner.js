@@ -49,6 +49,8 @@ const Banner = (props) => {
             props.history.push('/')
         } else if (e.target.value === 'cust-edit') {
             props.history.push('/customer-edit')
+        } else if(e.target.value === 'cust-del'){
+            props.history.push('/customer-list')
         }
     }
 
@@ -89,9 +91,6 @@ const Banner = (props) => {
                                     <FormControl variant="outlined" margin="dense" classes={{
                                         root: classes.quantityRoot
                                     }}>
-                                        {/* <InputLabel id="demo-simple-select-label">Actions</InputLabel> */}
-
-
                                         {
                                             props.screenType === 'cust' ?
                                                 <Select
@@ -121,7 +120,7 @@ const Banner = (props) => {
                                                         </div>
 
                                                     </MenuItem>
-                                                    <MenuItem value={4}>
+                                                    <MenuItem value='cust-del'>
                                                         <div className="menu-item">
                                                             <MdDelete className="action-icon" />
                                                             <div>DELETE</div>

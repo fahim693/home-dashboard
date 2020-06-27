@@ -46,7 +46,7 @@ const NavBar = (props) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className={`nav-link ${customers}`} to="#">
+                                    <Link className={`nav-link ${customers}`} to="/customer-list">
                                         <PeopleAltRounded className="nav-icon" />
                                         <div>Customers</div>
                                     </Link>
