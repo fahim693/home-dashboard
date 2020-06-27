@@ -24,7 +24,7 @@ const Addresses = () => {
         >
             <div className="address-container" style={{ border: 0 }}>
                 <div>
-                    <div className="addresses-details active">
+                    <div className="addresses-details address-active">
                         <div>
                             <div style={{ fontSize: 20, fontWeight: 500, color: '#2A95C5' }}>Permanent Address</div>
                             <div style={{ fontSize: 17, color: '#2A95C5', margin: '9px 0' }}>941 Baker's Street</div>
