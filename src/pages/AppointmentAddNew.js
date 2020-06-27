@@ -104,7 +104,9 @@ export default function AppointmentAddNew() {
                                                 <div style={{
                                                     display: 'flex',
                                                     justifyContent: 'space-between',
-                                                    width: '100%'
+                                                    alignItems:'center',
+                                                    height: 36,
+                                                    width: '100%',
                                                 }}
                                                     onClick={() => handleData(option)}
                                                 >

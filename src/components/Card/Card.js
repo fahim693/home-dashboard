@@ -3,6 +3,7 @@ import { Card, CardContent, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import './card.css'
 import { CloseRounded, CreateRounded, KeyboardArrowDownRounded } from '@material-ui/icons';
+import { withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,7 +42,7 @@ const CardCustom = (props) => {
                         {
                             props.cardType === 2 ?
                                 <div>
-                                    <Button style={{ color: '#2a95c5', fontWeight: 500, fontSize: 17 }}>+ ADD NEW</Button>
+                                    <Button onClick={() => props.history.push('/customer-new')} style={{ color: '#2a95c5', fontWeight: 500, fontSize: 17 }}>+ ADD NEW</Button>
                                 </div> :
                                 props.cardType === 3 ?
                                     <CloseRounded onClick={props.handleClose} style={{ cursor: 'pointer' }} /> :
@@ -55,7 +56,7 @@ const CardCustom = (props) => {
                                                 }}
                                                     onClick={props.handleClick}
                                                 >
-                                                    <span>View {props.rotate === 'initial'? 'All': 'LESS'}</span>
+                                                    <span>View {props.rotate === 'initial' ? 'All' : 'LESS'}</span>
                                                     <KeyboardArrowDownRounded className={props.rotate} />
                                                 </Button> : ''
                         }
@@ -69,4 +70,4 @@ const CardCustom = (props) => {
     )
 }
 
-export default CardCustom;
+export default withRouter(CardCustom);

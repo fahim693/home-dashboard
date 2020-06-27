@@ -60,6 +60,7 @@ const AppointmentAddressEdit = (props) => {
                     id="street-address"
                     variant="outlined"
                     placeholder="Enter Street Address"
+                    defaultValue={props.data.street_address}
                     // value={fieldValue.street_address}
                     name='street_address'
                     // onChange={handleOnChange}
@@ -76,7 +77,7 @@ const AppointmentAddressEdit = (props) => {
                 <Select
                     id="city"
                     // value={city}
-                    defaultValue={0}
+                    defaultValue={props.data.city}
                     MenuProps={{
                         getContentAnchorEl: null,
                         anchorOrigin: {
@@ -103,7 +104,7 @@ const AppointmentAddressEdit = (props) => {
             }}>
                 <Select
                     id="state"
-                    defaultValue={0}
+                    defaultValue={props.data.state}
                     MenuProps={{
                         getContentAnchorEl: null,
                         anchorOrigin: {
@@ -133,6 +134,7 @@ const AppointmentAddressEdit = (props) => {
                     variant="outlined"
                     name="zip"
                     placeholder="Enter ZIP"
+                    defaultValue={props.data.zip}
                     // value={fieldValue.zip}
                     // onChange={handleOnChange}
                     margin="dense"

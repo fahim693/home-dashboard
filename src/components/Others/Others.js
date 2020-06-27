@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { MdRemoveCircle } from 'react-icons/md'
 import { ImageRounded } from '@material-ui/icons';
-import { Typography, Chip, TextField, FormControl, MenuItem, Select, makeStyles, Button } from '@material-ui/core';
+import { Typography, Chip, TextField, FormControl, MenuItem, Select, makeStyles } from '@material-ui/core';
 import './others.css'
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import SearchIcon from "@material-ui/icons/Search";
-
+import TagButtonToggle from '../TagButtonToggle.js/TagButtonToggle';
 
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
@@ -27,26 +25,7 @@ const useStyles = makeStyles((theme) => ({
             // backgroundColor: "#fff"
         },
     },
-    tagRoot: {
-        "& .MuiSelect-select": {
-            '&:focus': {
-                backgroundColor: '#fff',
-            }
-        },
-        "& .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #bfbfbf"
-        },
-        "&:hover .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #000"
-        },
-        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #bfbfbf",
-            // backgroundColor: "#fff"
-        },
-        "& .MuiAutocomplete-inputRoot[class*='MuiOutlinedInput-root'] .MuiAutocomplete-input": {
-            padding: '10px !important'
-        }
-    }
+    
 }))
 
 const Others = (props) => {
@@ -72,68 +51,7 @@ const Others = (props) => {
                     ))
                 }
             </div>
-            {
-                clickState === 0 ?
-                    <div onClick={handleClick} className="chips-edit">
-                        <Chip className="chip-edit" label="+ ADD TAG" />
-                    </div> :
-                    clickState === 1 ?
-                        <div>
-                            <Autocomplete
-                                id="free-solo-demo"
-                                freeSolo
-                                options={['Tools', 'Photo', 'Job'].map((option) => option)}
-                                renderInput={(params) => (
-                                    <FormControl variant="outlined" fullWidth classes={{
-                                        root: classes.tagRoot
-                                    }}>
-                                        <TextField
-                                            {...params}
-                                            placeholder="Search Tag"
-                                            margin="normal"
-                                            onClick={handleChangeTag}
-                                            variant="outlined"
-                                            InputProps={{
-                                                ...params.InputProps,
-                                                endAdornment: <SearchIcon style={{
-                                                    marginRight: 10,
-                                                    color: '#A2A2A2'
-                                                }} />
-                                            }}
-                                        />
-                                    </FormControl>
-                                )}
-                            />
-                        </div> :
-                        <div>
-                            <Autocomplete
-                                id="free-solo-demo"
-                                freeSolo
-                                options={['Tools', 'Photo', 'Job'].map((option) => option)}
-                                renderInput={(params) => (
-                                    <FormControl variant="outlined" style={{ width: '100%' }} classes={{
-                                        root: classes.tagRoot
-                                    }}>
-                                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                                            <TextField
-                                                {...params}
-                                                placeholder="Search Tag"
-                                                margin="normal"
-                                                variant="outlined"
-                                                InputProps={{
-                                                    ...params.InputProps,
-                                                }}
-                                            />
-                                            <div style={{ marginTop: 5 }}>
-                                                <Button className='btn-primary' variant='contained'>ADD</Button>
-                                            </div>
-                                        </div>
-                                    </FormControl>
-                                )}
-                            />
-                        </div>
-            }
-
+            <TagButtonToggle clickState={clickState} handleClick={handleClick} handleChangeTag={handleChangeTag}/>
             <br />
             <Typography className="title-heads" variant="body2" component="p" >
                 Source

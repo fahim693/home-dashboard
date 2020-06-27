@@ -3,12 +3,9 @@
 }
 
 .MuiAutocomplete-option {
-  padding: 12px 12px 12px 18px !important;
+  /* padding: 10px 12px 10px 18px !important; */
+  /* height: 50px; */
   border-bottom: 2px solid #e6e6e6 !important;
-}
-
-.MuiAutocomplete-paper{
-  margin: 1px 0 !important;
 }
 
 .MuiAutocomplete-option:last-child {

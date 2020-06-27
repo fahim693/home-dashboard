@@ -9,6 +9,8 @@ import AppointmentAddNewInvoice from './pages/AppointmentAddNewInvoice';
 import CustomerNew from './pages/CustomerNew';
 import test from './components/ContactInfo/ContactInfoFilled';
 import CustomerDetails from './pages/CustomerDetails'
+import CustomerEdit from './pages/CustomerEdit'
+import CustomerList from './pages/CustomerList';
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
       <Route exact path="/add-invoice" component={AppointmentAddNewInvoice} />
       <Route exact path="/customer-new" component={CustomerNew} />
       <Route exact path="/customer" component={CustomerDetails} />
+      <Route exact path="/customer-edit" component={CustomerEdit} />
+      <Route exact path="/customer-list" component={CustomerList} />
       <Route exact path="/test" component={test} />
     </Router>
   )
