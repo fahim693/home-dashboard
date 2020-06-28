@@ -94,10 +94,8 @@ const useToolbarStyles = makeStyles((theme) => ({
     },
     quantityRoot: {
         minWidth: 185,
-        // width: '100%',
         color: "#000",
         backgroundColor: "#fff",
-        // opacity: 0.6,
         borderRadius: "5px",
         "& .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf"
@@ -116,7 +114,6 @@ const useToolbarStyles = makeStyles((theme) => ({
         },
         "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf",
-            // backgroundColor: "#fff"
         },
     }
 }));
@@ -226,10 +223,8 @@ const useStyles = makeStyles((theme) => ({
     },
     quantityRoot: {
         minWidth: 185,
-        // width: '100%',
         color: "#000",
         backgroundColor: "#fff",
-        // opacity: 0.6,
         borderRadius: "5px",
         "& .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf"
@@ -380,7 +375,7 @@ export default function CustomerList() {
                                                 <TableCell className='hst-body-cell' align="left">{row.email}</TableCell>
                                                 <TableCell className='hst-body-cell' align="left">{row.contact}</TableCell>
                                                 <TableCell className='hst-body-cell' align="left">{row.street_address}</TableCell>
-                                                <TableCell className='hst-body-cell' align="left">${row.city}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.city}</TableCell>
                                                 <TableCell className='hst-body-cell' align="left">{row.state}</TableCell>
                                             </TableRow>
                                         );
