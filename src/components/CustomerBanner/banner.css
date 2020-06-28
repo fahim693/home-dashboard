@@ -4,12 +4,12 @@
   margin-bottom: 1rem;
 }
 
-.MuiListItem-button:hover{
-  background-color: #F2F9FC !important;
-  color: #2A95C5 !important;
+.MuiListItem-button:hover {
+  background-color: #f2f9fc !important;
+  color: #2a95c5 !important;
 }
 
-.MuiButton-root{
+.MuiButton-root {
   font-size: 1rem !important;
   min-width: 130px !important;
 }
@@ -55,13 +55,13 @@
   color: red;
 }
 
-.menu-item{
+.menu-item {
   display: flex;
   align-items: center;
   font-weight: 500;
 }
 
-.menu-item > div{
+.menu-item > div {
   margin-top: 1px;
   /* margin-left: 2px; */
 }
@@ -69,6 +69,38 @@
 .action-icon {
   margin-right: 4px;
   font-size: 20px;
+}
+
+.employee-banner-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75px;
+  width: 75px;
+  background-color: rgba(42, 149, 197, 0.86);
+  border-radius: 100%;
+}
+
+.employee-picture {
+  height: 75px;
+  width: 75px;
+  background-image: url("/profile-img.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+}
+
+.with-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      0deg,
+      rgba(42, 149, 197, 0.86),
+      rgba(42, 149, 197, 0.86)
+    ),
+    url("/profile-img.png");
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 690px) {
