@@ -30,6 +30,8 @@ const NavBar = (props) => {
         customers = 'selected'
     } else if (props.active === 2) {
         appointments = 'selected'
+    } else if (props.active === 5) {
+        employees = 'selected'
     }
     return (
         <div className={classes.root}>
@@ -70,7 +72,7 @@ const NavBar = (props) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className={`nav-link ${employees}`} to="#">
+                                    <Link className={`nav-link ${employees}`} to="/employee-list">
                                         <AssignmentIndRounded className="nav-icon" />
                                         <div>Employees</div>
                                     </Link>

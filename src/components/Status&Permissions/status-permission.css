@@ -1,0 +1,10 @@
+.MuiRadio-colorSecondary.Mui-checked {
+  color: #2a95c5 !important;
+}
+.MuiIconButton-root {
+  padding: 6px 9px !important;
+}
+
+.MuiIconButton-root:hover{
+    background-color: #F2F9FC !important;
+}

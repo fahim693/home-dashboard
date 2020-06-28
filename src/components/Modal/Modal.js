@@ -43,32 +43,51 @@ export default function TransitionsModal(props) {
                         <br />
                         <br />
                         <br />
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'flex-end'
-                        }}>
-                            <Button onClick={props.handleModal} variant='outlined' style={{
-                                padding: '6px 16px',
-                                background: '#fff',
-                                fontWeight: 500,
-                                fontSize: 16,
-                                marginRight: 8
-                            }}>
-                                <CloseRounded style={{ color: '#D35342', marginRight: 4 }} />
-                                <span>CANCEL</span>
-                            </Button>
-                            <Button onClick={props.handleModal} variant='outlined' style={{
-                                padding: '6px 17px',
-                                background: '#D35342',
-                                fontWeight: 500,
-                                borderColor: '#D35342',
-                                color: '#fff',
-                                fontSize: 16
-                            }}>
-                                <DeleteRounded style={{ color: '#fff', marginRight: 4 }} />
-                                <span>DELETE</span>
-                            </Button>
-                        </div>
+                        {
+                            props.isPasswordReset ?
+                                <div style={{
+                                    display: 'flex',
+                                    justifyContent: 'flex-end'
+                                }}>
+                                    <Button onClick={props.handleModal} variant='outlined' style={{
+                                        padding: '6px 16px',
+                                        background: '#62C796',
+                                        color:'#fff',
+                                        fontWeight: 500,
+                                        fontSize: 16,
+                                        marginRight: 8
+                                    }}>
+                                        OK
+                                    </Button>
+                                </div>
+                                :
+                                <div style={{
+                                    display: 'flex',
+                                    justifyContent: 'flex-end'
+                                }}>
+                                    <Button onClick={props.handleModal} variant='outlined' style={{
+                                        padding: '6px 16px',
+                                        background: '#fff',
+                                        fontWeight: 500,
+                                        fontSize: 16,
+                                        marginRight: 8
+                                    }}>
+                                        <CloseRounded style={{ color: '#D35342', marginRight: 4 }} />
+                                        <span>CANCEL</span>
+                                    </Button>
+                                    <Button onClick={props.handleModal} variant='outlined' style={{
+                                        padding: '6px 17px',
+                                        background: '#D35342',
+                                        fontWeight: 500,
+                                        borderColor: '#D35342',
+                                        color: '#fff',
+                                        fontSize: 16
+                                    }}>
+                                        <DeleteRounded style={{ color: '#fff', marginRight: 4 }} />
+                                        <span>DELETE</span>
+                                    </Button>
+                                </div>
+                        }
                     </div>
                 </Fade>
             </Modal>

@@ -4,7 +4,7 @@ import { Typography, FormControl, Select, TextField, MenuItem, makeStyles } from
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
         minWidth: 195,
-        marginBottom: 9,
+        marginBottom: 10,
         "& .MuiSelect-select": {
             '&:focus': {
                 backgroundColor: '#fff',

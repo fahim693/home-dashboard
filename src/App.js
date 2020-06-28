@@ -7,10 +7,14 @@ import AppointmentLists from './pages/AppointmentList';
 import AppointmentAddNew from './pages/AppointmentAddNew';
 import AppointmentAddNewInvoice from './pages/AppointmentAddNewInvoice';
 import CustomerNew from './pages/CustomerNew';
-import test from './components/ContactInfo/ContactInfoFilled';
+import test from './components/CustomerBanner/BannerEmployee';
 import CustomerDetails from './pages/CustomerDetails'
 import CustomerEdit from './pages/CustomerEdit'
 import CustomerList from './pages/CustomerList';
+import EmployeeNew from './pages/EmployeeNew';
+import EmployeeDetails from './pages/EmployeeDetails';
+import EmployeeEdit from './pages/EmployeeEdit';
+import EmployeeList from './pages/EmployeeList';
 
 const App = () => {
   return (
@@ -24,6 +28,10 @@ const App = () => {
       <Route exact path="/customer" component={CustomerDetails} />
       <Route exact path="/customer-edit" component={CustomerEdit} />
       <Route exact path="/customer-list" component={CustomerList} />
+      <Route exact path="/employee-new" component={EmployeeNew} />
+      <Route exact path="/employee" component={EmployeeDetails} />
+      <Route exact path="/employee-edit" component={EmployeeEdit} />
+      <Route exact path="/employee-list" component={EmployeeList} />
       <Route exact path="/test" component={test} />
     </Router>
   )
