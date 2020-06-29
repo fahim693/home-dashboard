@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
-import { Typography, Chip } from '@material-ui/core';
-import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded, ImageRounded, GetAppRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
+import { Typography } from '@material-ui/core';
+import { EventNoteRounded, RoomRounded, PersonAddRounded, LabelImportantRounded, MonetizationOnRounded, HistoryRounded } from '@material-ui/icons';
 import '../styles/appointment.css'
 import Invoice from '../components/Invoice Table/Invoice';
 import AppointmentHistory from '../components/AppointmentHistory/AppointmentHistory';
@@ -13,6 +13,7 @@ import { data, dataInit } from '../data/UserData'
 import Card from '../components/Card/Card'
 import Schedule from '../components/Schedule/Schedule';
 import JobAssigned from '../components/JobAssigned/JobAssigned';
+import OthersFilled from '../components/Others/OthersFilled';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -82,43 +83,7 @@ export default function CenteredGrid() {
                                     icon={<LabelImportantRounded className="main-title-icon" />}
                                     cardType={4}
                                 >
-                                    <React.Fragment>
-                                        <Typography className="title-heads" variant="body2" component="p" >
-                                            Tags
-                                            </Typography>
-                                        <div className="chips">
-                                            {
-                                                data.tags.map(tag => (
-                                                    <Chip key={tag} className="chip" label={tag} />
-                                                ))
-                                            }
-                                        </div>
-                                        <br />
-                                        <Typography className="title-heads" variant="body2" component="p" >
-                                            Source
-                                            </Typography>
-                                        <Typography variant="body2" component="p" style={{ fontSize: 20 }}>{data.source_name}</Typography>
-                                        <br />
-                                        <Typography className="title-heads" variant="body2" component="p" >
-                                            Notes
-                                            </Typography>
-                                        <Typography variant="body2" component="p" style={{ fontSize: 20 }}>{data.notes}</Typography>
-                                        <br />
-                                        <Typography className="title-heads" variant="body2" component="p" >
-                                            Attachments
-                                            </Typography>
-                                        {
-                                            data.attachments.map((attachment, idx) => (
-                                                <div key={idx} className="attachment-card">
-                                                    <div>
-                                                        <ImageRounded style={{ marginRight: 10 }} />
-                                                        <Typography variant="body2" component="p" >{attachment}</Typography>
-                                                    </div>
-                                                    <GetAppRounded style={{ cursor: 'pointer' }} />
-                                                </div>
-                                            ))
-                                        }
-                                    </React.Fragment>
+                                    <OthersFilled data={data} />
                                 </Card>
                             </Grid>
                         </Grid>

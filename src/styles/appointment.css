@@ -14,38 +14,6 @@
   font-weight: 500 !important;
   margin-bottom: 1px !important;
 }
-.chips {
-  margin-top: 0.4rem;
-}
-
-.chips .chip {
-  margin-right: 0.5rem;
-  margin-top: 0.5rem;
-  padding: 0.7rem;
-  background-color: #6fa9ff42;
-  font-weight: 400;
-  font-size: 1.125rem;
-}
-
-.attachment-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.8rem;
-  font-size: 1.25rem;
-  background-color: #e6e6e678;;
-  border-radius: 6px;
-  margin-top: 0.6rem;
-}
-
-.attachment-card > div {
-  display: flex;
-  align-items: center;
-}
-
-.attachment-name {
-  margin-left: 7rem;
-}
 
 .start,
 .end {

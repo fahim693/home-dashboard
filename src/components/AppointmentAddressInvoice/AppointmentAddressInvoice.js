@@ -53,18 +53,23 @@ const AppointmentAddressInvoice = () => {
                     <MenuItem value={1}>Present Address</MenuItem>
                 </Select>
             </FormControl>
-            <br/>
-            <br/>
+            <br />
+            <br />
             <Typography className="title-heads" variant="body2" component="p" >
                 Street Address
             </Typography>
             <Typography variant="body2" component="p" style={{ fontSize: 20 }}>941 Baker's Street</Typography>
-            <br/>
+            <br />
             <Typography className="title-heads" variant="body2" component="p" >
                 City
             </Typography>
             <Typography variant="body2" component="p" style={{ fontSize: 20 }}>New York</Typography>
-            <br/>
+            <br />
+            <Typography className="title-heads" variant="body2" component="p" >
+                State
+            </Typography>
+            <Typography variant="body2" component="p" style={{ fontSize: 20 }}>New York</Typography>
+            <br />
             <Typography className="title-heads" variant="body2" component="p" >
                 ZIP
             </Typography>

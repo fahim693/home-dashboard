@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import './banner.css'
 import { Button, FormControl, makeStyles, Select, MenuItem } from '@material-ui/core';
-import { MdCheck, MdClose, MdSend, MdCreate, MdApps, MdDelete, MdImportExport, MdLocalAtm } from 'react-icons/md';
+import { MdCheck, MdClose} from 'react-icons/md';
 import { withRouter } from 'react-router-dom';
 import { data } from '../../data/UserData'
 import TabModal from '../Modal/TabModal';
+import { AppsRounded, CreateRounded, DeleteRounded, ImportExportRounded, SendRounded, LocalAtmRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -109,20 +110,20 @@ const Banner = (props) => {
                                                 >
                                                     <MenuItem value={0} disabled style={{ display: 'none' }}>
                                                         <div className="menu-item" >
-                                                            <MdApps className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
+                                                            <AppsRounded className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
                                                             <div>ACTIONS</div>
                                                         </div>
                                                     </MenuItem>
                                                     <MenuItem value='cust-edit'>
                                                         <div className="menu-item">
-                                                            <MdCreate className="action-icon" />
+                                                            <CreateRounded className="action-icon" />
                                                             <div>EDIT</div>
                                                         </div>
 
                                                     </MenuItem>
                                                     <MenuItem value='cust-del'>
                                                         <div className="menu-item">
-                                                            <MdDelete className="action-icon" />
+                                                            <DeleteRounded className="action-icon" />
                                                             <div>DELETE</div>
                                                         </div>
                                                     </MenuItem>
@@ -145,7 +146,7 @@ const Banner = (props) => {
                                                     >
                                                         <MenuItem value={0} disabled style={{ display: 'none' }}>
                                                             <div className="menu-item" >
-                                                                <MdApps className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
+                                                                <AppsRounded className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
                                                                 <div>ACTIONS</div>
                                                             </div>
                                                         </MenuItem>
@@ -154,32 +155,32 @@ const Banner = (props) => {
                                                             setOpen(true)
                                                         }} value={1}>
                                                             <div className="menu-item">
-                                                                <MdLocalAtm className="action-icon" />
+                                                                <LocalAtmRounded className="action-icon" />
                                                                 <div>PAY NOW</div>
                                                             </div>
                                                         </MenuItem>
                                                         <MenuItem value={2}>
                                                             <div className="menu-item">
-                                                                <MdSend className="action-icon" />
+                                                                <SendRounded className="action-icon" />
                                                                 <div> SEND INVOICE</div>
                                                             </div>
                                                         </MenuItem>
                                                         <MenuItem onClick={handleClickRefund} value={5}>
                                                             <div className="menu-item">
-                                                                <MdImportExport className="action-icon" />
+                                                                <ImportExportRounded className="action-icon" />
                                                                 <div> REFUND</div>
                                                             </div>
                                                         </MenuItem>
                                                         <MenuItem value={3}>
                                                             <div className="menu-item">
-                                                                <MdCreate className="action-icon" />
+                                                                <CreateRounded className="action-icon" />
                                                                 <div>EDIT</div>
                                                             </div>
 
                                                         </MenuItem>
                                                         <MenuItem value={4}>
                                                             <div className="menu-item">
-                                                                <MdDelete className="action-icon" />
+                                                                <DeleteRounded className="action-icon" />
                                                                 <div>DELETE</div>
                                                             </div>
                                                         </MenuItem>
