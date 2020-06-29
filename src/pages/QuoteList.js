@@ -22,18 +22,18 @@ import { TextField, Button, FormControl } from '@material-ui/core';
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
 import '../styles/appointment-list.css'
-import { customerData } from '../data/CustomerData'
+import { quoteData } from '../data/QuoteData'
 import { useState } from 'react';
 import Modal from '../components/Modal/Modal'
 
 
 const headCells = [
-    { id: 'name', label: 'Customers' },
-    { id: 'calories', label: 'Email' },
-    { id: 'fat', label: 'Contact' },
-    { id: 'carbs', label: 'Street Address' },
-    { id: 'protein', label: 'City' },
-    { id: 'sad', label: 'State' },
+    { id: 'name', label: 'Quote #' },
+    { id: 'calories', label: 'Date' },
+    { id: 'fat', label: 'Start Time' },
+    { id: 'carbs', label: 'Status' },
+    { id: 'protein', label: 'Amount' },
+    { id: 'alt', label: 'Address' }
 ];
 
 function EnhancedTableHead(props) {
@@ -135,9 +135,9 @@ const EnhancedTableToolbar = (props) => {
             ) : (
                     <div className="tbl-title">
                         <Typography className={classes.title} variant="h6" id="tableTitle" component="div" style={{ fontSize: 24, marginLeft: 20, fontWeight: 500 }}>
-                            Customers
+                            Quotes
                         </Typography>
-                        <div className="row-length">{customerData.length}</div>
+                        <div className="row-length">{quoteData.length}</div>
                     </div>
                 )}
 
@@ -173,7 +173,7 @@ const EnhancedTableToolbar = (props) => {
                         <div style={{
                             marginLeft: 16
                         }}>
-                            <Button href='/customer-new' variant='contained' className="btn-primary">ADD NEW</Button>
+                            <Button href='/quote-new' variant='contained' className="btn-primary">ADD NEW</Button>
                         </div>
                     </div>
                 )}
@@ -183,7 +183,7 @@ const EnhancedTableToolbar = (props) => {
                     setOpen(false)
                     window.location.reload()
                 }}
-                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected customers?' : 'Are you sure you want to delete the selected customer?'}
+                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected quotes?' : 'Are you sure you want to delete the selected quote?'}
             />
         </Toolbar>
     );
@@ -223,8 +223,10 @@ const useStyles = makeStyles((theme) => ({
     },
     quantityRoot: {
         minWidth: 185,
+        // width: '100%',
         color: "#000",
         backgroundColor: "#fff",
+        // opacity: 0.6,
         borderRadius: "5px",
         "& .MuiOutlinedInput-notchedOutline": {
             border: "1px solid #bfbfbf"
@@ -253,7 +255,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function CustomerList() {
+export default function QuoteList() {
     const classes = useStyles();
     const [selected, setSelected] = React.useState([]);
     const [page, setPage] = React.useState(0);
@@ -262,7 +264,7 @@ export default function CustomerList() {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = customerData.map((n) => n.id);
+            const newSelecteds = quoteData.map((n) => n.id);
             setSelected(newSelecteds);
             return;
         }
@@ -302,7 +304,7 @@ export default function CustomerList() {
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
     return (
-        <Layout active={1}>
+        <Layout active={3}>
             <div className={classes.root}>
                 <div className="search-container-resp">
                     <FormControl variant="outlined" classes={{
@@ -327,7 +329,7 @@ export default function CustomerList() {
                     <div style={{
                         marginTop: 10
                     }}>
-                        <Button href='/add' variant='contained' className="btn-primary">ADD NEW</Button>
+                        <Button href='/quote-new' variant='contained' className="btn-primary">ADD NEW</Button>
                     </div>
                 </div>
                 <Paper className={classes.paper}>
@@ -343,10 +345,10 @@ export default function CustomerList() {
                                 classes={classes}
                                 numSelected={selected.length}
                                 onSelectAllClick={handleSelectAllClick}
-                                rowCount={customerData.length}
+                                rowCount={quoteData.length}
                             />
                             <TableBody>
-                                {customerData
+                                {quoteData
                                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                     .map((row, index) => {
                                         const isItemSelected = isSelected(row.id);
@@ -370,13 +372,13 @@ export default function CustomerList() {
                                                     />
                                                 </TableCell>
                                                 <TableCell className='hst-body-cell' align='left' id={labelId} scope="row">
-                                                    {row.name}
+                                                    {row.id}
                                                 </TableCell>
-                                                <TableCell className='hst-body-cell' align="left">{row.email}</TableCell>
-                                                <TableCell className='hst-body-cell' align="left">{row.contact}</TableCell>
-                                                <TableCell className='hst-body-cell' align="left">{row.street_address}</TableCell>
-                                                <TableCell className='hst-body-cell' align="left">{row.city}</TableCell>
-                                                <TableCell className='hst-body-cell' align="left">{row.state}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.date}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.start_time}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.status}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">${row.amount}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">{row.address}</TableCell>
                                             </TableRow>
                                         );
                                     })}
@@ -387,7 +389,7 @@ export default function CustomerList() {
                         <TablePagination
                             rowsPerPageOptions={[5, 10, 25]}
                             component="div"
-                            count={customerData.length}
+                            count={quoteData.length}
                             rowsPerPage={rowsPerPage}
                             page={page}
                             onChangePage={handleChangePage}

@@ -1,7 +1,7 @@
 import React from 'react'
-import { CameraAltRounded } from '@material-ui/icons';
+import { CameraAltRounded, AppsRounded, CreateRounded, DeleteRounded } from '@material-ui/icons';
 import { makeStyles, Button, Select, FormControl, MenuItem } from '@material-ui/core';
-import { MdCheck, MdClose, MdCreate, MdDelete, MdApps } from 'react-icons/md';
+import { MdCheck, MdClose } from 'react-icons/md';
 import { withRouter } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -111,20 +111,20 @@ const BannerEmployee = (props) => {
                                         >
                                             <MenuItem value={0} disabled style={{ display: 'none' }}>
                                                 <div className="menu-item" >
-                                                    <MdApps className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
+                                                    <AppsRounded className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} />
                                                     <div>ACTIONS</div>
                                                 </div>
                                             </MenuItem>
                                             <MenuItem value='emp-edit'>
                                                 <div className="menu-item">
-                                                    <MdCreate className="action-icon" />
+                                                    <CreateRounded className="action-icon" />
                                                     <div>EDIT</div>
                                                 </div>
 
                                             </MenuItem>
                                             <MenuItem value='emp-del'>
                                                 <div className="menu-item">
-                                                    <MdDelete className="action-icon" />
+                                                    <DeleteRounded className="action-icon" />
                                                     <div>DELETE</div>
                                                 </div>
                                             </MenuItem>

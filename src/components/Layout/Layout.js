@@ -30,6 +30,8 @@ const NavBar = (props) => {
         customers = 'selected'
     } else if (props.active === 2) {
         appointments = 'selected'
+    } else if (props.active === 3) {
+        quotes = 'selected'
     } else if (props.active === 5) {
         employees = 'selected'
     }
@@ -60,7 +62,7 @@ const NavBar = (props) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className={`nav-link ${quotes}`} to="#">
+                                    <Link className={`nav-link ${quotes}`} to="/quote-list">
                                         <ReceiptRounded className="nav-icon" />
                                         <div>Quotes</div>
                                     </Link>

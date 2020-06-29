@@ -2,6 +2,7 @@ import React from 'react'
 import './banner.css'
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
+import { MdCheck } from 'react-icons/md';
 
 const BannerButtonOnly = (props) => {
 
@@ -11,7 +12,15 @@ const BannerButtonOnly = (props) => {
             justifyContent: 'flex-end',
             marginTop: 45
         }}>
-            <Button onClick={() => props.history.push(props.link)} variant='contained' className="btn-primary">{props.text}</Button>
+            {
+                props.text === 'SAVE' ?
+                    <Button onClick={() => props.history.push(props.link)} variant='contained' className="btn-save">
+                        <MdCheck className='btn-icon' />
+                        {props.text}
+                    </Button>
+                    : <Button onClick={() => props.history.push(props.link)} variant='contained' className="btn-primary">{props.text}</Button>
+            }
+
         </div >
     )
 }
