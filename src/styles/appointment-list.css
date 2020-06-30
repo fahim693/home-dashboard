@@ -3,6 +3,10 @@
 .MuiCheckbox-colorPrimary.MuiCheckbox-indeterminate {
   color: #2a95c5 !important;
 }
+
+/* .MuiFormControl-marginDense{
+  margin: 0 !important;
+} */
 .apt-list-tbl > .MuiTableCell-root {
   padding-left: 23px !important;
 }

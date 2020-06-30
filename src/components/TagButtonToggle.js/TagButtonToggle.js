@@ -2,6 +2,7 @@ import React from 'react'
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { FormControl, TextField, Button, makeStyles, Chip } from '@material-ui/core';
 import SearchIcon from "@material-ui/icons/Search";
+import './tag-toggle.css'
 
 const useStyles = makeStyles((theme) => ({
     tagRoot: {
@@ -51,6 +52,7 @@ const TagButtonToggle = (props) => {
                                             margin="normal"
                                             onClick={props.handleChangeTag}
                                             variant="outlined"
+                                            style={{ marginTop: '14px' }}
                                             InputProps={{
                                                 ...params.InputProps,
                                                 endAdornment: <SearchIcon style={{
@@ -72,10 +74,11 @@ const TagButtonToggle = (props) => {
                                     <FormControl variant="outlined" style={{ width: '100%' }} classes={{
                                         root: classes.tagRoot
                                     }}>
-                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                        <div className='tag-autocomplete' style={{ display: 'flex', alignItems: 'center' }}>
                                             <TextField
                                                 {...params}
                                                 placeholder="Search Tag"
+                                                style={{ marginTop: '14px' }}
                                                 margin="normal"
                                                 variant="outlined"
                                                 InputProps={{

@@ -4,7 +4,7 @@ export const quoteData = [
         date: '12/04/2020',
         start_time: '05:30 PM',
         status: 'Created',
-        amount: 150,
+        amount: '150.00',
         address: '941 Baker’s Street New York NY 50008'
     },
     {
@@ -12,7 +12,7 @@ export const quoteData = [
         date: '12/04/2020',
         start_time: '05:30 PM',
         status: 'Created',
-        amount: 150,
+        amount: '150.00',
         address: '941 Baker’s Street New York NY 50008'
     },
     {
@@ -20,7 +20,7 @@ export const quoteData = [
         date: '12/04/2020',
         start_time: '05:30 PM',
         status: 'Created',
-        amount: 150,
+        amount: '150.00',
         address: '941 Baker’s Street New York NY 50008'
     },
     {
@@ -28,7 +28,7 @@ export const quoteData = [
         date: '12/04/2020',
         start_time: '05:30 PM',
         status: 'Created',
-        amount: 150,
+        amount: '150.00',
         address: '941 Baker’s Street New York NY 50008'
     },
     {
@@ -36,7 +36,7 @@ export const quoteData = [
         date: '12/04/2020',
         start_time: '05:30 PM',
         status: 'Created',
-        amount: 150,
+        amount: '150.00',
         address: '941 Baker’s Street New York NY 50008'
     },
     {
@@ -44,7 +44,7 @@ export const quoteData = [
         date: '12/04/2020',
         start_time: '05:30 PM',
         status: 'Created',
-        amount: 150,
+        amount: '150.00',
         address: '941 Baker’s Street New York NY 50008'
     },
     {
@@ -52,7 +52,7 @@ export const quoteData = [
         date: '12/04/2020',
         start_time: '05:30 PM',
         status: 'Created',
-        amount: 150,
+        amount: '150.00',
         address: '941 Baker’s Street New York NY 50008'
     },
     {
@@ -60,7 +60,7 @@ export const quoteData = [
         date: '12/04/2020',
         start_time: '05:30 PM',
         status: 'Created',
-        amount: 150,
+        amount: '150.00',
         address: '941 Baker’s Street New York NY 50008'
     }
 ]

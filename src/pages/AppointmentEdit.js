@@ -85,7 +85,7 @@ export default function CenteredGrid() {
     return (
         <Layout active={2}>
             <div className={classes.root}>
-                <Banner edit={true} balanceTypeText="Remaining Balance" confirmUrl="/appointment"/>
+                <Banner edit={true} balanceTypeText="Remaining Balance" confirmUrl="/appointment" />
                 <Timeline step={0} />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4} >
@@ -107,11 +107,17 @@ export default function CenteredGrid() {
                                                     <KeyboardDatePicker
                                                         clearable
                                                         value={date.start}
+                                                        variant='inline'
+                                                        KeyboardButtonProps
                                                         onChange={date => handleDateChange(date, 'start')}
                                                         minDate={new Date()}
                                                         inputVariant="outlined"
                                                         format="MM/DD/YYYY"
                                                         margin="dense"
+                                                        PopoverProps={{
+                                                            anchorOrigin: { horizontal: "left", vertical: "bottom" },
+                                                            transformOrigin: { horizontal: "left", vertical: "top" },
+                                                        }}
                                                     />
                                                 </MuiPickersUtilsProvider>
                                             </FormControl>
@@ -176,11 +182,17 @@ export default function CenteredGrid() {
                                                     <KeyboardDatePicker
                                                         clearable
                                                         value={date.end}
+                                                        variant='inline'
+                                                        KeyboardButtonProps
                                                         onChange={date => handleDateChange(date, 'end')}
                                                         minDate={new Date()}
                                                         inputVariant="outlined"
                                                         format="MM/DD/YYYY"
                                                         margin="dense"
+                                                        PopoverProps={{
+                                                            anchorOrigin: { horizontal: "left", vertical: "bottom" },
+                                                            transformOrigin: { horizontal: "left", vertical: "top" },
+                                                        }}
                                                     />
                                                 </MuiPickersUtilsProvider>
                                             </FormControl>

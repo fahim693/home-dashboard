@@ -25,6 +25,7 @@ import '../styles/appointment-list.css'
 import { employeeData } from '../data/EmployeeData'
 import { useState } from 'react';
 import Modal from '../components/Modal/Modal'
+import { AddRounded } from '@material-ui/icons';
 
 
 const headCells = [
@@ -167,12 +168,16 @@ const EnhancedTableToolbar = (props) => {
                                     )
                                 }}
                                 margin="dense"
+                                style={{ margin: 0 }}
+
                             />
                         </FormControl>
                         <div style={{
                             marginLeft: 16
                         }}>
-                            <Button href='/employee-new' variant='contained' className="btn-primary">ADD NEW</Button>
+                            <Button href='/employee-new' variant='contained' className="btn-primary">
+                                <AddRounded />
+                                ADD NEW</Button>
                         </div>
                     </div>
                 )}
@@ -328,7 +333,9 @@ export default function EmployeeList() {
                     <div style={{
                         marginTop: 10
                     }}>
-                        <Button href='/add' variant='contained' className="btn-primary">ADD NEW</Button>
+                        <Button href='/add' variant='contained' className="btn-primary">
+                            <AddRounded />
+                            ADD NEW</Button>
                     </div>
                 </div>
                 <Paper className={classes.paper}>

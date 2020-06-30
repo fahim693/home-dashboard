@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './banner.css'
 import { Button, FormControl, makeStyles, Select, MenuItem } from '@material-ui/core';
-import { MdCheck, MdClose} from 'react-icons/md';
+import { MdCheck, MdClose } from 'react-icons/md';
 import { withRouter } from 'react-router-dom';
 import { data } from '../../data/UserData'
 import TabModal from '../Modal/TabModal';
@@ -50,7 +50,7 @@ const Banner = (props) => {
             props.history.push('/')
         } else if (e.target.value === 'cust-edit') {
             props.history.push('/customer-edit')
-        } else if(e.target.value === 'cust-del'){
+        } else if (e.target.value === 'cust-del') {
             props.history.push('/customer-list')
         }
     }
@@ -89,9 +89,11 @@ const Banner = (props) => {
                             </React.Fragment> :
                             <React.Fragment>
                                 <div className="cst-action">
-                                    <FormControl variant="outlined" margin="dense" classes={{
-                                        root: classes.quantityRoot
-                                    }}>
+                                    <FormControl variant="outlined" margin="dense"
+                                        style={{ margin: 0 }}
+                                        classes={{
+                                            root: classes.quantityRoot
+                                        }}>
                                         {
                                             props.screenType === 'cust' ?
                                                 <Select
