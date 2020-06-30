@@ -39,10 +39,10 @@ const AppointmentAddressEdit = (props) => {
                             <TextField
                                 id="street-address"
                                 variant="outlined"
-                                placeholder="Enter Street Address"
+                                placeholder="Enter Address Name"
                                 // value={fieldValue.street_address}
                                 name='street_address'
-                                value="Permanent Address"
+                                value={props.addrName}
                                 // onChange={handleOnChange}
                                 fullWidth
                                 margin='dense'

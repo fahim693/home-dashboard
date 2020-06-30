@@ -25,6 +25,7 @@ import '../styles/appointment-list.css'
 import { quoteData } from '../data/QuoteData'
 import { useState } from 'react';
 import Modal from '../components/Modal/Modal'
+import { AddRounded } from '@material-ui/icons';
 
 
 const headCells = [
@@ -168,12 +169,15 @@ const EnhancedTableToolbar = (props) => {
                                     )
                                 }}
                                 margin="dense"
+                                style={{ margin: 0 }}
                             />
                         </FormControl>
                         <div style={{
                             marginLeft: 16
                         }}>
-                            <Button href='/quote-new' variant='contained' className="btn-primary">ADD NEW</Button>
+                            <Button href='/quote-new' variant='contained' className="btn-primary">
+                                <AddRounded />
+                                ADD NEW</Button>
                         </div>
                     </div>
                 )}
@@ -329,7 +333,9 @@ export default function QuoteList() {
                     <div style={{
                         marginTop: 10
                     }}>
-                        <Button href='/quote-new' variant='contained' className="btn-primary">ADD NEW</Button>
+                        <Button href='/quote-new' variant='contained' className="btn-primary">
+                            <AddRounded />
+                            ADD NEW</Button>
                     </div>
                 </div>
                 <Paper className={classes.paper}>
