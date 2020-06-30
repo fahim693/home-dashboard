@@ -1,7 +1,9 @@
 .main-title-icon {
   font-size: 1.3rem !important;
 }
-
+.view-btn > .MuiButton-root{
+  min-width: 117px !important;
+}
 .card-title {
   display: flex;
   align-items: center;

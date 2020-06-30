@@ -56,19 +56,21 @@ const CardCustom = (props) => {
                                             </div>
                                             :
                                             props.expansionButton ?
-                                                <Button
-                                                    onClick={props.handleClick}
-                                                    style={{paddingRight: 0}}
-                                                >
-                                                    <div style={{
-                                                        display: 'flex',
-                                                        alignItems: 'center',
-                                                    }}>
-                                                        <span>View {props.rotate === 'initial' ? 'All' : 'LESS'}</span>
-                                                        <KeyboardArrowDownRounded style={{ fontSize: 27, marginTop: -1.3 }} className={props.rotate} />
-                                                    </div>
+                                                <div className="view-btn">
+                                                    <Button
+                                                        onClick={props.handleClick}
+                                                        style={{ paddingLeft: ' 12px',paddingRight:'5px' }}
+                                                    >
+                                                        <div style={{
+                                                            display: 'flex',
+                                                            alignItems: 'center',
+                                                        }}>
+                                                            <span>View {props.rotate === 'initial' ? 'All' : 'LESS'}</span>
+                                                            <KeyboardArrowDownRounded style={{ fontSize: 27, marginTop: -1.3 }} className={props.rotate} />
+                                                        </div>
 
-                                                </Button> : ''
+                                                    </Button>
+                                                </div> : ''
                         }
                     </div>
                 </Typography>
