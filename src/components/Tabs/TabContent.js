@@ -149,11 +149,17 @@ const TabContent = (props) => {
                                             <KeyboardDatePicker
                                                 clearable
                                                 value={date.start}
+                                                variant='inline'
+                                                KeyboardButtonProps
                                                 onChange={date => handleDateChange(date, 'start')}
                                                 minDate={new Date()}
                                                 inputVariant="outlined"
                                                 format="MM/DD/YYYY"
                                                 margin="dense"
+                                                PopoverProps={{
+                                                    anchorOrigin: { horizontal: "left", vertical: "bottom" },
+                                                    transformOrigin: { horizontal: "left", vertical: "top" },
+                                                }}
                                             />
                                         </MuiPickersUtilsProvider>
                                     </FormControl>
