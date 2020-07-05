@@ -19,7 +19,6 @@ import { data } from '../data/UserData'
 import { items, services } from '../data/InvoiceData'
 import { customerData } from '../data/CustomerInfo';
 
-
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,

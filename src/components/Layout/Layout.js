@@ -34,6 +34,8 @@ const NavBar = (props) => {
         quotes = 'selected'
     } else if (props.active === 5) {
         employees = 'selected'
+    }else if (props.active === 6) {
+        more = 'selected'
     }
     return (
         <div className={classes.root}>
@@ -80,7 +82,7 @@ const NavBar = (props) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className={`nav-link ${more}`} to="#">
+                                    <Link className={`nav-link ${more}`} to="/more">
                                         <MoreHorizRounded className="nav-icon" />
                                         <div>More</div>
                                     </Link>

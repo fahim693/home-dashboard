@@ -19,6 +19,9 @@ import QuoteNewInvoice from './pages/QuoteNewInvoice';
 import Quote from './pages/Quote';
 import QuoteEdit from './pages/QuoteEdit';
 import QuoteList from './pages/QuoteList';
+import More from './pages/More';
+import BusinessProfile from './pages/BusinessProfile';
+import BusinessProfileEdit from './pages/BusinessProfileEdit';
 
 const App = () => {
   return (
@@ -41,6 +44,9 @@ const App = () => {
       <Route exact path="/quote" component={Quote} />
       <Route exact path="/quote-edit" component={QuoteEdit} />
       <Route exact path="/quote-list" component={QuoteList} />
+      <Route exact path="/more" component={More} />
+      <Route exact path="/business-profile" component={BusinessProfile} />
+      <Route exact path="/business-profile-edit" component={BusinessProfileEdit} />
     </Router>
   )
 }

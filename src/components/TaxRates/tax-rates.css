@@ -1,0 +1,11 @@
+.tax-tbl > .MuiTableCell-root {
+  padding: 1rem 1.5rem !important;
+}
+
+.tax-tbl > .MuiTableCell-root:nth-child(1) {
+    padding-right: 1px !important;
+  }
+
+  .tax-tbl > .MuiTableCell-root:nth-child(2) {
+    padding-left: 8px !important;
+  }

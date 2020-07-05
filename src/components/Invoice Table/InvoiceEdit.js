@@ -128,7 +128,6 @@ export default function Invoice(props) {
                                                 <MenuItem value={3}>Engineer</MenuItem>
                                             </Select>
                                         </FormControl>
-                                        <br />
                                         <FormControl variant="outlined" fullWidth classes={{
                                             root: classes.quantityRoot
                                         }}>
@@ -236,7 +235,6 @@ export default function Invoice(props) {
                                                 <MenuItem value={2}>Wipes</MenuItem>
                                             </Select>
                                         </FormControl>
-                                        <br />
                                         <FormControl variant="outlined" fullWidth classes={{
                                             root: classes.quantityRoot
                                         }}>
