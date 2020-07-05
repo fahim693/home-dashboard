@@ -1,5 +1,5 @@
 import React from 'react'
-import { CameraAltRounded, AppsRounded, CreateRounded, DeleteRounded } from '@material-ui/icons';
+import { CameraAltRounded, AppsRounded, CreateRounded } from '@material-ui/icons';
 import { makeStyles, Button, Select, FormControl, MenuItem } from '@material-ui/core';
 import { MdCheck, MdClose } from 'react-icons/md';
 import { withRouter } from 'react-router-dom';
@@ -38,10 +38,11 @@ const BannerMore = (props) => {
 
     const handleChange = (e) => {
         if (e.target.value === 'emp-edit') {
-            props.history.push('/employee-edit')
-        } else if (e.target.value === 'emp-del') {
-            props.history.push('/employee-list')
-        }
+            props.history.push('/business-profile-edit')
+        } 
+        // else if (e.target.value === 'emp-del') {
+        //     props.history.push('/employee-list')
+        // }
     }
     return (
         <React.Fragment>
@@ -124,14 +125,13 @@ const BannerMore = (props) => {
                                                     <CreateRounded className="action-icon" />
                                                     <div>EDIT</div>
                                                 </div>
-
                                             </MenuItem>
-                                            <MenuItem value='emp-del'>
+                                            {/* <MenuItem value='emp-del'>
                                                 <div className="menu-item">
                                                     <DeleteRounded className="action-icon" />
                                                     <div>DELETE</div>
                                                 </div>
-                                            </MenuItem>
+                                            </MenuItem> */}
                                         </Select>
                                     </FormControl>
                                 </div>
