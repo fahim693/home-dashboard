@@ -19,9 +19,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         minWidth: 275,
-    },
-    formControl: {
-        minWidth: 185,
     }
 }));
 
