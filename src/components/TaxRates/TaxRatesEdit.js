@@ -54,7 +54,6 @@ export default function TaxRates(props) {
             title="Tax Rates"
             icon={<FunctionsRounded className="main-title-icon" />}
             cardType={1}
-            withEditIcon={true}
         >
             <TableContainer>
                 <Table className={classes.table} aria-label="simple table">
