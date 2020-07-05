@@ -46,31 +46,27 @@ const CardCustom = (props) => {
                                 </div> :
                                 props.cardType === 3 ?
                                     <CloseRounded onClick={props.handleClose} style={{ cursor: 'pointer' }} /> :
-                                    props.cardType === 4 ?
+                                    props.withEditIcon ?
                                         <div className="edit-icon-container">
                                             <CreateRounded onClick={props.handleClose} className="with-edit-icon" />
-                                        </div> :
-                                        props.withEditIcon ?
-                                            <div className="edit-icon-container">
-                                                <CreateRounded onClick={props.handleClose} className="with-edit-icon" />
-                                            </div>
-                                            :
-                                            props.expansionButton ?
-                                                <div className="view-btn">
-                                                    <Button
-                                                        onClick={props.handleClick}
-                                                        style={{ paddingLeft: ' 12px',paddingRight:'5px' }}
-                                                    >
-                                                        <div style={{
-                                                            display: 'flex',
-                                                            alignItems: 'center',
-                                                        }}>
-                                                            <span>View {props.rotate === 'initial' ? 'All' : 'LESS'}</span>
-                                                            <KeyboardArrowDownRounded style={{ fontSize: 27, marginTop: -1.8 }} className={props.rotate} />
-                                                        </div>
+                                        </div>
+                                        :
+                                        props.expansionButton ?
+                                            <div className="view-btn">
+                                                <Button
+                                                    onClick={props.handleClick}
+                                                    style={{ paddingLeft: ' 12px', paddingRight: '5px' }}
+                                                >
+                                                    <div style={{
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                    }}>
+                                                        <span>View {props.rotate === 'initial' ? 'All' : 'LESS'}</span>
+                                                        <KeyboardArrowDownRounded style={{ fontSize: 27, marginTop: -1.8 }} className={props.rotate} />
+                                                    </div>
 
-                                                    </Button>
-                                                </div> : ''
+                                                </Button>
+                                            </div> : ''
                         }
                     </div>
                 </Typography>
