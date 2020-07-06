@@ -1,7 +1,7 @@
 import React from 'react'
 import './service-item.css'
-import { CameraAltRounded, ImportExportRounded } from '@material-ui/icons';
-import { TextField, FormControl, MenuItem, Select, Typography, makeStyles, Button, RadioGroup, FormControlLabel, Radio, Switch } from '@material-ui/core';
+import { CameraAltRounded } from '@material-ui/icons';
+import { TextField, FormControl, MenuItem, Select, Typography, makeStyles, Button, Switch } from '@material-ui/core';
 import Card from '../Card/Card'
 import { MdCheck } from 'react-icons/md';
 
@@ -29,14 +29,14 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const NewService = () => {
+const NewService = (props) => {
     const classes = useStyles();
 
     return (
         <Card
-            title="Add New Service"
+            title={props.cardTitle}
             cardType={3}
-        // handleClose={props.handleClose}
+            handleClose={props.handleClose}
         >
             <div className="modal-cover-img">
                 <CameraAltRounded style={{ color: '#fff', fontSize: 30 }} />
@@ -45,9 +45,16 @@ const NewService = () => {
                 borderBottom: '2px solid #E0E0E0',
                 padding: '0.7rem 2rem 0'
             }}>
-                <Typography className="title-heads" variant="body2" component="p">
-                    Service Name
-                </Typography>
+                {
+                    props.modalType === 'service' ?
+                        <Typography className="title-heads" variant="body2" component="p">
+                            Service Name
+                        </Typography> :
+                        <Typography className="title-heads" variant="body2" component="p">
+                            Item Name
+                        </Typography>
+                }
+
                 <FormControl variant="outlined" fullWidth margin="dense" classes={{
                     root: classes.quantityRoot
                 }}>

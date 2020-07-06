@@ -24,6 +24,7 @@ import BusinessProfile from './pages/BusinessProfile';
 import BusinessProfileEdit from './pages/BusinessProfileEdit';
 import ItemTable from './pages/PriceBookTables/ItemTable';
 import ServiceTable from './pages/PriceBookTables/ServiceTable';
+import test from './components/Modal/NewServicesModal';
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
       <Route exact path="/business-profile-edit" component={BusinessProfileEdit} />
       <Route exact path="/service-table" component={ServiceTable} />
       <Route exact path="/item-table" component={ItemTable} />
+      <Route exact path="/test" component={test} />
     </Router>
   )
 }

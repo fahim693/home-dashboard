@@ -24,6 +24,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import { items } from '../../data/PriceBookData'
 import { useState } from 'react';
 import Modal from '../../components/Modal/Modal'
+import AddNewModal from '../../components/Modal/NewServicesModal'
 import { AddRounded } from '@material-ui/icons';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
@@ -132,6 +133,7 @@ const EnhancedTableToolbar = (props) => {
     const classes = useToolbarStyles();
     const { numSelected } = props;
     const [open, setOpen] = useState(false)
+    const [addNewOpen, setAddNewOpen] = useState(false)
 
     return (
         <Toolbar
@@ -197,23 +199,25 @@ const EnhancedTableToolbar = (props) => {
                             flexGrow: 1,
                             textAlign: 'right'
                         }}>
-                            <Button href='/add' variant='contained' className="btn-primary">
+                            <Button onClick={() => { setAddNewOpen(true) }} variant='contained' className="btn-primary">
                                 <AddRounded />
                                  ADD NEW
                                  </Button>
                         </div>
                     </div>
-                )}
+                )
+            }
 
-            {numSelected > 0 ? (
-                <Tooltip title="Delete">
-                    <IconButton onClick={() => {
-                        setOpen(true)
-                    }} aria-label="delete">
-                        <DeleteIcon />
-                    </IconButton>
-                </Tooltip>
-            ) : ''
+            {
+                numSelected > 0 ? (
+                    <Tooltip title="Delete">
+                        <IconButton onClick={() => {
+                            setOpen(true)
+                        }} aria-label="delete">
+                            <DeleteIcon />
+                        </IconButton>
+                    </Tooltip>
+                ) : ''
             }
             <Modal
                 open={open}
@@ -221,9 +225,17 @@ const EnhancedTableToolbar = (props) => {
                     setOpen(false)
                     window.location.reload()
                 }}
-                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected appointments?' : 'Are you sure you want to delete the selected appointment?'}
+                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected items?' : 'Are you sure you want to delete the selected item?'}
             />
-        </Toolbar>
+            <AddNewModal
+                open={addNewOpen}
+                cardTitle='Add New Item'
+                modalType='item'
+                handleModal={() => {
+                    setAddNewOpen(false)
+                }}
+            />
+        </Toolbar >
     );
 };
 

@@ -24,6 +24,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import { services } from '../../data/PriceBookData'
 import { useState } from 'react';
 import Modal from '../../components/Modal/Modal'
+import AddNewModal from '../../components/Modal/NewServicesModal'
 import { AddRounded } from '@material-ui/icons';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
@@ -131,6 +132,7 @@ const EnhancedTableToolbar = (props) => {
     const classes = useToolbarStyles();
     const { numSelected } = props;
     const [open, setOpen] = useState(false)
+    const [addNewOpen, setAddNewOpen] = useState(false)
     return (
         <Toolbar
             className={`${clsx(classes.root, {
@@ -194,10 +196,10 @@ const EnhancedTableToolbar = (props) => {
                             flexGrow: 1,
                             textAlign: 'right'
                         }}>
-                            <Button href='/add' variant='contained' className="btn-primary">
+                            <Button onClick={() => { setAddNewOpen(true) }} variant='contained' className="btn-primary">
                                 <AddRounded />
                                  ADD NEW
-                                 </Button>
+                            </Button>
                         </div>
                     </div>
                 )}
@@ -218,7 +220,15 @@ const EnhancedTableToolbar = (props) => {
                     setOpen(false)
                     window.location.reload()
                 }}
-                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected appointments?' : 'Are you sure you want to delete the selected appointment?'}
+                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected services?' : 'Are you sure you want to delete the selected service?'}
+            />
+            <AddNewModal
+                open={addNewOpen}
+                cardTitle='Add New Service'
+                modalType='service'
+                handleModal={() => {
+                    setAddNewOpen(false)
+                }}
             />
         </Toolbar>
     );
