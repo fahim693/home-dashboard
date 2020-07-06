@@ -21,7 +21,7 @@ import Layout from '../../components/Layout/Layout'
 import { TextField, Button, FormControl } from '@material-ui/core';
 import InputAdornment from "@material-ui/core/InputAdornment";
 import SearchIcon from "@material-ui/icons/Search";
-import { items } from '../../data/PriceBookData'
+import { items, itemsEmpty } from '../../data/PriceBookData'
 import { useState } from 'react';
 import Modal from '../../components/Modal/Modal'
 import AddNewModal from '../../components/Modal/NewServicesModal'
@@ -230,11 +230,22 @@ const EnhancedTableToolbar = (props) => {
             <AddNewModal
                 open={addNewOpen}
                 cardTitle='Add New Item'
+                data={itemsEmpty}
                 modalType='item'
                 handleModal={() => {
                     setAddNewOpen(false)
                 }}
             />
+            {/* <AddNewModal
+                open={addNewOpen}
+                cardTitle='Edit Item'
+                withImage={true}
+                modalType='item'
+                data={items[0]}
+                handleModal={() => {
+                    setAddNewOpen(false)
+                }}
+            /> */}
         </Toolbar >
     );
 };
@@ -428,7 +439,7 @@ export default function ItemTable() {
                                                 </TableCell>
                                                 <TableCell className='hst-body-cell' align="left">{row.description}</TableCell>
                                                 <TableCell className='hst-body-cell' align="left">{row.category}</TableCell>
-                                                <TableCell className='hst-body-cell' align="left">{row.price}</TableCell>
+                                                <TableCell className='hst-body-cell' align="left">${row.price}</TableCell>
                                                 <TableCell className='hst-body-cell' align="left">{row.booking}</TableCell>
                                             </TableRow>
                                         );

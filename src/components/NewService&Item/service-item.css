@@ -11,3 +11,28 @@
   display: flex;
   justify-content: space-between;
 }
+
+.with-cover-image {
+  background-image: url(/carpet.png);
+  background-size: cover;
+}
+
+.with-cover-image > .modal-cover-icon {
+  display: none;
+  color: #fff;
+  font-size: 30px;
+}
+
+.with-cover-image:hover > .modal-cover-icon {
+  display: block;
+}
+
+.with-cover-image:hover {
+  background: linear-gradient(
+      0deg,
+      rgba(42, 149, 197, 0.86),
+      rgba(42, 149, 197, 0.86)
+    ),
+    url(/carpet.png);
+  background-size: cover;
+}

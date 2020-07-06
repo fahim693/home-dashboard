@@ -39,6 +39,8 @@ export default function TransitionsModal(props) {
                 <Fade in={props.open}>
                     <div className={classes.paper}>
                         <NewService
+                            withImage={props.withImage}
+                            data={props.data}
                             handleClose={props.handleModal}
                             modalType={props.modalType}
                             cardTitle={props.cardTitle}

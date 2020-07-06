@@ -38,9 +38,16 @@ const NewService = (props) => {
             cardType={3}
             handleClose={props.handleClose}
         >
-            <div className="modal-cover-img">
-                <CameraAltRounded style={{ color: '#fff', fontSize: 30 }} />
-            </div>
+            {
+                props.withImage ?
+                    <div className="modal-cover-img with-cover-image">
+                        <CameraAltRounded className='modal-cover-icon' />
+                    </div> :
+                    <div className="modal-cover-img">
+                        <CameraAltRounded style={{ color: '#fff', fontSize: 30 }} />
+                    </div>
+            }
+
             <div style={{
                 borderBottom: '2px solid #E0E0E0',
                 padding: '0.7rem 2rem 0'
@@ -60,7 +67,7 @@ const NewService = (props) => {
                 }}>
                     <Select
                         id="payment"
-                        defaultValue={1}
+                        defaultValue={props.data.selected_item}
                         MenuProps={{
                             getContentAnchorEl: null,
                             anchorOrigin: {
@@ -69,10 +76,9 @@ const NewService = (props) => {
                             }
                         }}
                     >
-                        <MenuItem value={1} style={{ display: 'none' }}>Select Service Name</MenuItem>
-                        <MenuItem value={4}>Card</MenuItem>
-                        <MenuItem value={2}>Cash</MenuItem>
-                        <MenuItem value={3}>Bank Transfer</MenuItem>
+                        <MenuItem value={1} style={{ display: 'none' }}>Select {props.modalType === 'service' ? 'Service' : 'Item'} Name</MenuItem>
+                        <MenuItem value={2}>Carpet (One Bedroom)</MenuItem>
+                        <MenuItem value={3}>2 Bedroom Clean</MenuItem>
                     </Select>
                 </FormControl>
                 <Typography className="title-heads" variant="body2" component="p">
@@ -86,6 +92,7 @@ const NewService = (props) => {
                         variant="outlined"
                         placeholder="Enter Description"
                         // value={fieldValue.street_address}
+                        defaultValue={props.data.description}
                         name='amount'
                         // onChange={handleOnChange}
                         fullWidth
@@ -100,7 +107,7 @@ const NewService = (props) => {
                 }}>
                     <Select
                         id="payment"
-                        defaultValue={1}
+                        defaultValue={props.data.selected_cat}
                         MenuProps={{
                             getContentAnchorEl: null,
                             anchorOrigin: {
@@ -110,9 +117,8 @@ const NewService = (props) => {
                         }}
                     >
                         <MenuItem value={1} style={{ display: 'none' }}>Select Category</MenuItem>
-                        <MenuItem value={4}>Card</MenuItem>
-                        <MenuItem value={2}>Cash</MenuItem>
-                        <MenuItem value={3}>Bank Transfer</MenuItem>
+                        <MenuItem value={2}>Carpet Materials</MenuItem>
+                        <MenuItem value={3}>Bedroom Clean</MenuItem>
                     </Select>
                 </FormControl>
                 <div className="flex-container">
@@ -126,8 +132,9 @@ const NewService = (props) => {
                             <TextField
                                 id="amount"
                                 variant="outlined"
-                                placeholder="Enter Description"
+                                placeholder="Enter Price"
                                 // value={fieldValue.street_address}
+                                defaultValue={props.data.price}
                                 name='ampunt'
                                 // onChange={handleOnChange}
                                 fullWidth
@@ -145,8 +152,9 @@ const NewService = (props) => {
                             <TextField
                                 id="amount"
                                 variant="outlined"
-                                placeholder="Enter Description"
+                                placeholder="Enter Unit"
                                 // value={fieldValue.street_address}
+                                defaultValue={props.data.unit}
                                 name='ampunt'
                                 // onChange={handleOnChange}
                                 fullWidth
