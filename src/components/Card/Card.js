@@ -45,7 +45,9 @@ const CardCustom = (props) => {
                                     <Button onClick={() => props.history.push('/customer-new')} style={{ color: '#2a95c5', fontWeight: 500, fontSize: 17 }}>+ ADD NEW</Button>
                                 </div> :
                                 props.cardType === 3 ?
-                                    <CloseRounded onClick={props.handleClose} style={{ cursor: 'pointer' }} /> :
+                                    <div className="edit-icon-container">
+                                        <CloseRounded onClick={props.handleClose} style={{ cursor: 'pointer' }} />
+                                    </div> :
                                     props.withEditIcon ?
                                         <div className="edit-icon-container">
                                             <CreateRounded onClick={props.handleClose} className="with-edit-icon" />
