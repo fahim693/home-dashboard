@@ -25,7 +25,7 @@ import { services, servicesEmpty } from '../../data/PriceBookData'
 import { useState } from 'react';
 import Modal from '../../components/Modal/Modal'
 import AddNewModal from '../../components/Modal/NewServicesModal'
-import { AddRounded } from '@material-ui/icons';
+import { AddRounded, EditRounded } from '@material-ui/icons';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import './price-book-tables.css'
@@ -133,6 +133,8 @@ const EnhancedTableToolbar = (props) => {
     const { numSelected } = props;
     const [open, setOpen] = useState(false)
     const [addNewOpen, setAddNewOpen] = useState(false)
+    const [editOpen, setEditOpen] = useState(false)
+
     return (
         <Toolbar
             className={`${clsx(classes.root, {
@@ -204,15 +206,32 @@ const EnhancedTableToolbar = (props) => {
                     </div>
                 )}
 
-            {numSelected > 0 ? (
-                <Tooltip title="Delete">
-                    <IconButton onClick={() => {
-                        setOpen(true)
-                    }} aria-label="delete">
-                        <DeleteIcon />
-                    </IconButton>
-                </Tooltip>
-            ) : ''
+            {
+                numSelected === 1 ? (
+                    <React.Fragment>
+                        <Tooltip title="Edit">
+                            <IconButton onClick={() => {
+                                setEditOpen(true)
+                            }} aria-label="edit">
+                                <EditRounded />
+                            </IconButton>
+                        </Tooltip>
+                        <Tooltip title="Delete">
+                            <IconButton onClick={() => {
+                                setOpen(true)
+                            }} aria-label="delete">
+                                <DeleteIcon />
+                            </IconButton>
+                        </Tooltip>
+                    </React.Fragment>
+                ) : numSelected > 1 ?
+                        <Tooltip title="Delete">
+                            <IconButton onClick={() => {
+                                setOpen(true)
+                            }} aria-label="delete">
+                                <DeleteIcon />
+                            </IconButton>
+                        </Tooltip> : ''
             }
             <Modal
                 open={open}
@@ -231,16 +250,17 @@ const EnhancedTableToolbar = (props) => {
                     setAddNewOpen(false)
                 }}
             />
-            {/* <AddNewModal
-                open={addNewOpen}
+            <AddNewModal
+                open={editOpen}
                 cardTitle='Edit Service'
                 withImage={true}
                 data={services[0]}
                 modalType='service'
                 handleModal={() => {
                     setAddNewOpen(false)
+                    window.location.reload()
                 }}
-            /> */}
+            />
         </Toolbar>
     );
 };

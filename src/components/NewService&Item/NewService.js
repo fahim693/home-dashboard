@@ -203,7 +203,7 @@ const NewService = (props) => {
                 justifyContent: 'center',
                 padding: '25px 0'
             }}>
-                <Button variant='contained' className="btn-save">
+                <Button onClick={props.handleClose} variant='contained' className="btn-save">
                     <MdCheck className='btn-icon' />
                                     SAVE
                 </Button>
