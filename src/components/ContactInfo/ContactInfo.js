@@ -216,6 +216,7 @@ const ContactInfo = (props) => {
                             <Switch
                                 // checked={state.checkedB}
                                 // onChange={handleChange}
+                                className="checked-hover"
                                 color="primary"
                                 name="checkedB"
                                 inputProps={{ 'aria-label': 'primary checkbox' }}

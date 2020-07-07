@@ -173,6 +173,7 @@ const NewService = (props) => {
                         <Switch
                             // checked={state.checkedB}
                             // onChange={handleChange}
+                            className="checked-hover"
                             color="primary"
                             name="checkedB"
                             inputProps={{ 'aria-label': 'primary checkbox' }}
@@ -189,6 +190,7 @@ const NewService = (props) => {
                         <Switch
                             // checked={state.checkedB}
                             // onChange={handleChange}
+                            className="checked-hover"
                             color="primary"
                             name="checkedB"
                             inputProps={{ 'aria-label': 'primary checkbox' }}
