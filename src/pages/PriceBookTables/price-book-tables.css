@@ -1,0 +1,8 @@
+.MuiToggleButton-root.Mui-selected{
+    background-color: #2A95C5 !important;
+    color: #fff !important;
+}
+
+.MuiToggleButton-sizeSmall{
+    width: 90px !important;
+}

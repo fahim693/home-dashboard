@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     quantityRoot: {
         color: "#000",
         backgroundColor: "#fff",
+        marginBottom: 6,
         borderRadius: "5px",
         "& .MuiSelect-select": {
             '&:focus': {

@@ -22,6 +22,10 @@ import QuoteList from './pages/QuoteList';
 import More from './pages/More';
 import BusinessProfile from './pages/BusinessProfile';
 import BusinessProfileEdit from './pages/BusinessProfileEdit';
+import ItemTable from './pages/PriceBookTables/ItemTable';
+import ServiceTable from './pages/PriceBookTables/ServiceTable';
+import test from './pages/Hours';
+import Hours from './pages/Hours';
 
 const App = () => {
   return (
@@ -47,6 +51,10 @@ const App = () => {
       <Route exact path="/more" component={More} />
       <Route exact path="/business-profile" component={BusinessProfile} />
       <Route exact path="/business-profile-edit" component={BusinessProfileEdit} />
+      <Route exact path="/service-table" component={ServiceTable} />
+      <Route exact path="/item-table" component={ItemTable} />
+      <Route exact path="/hours" component={Hours} />
+      <Route exact path="/test" component={test} />
     </Router>
   )
 }

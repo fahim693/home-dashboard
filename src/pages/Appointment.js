@@ -58,7 +58,7 @@ export default function CenteredGrid() {
                                 <Card
                                     title="Appointment Address"
                                     icon={<RoomRounded className="main-title-icon" />}
-                                    cardType={4}
+                                    withEditIcon={true}
                                 >
                                     <Typography variant="body2" component="p" style={{ fontSize: 20 }}>
                                         {data.appointment_address}
@@ -69,7 +69,7 @@ export default function CenteredGrid() {
                                 <Card
                                     title="Job Assigned To"
                                     icon={<PersonAddRounded className="main-title-icon" />}
-                                    cardType={4}
+                                    withEditIcon={true}
                                 >
                                     <JobAssigned data={type === 0 ? dataInit : data} />
                                 </Card>
@@ -78,7 +78,7 @@ export default function CenteredGrid() {
                                 <Card
                                     title="Others"
                                     icon={<LabelImportantRounded className="main-title-icon" />}
-                                    cardType={4}
+                                    withEditIcon={true}
                                 >
                                     <OthersFilled data={data} />
                                 </Card>

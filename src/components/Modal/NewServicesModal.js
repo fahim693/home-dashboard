@@ -3,9 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import Tabs from '../Tabs/Tabs';
-import TabRefund from '../Tabs/TabRefund';
-// import '../styles/modalStyle.css'
+import NewService from '../NewService&Item/NewService';
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -39,11 +37,13 @@ export default function TransitionsModal(props) {
             >
                 <Fade in={props.open}>
                     <div className={classes.paper}>
-                        {
-                            !props.isRefund ?
-                                <Tabs handleClose={props.handleClose} /> :
-                                <TabRefund handleClose={props.handleClose} />
-                        }
+                        <NewService
+                            withImage={props.withImage}
+                            data={props.data}
+                            handleClose={props.handleModal}
+                            modalType={props.modalType}
+                            cardTitle={props.cardTitle}
+                        />
                     </div>
                 </Fade>
             </Modal>

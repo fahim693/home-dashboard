@@ -17,10 +17,12 @@ const options = [
     {
         icon: <FormatListBulletedRounded style={{ color: '#58BFEF' }} className='option-icon-style' />,
         name: 'Price Book',
+        url:'/item-table'
     },
     {
         icon: <QueryBuilderRounded style={{ color: '#7EC96F' }} className='option-icon-style' />,
-        name: 'Hours'
+        name: 'Hours',
+        url: '/hours',
     },
     {
         icon: <AttachMoneyRounded style={{ color: '#5F9FFF' }} className='option-icon-style' />,

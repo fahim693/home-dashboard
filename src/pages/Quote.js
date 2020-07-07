@@ -41,7 +41,7 @@ export default function Quote() {
                                 <Card
                                     title="Schedule"
                                     icon={<EventNoteRounded className="main-title-icon" />}
-                                    cardType={4}
+                                    withEditIcon={true}
                                 >
                                     <Schedule
                                         data={data}
@@ -52,7 +52,7 @@ export default function Quote() {
                                 <Card
                                     title="Others"
                                     icon={<LabelImportantRounded className="main-title-icon" />}
-                                    cardType={4}
+                                    withEditIcon={true}
                                 >
                                     <OthersFilled data={data} />
                                 </Card>
@@ -61,7 +61,7 @@ export default function Quote() {
                                 <Card
                                     title="Appointment Address"
                                     icon={<RoomRounded className="main-title-icon" />}
-                                    cardType={4}
+                                    withEditIcon={true}
                                 >
                                     <Typography variant="body2" component="p" style={{ fontSize: 20 }}>
                                         {data.appointment_address}
