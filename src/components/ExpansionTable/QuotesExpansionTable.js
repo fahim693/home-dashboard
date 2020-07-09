@@ -61,10 +61,7 @@ function EnhancedTableHead(props) {
 EnhancedTableHead.propTypes = {
     classes: PropTypes.object.isRequired,
     numSelected: PropTypes.number.isRequired,
-    onRequestSort: PropTypes.func.isRequired,
     onSelectAllClick: PropTypes.func.isRequired,
-    order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-    orderBy: PropTypes.string.isRequired,
     rowCount: PropTypes.number.isRequired,
 };
 
@@ -85,33 +82,6 @@ const useToolbarStyles = makeStyles((theme) => ({
             },
     title: {
         flex: '1 1 100%',
-    },
-    quantityRoot: {
-        minWidth: 185,
-        // width: '100%',
-        color: "#000",
-        backgroundColor: "#fff",
-        // opacity: 0.6,
-        borderRadius: "5px",
-        "& .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #bfbfbf"
-        },
-        "&:hover .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #000"
-        },
-        ".MuiSelect-select": {
-            '&:focus': {
-                backgroundColor: '#fff'
-            }
-        },
-        ".MuiOutlinedInput-notchedOutline": {
-            color: '#000',
-            backgroundColor: "#fff"
-        },
-        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #bfbfbf",
-            // backgroundColor: "#fff"
-        },
     }
 }));
 
@@ -182,7 +152,6 @@ const useStyles = makeStyles((theme) => ({
                 backgroundColor: '#fff'
             }
         },
-        // marginTop: '65px !important'
     },
     paper: {
         width: '100%',
@@ -190,44 +159,6 @@ const useStyles = makeStyles((theme) => ({
     },
     table: {
         minWidth: 750,
-    },
-    visuallyHidden: {
-        border: 0,
-        clip: 'rect(0 0 0 0)',
-        height: 1,
-        margin: -1,
-        overflow: 'hidden',
-        padding: 0,
-        position: 'absolute',
-        top: 20,
-        width: 1,
-    },
-    quantityRoot: {
-        minWidth: 185,
-        // width: '100%',
-        color: "#000",
-        backgroundColor: "#fff",
-        // opacity: 0.6,
-        borderRadius: "5px",
-        "& .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #bfbfbf"
-        },
-        "&:hover .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #000"
-        },
-        ".MuiSelect-select": {
-            '&:focus': {
-                backgroundColor: '#fff'
-            }
-        },
-        ".MuiOutlinedInput-notchedOutline": {
-            color: '#000',
-            backgroundColor: "#fff"
-        },
-        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-            border: "1px solid #bfbfbf",
-            // backgroundColor: "#fff"
-        },
     },
     tableRow: {
         "&.MuiTableRow-root.Mui-selected": {
@@ -281,7 +212,7 @@ export default function QuotesExpansionTable(props) {
         setSelected(newSelected);
     };
 
-    const getLimited = (limit) => {
+    const getTableData = (limit) => {
         let arr = []
         props.data.map((row, index) => {
             const isItemSelected = isSelected(row.id);
@@ -320,43 +251,6 @@ export default function QuotesExpansionTable(props) {
         return arr;
     }
 
-    const getUnlimited = () => {
-        let arr = []
-        props.data.map((row, index) => {
-            const isItemSelected = isSelected(row.id);
-            const labelId = `enhanced-table-checkbox-${index}`;
-            arr.push(
-                <TableRow
-                    hover
-                    onClick={(event) => handleClick(event, row.id)}
-                    role="checkbox"
-                    aria-checked={isItemSelected}
-                    tabIndex={-1}
-                    key={row.id}
-                    selected={isItemSelected}
-                    className={`${classes.tableRow}  apt-list-tbl`}
-                >
-                    <TableCell className="checkbox-cell" padding="checkbox">
-                        <Checkbox
-                            className='checkbox'
-                            checked={isItemSelected}
-                            inputProps={{ 'aria-labelledby': labelId }}
-                        />
-                    </TableCell>
-                    <TableCell className='hst-body-cell' align='left' id={labelId} scope="row">
-                        {row.id}
-                    </TableCell>
-                    <TableCell className='hst-body-cell' align="left">{row.date}</TableCell>
-                    <TableCell className='hst-body-cell' align="left">{row.start}</TableCell>
-                    <TableCell className='hst-body-cell' align="left">${row.amount}</TableCell>
-                    <TableCell className='hst-body-cell' align="left">{row.status}</TableCell>
-                </TableRow>
-            )
-            return ''
-        })
-        return arr;
-    }
-
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
     return (
@@ -389,7 +283,7 @@ export default function QuotesExpansionTable(props) {
                         <TableBody>
                             {
                                 !expanded ?
-                                    getLimited(3) : getUnlimited()
+                                    getTableData(3) : getTableData(props.data.length)
                             }
                         </TableBody>
                     </Table>
