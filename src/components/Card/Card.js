@@ -66,7 +66,6 @@ const CardCustom = (props) => {
                                                         <span>View {props.rotate === 'initial' ? 'All' : 'LESS'}</span>
                                                         <KeyboardArrowDownRounded style={{ fontSize: 27, marginTop: -1.8 }} className={props.rotate} />
                                                     </div>
-
                                                 </Button>
                                             </div> : ''
                         }

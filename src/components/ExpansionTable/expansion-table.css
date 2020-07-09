@@ -1,0 +1,9 @@
+.view-all-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 1rem 0;
+  cursor: pointer;
+}
