@@ -389,7 +389,7 @@ export default function InvoiceExpansionTable(props) {
                         <TableBody>
                             {
                                 !expanded ?
-                                    getLimited(4) : getUnlimited()
+                                    getLimited(3) : getUnlimited()
                             }
                         </TableBody>
                     </Table>
