@@ -7,11 +7,11 @@ import ContactInfo from '../components/ContactInfo/ContactInfoFilled';
 import Addresses from '../components/Addresses/AddressFilled';
 import Notes from '../components/Notes/NotesFilled';
 import Tags from '../components/Tags/TagsFilled';
-import ExpansionTable from '../components/ExpansionTable/ExpansionTable';
+import AppointmentExapansionTable from '../components/ExpansionTable/AppointmentExapansionTable';
 import InvoiceExpansionTable from '../components/ExpansionTable/InvoiceExpansionTable';
-import { rows, headerData } from '../data/AppointmentData'
-import { WorkRounded, ReceiptRounded } from '@material-ui/icons';
-import { invoiceData, invoiceHeader } from '../data/InvoicesTableData';
+import { rows } from '../data/AppointmentData'
+import { invoiceData } from '../data/InvoicesTableData';
+import QuotesExpansionTable from '../components/ExpansionTable/QuotesExpansionTable';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -51,13 +51,13 @@ export default function CustomerDetails() {
                         <Addresses />
                     </Grid>
                     <Grid item xs={12} md={12} >
-                        <ExpansionTable type='apt' headerData={headerData} data={rows} cardTitle="Appointments" icon={<WorkRounded className="main-title-icon" />} />
+                        <AppointmentExapansionTable data={rows} />
                     </Grid>
                     <Grid item xs={12} md={12} >
-                        <InvoiceExpansionTable headerData={invoiceHeader} data={invoiceData} />
+                        <InvoiceExpansionTable data={invoiceData} />
                     </Grid>
                     <Grid item xs={12} md={12} >
-                        <ExpansionTable type='qts' headerData={headerData} data={rows} cardTitle="Quotes" icon={<ReceiptRounded className="main-title-icon" />} />
+                        <QuotesExpansionTable data={rows} />
                     </Grid>
                 </Grid>
             </div>

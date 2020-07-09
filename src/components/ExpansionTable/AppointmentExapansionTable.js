@@ -19,13 +19,13 @@ import { Button } from '@material-ui/core';
 import { useState } from 'react';
 import './expansion-table.css'
 import Modal from '../../components/Modal/Modal'
-import { AddRounded, MonetizationOnRounded, KeyboardArrowDownRounded } from '@material-ui/icons';
+import { AddRounded, KeyboardArrowDownRounded, WorkRounded } from '@material-ui/icons';
 
 
 const headCells = [
-    { id: 'name', label: 'Invoice #' },
-    { id: 'calories', label: 'Date Sent' },
-    { id: 'fat', label: 'Date Paid' },
+    { id: 'name', label: 'Appointment #' },
+    { id: 'calories', label: 'Date' },
+    { id: 'fat', label: 'Start Time' },
     { id: 'carbs', label: 'Amount' },
     { id: 'protein', label: 'Status' }
 ];
@@ -131,9 +131,9 @@ const EnhancedTableToolbar = (props) => {
                 </Typography>
             ) : (
                     <div className="tbl-title">
-                        <MonetizationOnRounded style={{ margin: '0 17px 0 17px' }} className="main-title-icon" />
+                        <WorkRounded style={{ margin: '0 17px 0 17px' }} className="main-title-icon" />
                         <Typography className={classes.title} variant="h6" id="tableTitle" component="div" style={{ fontSize: 24, fontWeight: 500 }}>
-                            Invoices
+                            Appointments
                         </Typography>
                     </div>
                 )}
@@ -164,7 +164,7 @@ const EnhancedTableToolbar = (props) => {
                     setOpen(false)
                     window.location.reload()
                 }}
-                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected invoices?' : 'Are you sure you want to delete the selected invoice?'}
+                modalText={numSelected > 1 ? 'Are you sure you want to delete the selected appointments?' : 'Are you sure you want to delete the selected appointment?'}
             />
         </Toolbar>
     );
@@ -236,7 +236,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function InvoiceExpansionTable(props) {
+export default function AppointmentExpansionTable(props) {
     const classes = useStyles();
     const [selected, setSelected] = React.useState([]);
     const [dense] = React.useState(false);
@@ -308,8 +308,8 @@ export default function InvoiceExpansionTable(props) {
                         <TableCell className='hst-body-cell' align='left' id={labelId} scope="row">
                             {row.id}
                         </TableCell>
-                        <TableCell className='hst-body-cell' align="left">{row.dateSent}</TableCell>
-                        <TableCell className='hst-body-cell' align="left">{row.datePaid}</TableCell>
+                        <TableCell className='hst-body-cell' align="left">{row.date}</TableCell>
+                        <TableCell className='hst-body-cell' align="left">{row.start}</TableCell>
                         <TableCell className='hst-body-cell' align="left">${row.amount}</TableCell>
                         <TableCell className='hst-body-cell' align="left">{row.status}</TableCell>
                     </TableRow>
@@ -346,8 +346,8 @@ export default function InvoiceExpansionTable(props) {
                     <TableCell className='hst-body-cell' align='left' id={labelId} scope="row">
                         {row.id}
                     </TableCell>
-                    <TableCell className='hst-body-cell' align="left">{row.dateSent}</TableCell>
-                    <TableCell className='hst-body-cell' align="left">{row.datePaid}</TableCell>
+                    <TableCell className='hst-body-cell' align="left">{row.date}</TableCell>
+                    <TableCell className='hst-body-cell' align="left">{row.start}</TableCell>
                     <TableCell className='hst-body-cell' align="left">${row.amount}</TableCell>
                     <TableCell className='hst-body-cell' align="left">{row.status}</TableCell>
                 </TableRow>
@@ -365,7 +365,7 @@ export default function InvoiceExpansionTable(props) {
                 <div style={{
                     marginTop: 10
                 }}>
-                    <Button variant='contained' className="btn-primary">
+                    <Button href='/add' variant='contained' className="btn-primary">
                         <AddRounded />
                             ADD NEW
                             </Button>

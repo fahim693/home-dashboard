@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -77,7 +77,7 @@ const useStyles = makeStyles({
 
 export default function Invoice(props) {
     const classes = useStyles();
-
+    const [newField, showNewField] = useState(false)
 
     return (
         <TableContainer >
@@ -309,19 +309,104 @@ export default function Invoice(props) {
                     </TableRow>
                     <TableRow className='inv-tbl'>
                         <TableCell></TableCell>
-                        <TableCell className="tbl-head-cell" align="center"><strong>Subtotal</strong></TableCell>
+                        <TableCell className="tbl-head-cell" >
+                            <div style={{ marginLeft: 23 }}>
+                                <strong>Subtotal</strong>
+                            </div>
+                        </TableCell>
                         <TableCell align="left"></TableCell>
                         <TableCell className="tbl-body-cell" align="center">$201</TableCell>
                     </TableRow>
                     <TableRow className='inv-tbl'>
                         <TableCell></TableCell>
-                        <TableCell className="tbl-head-cell" align="center"><strong>Tax</strong></TableCell>
+                        <TableCell className="tbl-head-cell" align="left">
+                            <div style={{ marginLeft: 23 }}>
+                                <strong>Tax</strong>
+                            </div>
+                        </TableCell>
                         <TableCell></TableCell>
                         <TableCell className="tbl-body-cell" align="center">$7</TableCell>
                     </TableRow>
+                    {
+                        props.type === 1 ?
+                            '' :
+                            <React.Fragment>
+                                <TableRow className='inv-tbl-cust'>
+                                    <TableCell></TableCell>
+                                    <TableCell align='left' className="tbl-head-cell">
+                                        <FormControl variant="outlined" fullWidth margin="dense" classes={{
+                                            root: classes.quantityRoot
+                                        }}>
+                                            <Select
+                                                id="tax"
+                                                defaultValue={1}
+                                                MenuProps={{
+                                                    getContentAnchorEl: null,
+                                                    anchorOrigin: {
+                                                        vertical: "bottom",
+                                                        horizontal: "left",
+                                                    }
+                                                }}
+                                            >
+
+                                                <MenuItem value={1}>IL (3.6%)</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </TableCell>
+                                    <TableCell></TableCell>
+                                    <TableCell style={{ color: '#828282' }} className="tbl-body-cell" align="center">$7.00</TableCell>
+                                </TableRow>
+                                {
+                                    newField ?
+                                        <TableRow className='inv-tbl-cust'>
+                                            <TableCell></TableCell>
+                                            <TableCell align='left' style={{ display: 'flex', alignItems: 'center', paddingLeft: 0 }} className="tbl-head-cell">
+                                                <MdRemoveCircle onClick={() => showNewField(false)} style={{ marginRight: 6 }} className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon'} />
+                                                <FormControl variant="outlined" fullWidth margin="dense" classes={{
+                                                    root: classes.quantityRoot
+                                                }}>
+                                                    <Select
+                                                        id="tax"
+                                                        defaultValue={1}
+                                                        MenuProps={{
+                                                            getContentAnchorEl: null,
+                                                            anchorOrigin: {
+                                                                vertical: "bottom",
+                                                                horizontal: "left",
+                                                            }
+                                                        }}
+                                                    >
+
+                                                        <MenuItem value={1}>IL (3.6%)</MenuItem>
+                                                    </Select>
+                                                </FormControl>
+                                            </TableCell>
+                                            <TableCell></TableCell>
+                                            <TableCell style={{ color: '#828282' }} className="tbl-body-cell" align="center">$7.00</TableCell>
+                                        </TableRow> : ''
+                                }
+
+                                <TableRow className='inv-tbl-cust'>
+                                    <TableCell></TableCell>
+                                    <TableCell className="tbl-head-cell">
+                                        <div onClick={() => showNewField(true)} className="chips-edit-inv">
+                                            <Chip className="chip-edit" label="+ ADD TAX" />
+                                        </div>
+                                    </TableCell>
+                                    <TableCell></TableCell>
+                                    <TableCell></TableCell>
+                                </TableRow>
+                                <br />
+                            </React.Fragment>
+                    }
+
                     <TableRow className='inv-tbl inv-tbl-total'>
                         <TableCell></TableCell>
-                        <TableCell className="hst-tbl-header tbl-head-cell" align="center"><strong>Total</strong></TableCell>
+                        <TableCell align='left' className="hst-tbl-header tbl-head-cell">
+                            <div style={{ marginLeft: 23 }}>
+                                <strong>Total</strong>
+                            </div>
+                        </TableCell>
                         <TableCell></TableCell>
                         <TableCell className="hst-tbl-header tbl-head-cell" align="center"><strong>$208</strong></TableCell>
                     </TableRow>
