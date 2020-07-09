@@ -87,19 +87,6 @@ export default function Invoice() {
                         <TableCell></TableCell>
                         <TableCell></TableCell>
                     </TableRow>
-                    {/* <div style={{ paddingLeft: '1.6rem' }}>
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    // checked={services.tax}
-                                    // onChange={handleChange}
-                                    name="checked"
-                                    className='checkbox'
-                                />
-                            }
-                            label={<Typography className="tbl-tax-label">Tax Applicable</Typography>}
-                        />
-                    </div> */}
                     <p className='table-title'>Items</p>
                     {items.data.map((row, idx) => (
                         <TableRow className='inv-tbl-cust' key={idx}>
@@ -193,7 +180,7 @@ export default function Invoice() {
                                     </FormControl>
                                 </TableCell>
                                 <TableCell></TableCell>
-                                <TableCell style={{ color: '#828282' }} className="tbl-body-cell" align="center">$7.00</TableCell>
+                                <TableCell style={{ color: '#828282' }} className="tbl-body-cell" align="right">$7.00</TableCell>
                             </TableRow> : ''
                     }
                     <TableRow className='inv-tbl-cust'>
