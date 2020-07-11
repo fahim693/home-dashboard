@@ -45,8 +45,7 @@ const NavBar = (props) => {
                         <div className="navbar">
                             <ul>
                                 <li className="nav-item">
-                                    <Link className={`nav-link ${home}`} to="#">
-                                        {/* <MdDashboard className="nav-icon" /> */}
+                                    <Link className={`nav-link ${home}`} to="/">
                                         <DashboardRounded className="nav-icon" />
                                         <div>Home</div>
                                     </Link>
@@ -58,7 +57,7 @@ const NavBar = (props) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className={`nav-link ${appointments}`} to="/">
+                                    <Link className={`nav-link ${appointments}`} to="/appointment-list">
                                         <WorkRounded className="nav-icon" />
                                         <div>Appointments</div>
                                     </Link>

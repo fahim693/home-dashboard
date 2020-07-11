@@ -26,11 +26,13 @@ import ItemTable from './pages/PriceBookTables/ItemTable';
 import ServiceTable from './pages/PriceBookTables/ServiceTable';
 import test from './pages/Hours';
 import Hours from './pages/Hours';
+import Home from './pages/Home';
 
 const App = () => {
   return (
     <Router>
-      <Route exact path="/" component={AppointmentLists} />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/appointment-list" component={AppointmentLists} />
       <Route exact path="/appointment" component={Appointment} />
       <Route exact path="/edit" component={AppointmentEdit} />
       <Route exact path="/add" component={AppointmentAddNew} />
