@@ -80,9 +80,16 @@ const CardCustom = (props) => {
                         alignItems: 'center',
                         width: '100%'
                     }}>
-                        <div className={cardTitle}>
-                            {props.title}
-                        </div>
+                        {
+                            props.withSubTitle ?
+                                <div className={cardTitle}>
+                                    {props.title} <span style={{ color: 'rgb(152, 152, 152)' }}>(Month-over-Month)</span>
+                                </div> :
+                                <div className={cardTitle}>
+                                    {props.title}
+                                </div>
+                        }
+
                         {
                             props.cardType === 2 ?
                                 <div>
@@ -102,10 +109,10 @@ const CardCustom = (props) => {
                                                 display: 'flex',
                                                 alignItems: 'center'
                                             }}>
-                                                <div style={{width: 28,height: 28}} className="edit-icon-container">
+                                                <div style={{ width: 28, height: 28 }} className="edit-icon-container">
                                                     <KeyboardArrowLeftRounded onClick={prevMonth} style={{ cursor: 'pointer' }} />
                                                 </div>
-                                                <div style={{width: 28,height: 28}} className="edit-icon-container">
+                                                <div style={{ width: 28, height: 28 }} className="edit-icon-container">
                                                     <KeyboardArrowRightRounded onClick={nextMonth} style={{ cursor: 'pointer' }} />
                                                 </div>
                                             </div>

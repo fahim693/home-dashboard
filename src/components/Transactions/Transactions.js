@@ -10,7 +10,6 @@ const Transactions = (props) => {
             title="Transactions"
             icon={<AttachMoneyRounded className="main-title-icon" />}
             cardType={4}
-            withEditIcon={true}
         >
             <Grid container>
                 <Grid item xs={12} sm={6} >

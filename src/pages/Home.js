@@ -9,6 +9,9 @@ import Transactions from '../components/Transactions/Transactions';
 import UpcomingAppointments from '../components/UpcomingAppointments/UpcomingAppointments';
 import OpenInvoices from '../components/OpenInvoices/OpenInvoices';
 import EmployeeOnCall from '../components/EmployeeOnCall/EmployeeOnCall';
+import AppointmentsChart from '../components/Charts/AppointmentsChart';
+import QuotesChart from '../components/Charts/QuotesChart';
+import SalesChart from '../components/Charts/SalesChart';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -47,10 +50,16 @@ export default function Home() {
                         <OpenInvoices />
                     </Grid>
                     <Grid item xs={12} md={8} >
-                        {/* <OpenInvoices /> */}
+                        <SalesChart />
                     </Grid>
                     <Grid item xs={12} md={4} >
                         <EmployeeOnCall />
+                    </Grid>
+                    <Grid item xs={12} md={6} >
+                        <AppointmentsChart />
+                    </Grid>
+                    <Grid item xs={12} md={6} >
+                        <QuotesChart />
                     </Grid>
                 </Grid>
             </div>
