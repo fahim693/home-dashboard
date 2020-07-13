@@ -43,15 +43,16 @@ export default function Home() {
                     <Grid item xs={12} md={4} >
                         <Transactions />
                     </Grid>
+                    <Grid item xs={12} md={8} >
+                        <SalesChart />
+                    </Grid>
                     <Grid item xs={12} md={4} >
                         <UpcomingAppointments />
                     </Grid>
                     <Grid item xs={12} md={4} >
                         <OpenInvoices />
                     </Grid>
-                    <Grid item xs={12} md={8} >
-                        <SalesChart />
-                    </Grid>
+
                     <Grid item xs={12} md={4} >
                         <EmployeeOnCall />
                     </Grid>

@@ -18,29 +18,29 @@ const CardCustom = (props) => {
     let month = ''
 
     if (counter === 1) {
-        month = 'January'
+        month = 'Jan'
     } else if (counter === 2) {
-        month = 'February'
+        month = 'Feb'
     } else if (counter === 3) {
-        month = 'March'
+        month = 'Mar'
     } else if (counter === 4) {
-        month = 'April'
+        month = 'Apr'
     } else if (counter === 5) {
         month = 'May'
     } else if (counter === 6) {
-        month = 'June'
+        month = 'Jun'
     } else if (counter === 7) {
-        month = 'July'
+        month = 'Jul'
     } else if (counter === 8) {
-        month = 'August'
+        month = 'Aug'
     } else if (counter === 9) {
-        month = 'September'
+        month = 'Sep'
     } else if (counter === 10) {
-        month = 'October'
+        month = 'Oct'
     } else if (counter === 11) {
-        month = 'November'
+        month = 'Nov'
     } else if (counter === 12) {
-        month = 'December'
+        month = 'Dec'
     }
 
     const nextMonth = () => {
@@ -83,7 +83,7 @@ const CardCustom = (props) => {
                         {
                             props.withSubTitle ?
                                 <div className={cardTitle}>
-                                    {props.title} <span style={{ color: 'rgb(152, 152, 152)' }}>(Month-over-Month)</span>
+                                    {props.title} <span style={{ color: 'rgb(152, 152, 152)' }}>(Month-Over-Month)</span>
                                 </div> :
                                 <div className={cardTitle}>
                                     {props.title}
@@ -102,26 +102,20 @@ const CardCustom = (props) => {
                                     props.cardType === 4 ?
                                         <div style={{
                                             display: 'flex',
-                                            marginTop: -3,
-                                            color: "#828282"
+                                            alignItems: 'center',
+                                            marginTop: '-.1rem',
+                                            color: "#828282",
+                                            paddingRight: 8
                                         }}>
-                                            <div style={{
-                                                display: 'flex',
-                                                alignItems: 'center'
-                                            }}>
-                                                <div style={{ width: 28, height: 28 }} className="edit-icon-container">
-                                                    <KeyboardArrowLeftRounded onClick={prevMonth} style={{ cursor: 'pointer' }} />
-                                                </div>
-                                                <div style={{ width: 28, height: 28 }} className="edit-icon-container">
-                                                    <KeyboardArrowRightRounded onClick={nextMonth} style={{ cursor: 'pointer' }} />
-                                                </div>
+
+                                            <div style={{ width: 28, height: 28 }} className="edit-icon-container">
+                                                <KeyboardArrowLeftRounded onClick={prevMonth} style={{ cursor: 'pointer' }} />
                                             </div>
-                                            <div
-                                                style={{
-                                                    margin: '0 4px 0 0'
-                                                }}
-                                            >
+                                            <div style={{margin:'0 5px'}}>
                                                 {month}
+                                            </div>
+                                            <div style={{ width: 28, height: 28 }} className="edit-icon-container">
+                                                <KeyboardArrowRightRounded onClick={nextMonth} style={{ cursor: 'pointer' }} />
                                             </div>
                                         </div> :
                                         props.withEditIcon ?

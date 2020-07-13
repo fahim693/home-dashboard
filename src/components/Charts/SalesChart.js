@@ -2,7 +2,7 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import Card from '../Card/Card'
 import { TrendingUpRounded } from '@material-ui/icons';
-
+import 'chartjs-plugin-datalabels'
 
 var yLabels = {
     0: '0',
@@ -40,6 +40,20 @@ const data = {
 }
 const dataTooltip = ['$3.6K', '$10.2K', '$4.8K', '$5.2K', '$18.6K', '$10.4K']
 const options = {
+    plugins: {
+        datalabels: {
+            color: '#fff',
+            font:{
+                weight: '500'
+            },
+            formatter: function (value, context) {
+                return dataTooltip[context.dataIndex];
+            },
+            anchor: 'end',
+            align: 'bottom',
+        }
+
+    },
     tooltips: {
         callbacks: {
             title: function (tooltipItems, data) {

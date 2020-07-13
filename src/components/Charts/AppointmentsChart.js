@@ -9,31 +9,31 @@ const data = {
         label: '# of Votes',
         data: [30, 40, 20],
         backgroundColor: [
-            '#54A2E5',
-            '#F3D58C',
-            '#6CBEBF'
+            '#64B5F6',
+            '#FFD740',
+            '#8BDCB3'
         ],
         borderColor: [
-            '#54A2E5',
-            '#F3D58C',
-            '#6CBEBF'
+            '#64B5F6',
+            '#FFD740',
+            '#8BDCB3'
         ],
         borderWidth: 1,
     }]
 }
 
-const dataTooltip =['$9,436.46','$5,614.64','$4,422.62']
+const dataTooltip = ['$9,436.46', '$5,614.64', '$4,422.62']
 
 const options = {
     tooltips: {
         callbacks: {
-              title: function(tooltipItems, data) {
+            title: function (tooltipItems, data) {
                 return '';
-              },
-              label: function(tooltipItem, data) {
+            },
+            label: function (tooltipItem, data) {
                 return dataTooltip[tooltipItem.index];
-              }
             }
+        }
     },
     layout: {
         padding: {
@@ -48,7 +48,12 @@ const options = {
         onClick: (e) => e.stopPropagation()
     },
     cutoutPercentage: 65,
-    rotation: -1.5 * Math.PI
+    rotation: -1.5 * Math.PI,
+    plugins: {
+        datalabels: {
+            display: false
+        }
+    },
 }
 
 const AppointmentsChart = () => {
@@ -59,15 +64,28 @@ const AppointmentsChart = () => {
             cardType={4}
         >
             <div >
+                {/* '#64B5F6',
+            '#FFD740',
+            '#8BDCB3' */}
                 <Doughnut
                     height={180}
                     data={data}
-                    options={options} />
+                    options={options}
+                    plugins={
+                        [{
+                            beforeInit: function (chart, options) {
+                                chart.legend.afterFit = function () {
+                                    this.height = this.height + 18;
+                                };
+                            }
+                        }]
+                    }
+                />
                 <div style={{
                     position: 'absolute',
                     marginTop: -120,
                     marginLeft: 100,
-                    color: '#54A2E5',
+                    color: '#2286C3',
                     fontWeight: 500
                 }}>
                     $9,436.46
@@ -76,7 +94,7 @@ const AppointmentsChart = () => {
                     position: 'absolute',
                     marginTop: -120,
                     marginLeft: 485,
-                    color: '#6CBEBF',
+                    color: '#398E8F',
                     fontWeight: 500
                 }}>
                     $4,422.62
@@ -85,7 +103,7 @@ const AppointmentsChart = () => {
                     position: 'absolute',
                     marginTop: -310,
                     marginLeft: 485,
-                    color: '#DCAC39',
+                    color: '#C8A600',
                     fontWeight: 500
                 }}>
                     $5,614.64
