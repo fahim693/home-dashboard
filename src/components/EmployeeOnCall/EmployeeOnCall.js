@@ -27,7 +27,7 @@ const data = [
 const EmployeeOnCall = (props) => {
     return (
         <Card
-            title="Employee On Call"
+            title="Employees On Call"
             icon={<EmojiPeopleRounded className="main-title-icon" />}
             noBoxShadow={true}
         >

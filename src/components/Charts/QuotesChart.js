@@ -9,31 +9,31 @@ const data = {
         label: '# of Votes',
         data: [60, 25, 15],
         backgroundColor: [
-            '#6CBEBF',
-            '#F2A254',
+            '#8BDCB3',
+            '#FFAB00',
             '#54A2E5'
         ],
         borderColor: [
-            '#6CBEBF',
-            '#F2A254',
+            '#8BDCB3',
+            '#FFAB00',
             '#54A2E5'
         ],
         borderWidth: 1,
     }]
 }
 
-const dataTooltip =['$15,242.52','$3,812.34','$1,642.94']
+const dataTooltip = ['$15,242.52', '$3,812.34', '$1,642.94']
 
 const options = {
     tooltips: {
         callbacks: {
-              title: function(tooltipItems, data) {
+            title: function (tooltipItems, data) {
                 return '';
-              },
-              label: function(tooltipItem, data) {
+            },
+            label: function (tooltipItem, data) {
                 return dataTooltip[tooltipItem.index];
-              }
             }
+        }
     },
     layout: {
         padding: {
@@ -45,13 +45,20 @@ const options = {
         labels: {
             fontColor: '#828282',
         },
-        onClick: (e) => e.stopPropagation()
+        onClick: (e) => e.stopPropagation(),
     },
+
     cutoutPercentage: 65,
-    rotation: -1.65 * Math.PI
+    rotation: -1.65 * Math.PI,
+    plugins: {
+        datalabels: {
+            display: false
+        }
+    },
 }
 
 const QuotesChart = () => {
+
     return (
         <Card
             title="Quotes"
@@ -62,12 +69,22 @@ const QuotesChart = () => {
                 <Doughnut
                     height={180}
                     data={data}
-                    options={options} />
+                    options={options}
+                    plugins={
+                        [{
+                            beforeInit: function (chart, options) {
+                                chart.legend.afterFit = function () {
+                                    this.height = this.height + 18;
+                                };
+                            }
+                        }]
+                    }
+                />
                 <div style={{
                     position: 'absolute',
                     marginTop: -120,
                     marginLeft: 100,
-                    color: '#6CBEBF',
+                    color: '#398E8F',
                     fontWeight: 500
                 }}>
                     $15,242.52
@@ -76,7 +93,7 @@ const QuotesChart = () => {
                     position: 'absolute',
                     marginTop: -120,
                     marginLeft: 485,
-                    color: '#54A2E5',
+                    color: '#2286C3',
                     fontWeight: 500
                 }}>
                     $1,642.94
@@ -85,7 +102,7 @@ const QuotesChart = () => {
                     position: 'absolute',
                     marginTop: -310,
                     marginLeft: 485,
-                    color: '#F2A254',
+                    color: '#C67C00',
                     fontWeight: 500
                 }}>
                     $3,812.34

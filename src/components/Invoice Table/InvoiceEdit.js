@@ -317,20 +317,21 @@ export default function Invoice(props) {
                         <TableCell align="left"></TableCell>
                         <TableCell className="tbl-body-cell" align="center">$201</TableCell>
                     </TableRow>
-                    <TableRow className='inv-tbl'>
-                        <TableCell></TableCell>
-                        <TableCell className="tbl-head-cell" align="left">
-                            <div style={{ marginLeft: 23 }}>
-                                <strong>Tax</strong>
-                            </div>
-                        </TableCell>
-                        <TableCell></TableCell>
-                        <TableCell className="tbl-body-cell" align="center">$7</TableCell>
-                    </TableRow>
+
                     {
                         props.type === 1 ?
                             '' :
                             <React.Fragment>
+                                <TableRow className='inv-tbl'>
+                                    <TableCell></TableCell>
+                                    <TableCell className="tbl-head-cell" align="left">
+                                        <div style={{ marginLeft: 23 }}>
+                                            <strong>Tax</strong>
+                                        </div>
+                                    </TableCell>
+                                    <TableCell></TableCell>
+                                    <TableCell className="tbl-body-cell" align="center">$7</TableCell>
+                                </TableRow>
                                 <TableRow className='inv-tbl-cust'>
                                     <TableCell></TableCell>
                                     <TableCell align='left' className="tbl-head-cell">

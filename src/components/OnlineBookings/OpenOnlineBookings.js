@@ -1,12 +1,12 @@
 import React from 'react'
 import Card from '../Card/Card'
-import { ReceiptRounded } from '@material-ui/icons'
+import { ShoppingCartRounded } from '@material-ui/icons'
 
 const OpenOnlineBookings = (props) => {
     return (
         <Card
-            title="Open Online Bookings"
-            icon={<ReceiptRounded className="main-title-icon" />}
+            title="Online Bookings"
+            icon={<ShoppingCartRounded className="main-title-icon" />}
             cardType={4}
             withEditIcon={true}
         >

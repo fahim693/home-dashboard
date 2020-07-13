@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../Card/Card'
-import { AssessmentOutlined } from '@material-ui/icons'
+import { EventNoteRounded } from '@material-ui/icons'
 import './upcoming-appointments.css'
 
 const data = [
@@ -34,7 +34,7 @@ const UpcomingAppointments = (props) => {
     return (
         <Card
             title="Upcoming Appointments"
-            icon={<AssessmentOutlined className="main-title-icon" />}
+            icon={<EventNoteRounded className="main-title-icon" />}
             noBoxShadow={true}
         >
             <div className="upcoming-appointments-container">
