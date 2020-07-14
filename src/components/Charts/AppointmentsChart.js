@@ -44,6 +44,7 @@ const options = {
     legend: {
         labels: {
             fontColor: '#828282',
+            fontStyle: 500
         },
         onClick: (e) => e.stopPropagation()
     },
