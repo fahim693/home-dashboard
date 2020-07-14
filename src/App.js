@@ -24,7 +24,7 @@ import BusinessProfile from './pages/BusinessProfile';
 import BusinessProfileEdit from './pages/BusinessProfileEdit';
 import ItemTable from './pages/PriceBookTables/ItemTable';
 import ServiceTable from './pages/PriceBookTables/ServiceTable';
-import test from './pages/Hours';
+import test from './components/Modal/AccountSettingsModal';
 import Hours from './pages/Hours';
 import Home from './pages/Home';
 
