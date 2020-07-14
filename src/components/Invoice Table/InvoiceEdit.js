@@ -140,6 +140,7 @@ export default function Invoice(props) {
                                         <Autocomplete
                                             id="free-solo-demo"
                                             freeSolo
+                                            disableClearable={true}
                                             defaultValue={
                                                 props.type === 1 ?
                                                     '' :
@@ -263,7 +264,7 @@ export default function Invoice(props) {
                                         <Autocomplete
                                             id="free-solo-demo"
                                             freeSolo
-                                            // disableClearable={true}
+                                            disableClearable={true}
                                             defaultValue={
                                                 props.type === 1 ?
                                                     '' : dataSearchItem.find(data => data.name === 'Wipes')

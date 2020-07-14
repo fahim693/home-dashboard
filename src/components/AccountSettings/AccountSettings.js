@@ -79,7 +79,6 @@ const AccountSettings = (props) => {
                         id="amount"
                         variant="outlined"
                         // value={fieldValue.street_address}
-                        defaultValue={props.data.description}
                         name='email'
                         // onChange={handleOnChange}
                         type='password'
@@ -97,7 +96,6 @@ const AccountSettings = (props) => {
                         id="amount"
                         variant="outlined"
                         // value={fieldValue.street_address}
-                        defaultValue={props.data.description}
                         name='email'
                         // onChange={handleOnChange}
                         type='password'
@@ -115,7 +113,6 @@ const AccountSettings = (props) => {
                         id="amount"
                         variant="outlined"
                         // value={fieldValue.street_address}
-                        defaultValue={props.data.description}
                         name='email'
                         type='password'
                         // onChange={handleOnChange}

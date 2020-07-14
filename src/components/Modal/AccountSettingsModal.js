@@ -4,7 +4,6 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import AccountSettings from '../AccountSettings/AccountSettings';
-import {items} from '../../data/PriceBookData'
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -39,7 +38,6 @@ export default function AccountSettingsModal(props) {
                 <Fade in={props.open}>
                     <div className={classes.paper}>
                         <AccountSettings
-                            data={items}
                             handleClose={props.handleClose}
                             handleSave={props.handleSave}
                         />
