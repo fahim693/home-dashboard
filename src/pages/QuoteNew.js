@@ -121,6 +121,7 @@ export default function QuoteNew() {
                                                     <TextField
                                                         {...params}
                                                         placeholder="Search"
+                                                        className='search-add-new'
                                                         margin="normal"
                                                         variant="outlined"
                                                         style={{

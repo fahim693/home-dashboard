@@ -49,16 +49,29 @@ export default function TransitionsModal(props) {
                                     display: 'flex',
                                     justifyContent: 'flex-end'
                                 }}>
-                                    <Button onClick={props.handleModal} variant='outlined' style={{
-                                        padding: '6px 16px',
-                                        background: '#62C796',
-                                        color:'#fff',
-                                        fontWeight: 500,
-                                        fontSize: 16,
-                                        marginRight: 8
-                                    }}>
-                                        OK
-                                    </Button>
+                                    {
+                                        props.isErrored ?
+                                            <Button onClick={props.handleModal} variant='outlined' style={{
+                                                padding: '6px 16px',
+                                                background: '#EB5757',
+                                                color: '#fff',
+                                                fontWeight: 500,
+                                                fontSize: 16,
+                                                marginRight: 8
+                                            }}>
+                                                OK
+                                        </Button> :
+                                            <Button onClick={props.handleModal} variant='outlined' style={{
+                                                padding: '6px 16px',
+                                                background: '#62C796',
+                                                color: '#fff',
+                                                fontWeight: 500,
+                                                fontSize: 16,
+                                                marginRight: 8
+                                            }}>
+                                                OK
+                                        </Button>
+                                    }
                                 </div>
                                 :
                                 <div style={{

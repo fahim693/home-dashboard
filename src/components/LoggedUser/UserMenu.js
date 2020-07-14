@@ -2,19 +2,16 @@ import React from 'react';
 import './user-menu.css'
 import { MdArrowDropDown } from 'react-icons/md';
 import { Menu, MenuItem } from '@material-ui/core';
-
-const options = [
-    {
-        name: 'Settings'
-    },
-    {
-        name: 'Logout'
-    }
-]
+import AccountSettingsModal from '../Modal/AccountSettingsModal';
+import Modal from '../Modal/Modal';
 
 const UserMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [rotate, setRotate] = React.useState('initial');
+    const [open, setOpen] = React.useState(false);
+    const [alertText, setAlertText] = React.useState('');
+    const [isErrored, setErrored] = React.useState(false);
+    const [alertOpen, setAlertOpen] = React.useState(false);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
         console.log(rotate);
@@ -32,10 +29,14 @@ const UserMenu = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleAction = () => {
+        setOpen(true)
+    }
     return (
         <div>
             <div onClick={handleClick} className="logged-in-user">
-                <img style={{height: 50}} src="/profile-img.png" alt="" />
+                <img style={{ height: 50 }} src="/profile-img.png" alt="" />
                 <div>
                     <h3 className="name">John Doe</h3>
                     <div className="email">johndoe@gmail.com</div>
@@ -53,12 +54,41 @@ const UserMenu = () => {
                 onClose={handleClose}
                 onClick={handleChange}
             >
-                {
-                    options.map((option) => (
-                        <MenuItem key={option.name} onClick={handleClose} style={{ width: 235 }}>{option.name}</MenuItem>
-                    ))
-                }
+                <MenuItem onClick={handleAction} style={{ width: 235 }}>Account Settings</MenuItem>
+                <MenuItem onClick={handleClose} style={{ width: 235 }}>Logout</MenuItem>
+
             </Menu>
+            <AccountSettingsModal
+                open={open}
+                handleClose={() => {
+                    setOpen(false)
+                    setAnchorEl(null);
+                }}
+                handleSave={(flag) => {
+                    if (flag === 1) {
+                        setAlertText('Your password has been reset successfully.')
+                        setAlertOpen(true)
+                        setErrored(false)
+                        setOpen(false)
+                    } else if (flag === 0) {
+                        setAlertText('This is not a valid email address.')
+                        setAlertOpen(true)
+                        setErrored(true)
+                        setOpen(false)
+                    }
+
+                }}
+            />
+            <Modal
+                open={alertOpen}
+                isPasswordReset={true}
+                modalText={alertText}
+                isErrored={isErrored}
+                handleModal={() => {
+                    setAlertOpen(false)
+                    setAnchorEl(null);
+                }}
+            />
         </div>
     )
 }

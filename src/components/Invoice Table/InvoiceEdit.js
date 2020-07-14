@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import './invoice-edit.css'
 import { FormControlLabel, Checkbox, FormControl, Select, MenuItem, TextField, Chip, Typography } from '@material-ui/core';
 import { MdRemoveCircle } from 'react-icons/md';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 const useStyles = makeStyles({
     table: {
@@ -74,6 +75,36 @@ const useStyles = makeStyles({
     }
 });
 
+const dataSearch = [
+    {
+        name: 'Technician',
+        amount: '62.00'
+    },
+    {
+        name: 'Technician',
+        amount: '62.00'
+    },
+    {
+        name: 'Technician',
+        amount: '62.00'
+    },
+]
+
+const dataSearchItem = [
+    {
+        name: 'Wipes',
+        amount: '5.00'
+    },
+    {
+        name: 'Wipes',
+        amount: '5.00'
+    },
+    {
+        name: 'Wipes',
+        amount: '5.00'
+    },
+]
+
 
 export default function Invoice(props) {
     const classes = useStyles();
@@ -102,32 +133,48 @@ export default function Invoice(props) {
                         <TableRow className='inv-tbl' key={idx}>
                             <TableCell >
                                 <div className="edit-field">
-                                    <div style={{ marginTop: 10 }}>
+                                    <div style={{ marginTop: 16 }}>
                                         <MdRemoveCircle className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon'} />
                                     </div>
                                     <div>
-                                        <FormControl variant="outlined" fullWidth margin="dense" classes={{
-                                            root: classes.quantityRoot
-                                        }}>
-                                            <Select
-                                                id="city"
-                                                // value={age}
-                                                // onChange={handleChange}
-                                                MenuProps={{
-                                                    getContentAnchorEl: null,
-                                                    anchorOrigin: {
-                                                        vertical: "bottom",
-                                                        horizontal: "left",
-                                                    }
+                                        <Autocomplete
+                                            id="free-solo-demo"
+                                            freeSolo
+                                            disableClearable={true}
+                                            defaultValue={
+                                                props.type === 1 ?
+                                                    '' :
+                                                    dataSearch.find(data => data.name === 'Technician')}
+                                            options={dataSearch}
+                                            getOptionLabel={(option) => option.name}
+                                            renderOption={(option, idx) => (
+                                                <div className='inv-edit-search-items' style={{
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between',
+                                                    alignItems: 'center',
+                                                    height: 36,
+                                                    width: '100%',
                                                 }}
-                                                defaultValue={row.desc}
-                                            >
-                                                <MenuItem value={0} style={{ display: "none" }}>Select Service</MenuItem>
-                                                <MenuItem value={1}>Technician</MenuItem>
-                                                <MenuItem value={2}>Scientist</MenuItem>
-                                                <MenuItem value={3}>Engineer</MenuItem>
-                                            </Select>
-                                        </FormControl>
+                                                // onClick={() => handleData(option)}
+                                                >
+                                                    <div>{option.name}</div>
+                                                    <div>${option.amount}</div>
+                                                </div>
+                                            )}
+                                            renderInput={(params) => (
+                                                <FormControl variant="outlined" style={{ width: '100%' }} classes={{
+                                                    root: classes.quantityRoot2
+                                                }}>
+                                                    <TextField
+                                                        {...params}
+                                                        className='inv-edit-search'
+                                                        placeholder="Search Service"
+                                                        margin="dense"
+                                                        variant="outlined"
+                                                    />
+                                                </FormControl>
+                                            )}
+                                        />
                                         <FormControl variant="outlined" fullWidth classes={{
                                             root: classes.quantityRoot
                                         }}>
@@ -210,31 +257,49 @@ export default function Invoice(props) {
                         <TableRow className='inv-tbl' key={idx}>
                             <TableCell>
                                 <div className="edit-field">
-                                    <div style={{ marginTop: 10 }}>
+                                    <div style={{ marginTop: 16 }}>
                                         <MdRemoveCircle className={props.type === 1 ? 'inv-add-icon' : 'apt-edit-icon'} />
                                     </div>
                                     <div>
-                                        <FormControl variant="outlined" fullWidth margin="dense" classes={{
-                                            root: classes.quantityRoot
-                                        }}>
-                                            <Select
-                                                id="city"
-                                                defaultValue={row.desc}
-                                                MenuProps={{
-                                                    getContentAnchorEl: null,
-                                                    anchorOrigin: {
-                                                        vertical: "bottom",
-                                                        horizontal: "left",
-                                                    }
+                                        <Autocomplete
+                                            id="free-solo-demo"
+                                            freeSolo
+                                            disableClearable={true}
+                                            defaultValue={
+                                                props.type === 1 ?
+                                                    '' : dataSearchItem.find(data => data.name === 'Wipes')
+                                            }
+                                            options={dataSearchItem}
+                                            getOptionLabel={(option) => option.name}
+                                            renderOption={(option, idx) => (
+                                                <div className='inv-edit-search-items' style={{
+                                                    display: 'flex',
+                                                    justifyContent: 'space-between',
+                                                    alignItems: 'center',
+                                                    height: 36,
+                                                    width: '100%',
                                                 }}
-                                            // value={age}
-                                            // onChange={handleChange}
-                                            >
-                                                <MenuItem value={0} style={{ display: "none" }}>Select Service</MenuItem>
-                                                <MenuItem value={1}>Wipes</MenuItem>
-                                                <MenuItem value={2}>Wipes</MenuItem>
-                                            </Select>
-                                        </FormControl>
+                                                // onClick={() => handleData(option)}
+                                                >
+                                                    <div>{option.name}</div>
+                                                    <div>${option.amount}</div>
+                                                </div>
+                                            )}
+                                            renderInput={(params) => (
+                                                <FormControl variant="outlined" style={{ width: '100%' }} classes={{
+                                                    root: classes.quantityRoot2
+                                                }}>
+                                                    <TextField
+                                                        {...params}
+                                                        defaultValue='sdfsdf'
+                                                        className='inv-edit-search'
+                                                        placeholder="Search Item"
+                                                        margin="dense"
+                                                        variant="outlined"
+                                                    />
+                                                </FormControl>
+                                            )}
+                                        />
                                         <FormControl variant="outlined" fullWidth classes={{
                                             root: classes.quantityRoot
                                         }}>

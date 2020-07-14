@@ -4,7 +4,7 @@
 }
 
 .checkbox:hover {
-  background-color: #F2F9FC !important;
+  background-color: #f2f9fc !important;
 }
 
 .chips-edit-inv .chip-edit {
@@ -14,4 +14,14 @@
   color: #fff;
   font-weight: 500;
   cursor: pointer;
+}
+
+.inv-edit-search
+  > .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]
+  .MuiAutocomplete-input {
+  padding: 11px 15px !important;
+}
+
+.inv-edit-search-items:hover{
+  color: #2A95C5;
 }
