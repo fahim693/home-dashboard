@@ -127,6 +127,7 @@ export default function AppointmentAddNew() {
                                                         placeholder="Search"
                                                         margin="normal"
                                                         variant="outlined"
+                                                        className='search-add-new'
                                                         style={{
                                                             boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.22)'
                                                         }}
