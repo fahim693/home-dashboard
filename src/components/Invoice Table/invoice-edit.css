@@ -19,7 +19,7 @@
 .inv-edit-search
   > .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]
   .MuiAutocomplete-input {
-  padding: 11px 15px !important;
+  padding: 10.5px 15px !important;
 }
 
 .inv-edit-search-items:hover{
