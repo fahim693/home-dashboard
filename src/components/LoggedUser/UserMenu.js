@@ -4,8 +4,9 @@ import { MdArrowDropDown } from 'react-icons/md';
 import { Menu, MenuItem } from '@material-ui/core';
 import AccountSettingsModal from '../Modal/AccountSettingsModal';
 import Modal from '../Modal/Modal';
+import { withRouter } from 'react-router-dom';
 
-const UserMenu = () => {
+const UserMenu = (props) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [rotate, setRotate] = React.useState('initial');
     const [open, setOpen] = React.useState(false);
@@ -33,6 +34,11 @@ const UserMenu = () => {
     const handleAction = () => {
         setOpen(true)
     }
+
+    const handleLogout = () => {
+        setAnchorEl(null);
+        props.history.push('/login')
+    }
     return (
         <div>
             <div onClick={handleClick} className="logged-in-user">
@@ -55,7 +61,7 @@ const UserMenu = () => {
                 onClick={handleChange}
             >
                 <MenuItem onClick={handleAction} style={{ width: 235 }}>Account Settings</MenuItem>
-                <MenuItem onClick={handleClose} style={{ width: 235 }}>Logout</MenuItem>
+                <MenuItem onClick={handleLogout} style={{ width: 235 }}>Logout</MenuItem>
 
             </Menu>
             <AccountSettingsModal
@@ -93,4 +99,4 @@ const UserMenu = () => {
     )
 }
 
-export default UserMenu;
+export default withRouter(UserMenu);

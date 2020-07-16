@@ -1,0 +1,17 @@
+.login-right-container {
+  background-color: #2a95c5;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.login-right-text-bottom{
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 3rem;
+}

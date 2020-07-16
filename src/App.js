@@ -27,6 +27,10 @@ import ServiceTable from './pages/PriceBookTables/ServiceTable';
 import test from './components/Modal/AccountSettingsModal';
 import Hours from './pages/Hours';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import ForgotPassword from './pages/ForgotPassword';
+import SignUp from './pages/SignUp';
+import SettingUpAccount from './pages/SettingUpAccount';
 
 const App = () => {
   return (
@@ -57,6 +61,10 @@ const App = () => {
       <Route exact path="/item-table" component={ItemTable} />
       <Route exact path="/hours" component={Hours} />
       <Route exact path="/test" component={test} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/forgot-password" component={ForgotPassword} />
+      <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/setting-up" component={SettingUpAccount} />
     </Router>
   )
 }
