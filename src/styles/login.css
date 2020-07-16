@@ -1,0 +1,54 @@
+.login-body {
+  background-color: #f6f6f6;
+}
+
+.login-form {
+  padding: 0 2rem;
+}
+
+.login-form-type {
+  font-size: 23px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.login-field-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4f4f4f;
+  margin-bottom: 6px;
+}
+
+.login-forgot-pass {
+  text-align: center;
+  color: #2a95c5;
+  text-decoration: underline;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.login-field-warning {
+  color: #eb5757;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 14px;
+  font-weight: 500;
+  width: 60%;
+}
+
+.terms-policy-text {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.tos {
+  color: #2a95c5;
+  text-decoration: underline;
+  cursor: pointer;
+}

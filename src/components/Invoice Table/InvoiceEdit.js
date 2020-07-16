@@ -122,9 +122,15 @@ export default function Invoice(props) {
                 <TableHead>
                     <TableRow className='inv-tbl hst-tbl-header '>
                         <TableCell></TableCell>
-                        <TableCell className="tbl-head-cell" align="center">Quantity</TableCell>
-                        <TableCell className="tbl-head-cell" align="center">Price</TableCell>
-                        <TableCell className="tbl-head-cell" align="center">Amount</TableCell>
+                        <TableCell className="tbl-head-cell" align="center">
+                            <span style={{ marginLeft: -36 }}>Quantity</span>
+                        </TableCell>
+                        <TableCell className="tbl-head-cell" align="center">
+                            <span style={{ marginLeft: -63 }}>Price</span>
+                        </TableCell>
+                        <TableCell className="tbl-head-cell" align="center">
+                            <span style={{ marginLeft: -35 }}>Amount</span>
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -197,6 +203,7 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
+                                        style={{ marginTop: -37 }}
                                         variant="outlined"
                                         defaultValue={row.qty}
                                         margin="dense"
@@ -208,6 +215,7 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
+                                        style={{ marginTop: -37 }}
                                         variant="outlined"
                                         placeholder="0.00"
                                         defaultValue={row.price}
@@ -220,6 +228,7 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
+                                        style={{ marginTop: -37 }}
                                         variant="outlined"
                                         defaultValue={row.amount}
                                         margin="dense"
@@ -318,6 +327,8 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
+                                        style={{ marginTop: -37 }}
+
                                         defaultValue={row.qty}
                                         variant="outlined"
                                         margin="dense"
@@ -329,6 +340,8 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
+                                        style={{ marginTop: -37 }}
+
                                         defaultValue={row.price}
                                         placeholder="0.00"
                                         variant="outlined"
@@ -341,6 +354,8 @@ export default function Invoice(props) {
                                     root: classes.quantityRoot2
                                 }}>
                                     <TextField
+                                        style={{ marginTop: -37 }}
+
                                         defaultValue={row.amount}
                                         variant="outlined"
                                         margin="dense"
@@ -380,7 +395,7 @@ export default function Invoice(props) {
                             </div>
                         </TableCell>
                         <TableCell align="left"></TableCell>
-                        <TableCell className="tbl-body-cell" align="center">$201</TableCell>
+                        <TableCell className="tbl-body-cell" align="center">$201.00</TableCell>
                     </TableRow>
 
                     {
@@ -395,7 +410,9 @@ export default function Invoice(props) {
                                         </div>
                                     </TableCell>
                                     <TableCell></TableCell>
-                                    <TableCell className="tbl-body-cell" align="center">$7</TableCell>
+                                    <TableCell className="tbl-body-cell" align="center">
+                                        <span style={{ marginRight: -19 }}>$7.00</span>
+                                    </TableCell>
                                 </TableRow>
                                 <TableRow className='inv-tbl-cust'>
                                     <TableCell></TableCell>
@@ -420,7 +437,9 @@ export default function Invoice(props) {
                                         </FormControl>
                                     </TableCell>
                                     <TableCell></TableCell>
-                                    <TableCell style={{ color: '#828282' }} className="tbl-body-cell" align="center">$7.00</TableCell>
+                                    <TableCell style={{ color: '#828282' }} className="tbl-body-cell" align="center">
+                                        <span style={{ marginRight: -19 }}>$7.00</span>
+                                    </TableCell>
                                 </TableRow>
                                 {
                                     newField ?
@@ -448,7 +467,9 @@ export default function Invoice(props) {
                                                 </FormControl>
                                             </TableCell>
                                             <TableCell></TableCell>
-                                            <TableCell style={{ color: '#828282' }} className="tbl-body-cell" align="center">$7.00</TableCell>
+                                            <TableCell style={{ color: '#828282' }} className="tbl-body-cell" align="center">
+                                                <span style={{ marginRight: -19 }}>$7.00</span>
+                                            </TableCell>
                                         </TableRow> : ''
                                 }
 
@@ -474,7 +495,11 @@ export default function Invoice(props) {
                             </div>
                         </TableCell>
                         <TableCell></TableCell>
-                        <TableCell className="hst-tbl-header tbl-head-cell" align="center"><strong>$208</strong></TableCell>
+                        <TableCell className="hst-tbl-header tbl-head-cell" align="center">
+                            <span style={{ marginRight: 8 }}>
+                                <strong>$208.00</strong>
+                            </span>
+                        </TableCell>
                     </TableRow>
                 </TableBody>
             </Table>
