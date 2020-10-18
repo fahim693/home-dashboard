@@ -1,6 +1,9 @@
 .MuiAppBar-colorPrimary {
   background-color: #2a95c5 !important;
 }
+.MuiBadge-colorError{
+  background-color: #EB5757 !important;
+}
 .nav-desktop {
   display: block;
 }
