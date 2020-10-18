@@ -9,7 +9,7 @@ const Notification = (props) => {
             <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <ArrowDropUp style={{ color: '#fff', fontSize: 62 }} />
             </div>
-            <div style={{ marginTop: -28, borderRadius: 6, backgroundColor: '#F3F4F6', }}>
+            <div style={{ boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.22)', marginTop: -28, borderRadius: 6, backgroundColor: '#F3F4F6', }}>
                 <div style={{ backgroundColor: '#fff', borderRadius: 6, borderBottomLeftRadius: 0, borderBottomRightRadius: 0, display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 18px', boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.22)', marginBottom: 1 }}>
                     <div style={{ fontWeight: 500, fontSize: 24, color: '#000' }}>Notifications</div>
                     <div onClick={() => props.setNotification(false)} className='not-icon-hover' style={{ cursor: 'pointer', height: 30, width: 30, borderRadius: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
