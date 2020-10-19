@@ -31,8 +31,8 @@ const Notification = (props) => {
                                     <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
                                     <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
                                 </div>
-                                <div style={{ cursor: 'pointer' }}>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div>
+                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
                                         <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
                                     </svg>
@@ -46,8 +46,8 @@ const Notification = (props) => {
                                     <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Invoice Paid</div>
                                     <div style={{ color: '#828282' }}>Invoice paid by John Doe on January 3rd, 2020 at 4:12 PM.</div>
                                 </div>
-                                <div style={{ cursor: 'pointer' }}>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div>
+                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
                                         <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
                                     </svg>
@@ -61,8 +61,8 @@ const Notification = (props) => {
                                     <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
                                     <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
                                 </div>
-                                <div style={{ cursor: 'pointer' }}>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div>
+                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
                                         <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
                                     </svg>
@@ -83,8 +83,8 @@ const Notification = (props) => {
                                     <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
                                     <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
                                 </div>
-                                <div style={{ cursor: 'pointer' }}>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div>
+                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
                                         <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
                                     </svg>
@@ -98,8 +98,8 @@ const Notification = (props) => {
                                     <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Invoice Paid</div>
                                     <div style={{ color: '#828282' }}>Invoice paid by John Doe on January 3rd, 2020 at 4:12 PM.</div>
                                 </div>
-                                <div style={{ cursor: 'pointer' }}>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div>
+                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
                                         <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
                                     </svg>
@@ -113,8 +113,8 @@ const Notification = (props) => {
                                     <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
                                     <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
                                 </div>
-                                <div style={{ cursor: 'pointer' }}>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <div >
+                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
                                         <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
                                     </svg>
