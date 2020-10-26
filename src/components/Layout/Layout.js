@@ -116,7 +116,7 @@ const NavBar = (props) => {
                             }
                             {
                                 showNotification ?
-                                    <div style={{ position: 'absolute', zIndex: 10, top: 47, right: 87 }}>
+                                    <div style={{ position: 'absolute', zIndex: 10, top: 47, right: 134 }}>
                                         <Notification
                                             setNotification={setNotification}
                                         />

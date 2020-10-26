@@ -43,7 +43,7 @@ const UserMenu = (props) => {
         <div>
             <div onClick={handleClick} className="logged-in-user">
                 <img style={{ height: 50 }} src="/profile-img.png" alt="" />
-                <div>
+                <div style={{width: 175}}>
                     <h3 className="name">John Doe</h3>
                     <div className="email">johndoe@gmail.com</div>
                 </div>
@@ -60,8 +60,8 @@ const UserMenu = (props) => {
                 onClose={handleClose}
                 onClick={handleChange}
             >
-                <MenuItem onClick={handleAction} style={{ width: 235 }}>Account Settings</MenuItem>
-                <MenuItem onClick={handleLogout} style={{ width: 235 }}>Logout</MenuItem>
+                <MenuItem onClick={handleAction} style={{ width: 250 }}>Account Settings</MenuItem>
+                <MenuItem onClick={handleLogout} style={{ width: 250 }}>Logout</MenuItem>
 
             </Menu>
             <AccountSettingsModal
