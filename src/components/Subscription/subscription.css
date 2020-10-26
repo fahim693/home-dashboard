@@ -1,0 +1,15 @@
+.subscription-switch {
+  display: flex;
+  align-items: center;
+}
+.subscription-switch .MuiSwitch-switchBase {
+  color: #2a95c5 !important;
+}
+
+.subscription-switch .MuiSwitch-colorPrimary.Mui-checked + .MuiSwitch-track {
+  opacity: 0.9;
+}
+
+.subscription-switch .MuiSwitch-track {
+  background-color: #2a95c5;
+}
