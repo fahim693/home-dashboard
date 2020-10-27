@@ -17,7 +17,7 @@ const options = [
     {
         icon: <FormatListBulletedRounded style={{ color: '#58BFEF' }} className='option-icon-style' />,
         name: 'Price Book',
-        url:'/item-table'
+        url: '/item-table'
     },
     {
         icon: <QueryBuilderRounded style={{ color: '#7EC96F' }} className='option-icon-style' />,
@@ -39,7 +39,8 @@ const options = [
     },
     {
         icon: <StarBorderRounded style={{ color: '#FFB281' }} className='option-icon-style' />,
-        name: 'Subscription'
+        name: 'Subscription',
+        url: true
     },
 ]
 

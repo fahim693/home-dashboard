@@ -21,7 +21,7 @@ const Billing = () => {
     return (
         <Grid container spacing={4}>
             <Grid item sm={6} xs={12}>
-                <div style={{ fontSize: 28, fontWeight: 500, marginBottom: 40, marginTop: 34 }}>Payment Information</div>
+                <div style={{ fontSize: 28, fontWeight: 500, marginBottom: 34, marginTop: 25 }}>Payment Information</div>
                 <div style={{ fontWeight: 500, fontSize: 20, color: '#333' }}>
                     <div>Name on card</div>
                     <TextField style={{ width: 380, marginTop: 8 }} variant="outlined" size='small' name="name" placeholder="Enter Name" value={cardInfo.name} onChange={handleChangeCardInfo} />
@@ -63,9 +63,9 @@ const Billing = () => {
                 </div>
             </Grid>
             <Grid item sm={6} xs={12}>
-                <Card style={{ padding: 34, boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.17)' }}>
+                <Card style={{ padding: '25px 30px 10px 30px', boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.17)' }}>
                     <CardContent>
-                        <div style={{ fontSize: 28, fontWeight: 500, marginBottom: 34 }}>Plan Details</div>
+                        <div style={{ fontSize: 28, fontWeight: 500, marginBottom: 32 }}>Plan Details</div>
                         <div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 20, fontWeight: 500, marginBottom: 10 }}>
                                 <div>Professional</div>
@@ -120,17 +120,17 @@ const Billing = () => {
                             <Divider />
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 20, fontWeight: 500, marginBottom: 10, marginTop: 11 }}>
                                 <div>Subtotal</div>
-                                <div>$100</div>
+                                <div>$100.00</div>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 20, fontWeight: 500, marginBottom: 10 }}>
                                 <div>Activation Fee</div>
-                                <div>$20</div>
+                                <div>$20.00</div>
                             </div>
 
                             <Divider />
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 26, fontWeight: 500, marginBottom: 12, marginTop: 11 }}>
                                 <div>Amount due today</div>
-                                <div>$100</div>
+                                <div>$120.00</div>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 18, color: '#828282', marginBottom: 10 }}>
                                 <div>Amount due on your renewal date (Nov 14, 2021)</div>
