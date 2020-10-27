@@ -24,7 +24,7 @@ import BusinessProfile from './pages/BusinessProfile';
 import BusinessProfileEdit from './pages/BusinessProfileEdit';
 import ItemTable from './pages/PriceBookTables/ItemTable';
 import ServiceTable from './pages/PriceBookTables/ServiceTable';
-import test from './components/Subscription/Subscribe';
+import test from './components/Invoice/Invoice';
 import Hours from './pages/Hours';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -32,6 +32,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import SignUp from './pages/SignUp';
 import SettingUpAccount from './pages/SettingUpAccount';
 import ExistingSubscriptionPlan from './pages/ExistingSubscriptionPlan';
+import Invoice from './pages/Invoice';
 
 const App = () => {
   return (
@@ -67,6 +68,7 @@ const App = () => {
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/setting-up" component={SettingUpAccount} />
       <Route exact path="/existing-plan" component={ExistingSubscriptionPlan} />
+      <Route exact path="/generate-invoice" component={Invoice} />
     </Router>
   )
 }
