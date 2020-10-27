@@ -12,17 +12,20 @@ const Invoice = () => {
             .then((canvas) => {
                 const imgData = canvas.toDataURL('image/png');
 
-                const pdf = new jsPDF();
+                const pdf = new jsPDF({
+                    unit: 'px'
+                });
                 var width = pdf.internal.pageSize.getWidth();
                 var height = pdf.internal.pageSize.getHeight();
+                console.log(width, height);
                 pdf.addImage(imgData, 'PNG', 0, 0, width, height);
                 pdf.save("Invoice.pdf");
             });
     }
     return (
-        <div>
+        <div style={{backgroundColor: '#e5e5e5'}}>
             <Button onClick={convertToPdf}>Test</Button>
-            <div ref={invoiceRef}>
+            <div style={{ backgroundColor: '#fff', maxWidth: 870, margin: '0 auto' }} ref={invoiceRef}>
                 <InvoicePage />
             </div>
         </div>
