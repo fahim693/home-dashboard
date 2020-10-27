@@ -18,10 +18,16 @@ const useStyles = makeStyles({
 const MoreOptionCard = (props) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false)
+    const [exists, setExists] = useState(false)
+
 
     const handleOnClick = () => {
         if (props.name === 'Subscription')
-            setOpen(true)
+            if (exists)
+                props.history.push(props.url)
+
+            else
+                setOpen(true)
         else
             props.history.push(props.url)
     }
@@ -35,6 +41,7 @@ const MoreOptionCard = (props) => {
                 </CardContent>
             </Card>
             <SubscriptionModal
+                setExists={setExists}
                 open={open}
                 setOpen={setOpen}
             />

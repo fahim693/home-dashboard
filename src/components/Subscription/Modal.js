@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -21,6 +21,15 @@ const useStyles = makeStyles((theme) => ({
 export default function SubscriptionModal(props) {
     const classes = useStyles();
     const [page, setPage] = useState(0)
+
+    useEffect(() => {
+        const func = () => {
+            if (page === 2)
+                props.setExists(true);
+        }
+        func();
+    }, [page, props])
+
     return (
         <div>
             <Modal

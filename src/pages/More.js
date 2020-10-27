@@ -40,7 +40,7 @@ const options = [
     {
         icon: <StarBorderRounded style={{ color: '#FFB281' }} className='option-icon-style' />,
         name: 'Subscription',
-        url: true
+        url: '/existing-plan'
     },
 ]
 

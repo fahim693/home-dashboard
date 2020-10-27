@@ -31,6 +31,7 @@ import Login from './pages/Login';
 import ForgotPassword from './pages/ForgotPassword';
 import SignUp from './pages/SignUp';
 import SettingUpAccount from './pages/SettingUpAccount';
+import ExistingSubscriptionPlan from './pages/ExistingSubscriptionPlan';
 
 const App = () => {
   return (
@@ -65,6 +66,7 @@ const App = () => {
       <Route exact path="/forgot-password" component={ForgotPassword} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/setting-up" component={SettingUpAccount} />
+      <Route exact path="/existing-plan" component={ExistingSubscriptionPlan} />
     </Router>
   )
 }
