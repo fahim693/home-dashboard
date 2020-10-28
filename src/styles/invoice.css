@@ -1,0 +1,21 @@
+.invoice-icons-hover {
+  height: 45px;
+  cursor: pointer;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+.invoice-icons-hover:hover {
+  background-color: #e0e0e02e;
+}
+
+@media print{
+    .hide-print{
+        display: none;
+    }
+    .print-only{
+        display: block;
+    }
+}
