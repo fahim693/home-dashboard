@@ -108,7 +108,7 @@ const NavBar = (props) => {
                                     <div style={{ backgroundColor: 'rgba(242, 249, 252, 0.32)', marginRight: 19, borderRadius: '100%', height: 44, width: 44, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                         <NotificationsRounded style={{ fontSize: 28 }} />
                                     </div> :
-                                    <div onClick={handleShowNotification} style={{ backgroundColor: '#2a95c5', marginRight: 18, borderRadius: '100%', height: 44, width: 44, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                    <div onClick={handleShowNotification} style={{ backgroundColor: '#2a95c5', marginRight: 19, borderRadius: '100%', height: 44, width: 44, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                         <Badge style={{ marginRight: 3, marginTop: 9, cursor: 'pointer' }} badgeContent={badgeContent} color="error">
                                             <NotificationsRounded style={{ marginTop: -9, marginRight: -2, fontSize: 28 }} />
                                         </Badge>

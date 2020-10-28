@@ -62,13 +62,13 @@ const App = () => {
       <Route exact path="/service-table" component={ServiceTable} />
       <Route exact path="/item-table" component={ItemTable} />
       <Route exact path="/hours" component={Hours} />
-      <Route exact path="/test" component={test} />
+      {/* <Route exact path="/test" component={test} /> */}
       <Route exact path="/login" component={Login} />
       <Route exact path="/forgot-password" component={ForgotPassword} />
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/setting-up" component={SettingUpAccount} />
       <Route exact path="/existing-plan" component={ExistingSubscriptionPlan} />
-      <Route exact path="/generate-invoice" component={Invoice} />
+      {/* <Route exact path="/generate-invoice" component={Invoice} /> */}
     </Router>
   )
 }

@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         minWidth: 275,
+        paddingTop: 20
     }
 }));
 
@@ -18,7 +19,7 @@ export default function ExistingSubscriptionPlan() {
     return (
         <Layout active={6}>
             <div className={classes.root}>
-                <Grid container spacing={3}>
+                <Grid container spacing={4}>
                     <Grid item sm={6} xs={12}>
                         <Card style={{ padding: '25px 30px 30px 30px', boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.17)' }}>
                             <CardContent>
