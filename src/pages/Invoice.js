@@ -58,7 +58,7 @@ const Invoice = () => {
                     </div>
                 </div>
             </div>
-            <div className='print-only' style={{ backgroundColor: '#fff', maxWidth: 870, margin: '0 auto' }} ref={invoiceRef}>
+            <div className='print-only' style={{ backgroundColor: '#fff', boxShadow: '0px 0px 5.08092px 1.01618px rgba(0, 0, 0, 0.12)', maxWidth: 870, margin: '0 auto' }} ref={invoiceRef}>
                 <InvoicePage />
             </div>
         </div >

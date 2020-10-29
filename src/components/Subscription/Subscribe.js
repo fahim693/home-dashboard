@@ -1,11 +1,12 @@
 import { Button, Switch } from '@material-ui/core'
-import React from 'react'
+import React, { useState } from 'react'
 import Billing from './Billing';
 import Packages from './Packages';
 import './subscription.css'
 import Success from './Success';
 
 const Subscribe = (props) => {
+    const [checked, setChecked] = useState(false)
     return (
         <div >
             {
@@ -16,10 +17,10 @@ const Subscribe = (props) => {
                         <div className='subscription-switch'>
                             <div style={{ fontSize: 20, fontWeight: 500, marginRight: 7 }}>Billed Monthly</div>
                             <Switch
-                                // checked={state.checkedB}
-                                // onChange={handleChange}
+                                checked={checked}
+                                onChange={() => setChecked(!checked)}
                                 color="primary"
-                                name="checkedB"
+                                name="checked"
                                 inputProps={{ 'aria-label': 'primary checkbox' }}
                             />
                             <div style={{ fontSize: 20, fontWeight: 500, marginLeft: 7 }}>Billed Yearly</div>
@@ -40,7 +41,7 @@ const Subscribe = (props) => {
             {
                 props.page === 0 ?
                     <div style={{ padding: '28px 60px', backgroundColor: '#f3f4f6', borderRadius: '0 0 6px 6px' }}>
-                        <Packages />
+                        <Packages checked={checked} />
                     </div> : props.page === 1 ?
                         <div style={{ padding: '28px 60px', backgroundColor: '#fff', borderRadius: '0 0 6px 6px' }}>
                             <Billing />

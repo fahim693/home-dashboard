@@ -2,43 +2,61 @@ import { Button, Card, CardContent, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
 import PackageDetails from './PackageDetails';
 
-const packs = [
+const packsYearly = [
     {
         name: 'BEGINNER',
-        price: '29.99',
+        price: '479.99',
         user: '1 User',
     },
     {
         name: 'INTERMEDIATE',
-        price: '575.90',
+        price: '767.99',
         user: '2-5 Users',
     },
     {
         name: 'PROFESSIONAL',
-        price: '959.90',
+        price: '1247.99',
+        user: '6+ Users',
+    },
+]
+
+const packsMonthly = [
+    {
+        name: 'BEGINNER',
+        price: '49.99',
+        user: '1 User',
+    },
+    {
+        name: 'INTERMEDIATE',
+        price: '79.99',
+        user: '2-5 Users',
+    },
+    {
+        name: 'PROFESSIONAL',
+        price: '129.99',
         user: '6+ Users',
     },
 ]
 
 
-const Packages = () => {
+const Packages = (props) => {
     const [selected, setSelected] = useState(1)
     return (
         <div style={{ backgroundColor: '#F3F4F6' }}>
             <Grid container spacing={5}>
                 {
-                    packs.map((item, idx) => {
+                    packsMonthly.map((item, idx) => {
                         if (idx === 1)
                             return (
                                 <Grid key={idx} item sm={4} xs={12}>
                                     <Card style={{ border: selected === 1 ? '1px solid #4BCA81' : '1px solid #E0E0E0', padding: '0 0 34px' }}>
-                                        <div style={{ color: '#fff', backgroundColor: '#2A95C5', height: 48, fontSize: 18, marginBottom: 29, fontWeight: 500, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <div style={{ color: '#fff', backgroundColor: selected === 1 ? "#4BCA81" : '#2A95C5', height: 48, fontSize: 18, marginBottom: 29, fontWeight: 500, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                             Most Popular
-                                    </div>
+                                        </div>
                                         <CardContent style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', fontWeight: 500 }}>
                                             <div style={{ fontSize: 20, color: '#2A95C5', marginBottom: 23 }}>{item.name}</div>
-                                            <div style={{ color: '#4F4F4F', fontSize: 39, marginBottom: 4 }}>${item.price}</div>
-                                            <div style={{ color: '#828282', fontSize: 17, marginBottom: 18 }}>per month</div>
+                                            <div style={{ color: '#4F4F4F', fontSize: 39, marginBottom: 4 }}>${props.checked ? packsYearly[idx].price : item.price}</div>
+                                            <div style={{ color: '#828282', fontSize: 17, marginBottom: 18 }}>per {props.checked ? 'year' : 'month'}</div>
                                             <div style={{ color: '#219653', fontSize: 20, marginBottom: 35 }}>{item.user}</div>
                                             {
                                                 selected === 1 ?
@@ -61,8 +79,8 @@ const Packages = () => {
                                     <Card style={{ border: idx === selected ? '1px solid #4BCA81' : '1px solid #E0E0E0', padding: '29px 0 34px', marginTop: 48 }}>
                                         <CardContent style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', fontWeight: 500 }}>
                                             <div style={{ fontSize: 20, color: '#2A95C5', marginBottom: 23 }}>{item.name}</div>
-                                            <div style={{ color: '#4F4F4F', fontSize: 39, marginBottom: 4 }}>${item.price}</div>
-                                            <div style={{ color: '#828282', fontSize: 17, marginBottom: 18 }}>per month</div>
+                                            <div style={{ color: '#4F4F4F', fontSize: 39, marginBottom: 4 }}>${props.checked ? packsYearly[idx].price : item.price}</div>
+                                            <div style={{ color: '#828282', fontSize: 17, marginBottom: 18 }}>per {props.checked ? 'year' : 'month'}</div>
                                             <div style={{ color: '#219653', fontSize: 20, marginBottom: 35 }}>{item.user}</div>
                                             {
                                                 selected === idx ?

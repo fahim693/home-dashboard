@@ -68,7 +68,7 @@ const App = () => {
       <Route exact path="/signup" component={SignUp} />
       <Route exact path="/setting-up" component={SettingUpAccount} />
       <Route exact path="/existing-plan" component={ExistingSubscriptionPlan} />
-      {/* <Route exact path="/generate-invoice" component={Invoice} /> */}
+      <Route exact path="/generate-invoice" component={Invoice} />
     </Router>
   )
 }

@@ -11,11 +11,12 @@
   background-color: #e0e0e02e;
 }
 
-@media print{
-    .hide-print{
-        display: none;
-    }
-    .print-only{
-        display: block;
-    }
+@media print {
+  .hide-print {
+    display: none;
+  }
+  .print-only {
+    display: block;
+    box-shadow: none !important;
+  }
 }
