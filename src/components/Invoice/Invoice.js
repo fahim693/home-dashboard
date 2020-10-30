@@ -176,10 +176,10 @@ const Invoice = () => {
                         <div style={{ fontWeight: 'bold', marginTop: 20, textAlign: 'right', fontSize: 22 }}>Total:</div>
                     </div>
                     <div>
-                        <div style={{ fontWeight: 'bold', marginBottom: 20, textAlign: 'right' }}>$15,900.00</div>
-                        <div style={{ fontWeight: 'bold', marginBottom: 8, textAlign: 'right' }}>$451.2</div>
-                        <div style={{ fontWeight: 600, marginBottom: 8, color: '#828282', textAlign: 'right' }}>$190.25</div>
-                        <div style={{ fontWeight: 600, marginBottom: 8, color: '#828282', textAlign: 'right' }}>$260.95</div>
+                        <div style={{ marginBottom: 20, textAlign: 'right' }}>$15,900.00</div>
+                        <div style={{ marginBottom: 8, textAlign: 'right' }}>$451.2</div>
+                        <div style={{ marginBottom: 8, color: '#828282', textAlign: 'right' }}>$190.25</div>
+                        <div style={{ marginBottom: 8, color: '#828282', textAlign: 'right' }}>$260.95</div>
                         <div style={{ fontWeight: 'bold', marginTop: 20, textAlign: 'right', fontSize: 22 }}>$16,351.2</div>
                     </div>
                 </div>
