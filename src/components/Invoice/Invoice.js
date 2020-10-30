@@ -23,6 +23,34 @@ const services = [
         price: '1,500.00',
         total: '1,500.00'
     },
+    {
+        name: 'Room Cleaning (2 Bedrooms)',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate metus ut urna blandit, ac ornare eros facilisis. Suspendisse magna arcu, ultricies et ante ut, dictum cursus arcu.',
+        qty: '1',
+        price: '1,800.00',
+        total: '1,800.00'
+    },
+    {
+        name: 'Bathroom Cleaning (1 Bathroom)',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate metus ut urna blandit, ac ornare eros facilisis. Suspendisse magna arcu, ultricies et ante ut, dictum cursus arcu.',
+        qty: '1',
+        price: '1,500.00',
+        total: '1,500.00'
+    },
+    {
+        name: 'Room Cleaning (2 Bedrooms)',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate metus ut urna blandit, ac ornare eros facilisis. Suspendisse magna arcu, ultricies et ante ut, dictum cursus arcu.',
+        qty: '1',
+        price: '1,800.00',
+        total: '1,800.00'
+    },
+    {
+        name: 'Bathroom Cleaning (1 Bathroom)',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate metus ut urna blandit, ac ornare eros facilisis. Suspendisse magna arcu, ultricies et ante ut, dictum cursus arcu.',
+        qty: '1',
+        price: '1,500.00',
+        total: '1,500.00'
+    },
 
 ]
 
@@ -48,6 +76,35 @@ const items = [
         price: '2,600.00',
         total: '2,600.00'
     },
+    {
+        name: 'Microfiber Cloth',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate metus ut urna blandit, ac ornare eros facilisis. Suspendisse magna arcu, ultricies et ante ut, dictum cursus arcu.',
+        qty: '1',
+        price: '4,800.00',
+        total: '4,800.00'
+    },
+    {
+        name: 'Mop Refill',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate metus ut urna blandit, ac ornare eros facilisis. Suspendisse magna arcu, ultricies et ante ut, dictum cursus arcu.',
+        qty: '1',
+        price: '2,600.00',
+        total: '2,600.00'
+    },
+    {
+        name: 'Microfiber Cloth',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate metus ut urna blandit, ac ornare eros facilisis. Suspendisse magna arcu, ultricies et ante ut, dictum cursus arcu.',
+        qty: '1',
+        price: '4,800.00',
+        total: '4,800.00'
+    },
+    {
+        name: 'Mop Refill',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate metus ut urna blandit, ac ornare eros facilisis. Suspendisse magna arcu, ultricies et ante ut, dictum cursus arcu.',
+        qty: '1',
+        price: '2,600.00',
+        total: '2,600.00'
+    },
+    
 
 ]
 

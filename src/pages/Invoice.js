@@ -3,7 +3,8 @@ import React, { useRef } from 'react'
 import InvoicePage from '../components/Invoice/Invoice';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
-import '../styles/invoice.css';
+import '../styles/invoice.css'
+
 
 const Invoice = () => {
     const invoiceRef = useRef();
@@ -13,15 +14,24 @@ const Invoice = () => {
         html2canvas(input)
             .then((canvas) => {
                 const imgData = canvas.toDataURL('image/png');
-
-                const pdf = new jsPDF();
-                var width = pdf.internal.pageSize.getWidth();
+                const pdf = new jsPDF('p', 'mm');
+                var width = pdf.internal.pageSize.getWidth() - 2 * 3;
                 var height = pdf.internal.pageSize.getHeight();
-                pdf.addImage(imgData, 'PNG', 0, 0, width, height);
+                var position = 0;
+                var imgHeight = canvas.height * width / canvas.width;
+                var heightLeft = imgHeight;
+                pdf.addImage(imgData, 'PNG', 0, position, width, imgHeight);
+                heightLeft -= height;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, width, imgHeight);
+                    heightLeft -= height;
+                }
                 pdf.save("Invoice.pdf");
             });
     }
-
     return (
         <div style={{ backgroundColor: '#e5e5e5', paddingBottom: 61 }}>
             <div className='hide-print' style={{ backgroundColor: '#333', marginBottom: 61 }}>
@@ -61,6 +71,7 @@ const Invoice = () => {
             <div className='print-only' style={{ backgroundColor: '#fff', boxShadow: '0px 0px 5.08092px 1.01618px rgba(0, 0, 0, 0.12)', maxWidth: 870, margin: '0 auto' }} ref={invoiceRef}>
                 <InvoicePage />
             </div>
+
         </div >
     )
 }
