@@ -20,13 +20,13 @@ const Invoice = () => {
                 var position = 0;
                 var imgHeight = canvas.height * width / canvas.width;
                 var heightLeft = imgHeight;
-                pdf.addImage(imgData, 'PNG', 0, position, width, imgHeight);
+                pdf.addImage(imgData, 'PNG', 0, position, width, imgHeight, '', 'FAST');
                 heightLeft -= height;
 
                 while (heightLeft >= 0) {
                     position = heightLeft - imgHeight;
                     pdf.addPage();
-                    pdf.addImage(imgData, 'PNG', 0, position, width, imgHeight);
+                    pdf.addImage(imgData, 'PNG', 0, position, width, imgHeight, '', 'FAST');
                     heightLeft -= height;
                 }
                 pdf.save("Invoice.pdf");

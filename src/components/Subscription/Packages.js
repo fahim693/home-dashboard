@@ -1,6 +1,7 @@
 import { Button, Card, CardContent, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
 import PackageDetails from './PackageDetails';
+var numeral = require('numeral');
 
 const packsYearly = [
     {
@@ -55,7 +56,7 @@ const Packages = (props) => {
                                         </div>
                                         <CardContent style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', fontWeight: 500 }}>
                                             <div style={{ fontSize: 20, color: '#2A95C5', marginBottom: 23 }}>{item.name}</div>
-                                            <div style={{ color: '#4F4F4F', fontSize: 39, marginBottom: 4 }}>${props.checked ? packsYearly[idx].price : item.price}</div>
+                                            <div style={{ color: '#4F4F4F', fontSize: 39, marginBottom: 4 }}>${props.checked ? numeral(packsYearly[idx].price).format('0,0.00') : numeral(item.price).format('0,0.00')}</div>
                                             <div style={{ color: '#828282', fontSize: 17, marginBottom: 18 }}>per {props.checked ? 'year' : 'month'}</div>
                                             <div style={{ color: '#219653', fontSize: 20, marginBottom: 35 }}>{item.user}</div>
                                             {
@@ -79,7 +80,7 @@ const Packages = (props) => {
                                     <Card style={{ border: idx === selected ? '1px solid #4BCA81' : '1px solid #E0E0E0', padding: '29px 0 34px', marginTop: 48 }}>
                                         <CardContent style={{ alignItems: 'center', display: 'flex', flexDirection: 'column', fontWeight: 500 }}>
                                             <div style={{ fontSize: 20, color: '#2A95C5', marginBottom: 23 }}>{item.name}</div>
-                                            <div style={{ color: '#4F4F4F', fontSize: 39, marginBottom: 4 }}>${props.checked ? packsYearly[idx].price : item.price}</div>
+                                            <div style={{ color: '#4F4F4F', fontSize: 39, marginBottom: 4 }}>${props.checked ? numeral(packsYearly[idx].price).format('0,0.00') : numeral(item.price).format('0,0.00')}</div>
                                             <div style={{ color: '#828282', fontSize: 17, marginBottom: 18 }}>per {props.checked ? 'year' : 'month'}</div>
                                             <div style={{ color: '#219653', fontSize: 20, marginBottom: 35 }}>{item.user}</div>
                                             {
