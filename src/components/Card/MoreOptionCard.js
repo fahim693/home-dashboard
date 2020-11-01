@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './card.css'
 import { makeStyles, Card, CardContent } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
+import SubscriptionModal from '../Subscription/Modal';
 
 const useStyles = makeStyles({
     root: {
@@ -16,13 +17,35 @@ const useStyles = makeStyles({
 
 const MoreOptionCard = (props) => {
     const classes = useStyles();
+    const [open, setOpen] = useState(false)
+    const [exists, setExists] = useState(false)
+
+
+    const handleOnClick = () => {
+        if (props.name === 'Subscription')
+            if (exists)
+                props.history.push(props.url)
+
+            else
+                setOpen(true)
+        else
+            props.history.push(props.url)
+    }
+
     return (
-        <Card className={classes.root} >
-            <CardContent style={{ cursor: 'pointer' }} onClick={()=> props.history.push(props.url)}>
-                <div style={{ textAlign: 'center' }}>{props.icon}</div>
-                <div style={{ fontSize: 21, fontWeight: 500, marginTop: 10 }}>{props.name}</div>
-            </CardContent>
-        </Card>
+        <React.Fragment>
+            <Card className={classes.root} >
+                <CardContent style={{ cursor: 'pointer' }} onClick={handleOnClick}>
+                    <div style={{ textAlign: 'center' }}>{props.icon}</div>
+                    <div style={{ fontSize: 21, fontWeight: 500, marginTop: 10 }}>{props.name}</div>
+                </CardContent>
+            </Card>
+            <SubscriptionModal
+                setExists={setExists}
+                open={open}
+                setOpen={setOpen}
+            />
+        </React.Fragment>
     )
 }
 
