@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
 import './schedule.css'
+import { Avatar } from '@material-ui/core';
 
 const unassignedUser = [
     {
@@ -31,6 +32,17 @@ const unassignedUser = [
 
 ]
 
+const employees = [
+    {
+        name: 'Sophia Davis',
+        avatar: 'S'
+    },
+    {
+        name: 'John Doe',
+        avatar: 'J'
+    },
+]
+
 const Schedule = () => {
     const [alignment, setAlignment] = React.useState('left');
     const [selectedDate, handleDateChange] = useState(new Date());
@@ -49,6 +61,24 @@ const Schedule = () => {
             setAlignment(newAlignment);
         }
     };
+
+    const getEmployees = () => {
+        let arr = [];
+        for (let i = 0; i < 8; i++) {
+            arr.push(
+                <div style={{ paddingLeft: 12, height: 66, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset 0px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
+                    {employees[i] ?
+                        <Avatar style={{ marginRight: 10 }}>{employees[i].avatar}</Avatar>
+                        : ''
+                    }
+                    {employees[i] ? employees[i].name : ''}
+                </div>
+            )
+        }
+
+        return arr;
+    }
+
     return (
         <div>
             <div style={{ backgroundColor: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 19px', boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.22)', marginBottom: 1, borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
@@ -145,6 +175,20 @@ const Schedule = () => {
                         </svg>
                     </div>
                 </div>
+            </div>
+            <div style={{ display: 'flex' }}>
+                <div style={{ width: 214 }}>
+                    <div style={{ padding: '14px 0px 14px 19px', fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset 0px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
+                        Employees
+                        <svg style={{ marginLeft: 8 }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.211604 1.61C2.5316 4.59 5.9616 9 5.9616 9V14C5.9616 15.1 6.8616 16 7.9616 16C9.0616 16 9.9616 15.1 9.9616 14V9C9.9616 9 13.3916 4.59 15.7116 1.61C16.2216 0.95 15.7516 0 14.9116 0H1.0016C0.171604 0 -0.298396 0.95 0.211604 1.61Z" fill="#333333" />
+                        </svg>
+                    </div>
+                    {
+                        getEmployees()
+                    }
+                </div>
+                <div></div>
             </div>
         </div >
     )
