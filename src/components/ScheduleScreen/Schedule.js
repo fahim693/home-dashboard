@@ -5,6 +5,7 @@ import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/picker
 import MomentUtils from '@date-io/moment';
 import './schedule.css'
 import { Avatar } from '@material-ui/core';
+import moment from 'moment';
 
 const unassignedUser = [
     {
@@ -101,12 +102,22 @@ const Schedule = () => {
 
     }
 
+    const handlePrevDay = () => {
+        let prevDay = moment(selectedDate).subtract(1, 'days')
+        handleDateChange(prevDay)
+    }
+
+    const handleNextDay = () => {
+        let nextDay = moment(selectedDate).add(1, 'days')
+        handleDateChange(nextDay)
+    }
+
     return (
         <div>
             <div style={{ backgroundColor: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 19px', boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.22)', marginBottom: 1, borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
                 <div style={{ flex: 1, fontWeight: 500, fontSize: 24, color: '#000' }}>Schedule</div>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <svg style={{ cursor: 'pointer' }} width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg onClick={handlePrevDay} style={{ cursor: 'pointer' }} width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.16156 0.828341C7.70656 0.373341 6.97156 0.373341 6.51656 0.828341L1.16156 6.18334C0.706562 6.63834 0.706562 7.37334 1.16156 7.82834L6.51656 13.1833C6.97156 13.6383 7.70656 13.6383 8.16156 13.1833C8.61656 12.7283 8.61656 11.9933 8.16156 11.5383L3.6349 7.00001L8.16156 2.47334C8.61656 2.01834 8.6049 1.27167 8.16156 0.828341Z" fill="black" />
                     </svg>
                     <div className='schedule-date-picker' style={{ width: 165, margin: '0px 30px' }}>
@@ -123,7 +134,7 @@ const Schedule = () => {
                             />
                         </MuiPickersUtilsProvider>
                     </div>
-                    <svg style={{ cursor: 'pointer' }} width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg onClick={handleNextDay} style={{ cursor: 'pointer' }} width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.16168 0.828341C1.61668 0.373341 2.35168 0.373341 2.80668 0.828341L8.16168 6.18334C8.61668 6.63834 8.61668 7.37334 8.16168 7.82834L2.80668 13.1833C2.35168 13.6383 1.61668 13.6383 1.16168 13.1833C0.706677 12.7283 0.706677 11.9933 1.16168 11.5383L5.68835 7.00001L1.16168 2.47334C0.706677 2.01834 0.718344 1.27167 1.16168 0.828341Z" fill="black" />
                     </svg>
 
@@ -200,7 +211,7 @@ const Schedule = () => {
             </div>
             <div style={{ display: 'flex' }}>
                 <div style={{ width: 214 }}>
-                    <div style={{ paddingLeft: 19, height: 50, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6',  display: 'flex', alignItems: 'center' }}>
+                    <div style={{ paddingLeft: 19, height: 50, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
                         Employees
                         <svg style={{ marginLeft: 8 }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.211604 1.61C2.5316 4.59 5.9616 9 5.9616 9V14C5.9616 15.1 6.8616 16 7.9616 16C9.0616 16 9.9616 15.1 9.9616 14V9C9.9616 9 13.3916 4.59 15.7116 1.61C16.2216 0.95 15.7516 0 14.9116 0H1.0016C0.171604 0 -0.298396 0.95 0.211604 1.61Z" fill="#333333" />
