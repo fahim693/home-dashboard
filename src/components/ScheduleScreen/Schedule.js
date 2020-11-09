@@ -1,6 +1,6 @@
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
 import './schedule.css'
@@ -43,18 +43,11 @@ const employees = [
     },
 ]
 
+const scheduleTime = ['8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM', '11 PM', '12 AM', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM', '7 AM']
+
 const Schedule = () => {
     const [alignment, setAlignment] = React.useState('left');
     const [selectedDate, handleDateChange] = useState(new Date());
-    const userRef = useRef();
-
-    useEffect(() => {
-        const func = () => {
-            let current = userRef.current;
-            console.log('width', current.offsetWidth);
-        }
-        func();
-    }, [])
 
     const handleAlignment = (event, newAlignment) => {
         if (newAlignment !== null) {
@@ -66,7 +59,7 @@ const Schedule = () => {
         let arr = [];
         for (let i = 0; i < 8; i++) {
             arr.push(
-                <div style={{ paddingLeft: 12, height: 66, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset 0px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
+                <div style={{ paddingLeft: 12, height: 66, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
                     {employees[i] ?
                         <Avatar style={{ marginRight: 10 }}>{employees[i].avatar}</Avatar>
                         : ''
@@ -77,6 +70,35 @@ const Schedule = () => {
         }
 
         return arr;
+    }
+
+    const getGrid = () => {
+        let arr = []
+        for (let i = 0; i < 48; i++) {
+            arr.push(
+                <div style={{ width: 54, border: '1px solid #F1F1F1', backgroundColor: '#fff' }}></div>
+            )
+        }
+
+        return arr;
+    }
+
+    const getGridRows = () => {
+        let arr = []
+        for (let i = 0; i < 8; i++) {
+            arr.push(
+                <div style={{ height: 66, display: 'flex' }}>
+                    <div style={{ display: 'flex' }}>
+                        {
+                            getGrid()
+                        }
+                    </div>
+                </div>
+            )
+        }
+
+        return arr;
+
     }
 
     return (
@@ -147,7 +169,7 @@ const Schedule = () => {
                             <path d="M8.60023 0.471141C8.0672 -0.157047 7.20615 -0.157047 6.67312 0.471141L0.399772 7.86443C-0.133257 8.49262 -0.133257 9.50738 0.399772 10.1356L6.67312 17.5289C7.20615 18.157 8.0672 18.157 8.60023 17.5289C9.13326 16.9007 9.13326 15.8859 8.60023 15.2577L3.29727 8.99195L8.60023 2.74228C9.13326 2.11409 9.11959 1.08322 8.60023 0.471141Z" fill="black" />
                         </svg>
                     </div>
-                    <div ref={userRef} style={{ padding: '14px 0px', display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap', flex: 1 }}>
+                    <div style={{ padding: '14px 0px', display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap', flex: 1 }}>
                         {
                             unassignedUser.map((item, idx) => {
                                 return (
@@ -178,7 +200,7 @@ const Schedule = () => {
             </div>
             <div style={{ display: 'flex' }}>
                 <div style={{ width: 214 }}>
-                    <div style={{ padding: '14px 0px 14px 19px', fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset 0px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
+                    <div style={{ paddingLeft: 19, height: 50, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6',  display: 'flex', alignItems: 'center' }}>
                         Employees
                         <svg style={{ marginLeft: 8 }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.211604 1.61C2.5316 4.59 5.9616 9 5.9616 9V14C5.9616 15.1 6.8616 16 7.9616 16C9.0616 16 9.9616 15.1 9.9616 14V9C9.9616 9 13.3916 4.59 15.7116 1.61C16.2216 0.95 15.7516 0 14.9116 0H1.0016C0.171604 0 -0.298396 0.95 0.211604 1.61Z" fill="#333333" />
@@ -188,7 +210,25 @@ const Schedule = () => {
                         getEmployees()
                     }
                 </div>
-                <div></div>
+                <div style={{ display: 'flex', flexDirection: 'column', flex: 1, overflowX: 'auto' }}>
+                    <div style={{ display: 'flex' }}>
+                        <div style={{ display: 'flex' }}>
+                            {
+                                scheduleTime.map((item, idx) => {
+                                    return (
+                                        <div key={idx} style={{ height: 48, width: 110, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#F2F9FC', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #E0E0E0' }}>
+                                            {item}
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                    {
+                        getGridRows()
+                    }
+                </div>
+
             </div>
         </div >
     )
