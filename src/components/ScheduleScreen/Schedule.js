@@ -6,6 +6,8 @@ import MomentUtils from '@date-io/moment';
 import './schedule.css'
 import { Avatar } from '@material-ui/core';
 import moment from 'moment';
+import UnassignedUser from './UnassignedUser';
+import GridSlot from './GridSlot';
 
 const unassignedUser = [
     {
@@ -15,21 +17,8 @@ const unassignedUser = [
         name: 'Marta Harvey'
     },
     {
-        name: 'Evelyn Lopez'
-    },
-    {
-        name: 'Marta Harvey'
-    },
-    {
-        name: 'Evelyn Lopez'
-    },
-    {
-        name: 'Marta Harvey'
-    },
-    {
-        name: 'Evelyn Lopez'
-    },
-
+        name: 'Sarah Grey'
+    }
 
 ]
 
@@ -60,7 +49,7 @@ const Schedule = () => {
         let arr = [];
         for (let i = 0; i < 8; i++) {
             arr.push(
-                <div style={{ paddingLeft: 12, height: 66, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
+                <div key={i} style={{ paddingLeft: 12, height: 66, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
                     {employees[i] ?
                         <Avatar style={{ marginRight: 10 }}>{employees[i].avatar}</Avatar>
                         : ''
@@ -73,11 +62,16 @@ const Schedule = () => {
         return arr;
     }
 
-    const getGrid = () => {
+    const getGrid = (row) => {
         let arr = []
         for (let i = 0; i < 48; i++) {
             arr.push(
-                <div style={{ width: 54, border: '1px solid #F1F1F1', backgroundColor: '#fff' }}></div>
+                <GridSlot
+                    key={i}
+                    idx={i}
+                    row={row}
+                    employees={employees}
+                />
             )
         }
 
@@ -88,10 +82,10 @@ const Schedule = () => {
         let arr = []
         for (let i = 0; i < 8; i++) {
             arr.push(
-                <div style={{ height: 66, display: 'flex' }}>
+                <div key={i} style={{ height: 66, display: 'flex' }}>
                     <div style={{ display: 'flex' }}>
                         {
-                            getGrid()
+                            getGrid(i)
                         }
                     </div>
                 </div>
@@ -184,20 +178,12 @@ const Schedule = () => {
                         {
                             unassignedUser.map((item, idx) => {
                                 return (
-                                    <div
+                                    <UnassignedUser
                                         key={idx}
-                                        style={{
-                                            width: 160,
-                                            padding: '0 10px',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            height: 45,
-                                            marginRight: 14,
-                                            borderRadius: 6,
-                                            fontSize: 18,
-                                            backgroundColor: '#F3D06D'
-                                        }}>{item.name}</div>
+                                        scheduleTime={scheduleTime}
+                                        item={item}
+                                        idx={idx}
+                                    />
                                 )
                             })
                         }
