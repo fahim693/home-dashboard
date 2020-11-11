@@ -164,6 +164,7 @@ const Schedule = () => {
                             minWidth: 16,
                             textAlign: 'center',
                             borderRadius: 6,
+                            fontSize: 17,
                             color: '#000',
                             marginLeft: 12,
                             backgroundColor: '#F3D06D'
