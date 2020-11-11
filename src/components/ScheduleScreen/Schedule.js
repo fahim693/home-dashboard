@@ -49,9 +49,9 @@ const Schedule = () => {
         let arr = [];
         for (let i = 0; i < 8; i++) {
             arr.push(
-                <div key={i} style={{ paddingLeft: 12, height: 66, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
+                <div key={i} style={{ paddingLeft: 12, height: 60, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
                     {employees[i] ?
-                        <Avatar style={{ marginRight: 10 }}>{employees[i].avatar}</Avatar>
+                        <Avatar style={{ marginRight: 10, backgroundColor: '#2A95C5' }}>{employees[i].avatar}</Avatar>
                         : ''
                     }
                     {employees[i] ? employees[i].name : ''}
@@ -82,7 +82,7 @@ const Schedule = () => {
         let arr = []
         for (let i = 0; i < 8; i++) {
             arr.push(
-                <div key={i} style={{ height: 66, display: 'flex' }}>
+                <div key={i} style={{ height: 60, display: 'flex' }}>
                     <div style={{ display: 'flex' }}>
                         {
                             getGrid(i)
@@ -107,8 +107,8 @@ const Schedule = () => {
     }
 
     return (
-        <div>
-            <div style={{ backgroundColor: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 19px', boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.22)', marginBottom: 1, borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
+        <div style={{ boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.22)' }}>
+            <div style={{ backgroundColor: '#fff', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 19px', boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.22)', marginBottom: 1, borderTopLeftRadius: 6, borderTopRightRadius: 6 }}>
                 <div style={{ flex: 1, fontWeight: 500, fontSize: 24, color: '#000' }}>Schedule</div>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                     <svg onClick={handlePrevDay} style={{ cursor: 'pointer' }} width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -156,17 +156,19 @@ const Schedule = () => {
                 </div>
             </div>
             <div style={{ backgroundColor: '#fff', display: 'flex', alignItems: 'center', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.12)' }}>
-                <div style={{ paddingLeft: 19, fontWeight: 500, fontSize: 18, color: '#828282', width: 195 }}>
+                <div style={{ paddingLeft: 19, fontWeight: 500, fontSize: 18, color: '#828282', width: 195, display: 'flex', alignItems: 'center' }}>
                     Unscheduled
-                    <span
+                    <div
                         style={{
                             padding: 4,
+                            minWidth: 16,
+                            textAlign: 'center',
                             borderRadius: 6,
                             color: '#000',
                             marginLeft: 12,
                             backgroundColor: '#F3D06D'
                         }}
-                    >12</span>
+                    >{unassignedUser.length}</div>
                 </div>
                 <div style={{ padding: '0 24px', display: 'flex', backgroundColor: '#f7f7f7', alignItems: 'center', flex: 1, overflow: 'hidden' }}>
                     <div style={{ cursor: 'pointer', marginRight: 18 }}>
@@ -174,7 +176,7 @@ const Schedule = () => {
                             <path d="M8.60023 0.471141C8.0672 -0.157047 7.20615 -0.157047 6.67312 0.471141L0.399772 7.86443C-0.133257 8.49262 -0.133257 9.50738 0.399772 10.1356L6.67312 17.5289C7.20615 18.157 8.0672 18.157 8.60023 17.5289C9.13326 16.9007 9.13326 15.8859 8.60023 15.2577L3.29727 8.99195L8.60023 2.74228C9.13326 2.11409 9.11959 1.08322 8.60023 0.471141Z" fill="black" />
                         </svg>
                     </div>
-                    <div style={{ padding: '14px 0px', display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap', flex: 1 }}>
+                    <div style={{ padding: '12px 0px', display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap', flex: 1 }}>
                         {
                             unassignedUser.map((item, idx) => {
                                 return (
@@ -197,7 +199,7 @@ const Schedule = () => {
             </div>
             <div style={{ display: 'flex' }}>
                 <div style={{ width: 214 }}>
-                    <div style={{ paddingLeft: 19, height: 50, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
+                    <div style={{ paddingLeft: 19, height: 44, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
                         Employees
                         <svg style={{ marginLeft: 8 }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.211604 1.61C2.5316 4.59 5.9616 9 5.9616 9V14C5.9616 15.1 6.8616 16 7.9616 16C9.0616 16 9.9616 15.1 9.9616 14V9C9.9616 9 13.3916 4.59 15.7116 1.61C16.2216 0.95 15.7516 0 14.9116 0H1.0016C0.171604 0 -0.298396 0.95 0.211604 1.61Z" fill="#333333" />
@@ -209,11 +211,11 @@ const Schedule = () => {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', flex: 1, overflowX: 'auto' }}>
                     <div style={{ display: 'flex' }}>
-                        <div style={{ display: 'flex' }}>
+                        <div style={{ display: 'flex', height: 44 }}>
                             {
                                 scheduleTime.map((item, idx) => {
                                     return (
-                                        <div key={idx} style={{ height: 48, width: 110, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#F2F9FC', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #E0E0E0' }}>
+                                        <div key={idx} style={{ width: 110, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#F2F9FC', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #E0E0E0' }}>
                                             {item}
                                         </div>
                                     )

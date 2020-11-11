@@ -24,7 +24,7 @@ import BusinessProfile from './pages/BusinessProfile';
 import BusinessProfileEdit from './pages/BusinessProfileEdit';
 import ItemTable from './pages/PriceBookTables/ItemTable';
 import ServiceTable from './pages/PriceBookTables/ServiceTable';
-import test from './components/ScheduleScreen/Schedule';
+// import test from './components/ScheduleScreen/Schedule';
 import Hours from './pages/Hours';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -73,7 +73,7 @@ const App = () => {
         <Route exact path="/setting-up" component={SettingUpAccount} />
         <Route exact path="/existing-plan" component={ExistingSubscriptionPlan} />
         <Route exact path="/generate-invoice" component={Invoice} />
-        <Route exact path="/schedule" component={test} />
+        <Route exact path="/schedule" component={Schedule} />
       </Router>
     </DndProvider>
   )

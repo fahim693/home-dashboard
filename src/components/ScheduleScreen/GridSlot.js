@@ -8,7 +8,6 @@ const GridSlot = (props) => {
         drop: () => ({ cell: props.idx, row: props.row }),
         collect: (monitor) => ({
             isOver: monitor.isOver(),
-            canDrop: monitor.canDrop(),
         }),
     });
 
@@ -17,7 +16,7 @@ const GridSlot = (props) => {
             {
                 props.row < props.employees.length ?
                     < div ref={drop} style={{ width: 54, border: '1px solid #F1F1F1', backgroundColor: isOver ? '#F3D06D' : '#fff' }}></div>
-                    : < div style={{ width: 54, border: '1px solid #F1F1F1', backgroundColor: isOver ? '#F3D06D' : '#fff' }}></div>
+                    : < div style={{ width: 54, border: '1px solid #F1F1F1', backgroundColor: '#fff' }}></div>
             }
         </React.Fragment>
     )

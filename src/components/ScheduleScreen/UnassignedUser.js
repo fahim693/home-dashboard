@@ -33,12 +33,12 @@ const UnassignedUser = (props) => {
         <div
             ref={drag}
             style={{
-                width: 160,
+                minWidth: 160,
                 padding: '0 10px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: 45,
+                height: 42,
                 marginRight: 14,
                 borderRadius: 6,
                 fontSize: 18,
