@@ -211,8 +211,8 @@ const Schedule = () => {
                     }
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', flex: 1, overflowX: 'auto' }}>
-                    <div style={{ display: 'flex' }}>
-                        <div style={{ display: 'flex', height: 44 }}>
+                    <div style={{ height: 44, display: 'flex' }}>
+                        <div style={{ display: 'flex' }}>
                             {
                                 scheduleTime.map((item, idx) => {
                                     return (

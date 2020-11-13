@@ -24,7 +24,7 @@ import BusinessProfile from './pages/BusinessProfile';
 import BusinessProfileEdit from './pages/BusinessProfileEdit';
 import ItemTable from './pages/PriceBookTables/ItemTable';
 import ServiceTable from './pages/PriceBookTables/ServiceTable';
-// import test from './components/ScheduleScreen/Schedule';
+import test from './components/ScheduleScreen/DateSelection';
 import Hours from './pages/Hours';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -66,7 +66,7 @@ const App = () => {
         <Route exact path="/service-table" component={ServiceTable} />
         <Route exact path="/item-table" component={ItemTable} />
         <Route exact path="/hours" component={Hours} />
-        {/* <Route exact path="/test" component={test} /> */}
+        <Route exact path="/test" component={test} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/forgot-password" component={ForgotPassword} />
         <Route exact path="/signup" component={SignUp} />
