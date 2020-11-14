@@ -38,6 +38,8 @@ const scheduleTime = ['8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM',
 const Schedule = () => {
     const [alignment, setAlignment] = React.useState('left');
     const [selectedDate, handleDateChange] = useState(new Date());
+    const [selectedRow, handleSelectedRow] = useState('');
+    const [selectedCell, handleSelectedCell] = useState('');
 
     const handleAlignment = (event, newAlignment) => {
         if (newAlignment !== null) {
@@ -69,6 +71,10 @@ const Schedule = () => {
                 <GridSlot
                     key={i}
                     idx={i}
+                    selectedRow={selectedRow}
+                    handleSelectedRow={handleSelectedRow}
+                    handleSelectedCell={handleSelectedCell}
+                    selectedCell={selectedCell}
                     row={row}
                     employees={employees}
                 />
@@ -184,6 +190,8 @@ const Schedule = () => {
                                     <UnassignedUser
                                         key={idx}
                                         scheduleTime={scheduleTime}
+                                        handleSelectedCell={handleSelectedCell}
+                                        handleSelectedRow={handleSelectedRow}
                                         item={item}
                                         idx={idx}
                                     />

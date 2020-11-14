@@ -8,20 +8,8 @@ const UnassignedUser = (props) => {
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult();
             if (item && dropResult) {
-                console.log('cell/row', dropResult.cell, dropResult.row);
-                //     let temp = arr;
-                //     if (item.name === 'Glass') {
-                //         temp[dropResult.index].bgcolor = 'darkgreen'
-                //         setArr([...temp])
-                //     }
-                //     else if (item.name === 'Banana') {
-                //         temp[dropResult.index].bgcolor = 'darkkhaki'
-                //         setArr([...temp])
-                //     }
-                //     else
-                //         temp[dropResult.index].bgcolor = '#000'
-                //     setArr([...temp])
-
+                props.handleSelectedRow(dropResult.row)
+                props.handleSelectedCell(dropResult.cell)
             }
         },
         collect: (monitor) => ({
