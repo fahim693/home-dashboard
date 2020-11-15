@@ -39,13 +39,53 @@ const Schedule = () => {
     const [alignment, setAlignment] = React.useState('left');
     const [selectedDate, handleDateChange] = useState(new Date());
     const [selectedRow, handleSelectedRow] = useState('');
-    const [selectedCell, handleSelectedCell] = useState('');
+    const [selectedCell, setSelectedCell] = useState('');
+    const [schedule, setSchedule] = useState({
+        startDate: new Date(),
+        startTime: '',
+        endTime: ''
+    })
 
     const handleAlignment = (event, newAlignment) => {
         if (newAlignment !== null) {
             setAlignment(newAlignment);
         }
     };
+
+    const handleSelectedCell = (cell) => {
+        setSelectedCell(cell);
+        if (isEven(cell)) {
+            setSchedule({
+                ...schedule,
+                startTime: moment(scheduleTime[cell / 2], 'h A').format('h:mm A')
+            })
+        } else {
+            setSchedule({
+                ...schedule,
+                startTime: moment(scheduleTime[Math.floor(cell / 2)], 'h A').add(30, 'minutes').format('h:mm A')
+            })
+        }
+    }
+
+    const isEven = (n) => {
+        return n % 2 === 0;
+    }
+
+    const setTimeInPopUp = () => {
+        if (isEven(selectedCell)) {
+            console.log('innn', scheduleTime[selectedCell / 2]);
+            setSchedule({
+                ...schedule,
+                startTime: scheduleTime[selectedCell / 2]
+            })
+        } else {
+            setSchedule({
+                ...schedule,
+                startTime: moment(scheduleTime[Math.floor(selectedCell / 2)], 'h A').add(30, 'minutes').format('h:mm A')
+            })
+        }
+
+    }
 
     const getEmployees = () => {
         let arr = [];
@@ -77,6 +117,9 @@ const Schedule = () => {
                     selectedCell={selectedCell}
                     row={row}
                     employees={employees}
+                    // confirmSelection={confirmSelection}
+                    schedule={schedule}
+                    setSchedule={setSchedule}
                 />
             )
         }
@@ -162,7 +205,7 @@ const Schedule = () => {
                 </div>
             </div>
             <div style={{ backgroundColor: '#fff', display: 'flex', alignItems: 'center', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.12)' }}>
-                <div style={{ paddingLeft: 19, fontWeight: 500, fontSize: 18, color: '#828282', width: 195, display: 'flex', alignItems: 'center' }}>
+                <div style={{ paddingLeft: 19, fontWeight: 500, fontSize: 18, color: '#828282', width: 194, display: 'flex', alignItems: 'center' }}>
                     Unscheduled
                     <div
                         style={{
@@ -194,6 +237,7 @@ const Schedule = () => {
                                         handleSelectedRow={handleSelectedRow}
                                         item={item}
                                         idx={idx}
+                                        setTimeInPopUp={setTimeInPopUp}
                                     />
                                 )
                             })

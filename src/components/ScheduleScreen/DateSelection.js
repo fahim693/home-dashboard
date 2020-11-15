@@ -1,18 +1,28 @@
 import React, { useState } from 'react'
-import { KeyboardDatePicker, KeyboardTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
-import { Button } from '@material-ui/core';
+import { Button, FormControl, MenuItem, Select } from '@material-ui/core';
 import { ArrowDropUp } from '@material-ui/icons';
-
+import moment from 'moment';
 
 const DateSelection = (props) => {
 
     const [selectedDate, handleDateChange] = useState(new Date());
 
+    const [startTime, setStartTime] = useState(0)
+
+    const handleChangeStartTime = (time) => {
+        console.log('time', time);
+        props.setSchedule({
+            ...props.schedule,
+            startTime: time
+        })
+    }
+
     return (
         <div>
-            <div style={{ marginLeft: 18, marginTop: -23, }}>
-                <ArrowDropUp style={{ color: '#fff', fontSize: 62 }} />
+            <div style={{ marginLeft: 2, marginTop: -23, }}>
+                <ArrowDropUp style={{ color: '#fff', fontSize: 57 }} />
             </div>
             <div style={{ marginTop: -30, backgroundColor: '#fff', padding: '22px 0 22px 28px', width: 315, borderRadius: 6, boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 24px 38px rgba(0, 0, 0, 0.14), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px -2px 8px rgba(0, 0, 0, 0.1)' }}>
                 <div style={{ fontSize: 20, fontWeight: 500, marginBottom: 18 }}>Confirm Date and Time</div>
@@ -37,35 +47,80 @@ const DateSelection = (props) => {
                     </div>
                     <div style={{ marginBottom: 12 }}>
                         <div style={{ marginBottom: 3 }}>Start Time</div>
-                        <div style={{ width: 158 }}>
-                            <MuiPickersUtilsProvider
-                                utils={MomentUtils}>
-                                <KeyboardTimePicker
-                                    autoOk
-                                    variant="inline"
-                                    inputVariant="outlined"
-                                    margin='dense'
-                                    value={selectedDate}
-                                    onChange={handleDateChange}
-                                />
-                            </MuiPickersUtilsProvider>
-                        </div>
+                        <FormControl style={{ width: 90 }} margin="dense" variant="outlined" >
+                            <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={startTime}
+                                MenuProps={{
+                                    getContentAnchorEl: null,
+                                    anchorOrigin: {
+                                        vertical: "bottom",
+                                        horizontal: "left"
+                                    }
+                                }}
+                                onChange={(e) => setStartTime(e.target.value)}
+                            >
+                                <MenuItem value={0}>{moment(props.schedule.startTime, 'h:mm A').format('h:mm')}</MenuItem>
+                                <MenuItem value={1}>{moment(props.schedule.startTime, 'h:mm A').add(15, "minutes").format('h:mm')}</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <FormControl style={{ width: 80, marginLeft: 10 }} margin="dense" variant="outlined" >
+                            <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={moment(props.schedule.startTime, 'h:mm A').format('A')}
+                                MenuProps={{
+                                    getContentAnchorEl: null,
+                                    anchorOrigin: {
+                                        vertical: "bottom",
+                                        horizontal: "left"
+                                    }
+                                }}
+                            // onChange={handleChange}
+                            >
+                                <MenuItem value={'AM'}>AM</MenuItem>
+                                <MenuItem value={'PM'}>PM</MenuItem>
+                            </Select>
+                        </FormControl>
                     </div>
                     <div>
                         <div style={{ marginBottom: 3 }}>End Time</div>
-                        <div style={{ width: 158 }}>
-                            <MuiPickersUtilsProvider
-                                utils={MomentUtils}>
-                                <KeyboardTimePicker
-                                    autoOk
-                                    variant="inline"
-                                    inputVariant="outlined"
-                                    margin='dense'
-                                    value={selectedDate}
-                                    onChange={handleDateChange}
-                                />
-                            </MuiPickersUtilsProvider>
-                        </div>
+                        <FormControl style={{ width: 90 }} margin="dense" variant="outlined" >
+                            <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={10}
+                                MenuProps={{
+                                    getContentAnchorEl: null,
+                                    anchorOrigin: {
+                                        vertical: "bottom",
+                                        horizontal: "left"
+                                    }
+                                }}
+                            // onChange={handleChange}
+                            >
+                                <MenuItem value={10}>{moment(props.schedule.startTime, 'h:mm A').add(30, 'minutes').format('h:mm')}</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <FormControl style={{ width: 80, marginLeft: 10 }} margin="dense" variant="outlined" >
+                            <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={moment(props.schedule.startTime, 'h:mm A').format('A')}
+                                // onChange={handleChange}
+                                MenuProps={{
+                                    getContentAnchorEl: null,
+                                    anchorOrigin: {
+                                        vertical: "bottom",
+                                        horizontal: "left"
+                                    }
+                                }}
+                            >
+                                <MenuItem value={'AM'}>AM</MenuItem>
+                                <MenuItem value={'PM'}>PM</MenuItem>
+                            </Select>
+                        </FormControl>
                     </div>
                 </div>
                 <div>
@@ -79,6 +134,7 @@ const DateSelection = (props) => {
                         }
                     >Cancel</Button>
                     <Button variant='outlined' style={{ backgroundColor: '#62C796', borderColor: '#62C796', color: '#fff' }}
+                        onClick={props.confirm}
                         startIcon={
                             <svg width="15" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.56836 11.3475L1.81501 7.45089C1.39678 7.0167 0.731903 7.0167 0.313673 7.45089C-0.104558 7.88509 -0.104558 8.57535 0.313673 9.00954L4.80697 13.6744C5.2252 14.1085 5.9008 14.1085 6.31903 13.6744L17.6863 1.88429C18.1046 1.4501 18.1046 0.759841 17.6863 0.325646C17.2681 -0.108549 16.6032 -0.108549 16.185 0.325646L5.56836 11.3475Z" fill="white" />
