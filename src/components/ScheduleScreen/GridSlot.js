@@ -13,8 +13,8 @@ const GridSlot = (props) => {
     });
 
     const closeDateSelection = () => {
-        props.handleSelectedRow('');
-        props.handleSelectedCell('');
+        props.setSelectedRow('')
+        props.setSelectedCell('')
     }
 
     return (
@@ -22,15 +22,16 @@ const GridSlot = (props) => {
             {
                 props.row < props.employees.length ?
                     <React.Fragment>
-                        <div ref={drop} style={{ width: 54, border: '1px solid #F1F1F1', backgroundColor: isOver || (props.row === props.selectedRow && props.idx === props.selectedCell) ? '#F3D06D' : '#fff' }}>
+                        <div ref={drop} style={{ width: 54, border: props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ? '1px solid ' + props.employees[props.row].boxColor : '1px solid #F1F1F1', backgroundColor: isOver || (props.row === props.selectedRow && props.idx === props.selectedCell) ? '#F3D06D' : props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ? props.employees[props.row].boxColor : '#fff' }}>
                             {
                                 props.row === props.selectedRow && props.idx === props.selectedCell ?
                                     <div style={{ position: 'relative', marginTop: 60 }}>
                                         <DateSelection
                                             cancel={closeDateSelection}
                                             confirm={props.confirmSelection}
-                                            schedule={props.schedule}
-                                            setSchedule={props.setSchedule}
+                                            setSchedule={props.setEmployees}
+                                            schedule={props.employees}
+                                            row={props.row}
                                         />
                                     </div>
                                     : ''

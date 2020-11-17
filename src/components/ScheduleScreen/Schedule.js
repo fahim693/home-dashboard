@@ -9,42 +9,53 @@ import moment from 'moment';
 import UnassignedUser from './UnassignedUser';
 import GridSlot from './GridSlot';
 
-const unassignedUser = [
-    {
-        name: 'Evelyn Lopez'
-    },
-    {
-        name: 'Marta Harvey'
-    },
-    {
-        name: 'Sarah Grey'
-    }
 
-]
-
-const employees = [
-    {
-        name: 'Sophia Davis',
-        avatar: 'S'
-    },
-    {
-        name: 'John Doe',
-        avatar: 'J'
-    },
-]
-
-const scheduleTime = ['8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM', '11 PM', '12 AM', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM', '7 AM']
+const halfHourlyTime = ['8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM', '9:00 PM', '9:30 PM', '10:00 PM', '10:30 PM', '11:00 PM', '11:30 PM', '12:00 AM', '12:30 AM', '1:00 AM', '1:30 AM', '2:00 AM', '2:30 AM', '3:00 AM', '3:30 AM', '4:00 AM', '4:30 AM', '5:00 AM', '5:30 AM', '6:00 AM', '6:30 AM', '7:00 AM', '7:30 AM',]
+const scheduleTime = ['8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM', '9:00 PM', '10:00 PM', '11:00 PM', '12:00 AM', '1:00 AM', '2:00 AM', '3:00 AM', '4:00 AM', '5:00 AM', '6:00 AM', '7:00 AM']
 
 const Schedule = () => {
     const [alignment, setAlignment] = React.useState('left');
     const [selectedDate, handleDateChange] = useState(new Date());
-    const [selectedRow, handleSelectedRow] = useState('');
+    const [selectedRow, setSelectedRow] = useState('');
     const [selectedCell, setSelectedCell] = useState('');
-    const [schedule, setSchedule] = useState({
-        startDate: new Date(),
-        startTime: '',
-        endTime: ''
-    })
+    const [removeIdx, setRemoveIdx] = useState('');
+    const [employees, setEmployees] = useState([
+        {
+            name: 'Sophia Davis',
+            avatar: 'S',
+            borderColor: '#7DCAEE',
+            boxColor: '#BFE6F8',
+            startDate: new Date(),
+            startTime: '',
+            startIdx: '',
+            endIdx: '',
+            endTime: '',
+        },
+        {
+            name: 'John Doe',
+            avatar: 'J',
+            borderColor: '#B1D7AA',
+            boxColor: '#D4F2CE',
+            startDate: new Date(),
+            startTime: '',
+            startIdx: '',
+            endIdx: '',
+            endTime: '',
+        },
+    ])
+
+    const [unassignedUser, setUnassignedUser] = useState([
+        {
+            name: 'Evelyn Lopez'
+        },
+        {
+            name: 'Marta Harvey'
+        },
+        {
+            name: 'Sarah Grey'
+        }
+    ])
+
 
     const handleAlignment = (event, newAlignment) => {
         if (newAlignment !== null) {
@@ -52,39 +63,47 @@ const Schedule = () => {
         }
     };
 
-    const handleSelectedCell = (cell) => {
-        setSelectedCell(cell);
+    const handleSelected = (row, cell) => {
+
         if (isEven(cell)) {
-            setSchedule({
-                ...schedule,
-                startTime: moment(scheduleTime[cell / 2], 'h A').format('h:mm A')
-            })
+            let temp = employees;
+
+            temp[row].startTime = scheduleTime[cell / 2]
+
+            setEmployees([...temp])
+
         } else {
-            setSchedule({
-                ...schedule,
-                startTime: moment(scheduleTime[Math.floor(cell / 2)], 'h A').add(30, 'minutes').format('h:mm A')
-            })
+            let temp = employees;
+
+            temp[row].startTime = moment(scheduleTime[Math.floor(cell / 2)], 'h:mm A').add(30, 'minutes').format('h:mm A')
+
+            setEmployees([...temp])
         }
+        setSelectedRow(row);
+        setSelectedCell(cell);
     }
 
     const isEven = (n) => {
         return n % 2 === 0;
     }
 
-    const setTimeInPopUp = () => {
-        if (isEven(selectedCell)) {
-            console.log('innn', scheduleTime[selectedCell / 2]);
-            setSchedule({
-                ...schedule,
-                startTime: scheduleTime[selectedCell / 2]
-            })
-        } else {
-            setSchedule({
-                ...schedule,
-                startTime: moment(scheduleTime[Math.floor(selectedCell / 2)], 'h A').add(30, 'minutes').format('h:mm A')
-            })
-        }
+    const confirmSelection = (row) => {
+        let startIdx = halfHourlyTime.indexOf(employees[row].startTime) === -1 ? halfHourlyTime.indexOf(moment(employees[row].startTime, 'h:mm A').subtract(15, 'minutes').format('h:mm A')) : halfHourlyTime.indexOf(employees[row].startTime)
+        let endIdx = halfHourlyTime.indexOf(employees[row].endTime)
 
+        let temp = employees;
+        temp[row].startIdx = startIdx;
+        temp[row].endIdx = endIdx;
+
+        setEmployees([...temp])
+        setSelectedCell('')
+        setSelectedRow('')
+
+        let tempUser = unassignedUser;
+
+        tempUser.splice(removeIdx, 1);
+
+        setUnassignedUser([...tempUser])
     }
 
     const getEmployees = () => {
@@ -93,7 +112,7 @@ const Schedule = () => {
             arr.push(
                 <div key={i} style={{ paddingLeft: 12, height: 60, color: '#333', backgroundColor: '#fff', boxShadow: '2px 0px 4px rgba(0, 0, 0, 0.12), inset -1px 1px 0px #E0E0E0, inset 0px -1px 0px #D6D6D6', display: 'flex', alignItems: 'center' }}>
                     {employees[i] ?
-                        <Avatar style={{ marginRight: 10, backgroundColor: '#2A95C5' }}>{employees[i].avatar}</Avatar>
+                        <Avatar style={{ border: '3px solid ' + employees[i].borderColor, width: 37, height: 37, marginRight: 10, backgroundColor: '#2A95C5' }}>{employees[i].avatar}</Avatar>
                         : ''
                     }
                     {employees[i] ? employees[i].name : ''}
@@ -112,14 +131,14 @@ const Schedule = () => {
                     key={i}
                     idx={i}
                     selectedRow={selectedRow}
-                    handleSelectedRow={handleSelectedRow}
-                    handleSelectedCell={handleSelectedCell}
+                    setSelectedRow={setSelectedRow}
+                    setSelectedCell={setSelectedCell}
                     selectedCell={selectedCell}
                     row={row}
                     employees={employees}
-                    // confirmSelection={confirmSelection}
-                    schedule={schedule}
-                    setSchedule={setSchedule}
+                    setEmployees={setEmployees}
+                    scheduleTime={scheduleTime}
+                    confirmSelection={confirmSelection}
                 />
             )
         }
@@ -204,7 +223,7 @@ const Schedule = () => {
                     </ToggleButtonGroup>
                 </div>
             </div>
-            <div style={{ backgroundColor: '#fff', display: 'flex', alignItems: 'center', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.12)' }}>
+            <div style={{ height: 65, backgroundColor: '#fff', display: 'flex', alignItems: 'center', boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.12)' }}>
                 <div style={{ paddingLeft: 19, fontWeight: 500, fontSize: 18, color: '#828282', width: 194, display: 'flex', alignItems: 'center' }}>
                     Unscheduled
                     <div
@@ -220,7 +239,7 @@ const Schedule = () => {
                         }}
                     >{unassignedUser.length}</div>
                 </div>
-                <div style={{ padding: '0 24px', display: 'flex', backgroundColor: '#f7f7f7', alignItems: 'center', flex: 1, overflow: 'hidden' }}>
+                <div style={{ padding: '0 24px', height: 65, display: 'flex', backgroundColor: '#f7f7f7', alignItems: 'center', flex: 1, overflow: 'hidden' }}>
                     <div style={{ cursor: 'pointer', marginRight: 18 }}>
                         <svg width="9" height="14" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.60023 0.471141C8.0672 -0.157047 7.20615 -0.157047 6.67312 0.471141L0.399772 7.86443C-0.133257 8.49262 -0.133257 9.50738 0.399772 10.1356L6.67312 17.5289C7.20615 18.157 8.0672 18.157 8.60023 17.5289C9.13326 16.9007 9.13326 15.8859 8.60023 15.2577L3.29727 8.99195L8.60023 2.74228C9.13326 2.11409 9.11959 1.08322 8.60023 0.471141Z" fill="black" />
@@ -233,11 +252,10 @@ const Schedule = () => {
                                     <UnassignedUser
                                         key={idx}
                                         scheduleTime={scheduleTime}
-                                        handleSelectedCell={handleSelectedCell}
-                                        handleSelectedRow={handleSelectedRow}
+                                        handleSelected={handleSelected}
                                         item={item}
                                         idx={idx}
-                                        setTimeInPopUp={setTimeInPopUp}
+                                        removeIdx={setRemoveIdx}
                                     />
                                 )
                             })
@@ -269,7 +287,7 @@ const Schedule = () => {
                                 scheduleTime.map((item, idx) => {
                                     return (
                                         <div key={idx} style={{ width: 110, fontWeight: 500, fontSize: 18, color: '#333', backgroundColor: '#F2F9FC', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #E0E0E0' }}>
-                                            {item}
+                                            {moment(item, 'h:mm A').format('h A')}
                                         </div>
                                     )
                                 })

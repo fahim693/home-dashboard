@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
 import { Button, FormControl, MenuItem, Select } from '@material-ui/core';
@@ -10,13 +10,32 @@ const DateSelection = (props) => {
     const [selectedDate, handleDateChange] = useState(new Date());
 
     const [startTime, setStartTime] = useState(0)
+    const [endTime, setEndTime] = useState(0)
+    const [endAmPm, setEndAmPm] = useState(moment(props.schedule[props.row].startTime, 'h:mm A').format('A'))
+    const [endTimeApplicable, setEndTimeApplicable] = useState([])
 
-    const handleChangeStartTime = (time) => {
-        console.log('time', time);
-        props.setSchedule({
-            ...props.schedule,
-            startTime: time
-        })
+    useEffect(() => {
+        const func = () => {
+            let temp = moment(props.schedule[props.row].startTime, 'h:mm A').add(30, 'minutes').format('h:mm')
+            let arr = []
+            for (let i = 0; i < 4; i++) {
+                arr.push(temp);
+                temp = moment(temp, 'h:mm A').add(30, 'minutes').format('h:mm')
+            }
+
+            setEndTimeApplicable([...arr])
+        }
+        func();
+    }, [props])
+
+    console.log('etimeapp', endTimeApplicable);
+    const confirm = () => {
+        let temp = props.schedule;
+        temp[props.row].startTime = startTime === 0 ? props.schedule[props.row].startTime : moment(props.schedule[props.row].startTime, 'h:mm A').add(15, "minutes").format('h:mm A')
+        temp[props.row].endTime = endTimeApplicable[endTime] + ' ' + endAmPm
+
+        props.setSchedule([...temp])
+        props.confirm(props.row);
     }
 
     return (
@@ -61,15 +80,15 @@ const DateSelection = (props) => {
                                 }}
                                 onChange={(e) => setStartTime(e.target.value)}
                             >
-                                <MenuItem value={0}>{moment(props.schedule.startTime, 'h:mm A').format('h:mm')}</MenuItem>
-                                <MenuItem value={1}>{moment(props.schedule.startTime, 'h:mm A').add(15, "minutes").format('h:mm')}</MenuItem>
+                                <MenuItem value={0}>{moment(props.schedule[props.row].startTime, 'h:mm A').format('h:mm')}</MenuItem>
+                                <MenuItem value={1}>{moment(props.schedule[props.row].startTime, 'h:mm A').add(15, "minutes").format('h:mm')}</MenuItem>
                             </Select>
                         </FormControl>
                         <FormControl style={{ width: 80, marginLeft: 10 }} margin="dense" variant="outlined" >
                             <Select
                                 labelId="demo-simple-select-outlined-label"
                                 id="demo-simple-select-outlined"
-                                value={moment(props.schedule.startTime, 'h:mm A').format('A')}
+                                value={endAmPm}
                                 MenuProps={{
                                     getContentAnchorEl: null,
                                     anchorOrigin: {
@@ -77,7 +96,8 @@ const DateSelection = (props) => {
                                         horizontal: "left"
                                     }
                                 }}
-                            // onChange={handleChange}
+                                disabled
+                                onChange={(e) => setEndAmPm(e.target.value)}
                             >
                                 <MenuItem value={'AM'}>AM</MenuItem>
                                 <MenuItem value={'PM'}>PM</MenuItem>
@@ -90,7 +110,7 @@ const DateSelection = (props) => {
                             <Select
                                 labelId="demo-simple-select-outlined-label"
                                 id="demo-simple-select-outlined"
-                                value={10}
+                                value={endTime}
                                 MenuProps={{
                                     getContentAnchorEl: null,
                                     anchorOrigin: {
@@ -98,17 +118,25 @@ const DateSelection = (props) => {
                                         horizontal: "left"
                                     }
                                 }}
-                            // onChange={handleChange}
+                                onChange={(e) => setEndTime(e.target.value)}
+
                             >
-                                <MenuItem value={10}>{moment(props.schedule.startTime, 'h:mm A').add(30, 'minutes').format('h:mm')}</MenuItem>
+                                {
+                                    endTimeApplicable.map((item, idx) => {
+                                        return (
+                                            <MenuItem key={idx} value={idx}>{item}</MenuItem>
+                                        )
+                                    })
+                                }
+
                             </Select>
                         </FormControl>
                         <FormControl style={{ width: 80, marginLeft: 10 }} margin="dense" variant="outlined" >
                             <Select
                                 labelId="demo-simple-select-outlined-label"
                                 id="demo-simple-select-outlined"
-                                value={moment(props.schedule.startTime, 'h:mm A').format('A')}
-                                // onChange={handleChange}
+                                value={moment(props.schedule[props.row].startTime, 'h:mm A').format('A')}
+                                onChange={(e) => setEndAmPm(e.target.value)}
                                 MenuProps={{
                                     getContentAnchorEl: null,
                                     anchorOrigin: {
@@ -134,7 +162,7 @@ const DateSelection = (props) => {
                         }
                     >Cancel</Button>
                     <Button variant='outlined' style={{ backgroundColor: '#62C796', borderColor: '#62C796', color: '#fff' }}
-                        onClick={props.confirm}
+                        onClick={confirm}
                         startIcon={
                             <svg width="15" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.56836 11.3475L1.81501 7.45089C1.39678 7.0167 0.731903 7.0167 0.313673 7.45089C-0.104558 7.88509 -0.104558 8.57535 0.313673 9.00954L4.80697 13.6744C5.2252 14.1085 5.9008 14.1085 6.31903 13.6744L17.6863 1.88429C18.1046 1.4501 18.1046 0.759841 17.6863 0.325646C17.2681 -0.108549 16.6032 -0.108549 16.185 0.325646L5.56836 11.3475Z" fill="white" />

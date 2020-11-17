@@ -4,12 +4,12 @@ import { ItemTypes } from './Constants';
 
 const UnassignedUser = (props) => {
     const [{ isDragging }, drag] = useDrag({
-        item: { type: ItemTypes.USER },
+        item: { userIdx: props.idx, type: ItemTypes.USER },
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult();
-            if (item && dropResult) {
-                props.handleSelectedRow(dropResult.row)
-                props.handleSelectedCell(dropResult.cell)
+            if (item && dropResult) { 
+                props.removeIdx(item.userIdx);
+                props.handleSelected(dropResult.row, dropResult.cell)
             }
         },
         collect: (monitor) => ({
