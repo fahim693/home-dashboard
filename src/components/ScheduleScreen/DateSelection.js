@@ -28,7 +28,6 @@ const DateSelection = (props) => {
         func();
     }, [props])
 
-    console.log('etimeapp', endTimeApplicable);
     const confirm = () => {
         let temp = props.schedule;
         temp[props.row].startTime = startTime === 0 ? props.schedule[props.row].startTime : moment(props.schedule[props.row].startTime, 'h:mm A').add(15, "minutes").format('h:mm A')

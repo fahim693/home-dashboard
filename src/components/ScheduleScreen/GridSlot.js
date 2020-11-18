@@ -2,6 +2,8 @@ import React from 'react'
 import { useDrop } from 'react-dnd';
 import { ItemTypes } from './Constants';
 import DateSelection from './DateSelection';
+import './gridSlot.css'
+import ScheduleDetails from './ScheduleDetails';
 
 const GridSlot = (props) => {
     const [{ isOver }, drop] = useDrop({
@@ -22,7 +24,7 @@ const GridSlot = (props) => {
             {
                 props.row < props.employees.length ?
                     <React.Fragment>
-                        <div ref={drop} style={{ width: 54, border: props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ? '1px solid ' + props.employees[props.row].boxColor : '1px solid #F1F1F1', backgroundColor: isOver || (props.row === props.selectedRow && props.idx === props.selectedCell) ? '#F3D06D' : props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ? props.employees[props.row].boxColor : '#fff' }}>
+                        <div className="show-schedule-info" ref={drop} style={{ width: 54, border: props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ? '1px solid ' + props.employees[props.row].boxColor : '1px solid #F1F1F1', backgroundColor: isOver || (props.row === props.selectedRow && props.idx === props.selectedCell) ? '#F3D06D' : props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ? props.employees[props.row].boxColor : '#fff' }}>
                             {
                                 props.row === props.selectedRow && props.idx === props.selectedCell ?
                                     <div style={{ position: 'relative', marginTop: 60 }}>
@@ -33,6 +35,13 @@ const GridSlot = (props) => {
                                             schedule={props.employees}
                                             row={props.row}
                                         />
+                                    </div>
+                                    : ''
+                            }
+                            {
+                                props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ?
+                                    <div style={{ position: 'relative', marginTop: 60 }} className="schedule-info">
+                                        <ScheduleDetails />
                                     </div>
                                     : ''
                             }
