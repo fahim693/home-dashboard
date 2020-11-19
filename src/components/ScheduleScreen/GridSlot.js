@@ -8,7 +8,7 @@ import ScheduleDetails from './ScheduleDetails';
 const GridSlot = (props) => {
     const [{ isOver }, drop] = useDrop({
         accept: ItemTypes.USER,
-        drop: () => ({ cell: props.idx, row: props.row }),
+        drop: () => ({ cell: props.idx, row: props.row, startIdx: props.employees[props.row].startIdx, endIdx: props.employees[props.row].endIdx, timeOff: props.timeOff }),
         collect: (monitor) => ({
             isOver: monitor.isOver(),
         }),
@@ -24,7 +24,16 @@ const GridSlot = (props) => {
             {
                 props.row < props.employees.length ?
                     <React.Fragment>
-                        <div className="show-schedule-info" ref={drop} style={{ width: 54, border: props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ? '1px solid ' + props.employees[props.row].boxColor : '1px solid #F1F1F1', backgroundColor: isOver || (props.row === props.selectedRow && props.idx === props.selectedCell) ? '#F3D06D' : props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ? props.employees[props.row].boxColor : '#fff' }}>
+                        <div className={props.row === props.selectedRow && props.idx === props.selectedCell ? '' : "show-schedule-info"} ref={drop}
+                            style={{
+                                width: 54,
+                                border: props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ?
+                                    '1px solid ' + props.employees[props.row].boxColor : props.timeOff.includes(props.idx) ?
+                                        '1px solid #E0E0E0' : '1px solid #F1F1F1',
+                                backgroundColor: isOver || (props.row === props.selectedRow && props.idx === props.selectedCell) ?
+                                    '#F3D06D' : props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ?
+                                        props.employees[props.row].boxColor : props.timeOff.includes(props.idx) ? '#F2F2F2' : '#fff'
+                            }}>
                             {
                                 props.row === props.selectedRow && props.idx === props.selectedCell ?
                                     <div style={{ position: 'relative', marginTop: 60 }}>
@@ -49,7 +58,7 @@ const GridSlot = (props) => {
                     </React.Fragment>
                     : < div style={{ width: 54, border: '1px solid #F1F1F1', backgroundColor: '#fff' }}></div>
             }
-        </React.Fragment>
+        </React.Fragment >
     )
 }
 

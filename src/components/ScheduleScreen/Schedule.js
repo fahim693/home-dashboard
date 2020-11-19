@@ -8,14 +8,22 @@ import { Avatar } from '@material-ui/core';
 import moment from 'moment';
 import UnassignedUser from './UnassignedUser';
 import GridSlot from './GridSlot';
+import Modal from './Modal'
 
 
 const halfHourlyTime = ['8:00 AM', '8:30 AM', '9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '12:00 PM', '12:30 PM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM', '5:30 PM', '6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM', '9:00 PM', '9:30 PM', '10:00 PM', '10:30 PM', '11:00 PM', '11:30 PM', '12:00 AM', '12:30 AM', '1:00 AM', '1:30 AM', '2:00 AM', '2:30 AM', '3:00 AM', '3:30 AM', '4:00 AM', '4:30 AM', '5:00 AM', '5:30 AM', '6:00 AM', '6:30 AM', '7:00 AM', '7:30 AM',]
 const scheduleTime = ['8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM', '8:00 PM', '9:00 PM', '10:00 PM', '11:00 PM', '12:00 AM', '1:00 AM', '2:00 AM', '3:00 AM', '4:00 AM', '5:00 AM', '6:00 AM', '7:00 AM']
-
+const timeOff = [0, 1, 2, 3, 12, 13, 14, 15, 16, 17]
 const Schedule = () => {
     const [alignment, setAlignment] = React.useState('left');
+    const [open, setOpen] = useState(false)
+    const [modalText, setModalText] = useState('')
     const [selectedDate, handleDateChange] = useState(new Date());
+    const [tempData, handleTempData] = useState({
+        removeIdx: '',
+        selectedRow: '',
+        selectedCell: ''
+    })
     const [selectedRow, setSelectedRow] = useState('');
     const [selectedCell, setSelectedCell] = useState('');
     const [removeIdx, setRemoveIdx] = useState('');
@@ -106,6 +114,27 @@ const Schedule = () => {
         setUnassignedUser([...tempUser])
     }
 
+    const handleModal = (type, removeIdx, row, cell) => {
+        handleTempData({
+            removeIdx: removeIdx,
+            selectedCell: cell,
+            selectedRow: row
+        })
+        if (type === 0) {
+            setModalText('The time you have selected already has an existing appointment. Would you still like to continue?')
+            setOpen(true);
+        }else{
+            setModalText('The time you have selected is out of business hours. Would you still like to continue?')
+            setOpen(true);
+        }
+    }
+
+    const showDatePicker = () => {
+        setOpen(false)
+        setRemoveIdx(tempData.removeIdx)
+        handleSelected(tempData.selectedRow, tempData.selectedCell)
+    }
+
     const getEmployees = () => {
         let arr = [];
         for (let i = 0; i < 8; i++) {
@@ -139,6 +168,8 @@ const Schedule = () => {
                     setEmployees={setEmployees}
                     scheduleTime={scheduleTime}
                     confirmSelection={confirmSelection}
+                    halfHourlyTime={halfHourlyTime}
+                    timeOff={timeOff}
                 />
             )
         }
@@ -255,6 +286,7 @@ const Schedule = () => {
                                         handleSelected={handleSelected}
                                         item={item}
                                         idx={idx}
+                                        modal={handleModal}
                                         removeIdx={setRemoveIdx}
                                     />
                                 )
@@ -300,6 +332,12 @@ const Schedule = () => {
                 </div>
 
             </div>
+            <Modal
+                open={open}
+                modalText={modalText}
+                setOpen={setOpen}
+                showDatePicker={showDatePicker}
+            />
         </div >
     )
 }

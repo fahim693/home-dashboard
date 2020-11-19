@@ -7,9 +7,15 @@ const UnassignedUser = (props) => {
         item: { userIdx: props.idx, type: ItemTypes.USER },
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult();
-            if (item && dropResult) { 
-                props.removeIdx(item.userIdx);
-                props.handleSelected(dropResult.row, dropResult.cell)
+            if (item && dropResult) {
+                if (dropResult.cell >= dropResult.startIdx && dropResult.cell < dropResult.endIdx) {
+                    props.modal(0, item.userIdx, dropResult.row, dropResult.cell);
+                } else if (dropResult.timeOff.includes(dropResult.cell)) {
+                    props.modal(1, item.userIdx, dropResult.row, dropResult.cell);
+                }else {
+                    props.removeIdx(item.userIdx);
+                    props.handleSelected(dropResult.row, dropResult.cell)
+                }
             }
         },
         collect: (monitor) => ({
