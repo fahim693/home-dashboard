@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDrop } from 'react-dnd';
 import { ItemTypes } from './Constants';
 import DateSelection from './DateSelection';
 import './gridSlot.css'
+import Modal from './Modal';
 import ScheduleDetails from './ScheduleDetails';
 
 const GridSlot = (props) => {
@@ -13,6 +14,8 @@ const GridSlot = (props) => {
             isOver: monitor.isOver(),
         }),
     });
+    const [open, setOpen] = useState(false)
+    const [click, setClick] = useState(false)
 
     const closeDateSelection = () => {
         props.setSelectedRow('')
@@ -32,7 +35,22 @@ const GridSlot = (props) => {
         temp[props.row].endIdx = ''
 
         props.setEmployees([...temp])
+        setOpen(false)
 
+    }
+
+    const handleClick = () => {
+        if (props.viewModal && !click) {
+            if (props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx) {
+                props.modal(0, '', props.row, props.idx);
+            } else if (props.timeOff.includes(props.idx)) {
+                props.modal(1, '', props.row, props.idx);
+            } else {
+                props.removeIdx('');
+                props.handleSelected(props.row, props.idx)
+            }
+        }
+        setClick(true);
     }
 
     return (
@@ -40,7 +58,10 @@ const GridSlot = (props) => {
             {
                 props.row < props.employees.length ?
                     <React.Fragment>
-                        <div className={props.row === props.selectedRow && props.idx === props.selectedCell ? '' : "show-schedule-info"} ref={drop}
+                        <div
+                            ref={drop}
+                            onClick={handleClick}
+                            className={props.row === props.selectedRow && props.idx === props.selectedCell ? '' : "show-schedule-info"}
                             style={{
                                 width: 54,
                                 border: props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ?
@@ -65,18 +86,25 @@ const GridSlot = (props) => {
                             }
                             {
                                 props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ?
-                                    <div style={{ position: 'relative', marginTop: 60 }} className="schedule-info">
-                                        <ScheduleDetails
-                                            edit={handleEdit}
-                                            delete={handleDelete}
-                                        />
-                                    </div>
+                                    props.viewModal ? '' :
+                                        <div style={{ position: 'relative', marginTop: 60 }} className="schedule-info">
+                                            <ScheduleDetails
+                                                edit={handleEdit}
+                                                delete={() => setOpen(true)}
+                                            />
+                                        </div>
                                     : ''
                             }
                         </div>
                     </React.Fragment>
                     : < div style={{ width: 54, border: '1px solid #F1F1F1', backgroundColor: '#fff' }}></div>
             }
+            <Modal
+                open={open}
+                setOpen={setOpen}
+                modalText="Would you like to delete this appointment?"
+                showDatePicker={handleDelete}
+            />
         </React.Fragment >
     )
 }

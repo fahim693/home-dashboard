@@ -175,6 +175,9 @@ const Schedule = (props) => {
                     timeOff={timeOff}
                     handleSelected={handleSelected}
                     removeIdx={setRemoveIdx}
+                    viewModal={props.modal}
+                    modal={handleModal}
+
                 />
             )
         }
