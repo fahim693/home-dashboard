@@ -18,7 +18,9 @@ const BannerButtonOnly = (props) => {
                         <MdCheck className='btn-icon' />
                         {props.text}
                     </Button>
-                    : <Button onClick={() => props.history.push(props.link)} variant='contained' className="btn-primary">{props.text}</Button>
+                    : props.text === 'SCHEDULE' ?
+                        <Button onClick={() => props.setOpen(true)} variant='contained' className="btn-primary">{props.text}</Button> :
+                        <Button onClick={() => props.history.push(props.link)} variant='contained' className="btn-primary">{props.text}</Button>
             }
 
         </div >

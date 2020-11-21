@@ -47,7 +47,9 @@ export default function CenteredGrid() {
                                 <Card
                                     title="Schedule"
                                     icon={<EventNoteRounded className="main-title-icon" />}
-                                    cardType={type > 0 ? 4 : ''}
+                                    // cardType={type > 0 ? 3 : ''}
+                                    withEditIcon={type > 0}
+
                                 >
                                     <Schedule
                                         data={type === 0 ? dataInit : data}
