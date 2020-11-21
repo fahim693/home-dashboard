@@ -108,11 +108,13 @@ const Schedule = (props) => {
         setSelectedCell('')
         setSelectedRow('')
 
-        let tempUser = unassignedUser;
+        if (removeIdx !== '') {
+            let tempUser = unassignedUser;
+            tempUser.splice(removeIdx, 1);
 
-        tempUser.splice(removeIdx, 1);
+            setUnassignedUser([...tempUser])
+        }
 
-        setUnassignedUser([...tempUser])
     }
 
     const handleModal = (type, removeIdx, row, cell) => {
@@ -171,6 +173,8 @@ const Schedule = (props) => {
                     confirmSelection={confirmSelection}
                     halfHourlyTime={halfHourlyTime}
                     timeOff={timeOff}
+                    handleSelected={handleSelected}
+                    removeIdx={setRemoveIdx}
                 />
             )
         }

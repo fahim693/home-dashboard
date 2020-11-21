@@ -13,10 +13,10 @@ const ScheduleDetails = (props) => {
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ fontWeight: 500, fontSize: 20 }}>Steve Parker</div>
                     <div>
-                        <svg style={{ cursor: 'pointer' }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg onClick={props.edit} style={{ cursor: 'pointer' }} width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 12.8538V15.5556C0 15.8045 0.195528 16 0.444383 16H3.14623C3.26177 16 3.37731 15.9556 3.4573 15.8667L13.1626 6.17025L9.82975 2.83738L0.133315 12.5338C0.0444384 12.6227 0 12.7293 0 12.8538ZM15.74 3.59283C16.0867 3.24622 16.0867 2.68629 15.74 2.33967L13.6603 0.259964C13.3137 -0.0866546 12.7538 -0.0866546 12.4072 0.259964L10.7807 1.8864L14.1136 5.21927L15.74 3.59283Z" fill="black" />
                         </svg>
-                        <svg style={{ marginLeft: 20, cursor: 'pointer' }} width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg onClick={props.delete} style={{ marginLeft: 20, cursor: 'pointer' }} width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.857143 14.2222C0.857143 15.2 1.62857 16 2.57143 16H9.42857C10.3714 16 11.1429 15.2 11.1429 14.2222V5.33333C11.1429 4.35556 10.3714 3.55556 9.42857 3.55556H2.57143C1.62857 3.55556 0.857143 4.35556 0.857143 5.33333V14.2222ZM11.1429 0.888889H9L8.39143 0.257778C8.23714 0.0977777 8.01429 0 7.79143 0H4.20857C3.98571 0 3.76286 0.0977777 3.60857 0.257778L3 0.888889H0.857143C0.385714 0.888889 0 1.28889 0 1.77778C0 2.26667 0.385714 2.66667 0.857143 2.66667H11.1429C11.6143 2.66667 12 2.26667 12 1.77778C12 1.28889 11.6143 0.888889 11.1429 0.888889Z" fill="black" />
                         </svg>
                     </div>

@@ -87,7 +87,7 @@ const DateSelection = (props) => {
                             <Select
                                 labelId="demo-simple-select-outlined-label"
                                 id="demo-simple-select-outlined"
-                                value={endAmPm}
+                                value={moment(props.schedule[props.row].startTime, 'h:mm A').format('A')}
                                 MenuProps={{
                                     getContentAnchorEl: null,
                                     anchorOrigin: {
@@ -96,7 +96,7 @@ const DateSelection = (props) => {
                                     }
                                 }}
                                 disabled
-                                onChange={(e) => setEndAmPm(e.target.value)}
+                                // onChange={(e) => setEndAmPm(e.target.value)}
                             >
                                 <MenuItem value={'AM'}>AM</MenuItem>
                                 <MenuItem value={'PM'}>PM</MenuItem>
@@ -134,7 +134,7 @@ const DateSelection = (props) => {
                             <Select
                                 labelId="demo-simple-select-outlined-label"
                                 id="demo-simple-select-outlined"
-                                value={moment(props.schedule[props.row].startTime, 'h:mm A').format('A')}
+                                value={endAmPm}
                                 onChange={(e) => setEndAmPm(e.target.value)}
                                 MenuProps={{
                                     getContentAnchorEl: null,

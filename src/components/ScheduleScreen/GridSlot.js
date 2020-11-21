@@ -19,6 +19,22 @@ const GridSlot = (props) => {
         props.setSelectedCell('')
     }
 
+    const handleEdit = () => {
+        props.removeIdx('');
+        props.handleSelected(props.row, props.idx)
+    }
+
+    const handleDelete = () => {
+        let temp = props.employees;
+        temp[props.row].startTime = ''
+        temp[props.row].startIdx = ''
+        temp[props.row].endTime = ''
+        temp[props.row].endIdx = ''
+
+        props.setEmployees([...temp])
+
+    }
+
     return (
         <React.Fragment>
             {
@@ -50,7 +66,10 @@ const GridSlot = (props) => {
                             {
                                 props.idx >= props.employees[props.row].startIdx && props.idx < props.employees[props.row].endIdx ?
                                     <div style={{ position: 'relative', marginTop: 60 }} className="schedule-info">
-                                        <ScheduleDetails />
+                                        <ScheduleDetails
+                                            edit={handleEdit}
+                                            delete={handleDelete}
+                                        />
                                     </div>
                                     : ''
                             }

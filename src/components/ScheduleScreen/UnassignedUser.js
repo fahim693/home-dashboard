@@ -12,7 +12,7 @@ const UnassignedUser = (props) => {
                     props.modal(0, item.userIdx, dropResult.row, dropResult.cell);
                 } else if (dropResult.timeOff.includes(dropResult.cell)) {
                     props.modal(1, item.userIdx, dropResult.row, dropResult.cell);
-                }else {
+                } else {
                     props.removeIdx(item.userIdx);
                     props.handleSelected(dropResult.row, dropResult.cell)
                 }
