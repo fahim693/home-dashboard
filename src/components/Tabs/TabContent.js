@@ -3,6 +3,7 @@ import { TextField, FormControl, Button, Typography, makeStyles } from '@materia
 import { SendRounded } from '@material-ui/icons';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
+import BankConnectModal from '../Modal/BankConnectModal';
 
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
@@ -34,12 +35,21 @@ const TabContent = (props) => {
         start: new Date()
     })
 
+    const [open, setOpen] = useState(false)
+
     const handleDateChange = (e, name) => {
         selectedDate({
             ...date,
             [name]: e
         })
     }
+
+    const handleBankConnect = () => {
+        if (props.type === 2) {
+            setOpen(true)
+        }
+    }
+
     return (
         <React.Fragment>
             <div style={{
@@ -220,13 +230,17 @@ const TabContent = (props) => {
                 justifyContent: 'center',
                 padding: '25px 0'
             }}>
-                <Button variant='outlined' className='btn-primary' style={{
+                <Button variant='outlined' onClick={handleBankConnect} className='btn-primary' style={{
                     border: 0
                 }}>
                     <SendRounded style={{ fontSize: 15, marginRight: 5 }} />
                     <span>SUBMIT</span>
                 </Button>
             </div>
+            <BankConnectModal
+                open={open}
+                setOpen={setOpen}
+            />
         </React.Fragment >
     )
 }
