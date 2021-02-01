@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import Subscribe from './Subscribe';
 import { Button, TextField } from '@material-ui/core';
 import InputMask from 'react-input-mask';
 
@@ -17,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function UpdateCardModal(props) {
     const classes = useStyles();
-    const [page, setPage] = useState(0)
     const [cardInfo, setCardInfo] = useState({
         name: '',
         number: '',
@@ -120,44 +117,3 @@ export default function UpdateCardModal(props) {
         </div >
     );
 }
-
-{/* <div style={{ fontSize: 28, fontWeight: 500, marginBottom: 34, marginTop: 25 }}>Payment Information</div>
-                <div style={{ fontWeight: 500, fontSize: 20, color: '#333' }}>
-                    <div>Name on card</div>
-                    <TextField style={{ width: 380, marginTop: 8 }} variant="outlined" size='small' name="name" placeholder="Enter Name" value={cardInfo.name} onChange={handleChangeCardInfo} />
-                    <br />
-                    <br />
-                    <div>Card Number</div>
-                    <InputMask mask="9999 9999 9999 9999" value={cardInfo.number} maskChar=" " onChange={(e) => setCardInfo({
-                        ...cardInfo,
-                        number: e.target.value
-                    })} >
-                        {(inputProps) => <TextField style={{ width: 380, marginTop: 8 }} variant="outlined" size='small' placeholder="1234 1234 1234 1234" />}
-                    </InputMask>
-                    <br />
-                    <br />
-                    <div style={{ display: 'flex' }}>
-                        <div>
-                            <div>Exp Date</div>
-                            <InputMask mask="99/99" value={cardInfo.expDate} maskChar=" " onChange={(e) => setCardInfo({
-                                ...cardInfo,
-                                expDate: e.target.value
-                            })} >
-                                {(inputProps) => <TextField style={{ width: 95, marginTop: 8 }} variant="outlined" size='small' placeholder="MM/YY" />}
-                            </InputMask>
-                        </div>
-                        <div style={{ margin: '0 16px' }}>
-                            <div>CVC</div>
-                            <InputMask mask="999" value={cardInfo.cvc} maskChar=" " onChange={(e) => setCardInfo({
-                                ...cardInfo,
-                                cvc: e.target.value
-                            })} >
-                                {(inputProps) => <TextField style={{ width: 95, marginTop: 8 }} variant="outlined" size='small' placeholder="CVC" />}
-                            </InputMask>
-                        </div>
-                        <div>
-                            <div>Postal Code</div>
-                            <TextField style={{ width: 155, marginTop: 8 }} variant="outlined" size='small' name="postalCode" placeholder="Postal Code" value={cardInfo.postalCode} onChange={handleChangeCardInfo} />
-                        </div>
-                    </div>
-                </div> */}
