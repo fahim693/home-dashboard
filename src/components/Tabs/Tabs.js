@@ -117,16 +117,16 @@ export default function FullWidthTabs(props) {
                 onChangeIndex={handleChangeIndex}
             >
                 <TabPanel value={value} index={0} dir={theme.direction}>
-                    <TabContent />
+                    <TabContent type={0} />
                 </TabPanel>
                 <TabPanel value={value} index={1} dir={theme.direction}>
-                    <TabContent type={1}/>
+                    <TabContent type={1} />
                 </TabPanel>
                 <TabPanel value={value} index={2} dir={theme.direction}>
-                    <TabContent type={2}/>
+                    <TabContent type={2} />
                 </TabPanel>
                 <TabPanel value={value} index={3} dir={theme.direction}>
-                    <TabContent type={3}/>
+                    <TabContent type={3} />
                 </TabPanel>
             </SwipeableViews>
         </div>
