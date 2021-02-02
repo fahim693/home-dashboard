@@ -45,7 +45,7 @@ const TabContent = (props) => {
     }
 
     const handleBankConnect = () => {
-        if (props.type === 2) {
+        if (props.type === 0) {
             setOpen(true)
         }
     }
@@ -69,7 +69,7 @@ const TabContent = (props) => {
             }}>
                 <Typography className="title-heads" variant="body2" component="p">
                     Email Receipt
-                        </Typography>
+                </Typography>
                 <FormControl variant="outlined" style={{ width: '100%' }} classes={{
                     root: classes.quantityRoot
                 }}>
