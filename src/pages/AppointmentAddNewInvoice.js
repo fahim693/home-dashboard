@@ -12,6 +12,7 @@ import BannerButtonOnly from '../components/CustomerBanner/BannerButtonOnly';
 import Others from '../components/Others/Others';
 import AppointmentAddressInvoice from '../components/AppointmentAddressInvoice/AppointmentAddressInvoice';
 import { items, services } from '../data/NewInvoiceData'
+import ScheduleModal from '../components/Modal/ScheduleModal';
 
 const data = {
     tags: [],
@@ -35,6 +36,7 @@ export default function CenteredGrid() {
         street_address: '941, Baker’s Street',
         notes: "",
     })
+    const [open, setOpen] = useState(false)
 
 
     const handleOnChange = (e) => {
@@ -47,7 +49,7 @@ export default function CenteredGrid() {
     return (
         <Layout active={2}>
             <div className={classes.root}>
-                <BannerButtonOnly text="SCHEDULE" link='/appointment' />
+                <BannerButtonOnly text="SCHEDULE" setOpen={setOpen} />
                 <TimelineAddNew step={1} />
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={4} >
@@ -96,6 +98,11 @@ export default function CenteredGrid() {
                     </Grid>
                 </Grid>
             </div>
+            <ScheduleModal
+                open={open}
+                setOpen={setOpen}
+                link='/appointment'
+            />
         </Layout >
     );
 }

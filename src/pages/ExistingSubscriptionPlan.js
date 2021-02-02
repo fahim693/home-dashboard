@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Layout from '../components/Layout/Layout';
 import { Button, Card, CardContent, Divider } from '@material-ui/core';
+import UpdateCardModal from '../components/Subscription/UpdateCard';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ExistingSubscriptionPlan() {
     const classes = useStyles();
+    const [open, setOpen] = useState(false)
 
     return (
         <Layout active={6}>
@@ -108,7 +110,7 @@ export default function ExistingSubscriptionPlan() {
                                         </div>
                                     </div>
                                     <div style={{ textAlign: 'right' }}>
-                                        <Button style={{ color: '#fff', backgroundColor: '#2A95C5' }} variant="contained">UPDATE CREDIT CARD</Button>
+                                        <Button style={{ color: '#fff', backgroundColor: '#2A95C5' }} variant="contained" onClick={() => setOpen(true)}>UPDATE CREDIT CARD</Button>
                                     </div>
                                 </div>
                             </CardContent>
@@ -116,6 +118,10 @@ export default function ExistingSubscriptionPlan() {
                     </Grid>
                 </Grid>
             </div>
+            <UpdateCardModal
+                open={open}
+                setOpen={setOpen}
+            />
         </Layout >
     );
 }

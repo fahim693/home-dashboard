@@ -1,0 +1,7 @@
+.schedule-info{
+    display: none;
+}
+
+.show-schedule-info:hover .schedule-info{
+    display: block;
+}

@@ -41,6 +41,8 @@ const NavBar = (props) => {
         appointments = 'selected'
     } else if (props.active === 3) {
         quotes = 'selected'
+    } else if (props.active === 4) {
+        schedule = 'selected'
     } else if (props.active === 5) {
         employees = 'selected'
     } else if (props.active === 6) {
@@ -83,7 +85,7 @@ const NavBar = (props) => {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className={`nav-link ${schedule}`} to="#">
+                                    <Link className={`nav-link ${schedule}`} to="/schedule">
                                         <EventNoteRounded className="nav-icon" />
                                         <div>Schedule</div>
                                     </Link>
