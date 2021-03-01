@@ -76,6 +76,7 @@ const SignUp = (props) => {
                                             variant="outlined"
                                             fullWidth
                                             name="notes"
+                                            placeholder="First Name"
                                             // value={props.notes}
                                             // onChange={props.handleOnChange}
                                             size='small'
@@ -92,6 +93,7 @@ const SignUp = (props) => {
                                             variant="outlined"
                                             fullWidth
                                             name="notes"
+                                            placeholder="Last Name"
                                             // value={props.notes}
                                             // onChange={props.handleOnChange}
                                             size='small'
@@ -112,6 +114,7 @@ const SignUp = (props) => {
                                     onChange={(e) => setFormField({
                                         ...formFields, [e.target.name]: e.target.value
                                     })}
+                                    placeholder="email@example.com"
                                     size='small'
                                     InputProps={{
                                         endAdornment:
@@ -133,6 +136,7 @@ const SignUp = (props) => {
                                     fullWidth
                                     name="notes"
                                     type='password'
+                                    placeholder="Password"
                                     // value={props.notes}
                                     // onChange={props.handleOnChange}
                                     size='small'
@@ -148,6 +152,7 @@ const SignUp = (props) => {
                                     fullWidth
                                     name="phone"
                                     value={formFields.phone}
+                                    placeholder="(999) 999-9999"
                                     onChange={(e) => {
                                         console.log(e.target.value);
                                         if (rePhone.test(e.target.value)) {

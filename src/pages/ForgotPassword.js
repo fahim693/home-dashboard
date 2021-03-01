@@ -48,7 +48,6 @@ const ForgotPassword = (props) => {
                     <LoginCard>
                         <div className='login-form'>
                             <div className='login-form-type'>Forgot your password?</div>
-                            <br />
                             <div className='login-field-title'>EMAIL</div>
                             <FormControl variant="outlined" fullWidth classes={{
                                 root: classes.quantityRoot
@@ -58,8 +57,10 @@ const ForgotPassword = (props) => {
                                     variant="outlined"
                                     fullWidth
                                     name="email"
+                                    autoFocus
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="email@example.com"
                                     size='small'
                                     InputProps={{
                                         endAdornment:

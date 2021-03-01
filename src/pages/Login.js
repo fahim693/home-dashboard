@@ -49,6 +49,7 @@ const Login = (props) => {
                                     // value={props.notes}
                                     // onChange={props.handleOnChange}
                                     size='small'
+                                    placeholder="email@example.com"
                                 />
                             </FormControl>
                             <div className='login-field-title'>PASSWORD</div>
@@ -64,6 +65,7 @@ const Login = (props) => {
                                     // value={props.notes}
                                     // onChange={props.handleOnChange}
                                     size='small'
+                                    placeholder="Password"
                                 />
                             </FormControl>
                             <FormControlLabel
