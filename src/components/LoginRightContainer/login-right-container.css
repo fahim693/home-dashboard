@@ -1,6 +1,6 @@
 .login-right-container {
   background-color: #2a95c5;
-  height: 100vh;
+  height: calc(100vh);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,10 +8,36 @@
   padding: 0 2rem;
 }
 
-.login-right-text-bottom{
-    color: #fff;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 500;
-    margin-top: 3rem;
+.login-right-text-bottom {
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 3rem;
+}
+
+.signup-svg {
+  display: block;
+}
+
+.signup-svg-sm {
+  display: none;
+}
+
+@media only screen and (max-width: 756px) {
+  .signup-svg {
+    display: none;
+  }
+  .signup-svg-sm {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .signup-svg {
+    display: block;
+  }
+  .signup-svg-sm {
+    display: none;
+  }
 }

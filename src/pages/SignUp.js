@@ -9,7 +9,7 @@ import { WarningRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
-        marginBottom: 20,
+        marginBottom: 14,
         borderRadius: "5px",
         "& .MuiSelect-select": {
             '&:focus': {
@@ -61,11 +61,10 @@ const SignUp = (props) => {
     return (
         <div className='login-body'>
             <Grid container spacing={0}>
-                <Grid item xs={8}>
+                <Grid item xs={12} sm={7} md={8}>
                     <LoginCard>
                         <div className='login-form'>
                             <div className='login-form-type'>Sign Up</div>
-                            <br />
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
                                     <div className='login-field-title'>FIRST NAME</div>
@@ -180,7 +179,7 @@ const SignUp = (props) => {
                         </div>
                     </LoginCard>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={5} md={4}>
                     <LoginRightContainer
                         icon={<SignUpSvg />}
                         text='An all-in-one app for home service providers to easily manage online bookings, organize daily schedules, and keep track of clients and finances'

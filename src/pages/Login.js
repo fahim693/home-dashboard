@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
-        marginBottom: 20,
+        marginBottom: 14,
         borderRadius: "5px",
         "& .MuiSelect-select": {
             '&:focus': {
@@ -33,11 +33,10 @@ const Login = (props) => {
     return (
         <div className='login-body'>
             <Grid container spacing={0}>
-                <Grid item xs={8}>
+                <Grid item xs={12} sm={7} md={8}>
                     <LoginCard>
                         <div className='login-form'>
                             <div className='login-form-type'>Log In</div>
-                            <br />
                             <div className='login-field-title'>EMAIL</div>
                             <FormControl variant="outlined" fullWidth classes={{
                                 root: classes.quantityRoot
@@ -79,7 +78,6 @@ const Login = (props) => {
                                 }
                                 label={<div style={{ marginTop: 9 }} className="login-field-title">REMEMBER ME</div>}
                             />
-                            <br />
                             <Button style={{ margin: '1rem 0 2.5rem', backgroundColor: '#4BCA81', color: '#fff' }} variant="contained" fullWidth>
                                 Log In
                             </Button>
@@ -92,7 +90,7 @@ const Login = (props) => {
                         </div>
                     </LoginCard>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={5} md={4}>
                     <LoginRightContainer
                         icon={<LoginSvg />}
                         text='An all-in-one app for home service providers to easily manage online bookings, organize daily schedules, and keep track of clients and finances'
