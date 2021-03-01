@@ -57,7 +57,6 @@ const ForgotPassword = (props) => {
                                     variant="outlined"
                                     fullWidth
                                     name="email"
-                                    autoFocus
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     placeholder="email@example.com"
