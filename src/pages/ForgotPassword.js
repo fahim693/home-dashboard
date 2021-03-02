@@ -74,11 +74,11 @@ const ForgotPassword = (props) => {
                             <Button onClick={validateEmail} style={{ margin: '0.5rem 0 2.5rem', backgroundColor: '#4BCA81', color: '#fff' }} variant="contained" fullWidth>
                                 Reset my password
                             </Button>
-                            <div onClick={() => props.history.push('/login')} className='login-forgot-pass' >
-                                Log In
+                            <div className='login-forgot-pass' >
+                                <span onClick={() => props.history.push('/login')} style={{ cursor: 'pointer' }}>Log In</span>
                             </div>
-                            <div onClick={() => props.history.push('/signup')} style={{ marginBottom: 30 }} className='login-forgot-pass'>
-                                No account yet? Sign Up!
+                            <div style={{ marginBottom: 30 }} className='login-forgot-pass'>
+                                <span onClick={() => props.history.push('/signup')} style={{ cursor: 'pointer' }}>No account yet? Sign Up!</span>
                             </div>
                         </div>
                     </LoginCard>

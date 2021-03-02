@@ -83,11 +83,11 @@ const Login = (props) => {
                             <Button style={{ margin: '1rem 0 2.5rem', backgroundColor: '#4BCA81', color: '#fff' }} variant="contained" fullWidth>
                                 Log In
                             </Button>
-                            <div onClick={() => props.history.push('/forgot-password')} className='login-forgot-pass'>
-                                Forgot your password?
+                            <div className='login-forgot-pass'>
+                                <span onClick={() => props.history.push('/forgot-password')} style={{ cursor: 'pointer' }}>Forgot your password?</span>
                             </div>
-                            <div onClick={() => props.history.push('/signup')} style={{ marginBottom: 30 }} className='login-forgot-pass'>
-                                No account yet? Sign Up!
+                            <div style={{ marginBottom: 30 }} className='login-forgot-pass'>
+                                <span onClick={() => props.history.push('/signup')} style={{ cursor: 'pointer' }}>No account yet? Sign Up!</span>
                             </div>
                         </div>
                     </LoginCard>

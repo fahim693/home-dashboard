@@ -178,8 +178,8 @@ const SignUp = (props) => {
                             <div className='terms-policy-text'>
                                 By creating an account you agree to HomeDash's <span className='tos'>Terms of Service</span> and <span className='tos'>Privacy Policy.</span>
                             </div>
-                            <div style={{ marginBottom: 30 }} onClick={() => props.history.push('/login')} className='login-forgot-pass'>
-                                Have an account? Log In
+                            <div style={{ marginBottom: 30 }} className='login-forgot-pass'>
+                                <span onClick={() => props.history.push('/login')} style={{ cursor: 'pointer' }}>Have an account? Log In</span>
                             </div>
                         </div>
                     </LoginCard>
