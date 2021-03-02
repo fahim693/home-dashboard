@@ -1,14 +1,16 @@
 .login-card-container {
-  height: 100vh;
+  /* height: calc(100vh); */
+  margin-top: 2vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0px 16px;
 }
 .login-card-top {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2.5rem 0 2.6rem;
+  padding: 1.8rem 0;
 }
 .login-card-icon {
   padding: 7px;
@@ -16,14 +18,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
-  width: 52px;
+  height: 38px;
+  width: 38px;
   border-radius: 100%;
-  margin-right: 1.2rem;
+  margin-right: 0.9rem;
 }
 
 .login-card-title {
   color: #2a95c5;
   font-weight: bold;
-  font-size: 39px;
+  font-size: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+  .login-card-container {
+    height: inherit;
+    margin: 16px 0;
+  }
 }

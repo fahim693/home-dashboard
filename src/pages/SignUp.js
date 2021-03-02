@@ -9,7 +9,7 @@ import { WarningRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     quantityRoot: {
-        marginBottom: 20,
+        marginBottom: 14,
         borderRadius: "5px",
         "& .MuiSelect-select": {
             '&:focus': {
@@ -61,11 +61,10 @@ const SignUp = (props) => {
     return (
         <div className='login-body'>
             <Grid container spacing={0}>
-                <Grid item xs={8}>
+                <Grid item xs={12} sm={7} md={8}>
                     <LoginCard>
                         <div className='login-form'>
                             <div className='login-form-type'>Sign Up</div>
-                            <br />
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sm={6}>
                                     <div className='login-field-title'>FIRST NAME</div>
@@ -77,6 +76,7 @@ const SignUp = (props) => {
                                             variant="outlined"
                                             fullWidth
                                             name="notes"
+                                            placeholder="First Name"
                                             // value={props.notes}
                                             // onChange={props.handleOnChange}
                                             size='small'
@@ -93,6 +93,7 @@ const SignUp = (props) => {
                                             variant="outlined"
                                             fullWidth
                                             name="notes"
+                                            placeholder="Last Name"
                                             // value={props.notes}
                                             // onChange={props.handleOnChange}
                                             size='small'
@@ -113,6 +114,7 @@ const SignUp = (props) => {
                                     onChange={(e) => setFormField({
                                         ...formFields, [e.target.name]: e.target.value
                                     })}
+                                    placeholder="email@example.com"
                                     size='small'
                                     InputProps={{
                                         endAdornment:
@@ -134,6 +136,7 @@ const SignUp = (props) => {
                                     fullWidth
                                     name="notes"
                                     type='password'
+                                    placeholder="Password"
                                     // value={props.notes}
                                     // onChange={props.handleOnChange}
                                     size='small'
@@ -149,6 +152,7 @@ const SignUp = (props) => {
                                     fullWidth
                                     name="phone"
                                     value={formFields.phone}
+                                    placeholder="(999) 999-9999"
                                     onChange={(e) => {
                                         console.log(e.target.value);
                                         if (rePhone.test(e.target.value)) {
@@ -174,13 +178,13 @@ const SignUp = (props) => {
                             <div className='terms-policy-text'>
                                 By creating an account you agree to HomeDash's <span className='tos'>Terms of Service</span> and <span className='tos'>Privacy Policy.</span>
                             </div>
-                            <div style={{ marginBottom: 30 }} onClick={() => props.history.push('/login')} className='login-forgot-pass'>
-                                Have an account? Log In
+                            <div style={{ marginBottom: 30 }} className='login-forgot-pass'>
+                                <span onClick={() => props.history.push('/login')} style={{ cursor: 'pointer' }}>Have an account? Log In</span>
                             </div>
                         </div>
                     </LoginCard>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={5} md={4}>
                     <LoginRightContainer
                         icon={<SignUpSvg />}
                         text='An all-in-one app for home service providers to easily manage online bookings, organize daily schedules, and keep track of clients and finances'
