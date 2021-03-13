@@ -71,43 +71,36 @@ const PageFilter = (props) => {
                         >
                             <MenuItem value={0} disabled style={{ display: 'none' }}>
                                 <div className="menu-item" >
-                                    {/* <AppsRounded className="action-icon" style={{ fontSize: 21, marginLeft: 2 }} /> */}
                                     <div>TOTAL SALES</div>
                                 </div>
                             </MenuItem>
                             <MenuItem value='emp-edit'>
                                 <div className="menu-item">
-                                    {/* <CreateRounded className="action-icon" /> */}
                                     <div>ONLINE BOOKINGS</div>
                                 </div>
                             </MenuItem>
                             <MenuItem value='emp-edit'>
                                 <div className="menu-item">
-                                    {/* <CreateRounded className="action-icon" /> */}
                                     <div>NEW CUSTOMERS</div>
                                 </div>
                             </MenuItem>
                             <MenuItem value='emp-edit'>
                                 <div className="menu-item">
-                                    {/* <CreateRounded className="action-icon" /> */}
                                     <div>TRANSACTIONS</div>
                                 </div>
                             </MenuItem>
                             <MenuItem value='emp-edit'>
                                 <div className="menu-item">
-                                    {/* <CreateRounded className="action-icon" /> */}
                                     <div>UPCOMING APPOINTMENTS</div>
                                 </div>
                             </MenuItem>
                             <MenuItem value='emp-edit'>
                                 <div className="menu-item">
-                                    {/* <CreateRounded className="action-icon" /> */}
                                     <div>OPEN INVOICES</div>
                                 </div>
                             </MenuItem>
                             <MenuItem value='emp-edit'>
                                 <div className="menu-item">
-                                    {/* <CreateRounded className="action-icon" /> */}
                                     <div>EMPLOYEES ON CALL</div>
                                 </div>
                             </MenuItem>
