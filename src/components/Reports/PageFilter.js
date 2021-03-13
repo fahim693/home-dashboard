@@ -51,7 +51,7 @@ const PageFilter = (props) => {
     return (
         <React.Fragment>
             <div className="top-container">
-                <div className="cst-action">
+                <div>
                     <FormControl variant="outlined" margin="dense" classes={{
                         root: classes.quantityRoot
                     }}>
