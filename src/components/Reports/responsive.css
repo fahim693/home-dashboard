@@ -1,0 +1,51 @@
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.top-date-filter {
+  display: flex;
+  align-items: center;
+}
+
+.date-keyboard {
+  width: 118px;
+  margin: 0 12px !important;
+}
+
+.stat {
+  display: block;
+}
+
+.stat-resp {
+  display: none;
+}
+
+@media only screen and (max-width: 990px) {
+  .top-container {
+    display: block;
+  }
+  .top-date-filter {
+    margin-top: 12px;
+  }
+  .stat {
+    display: none;
+  }
+
+  .stat-resp {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .top-date-filter {
+    display: block;
+  }
+  .date-keyboard {
+    margin: 0 !important;
+  }
+  .run-report-btn {
+    margin-top: 12px;
+  }
+}
