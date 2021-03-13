@@ -22,7 +22,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 990px) {
+@media only screen and (max-width: 970px) {
   .top-container {
     display: block;
   }
