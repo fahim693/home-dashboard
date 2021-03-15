@@ -18,110 +18,120 @@ const Notification = (props) => {
                         </svg>
                     </div>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'scroll', height: 580, }}>
-                    <div style={{ color: '#2C3C63', backgroundColor: '#E7EAF1', fontWeight: 'bold', padding: '16px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div>FRIDAY</div>
-                        <div>JAN 3</div>
-                    </div>
-                    <div style={{ padding: 18 }}>
-                        <Card style={{ padding: 18 }}>
-                            <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>5:06 PM</div>
-                                    <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
-                                    <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
-                                </div>
-                                <div>
-                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
-                                        <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
-                                    </svg>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card style={{ padding: 18, marginTop: 18 }}>
-                            <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>4:26 PM</div>
-                                    <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Invoice Paid</div>
-                                    <div style={{ color: '#828282' }}>Invoice paid by John Doe on January 3rd, 2020 at 4:12 PM.</div>
-                                </div>
-                                <div>
-                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
-                                        <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
-                                    </svg>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card style={{ padding: 18, marginTop: 18 }}>
-                            <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>3:02 PM</div>
-                                    <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
-                                    <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
-                                </div>
-                                <div>
-                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
-                                        <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
-                                    </svg>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
+                {
+                    props.clearNotification ?
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: 540, color: '#757575', fontSize: 22, fontWeight: 500 }}>
+                            No New Notifications
+                        </div>
+                        :
+                        <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'auto', height: 540, }}>
+                            <div style={{ color: '#2C3C63', backgroundColor: '#E7EAF1', fontWeight: 'bold', padding: '16px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <div>FRIDAY</div>
+                                <div>JAN 3</div>
+                            </div>
+                            <div style={{ padding: 18 }}>
+                                <Card style={{ padding: 18 }}>
+                                    <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div>
+                                            <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>5:06 PM</div>
+                                            <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
+                                            <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
+                                        </div>
+                                        <div>
+                                            <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
+                                                <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
+                                            </svg>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                                <Card style={{ padding: 18, marginTop: 18 }}>
+                                    <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div>
+                                            <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>4:26 PM</div>
+                                            <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Invoice Paid</div>
+                                            <div style={{ color: '#828282' }}>Invoice paid by John Doe on January 3rd, 2020 at 4:12 PM.</div>
+                                        </div>
+                                        <div>
+                                            <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
+                                                <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
+                                            </svg>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                                <Card style={{ padding: 18, marginTop: 18 }}>
+                                    <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div>
+                                            <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>3:02 PM</div>
+                                            <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
+                                            <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
+                                        </div>
+                                        <div>
+                                            <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
+                                                <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
+                                            </svg>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </div>
 
-                    <div style={{ color: '#2C3C63', backgroundColor: '#E7EAF1', fontWeight: 'bold', padding: '16px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <div>FRIDAY</div>
-                        <div>JAN 3</div>
-                    </div>
-                    <div style={{ padding: 18 }}>
-                        <Card style={{ padding: 18 }}>
-                            <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>5:06 PM</div>
-                                    <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
-                                    <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
-                                </div>
-                                <div>
-                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
-                                        <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
-                                    </svg>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card style={{ padding: 18, marginTop: 18 }}>
-                            <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>4:26 PM</div>
-                                    <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Invoice Paid</div>
-                                    <div style={{ color: '#828282' }}>Invoice paid by John Doe on January 3rd, 2020 at 4:12 PM.</div>
-                                </div>
-                                <div>
-                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
-                                        <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
-                                    </svg>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card style={{ padding: 18, marginTop: 18 }}>
-                            <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                <div>
-                                    <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>3:02 PM</div>
-                                    <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
-                                    <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
-                                </div>
-                                <div >
-                                    <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
-                                        <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
-                                    </svg>
-                                </div>
-                            </CardContent>
-                        </Card>
-                    </div>
+                            <div style={{ color: '#2C3C63', backgroundColor: '#E7EAF1', fontWeight: 'bold', padding: '16px 18px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <div>FRIDAY</div>
+                                <div>JAN 3</div>
+                            </div>
+                            <div style={{ padding: 18 }}>
+                                <Card style={{ padding: 18 }}>
+                                    <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div>
+                                            <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>5:06 PM</div>
+                                            <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
+                                            <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
+                                        </div>
+                                        <div>
+                                            <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
+                                                <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
+                                            </svg>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                                <Card style={{ padding: 18, marginTop: 18 }}>
+                                    <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div>
+                                            <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>4:26 PM</div>
+                                            <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Invoice Paid</div>
+                                            <div style={{ color: '#828282' }}>Invoice paid by John Doe on January 3rd, 2020 at 4:12 PM.</div>
+                                        </div>
+                                        <div>
+                                            <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
+                                                <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
+                                            </svg>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                                <Card style={{ padding: 18, marginTop: 18 }}>
+                                    <CardContent style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <div>
+                                            <div style={{ color: '#BDBDBD', fontSize: 14, marginBottom: 6 }}>3:02 PM</div>
+                                            <div style={{ color: '#333333', fontSize: 20, fontWeight: 500, marginBottom: 6 }}>Appointment Completed</div>
+                                            <div style={{ color: '#828282' }}>Appointment completed for John Doe on January 3rd, 2020 at 5:02 PM.</div>
+                                        </div>
+                                        <div >
+                                            <svg style={{ cursor: 'pointer' }} width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="15" cy="15" r="15" fill="#F2F2F2" />
+                                                <path d="M20.7749 9.23414C20.4174 8.87664 19.8399 8.87664 19.4824 9.23414L14.9999 13.7075L10.5174 9.22497C10.1599 8.86747 9.58241 8.86747 9.22491 9.22497C8.86741 9.58247 8.86741 10.16 9.22491 10.5175L13.7074 15L9.22491 19.4825C8.86741 19.84 8.86741 20.4175 9.22491 20.775C9.58241 21.1325 10.1599 21.1325 10.5174 20.775L14.9999 16.2925L19.4824 20.775C19.8399 21.1325 20.4174 21.1325 20.7749 20.775C21.1324 20.4175 21.1324 19.84 20.7749 19.4825L16.2924 15L20.7749 10.5175C21.1232 10.1691 21.1232 9.58247 20.7749 9.23414Z" fill="black" />
+                                            </svg>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </div>
+                        </div>
+                }
+                <div onClick={() => props.setClearNotification(true)} style={{ cursor: 'pointer', height: 52, borderRadius: '0px 0px 6px 6px', fontSize: 18, fontWeight: 500, backgroundColor: '#4B5F8E', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    CLEAR ALL
                 </div>
             </div >
         </div>

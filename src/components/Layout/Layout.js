@@ -32,6 +32,8 @@ const NavBar = (props) => {
     const classes = useStyles();
     const [showNotification, setNotification] = useState(false)
     const [badgeContent, setBadgeContent] = useState(3)
+    const [clearNotification, setClearNotification] = useState(false)
+
     let home, customers, appointments, schedule, employees, more, quotes = ''
     if (props.active === 0) {
         home = 'selected'
@@ -121,8 +123,10 @@ const NavBar = (props) => {
                                     <div style={{ position: 'absolute', zIndex: 10, top: 47, right: 134 }}>
                                         <Notification
                                             setNotification={setNotification}
+                                            setClearNotification={setClearNotification}
+                                            clearNotification={clearNotification}
                                         />
-                                    </div> : ''
+                                    </div> : null
                             }
 
                             <UserMenu />

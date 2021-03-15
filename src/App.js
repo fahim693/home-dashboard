@@ -24,7 +24,7 @@ import BusinessProfile from './pages/BusinessProfile';
 import BusinessProfileEdit from './pages/BusinessProfileEdit';
 import ItemTable from './pages/PriceBookTables/ItemTable';
 import ServiceTable from './pages/PriceBookTables/ServiceTable';
-import test from './components/ScheduleScreen/ScheduleDetails';
+// import test from './pages/Reports';
 import Hours from './pages/Hours';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -36,6 +36,7 @@ import Invoice from './pages/Invoice';
 import Schedule from './pages/Schedule';
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+import Reports from './pages/Reports';
 
 const App = () => {
   return (
@@ -66,7 +67,7 @@ const App = () => {
         <Route exact path="/service-table" component={ServiceTable} />
         <Route exact path="/item-table" component={ItemTable} />
         <Route exact path="/hours" component={Hours} />
-        <Route exact path="/test" component={test} />
+        {/* <Route exact path="/test" component={test} /> */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/forgot-password" component={ForgotPassword} />
         <Route exact path="/signup" component={SignUp} />
@@ -74,6 +75,8 @@ const App = () => {
         <Route exact path="/existing-plan" component={ExistingSubscriptionPlan} />
         <Route exact path="/generate-invoice" component={Invoice} />
         <Route exact path="/schedule" component={Schedule} />
+        <Route exact path="/reports" component={Reports} />
+
       </Router>
     </DndProvider>
   )
