@@ -10,7 +10,27 @@ const useStyles = makeStyles((theme) => ({
         minWidth: 215,
     },
     quantityRoot: {
-        minWidth: 180,
+        minWidth: 175,
+        color: "#000",
+        backgroundColor: "#fff",
+        borderRadius: "5px",
+        "& .MuiSelect-select": {
+            '&:focus': {
+                backgroundColor: '#fff',
+            }
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        "&:hover .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf"
+        },
+        "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1px solid #bfbfbf",
+        },
+    },
+    dateRoot: {
+        width: 146,
         color: "#000",
         backgroundColor: "#fff",
         borderRadius: "5px",
@@ -116,7 +136,7 @@ const PageFilter = (props) => {
                             <KeyboardDatePicker
                                 className="date-keyboard"
                                 classes={{
-                                    root: classes.quantityRoot
+                                    root: classes.dateRoot
                                 }}
                                 clearable
                                 value={date.start}
@@ -131,6 +151,7 @@ const PageFilter = (props) => {
                                     anchorOrigin: { horizontal: "left", vertical: "bottom" },
                                     transformOrigin: { horizontal: "left", vertical: "top" },
                                 }}
+                                autoOk
                             />
                         </MuiPickersUtilsProvider>
                     </FormControl>
@@ -142,7 +163,7 @@ const PageFilter = (props) => {
                             <KeyboardDatePicker
                                 className="date-keyboard"
                                 classes={{
-                                    root: classes.quantityRoot
+                                    root: classes.dateRoot
                                 }}
                                 clearable
                                 value={date.start}
@@ -157,6 +178,7 @@ const PageFilter = (props) => {
                                     anchorOrigin: { horizontal: "left", vertical: "bottom" },
                                     transformOrigin: { horizontal: "left", vertical: "top" },
                                 }}
+                                autoOk
                             />
                         </MuiPickersUtilsProvider>
                     </FormControl>
